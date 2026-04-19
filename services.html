@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Safer Charging - EV Charging Maintenance & Consultancy</title>
+    <meta name="description" content="Comprehensive EV charging services including proactive maintenance, risk assessments, EVCICR inspections, independent consultancy, and CPO support across the UK.">
+    <link rel="canonical" href="https://www.safercharging.co.uk/services">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://static.wixstatic.com/media/ab875a_1681593b88304360b33051c6f4a0d8e0~mv2.png/v1/fill/w_32,h_32/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://static.wixstatic.com/media/ab875a_1681593b88304360b33051c6f4a0d8e0~mv2.png/v1/fill/w_180,h_180/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy: #0B1232;
+            --navy-light: #141D45;
+            --navy-mid: #1A2550;
+            --yellow: #E8DE25;
+            --yellow-soft: #F0E94D;
+            --yellow-glow: rgba(232, 222, 37, 0.15);
+            --teal: #156082;
+            --teal-light: #1B7BA3;
+            --purple: #5F5478;
+            --purple-light: #7A6F94;
+            --off-white: #F7F6F1;
+            --warm-grey: #E8E6DF;
+            --text-dark: #0B1232;
+            --text-mid: #4A4A5A;
+            --text-light: #6B6B7B;
+            --white: #FFFFFF;
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --section-pad: clamp(80px, 10vw, 140px);
+            --container: 1200px;
+            --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+        body { font-family: var(--font-body); font-size: 16px; line-height: 1.7; color: var(--text-dark); background: var(--white); overflow-x: hidden; }
+        img { max-width: 100%; height: auto; display: block; }
+        a { text-decoration: none; color: inherit; transition: all 0.3s var(--ease); }
+        .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
+        section { padding: var(--section-pad) 0; }
+
+        /* NAV (same as index) */
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 20px 0; transition: all 0.4s var(--ease); background: rgba(11, 18, 50, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        .nav.scrolled { padding: 12px 0; box-shadow: 0 4px 30px rgba(0,0,0,0.15); }
+        .nav-inner { max-width: var(--container); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { display: flex; align-items: center; gap: 12px; }
+        .nav-logo-img { height: 42px; width: auto; }
+        .nav-logo-text { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--white); }
+        .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+        .nav-links a { color: rgba(255,255,255,0.8); font-size: 14px; font-weight: 500; position: relative; }
+        .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--yellow); transition: width 0.3s var(--ease); }
+        .nav-links a:hover { color: var(--white); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a.active { color: var(--yellow); }
+        .nav-links a.active::after { width: 100%; }
+        .nav-cta { background: var(--yellow) !important; color: var(--navy) !important; padding: 10px 24px; border-radius: 8px; font-weight: 600 !important; }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover { background: var(--yellow-soft) !important; transform: translateY(-1px); }
+        .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; background: none; border: none; }
+        .nav-toggle span { width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: all 0.3s var(--ease); }
+
+        /* PAGE HERO */
+        .page-hero {
+            background: var(--navy);
+            padding: 160px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(21, 96, 130, 0.15) 0%, transparent 70%);
+        }
+
+        .page-hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--yellow);
+            margin-bottom: 16px;
+        }
+
+        .page-hero-label::before {
+            content: '';
+            width: 24px;
+            height: 2px;
+            background: var(--yellow);
+        }
+
+        .page-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.15;
+            max-width: 700px;
+            margin-bottom: 20px;
+        }
+
+        .page-hero h1 em { font-style: normal; color: var(--yellow); }
+
+        .page-hero p {
+            font-size: 18px;
+            color: rgba(255,255,255,0.6);
+            max-width: 560px;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* SECTION STYLES */
+        .section-label { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; }
+        .section-label::before { content: ''; width: 24px; height: 2px; background: var(--teal); }
+        .section-title { font-family: var(--font-display); font-size: clamp(32px, 4vw, 48px); font-weight: 700; color: var(--navy); line-height: 1.15; margin-bottom: 20px; }
+        .section-title em { font-style: normal; color: var(--teal); }
+
+        /* SERVICE DETAIL BLOCKS */
+        .service-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .service-detail.reverse { direction: rtl; }
+        .service-detail.reverse > * { direction: ltr; }
+
+        .service-detail-content h2 {
+            font-family: var(--font-display);
+            font-size: clamp(28px, 3.5vw, 38px);
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .service-detail-content h2 em { font-style: normal; color: var(--teal); }
+
+        .service-detail-content > p {
+            font-size: 16px;
+            color: var(--text-mid);
+            line-height: 1.75;
+            margin-bottom: 28px;
+        }
+
+        .service-features {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .service-feature {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+
+        .service-feature-check {
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            background: var(--yellow-glow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .service-feature-check svg { width: 14px; height: 14px; }
+
+        .service-feature p {
+            font-size: 15px;
+            color: var(--text-mid);
+            line-height: 1.6;
+        }
+
+        .service-feature strong { color: var(--text-dark); font-weight: 600; }
+
+        .service-visual {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 24px 60px rgba(11, 18, 50, 0.08);
+        }
+
+        .service-visual img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+        }
+
+        .service-visual-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--navy);
+            color: var(--yellow);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* DIVIDER */
+        .section-divider {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--warm-grey), transparent);
+            margin: 0;
+        }
+
+        /* DARK SECTION */
+        .dark-section {
+            background: var(--navy);
+        }
+
+        .dark-section .section-label { color: var(--yellow); }
+        .dark-section .section-label::before { background: var(--yellow); }
+        .dark-section .section-title { color: var(--white); }
+        .dark-section .section-title em { color: var(--yellow); }
+        .dark-section .service-detail-content h2 { color: var(--white); }
+        .dark-section .service-detail-content h2 em { color: var(--yellow); }
+        .dark-section .service-detail-content > p { color: rgba(255,255,255,0.6); }
+        .dark-section .service-feature p { color: rgba(255,255,255,0.5); }
+        .dark-section .service-feature strong { color: rgba(255,255,255,0.85); }
+        .dark-section .service-visual { box-shadow: 0 24px 60px rgba(0,0,0,0.3); }
+
+        /* CTA BANNER */
+        .cta-banner {
+            background: var(--off-white);
+        }
+
+        .cta-card {
+            background: linear-gradient(135deg, var(--teal) 0%, var(--navy) 100%);
+            border-radius: 24px;
+            padding: 64px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-card::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(232,222,37,0.08) 0%, transparent 70%);
+        }
+
+        .cta-card h2 {
+            font-family: var(--font-display);
+            font-size: clamp(28px, 3.5vw, 38px);
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 14px;
+            position: relative;
+        }
+
+        .cta-card p {
+            font-size: 17px;
+            color: rgba(255,255,255,0.6);
+            max-width: 500px;
+            margin: 0 auto 32px;
+            position: relative;
+        }
+
+        .cta-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            position: relative;
+            flex-wrap: wrap;
+        }
+
+        .btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 32px; border-radius: 10px; font-size: 15px; font-weight: 600; cursor: pointer; border: none; transition: all 0.3s var(--ease); }
+        .btn-primary { background: var(--yellow); color: var(--navy); }
+        .btn-primary:hover { background: var(--yellow-soft); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(232,222,37,0.3); }
+        .btn-outline { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.3); }
+        .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.05); transform: translateY(-2px); }
+        .btn-arrow { transition: transform 0.3s var(--ease); }
+        .btn:hover .btn-arrow { transform: translateX(4px); }
+
+        /* FOOTER */
+        .footer { background: var(--navy); padding: 80px 0 40px; border-top: 1px solid rgba(255,255,255,0.05); }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 60px; }
+        .footer-brand p { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.7; margin-top: 16px; max-width: 280px; }
+        .footer-social { display: flex; gap: 12px; margin-top: 24px; }
+        .footer-social a { width: 40px; height: 40px; border-radius: 10px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; transition: all 0.3s var(--ease); }
+        .footer-social a:hover { background: var(--yellow); }
+        .footer-social a:hover svg { fill: var(--navy); }
+        .footer-social svg { width: 18px; height: 18px; fill: rgba(255,255,255,0.6); }
+        .footer h4 { font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 20px; }
+        .footer-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+        .footer-links a { font-size: 14px; color: rgba(255,255,255,0.5); }
+        .footer-links a:hover { color: var(--yellow); }
+        .footer-contact-item { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 16px; }
+        .footer-contact-item svg { width: 18px; height: 18px; fill: var(--yellow); flex-shrink: 0; margin-top: 2px; }
+        .footer-contact-item a, .footer-contact-item span { font-size: 14px; color: rgba(255,255,255,0.5); }
+        .footer-contact-item a:hover { color: var(--yellow); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+        .footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.3); }
+        .footer-bottom-links { display: flex; gap: 24px; }
+        .footer-bottom-links a { font-size: 13px; color: rgba(255,255,255,0.3); }
+        .footer-bottom-links a:hover { color: rgba(255,255,255,0.7); }
+
+        /* ANIMATIONS */
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s var(--ease-out); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .service-detail { grid-template-columns: 1fr; gap: 40px; }
+            .service-detail.reverse { direction: ltr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--navy); flex-direction: column; justify-content: center; align-items: center; gap: 28px; z-index: 999; }
+            .nav-links.open { display: flex; }
+            .nav-toggle { display: flex; z-index: 1001; }
+            .nav-links a { font-size: 20px; color: var(--white); }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .cta-card { padding: 40px 24px; }
+            .cta-actions { flex-direction: column; align-items: center; }
+            .btn { width: 100%; justify-content: center; max-width: 320px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="/index.html" class="nav-logo">
+                <img src="https://static.wixstatic.com/media/ab875a_1e3be18072b845028b4ea592384500b2~mv2.png" alt="Safer Charging Logo" class="nav-logo-img">
+                <span class="nav-logo-text">Safer Charging</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/services.html" class="active">Services</a></li>
+                <li><a href="/risk-assessments.html">Risk Assessments</a></li>
+                <li><a href="/plans.html">Plans</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/contact.html" class="nav-cta">Book a Call</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-label">Our Services</div>
+            <h1>Comprehensive EV charging <em>support</em></h1>
+            <p>From proactive maintenance to independent consultancy, we cover every aspect of keeping your charge points operational, safe, and compliant.</p>
+        </div>
+    </section>
+
+    <!-- SERVICE 1: MAINTENANCE -->
+    <section id="maintenance">
+        <div class="container">
+            <div class="service-detail reveal">
+                <div class="service-detail-content">
+                    <div class="section-label">Core Service</div>
+                    <h2>Maintenance and <em>Aftercare</em></h2>
+                    <p>Charge point aftercare just got easier. Our proactive and reactive maintenance plans are designed to minimise downtime, extend the life of your equipment, and give you peace of mind that your charging infrastructure is in expert hands.</p>
+
+                    <div class="service-features">
+                        <div class="service-feature">
+                            <div class="service-feature-check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <p><strong>Proactive monitoring</strong> using AI driven data intelligence to catch issues before they cause downtime</p>
+                        </div>
+                        <div class="service-feature">
+                            <div class="service-feature-check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <p><strong>Reactive support</strong> with 24/7 call out available UK wide with transparent SLA backed response times</p>
+                        </div>
+                        <div class="service-feature">
+                            <div class="service-feature-check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <p><strong>Legacy estate specialists</strong> bringing older hardware back to life rather than unnecessary replacements</p>
+                        </div>
+                        <div class="service-feature">
+                            <div class="service-feature-check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <p><strong>Hardware agnostic</strong> so we work with every manufacturer and platform on the market</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-visual">
+                    <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=800&q=80" alt="EV charger being serviced by a maintenance engineer">
+                    <div class="service-visual-badge">Core Service</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- SERVICE 2: RISK ASSESSMENTS -->
+    <section id="risk">
+        <div class="container">
+            <div class="service-detail reverse reveal">
+                <div class="service-detail-content">
+                    <div class="section-label">Compliance</div>
+                    <h2>Risk Assessments and <em>Compliance</em></h2>
+                    <p>As the responsible person for your site, knowing what risks are present and how to manage them effectively is essential. Our comprehensive assessments give you the clarity and documentation you need.</p>
+
+                    <div class="service-features">
+                        <div class="service-feature">
+                            <div class="service-feature-check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <p><strong>Fire safety checks</strong> specific to EV charging installations with actionable recommendations</p>
+                        </div>
+                        <div class="service-feature">
+                            <div class="service-feature-check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <p><strong>EVCICR inspections</strong> carried out by certified EV experts to the latest standards</p>
+                        </div>
+                        <div class="service-feature">
+                            <div class="service-feature-check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <p><strong>Installation condition reports</strong> with detailed documentation you can present to stakeholders</p>
+                        </div>
+                        <div class="service-feature">
+                            <div class="service-feature-check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <p><strong>Regulatory guidance</strong> helping you stay ahead of evolving UK compliance requirements</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-visual">
+                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80" alt="Engineer conducting a risk assessment on an electrical installation">
+                    <div class="service-visual-badge">Compliance</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- SERVICE 3: CONSULTANCY -->
+    <section class="dark-section" id="consultancy">
+        <div class="container">
+            <div class="service-detail reveal">
+                <div class="service-detail-content">
+                    <div class="section-label">Advisory</div>
+                    <h2>Independent <em>Consultancy</em></h2>
+                    <p>We have seen the good, the bad, and everything in between. Our years of specialist experience in EV charging mean we can reduce risk, avoid pitfalls, and guide you toward cost effective decisions that are right for your business.</p>
+
+                    <div class="service-features">
+                        <div class="service-feature">
+                            <div class="service-feature-check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <p><strong>Hardware and software agnostic</strong> recommendations with no ties to any manufacturer or vendor</p>
+                        </div>
+                        <div class="service-feature">
+                            <div class="service-feature-check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <p><strong>Remote or on site assessments</strong> depending on the complexity and scale of your project</p>
+                        </div>
+                        <div class="service-feature">
+                            <div class="service-feature-check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <p><strong>New project planning</strong> from site assessment through to equipment selection and deployment strategy</p>
+                        </div>
+                        <div class="service-feature">
+                            <div class="service-feature-check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <p><strong>Future proofing</strong> ensuring your investment scales as your needs grow and regulations evolve</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-visual">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80" alt="Consultants reviewing EV charging project plans">
+                    <div class="service-visual-badge">Advisory</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICE 4: CPO & OEM -->
+    <section id="cpo">
+        <div class="container">
+            <div class="service-detail reverse reveal">
+                <div class="service-detail-content">
+                    <div class="section-label">Partnership</div>
+                    <h2>CPO and <em>OEM Support</em></h2>
+                    <p>We understand the commercial pressures charge point operators and equipment manufacturers face. Our dedicated support helps you scale operations, maximise uptime, and deliver a better experience for your end users.</p>
+
+                    <div class="service-features">
+                        <div class="service-feature">
+                            <div class="service-feature-check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <p><strong>Network wide maintenance</strong> at scale with consistent quality and reporting across all your sites</p>
+                        </div>
+                        <div class="service-feature">
+                            <div class="service-feature-check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <p><strong>White label support</strong> options so your customers experience seamless service under your brand</p>
+                        </div>
+                        <div class="service-feature">
+                            <div class="service-feature-check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <p><strong>Revenue protection</strong> through proactive maintenance that keeps charge points earning</p>
+                        </div>
+                        <div class="service-feature">
+                            <div class="service-feature-check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <p><strong>Flexible SLAs</strong> tailored to the demands of your network and your customer expectations</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-visual">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80" alt="A network of EV charging stations at a commercial location">
+                    <div class="service-visual-badge">Partnership</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-card reveal">
+                <h2>Not sure which service you need?</h2>
+                <p>Book a free discovery call and we will help you work out the right approach for your situation.</p>
+                <div class="cta-actions">
+                    <a href="/contact.html" class="btn btn-primary">
+                        Book a Call
+                        <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="/plans.html" class="btn btn-outline">View Service Plans</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/index.html" class="nav-logo" style="margin-bottom: 4px;">
+                        <img src="https://static.wixstatic.com/media/ab875a_1e3be18072b845028b4ea592384500b2~mv2.png" alt="Safer Charging Logo" class="nav-logo-img">
+                        <span class="nav-logo-text">Safer Charging</span>
+                    </a>
+                    <p>Independent EV charging maintenance, risk assessments, and consultancy. Keeping charge points safe, compliant, and operational across the UK.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/company/safer-charging" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61573841676004" target="_blank" rel="noopener" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="/services.html">Maintenance and Aftercare</a></li>
+                        <li><a href="/risk-assessments.html">Risk Assessments</a></li>
+                        <li><a href="/services.html#consultancy">Consultancy</a></li>
+                        <li><a href="/services.html#cpo">CPO and OEM Support</a></li>
+                        <li><a href="/plans.html">Service Plans</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/about.html#academy">Arcane Academy</a></li>
+                        <li><a href="https://www.chargesafe.uk" target="_blank" rel="noopener">ChargeSafe</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Get in Touch</h4>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <a href="mailto:hello@safercharging.co.uk">hello@safercharging.co.uk</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        <a href="tel:+447356112325">07356 112 325</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>Bedfordshire, UK</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 &ndash; 2026 Safer Charging Limited. All rights reserved. Company no. 15822485. VAT: 472 4756 68.</p>
+                <div class="footer-bottom-links">
+                    <a href="/privacy.html">Privacy Statement</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 50); });
+        const toggle = document.getElementById('navToggle');
+        const links = document.getElementById('navLinks');
+        toggle.addEventListener('click', () => { links.classList.toggle('open'); });
+        links.querySelectorAll('a').forEach(a => { a.addEventListener('click', () => links.classList.remove('open')); });
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        reveals.forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

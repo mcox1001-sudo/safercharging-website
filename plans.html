@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plans &amp; Pricing | Safer Charging - EV Charging Service Plans</title>
+    <meta name="description" content="Flexible EV charging service plans from Safer Charging. Choose from Essential, Professional, or Enterprise packages for maintenance, inspections, and support across the UK.">
+    <link rel="canonical" href="https://www.safercharging.co.uk/plans">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://static.wixstatic.com/media/ab875a_1681593b88304360b33051c6f4a0d8e0~mv2.png/v1/fill/w_32,h_32/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://static.wixstatic.com/media/ab875a_1681593b88304360b33051c6f4a0d8e0~mv2.png/v1/fill/w_180,h_180/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy: #0B1232;
+            --navy-light: #141D45;
+            --navy-mid: #1A2550;
+            --yellow: #E8DE25;
+            --yellow-soft: #F0E94D;
+            --yellow-glow: rgba(232, 222, 37, 0.15);
+            --teal: #156082;
+            --teal-light: #1B7BA3;
+            --purple: #5F5478;
+            --purple-light: #7A6F94;
+            --off-white: #F7F6F1;
+            --warm-grey: #E8E6DF;
+            --text-dark: #0B1232;
+            --text-mid: #4A4A5A;
+            --text-light: #6B6B7B;
+            --white: #FFFFFF;
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --section-pad: clamp(80px, 10vw, 140px);
+            --container: 1200px;
+            --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+        body { font-family: var(--font-body); font-size: 16px; line-height: 1.7; color: var(--text-dark); background: var(--white); overflow-x: hidden; }
+        img { max-width: 100%; height: auto; display: block; }
+        a { text-decoration: none; color: inherit; transition: all 0.3s var(--ease); }
+        .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
+        section { padding: var(--section-pad) 0; }
+
+        /* NAV */
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 20px 0; transition: all 0.4s var(--ease); background: rgba(11, 18, 50, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        .nav.scrolled { padding: 12px 0; box-shadow: 0 4px 30px rgba(0,0,0,0.15); }
+        .nav-inner { max-width: var(--container); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { display: flex; align-items: center; gap: 12px; }
+        .nav-logo-img { height: 42px; width: auto; }
+        .nav-logo-text { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--white); }
+        .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+        .nav-links a { color: rgba(255,255,255,0.8); font-size: 14px; font-weight: 500; position: relative; }
+        .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--yellow); transition: width 0.3s var(--ease); }
+        .nav-links a:hover { color: var(--white); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a.active { color: var(--yellow); }
+        .nav-links a.active::after { width: 100%; }
+        .nav-cta { background: var(--yellow) !important; color: var(--navy) !important; padding: 10px 24px; border-radius: 8px; font-weight: 600 !important; }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover { background: var(--yellow-soft) !important; transform: translateY(-1px); }
+        .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; background: none; border: none; }
+        .nav-toggle span { width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: all 0.3s var(--ease); }
+
+        /* PAGE HERO */
+        .page-hero {
+            background: var(--navy);
+            padding: 160px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(21, 96, 130, 0.15) 0%, transparent 70%);
+        }
+
+        .page-hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--yellow);
+            margin-bottom: 16px;
+        }
+
+        .page-hero-label::before {
+            content: '';
+            width: 24px;
+            height: 2px;
+            background: var(--yellow);
+        }
+
+        .page-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.15;
+            max-width: 700px;
+            margin-bottom: 20px;
+        }
+
+        .page-hero h1 em { font-style: normal; color: var(--yellow); }
+
+        .page-hero p {
+            font-size: 18px;
+            color: rgba(255,255,255,0.6);
+            max-width: 560px;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* SECTION STYLES */
+        .section-label { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; }
+        .section-label::before { content: ''; width: 24px; height: 2px; background: var(--teal); }
+        .section-title { font-family: var(--font-display); font-size: clamp(32px, 4vw, 48px); font-weight: 700; color: var(--navy); line-height: 1.15; margin-bottom: 20px; }
+        .section-title em { font-style: normal; color: var(--teal); }
+        .section-subtitle { font-size: 17px; color: var(--text-mid); max-width: 600px; margin: 0 auto 60px; line-height: 1.7; }
+        .text-center { text-align: center; }
+
+        /* PRICING CARDS */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            align-items: stretch;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            border: 1.5px solid var(--warm-grey);
+            border-radius: 20px;
+            padding: 40px 32px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: all 0.4s var(--ease);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 50px rgba(11, 18, 50, 0.08);
+        }
+
+        .pricing-card.featured {
+            background: var(--navy);
+            border-color: var(--navy);
+            transform: scale(1.04);
+            box-shadow: 0 32px 80px rgba(11, 18, 50, 0.2);
+            z-index: 1;
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.04) translateY(-4px);
+            box-shadow: 0 36px 90px rgba(11, 18, 50, 0.25);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--yellow);
+            color: var(--navy);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 6px 20px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .pricing-tier {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 8px;
+        }
+
+        .pricing-card.featured .pricing-tier { color: var(--yellow); }
+
+        .pricing-name {
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 12px;
+        }
+
+        .pricing-card.featured .pricing-name { color: var(--white); }
+
+        .pricing-desc {
+            font-size: 15px;
+            color: var(--text-mid);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .pricing-card.featured .pricing-desc { color: rgba(255,255,255,0.55); }
+
+        .pricing-price {
+            font-family: var(--font-display);
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 4px;
+        }
+
+        .pricing-card.featured .pricing-price { color: var(--yellow); }
+
+        .pricing-period {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 28px;
+        }
+
+        .pricing-card.featured .pricing-period { color: rgba(255,255,255,0.4); }
+
+        .pricing-divider {
+            height: 1px;
+            background: var(--warm-grey);
+            margin-bottom: 28px;
+        }
+
+        .pricing-card.featured .pricing-divider { background: rgba(255,255,255,0.1); }
+
+        .pricing-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 32px;
+            flex-grow: 1;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 14px;
+            color: var(--text-mid);
+            line-height: 1.5;
+        }
+
+        .pricing-card.featured .pricing-features li { color: rgba(255,255,255,0.6); }
+
+        .pricing-features li svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .pricing-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 14px 24px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            border: 1.5px solid var(--navy);
+            background: transparent;
+            color: var(--navy);
+            cursor: pointer;
+            transition: all 0.3s var(--ease);
+        }
+
+        .pricing-btn:hover {
+            background: var(--navy);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(11, 18, 50, 0.15);
+        }
+
+        .pricing-card.featured .pricing-btn {
+            background: var(--yellow);
+            color: var(--navy);
+            border-color: var(--yellow);
+        }
+
+        .pricing-card.featured .pricing-btn:hover {
+            background: var(--yellow-soft);
+            border-color: var(--yellow-soft);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(232, 222, 37, 0.3);
+        }
+
+        /* FEATURE COMPARISON TABLE */
+        .comparison-section {
+            background: var(--off-white);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(11, 18, 50, 0.04);
+        }
+
+        .comparison-table thead th {
+            background: var(--navy);
+            color: var(--white);
+            font-size: 14px;
+            font-weight: 600;
+            padding: 18px 20px;
+            text-align: center;
+        }
+
+        .comparison-table thead th:first-child {
+            text-align: left;
+            font-size: 15px;
+        }
+
+        .comparison-table thead th.highlight-col {
+            background: var(--navy-light);
+            color: var(--yellow);
+        }
+
+        .comparison-table tbody td {
+            padding: 16px 20px;
+            font-size: 14px;
+            color: var(--text-mid);
+            text-align: center;
+            border-bottom: 1px solid var(--warm-grey);
+        }
+
+        .comparison-table tbody td:first-child {
+            text-align: left;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .comparison-table tbody td.highlight-col {
+            background: rgba(232, 222, 37, 0.04);
+        }
+
+        .comparison-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tbody tr:hover {
+            background: rgba(21, 96, 130, 0.02);
+        }
+
+        .comparison-table .check-icon {
+            color: var(--teal);
+        }
+
+        .comparison-table .dash-icon {
+            color: var(--warm-grey);
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* FAQ SECTION */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border: 1px solid var(--warm-grey);
+            border-radius: 14px;
+            padding: 28px;
+            transition: all 0.3s var(--ease);
+            cursor: pointer;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 8px 24px rgba(11, 18, 50, 0.05);
+            border-color: var(--teal);
+        }
+
+        .faq-question {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .faq-question svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            margin-top: 2px;
+            color: var(--teal);
+        }
+
+        .faq-answer {
+            font-size: 14px;
+            color: var(--text-mid);
+            line-height: 1.7;
+            padding-left: 32px;
+        }
+
+        /* CTA BANNER */
+        .cta-banner {
+            background: var(--off-white);
+        }
+
+        .cta-card {
+            background: linear-gradient(135deg, var(--teal) 0%, var(--navy) 100%);
+            border-radius: 24px;
+            padding: 64px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-card::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(232,222,37,0.08) 0%, transparent 70%);
+        }
+
+        .cta-card h2 {
+            font-family: var(--font-display);
+            font-size: clamp(28px, 3.5vw, 38px);
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 14px;
+            position: relative;
+        }
+
+        .cta-card p {
+            font-size: 17px;
+            color: rgba(255,255,255,0.6);
+            max-width: 500px;
+            margin: 0 auto 32px;
+            position: relative;
+        }
+
+        .cta-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            position: relative;
+            flex-wrap: wrap;
+        }
+
+        .btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 32px; border-radius: 10px; font-size: 15px; font-weight: 600; cursor: pointer; border: none; transition: all 0.3s var(--ease); }
+        .btn-primary { background: var(--yellow); color: var(--navy); }
+        .btn-primary:hover { background: var(--yellow-soft); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(232,222,37,0.3); }
+        .btn-outline { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.3); }
+        .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.05); transform: translateY(-2px); }
+        .btn-arrow { transition: transform 0.3s var(--ease); }
+        .btn:hover .btn-arrow { transform: translateX(4px); }
+
+        /* FOOTER */
+        .footer { background: var(--navy); padding: 80px 0 40px; border-top: 1px solid rgba(255,255,255,0.05); }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 60px; }
+        .footer-brand p { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.7; margin-top: 16px; max-width: 280px; }
+        .footer-social { display: flex; gap: 12px; margin-top: 24px; }
+        .footer-social a { width: 40px; height: 40px; border-radius: 10px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; transition: all 0.3s var(--ease); }
+        .footer-social a:hover { background: var(--yellow); }
+        .footer-social a:hover svg { fill: var(--navy); }
+        .footer-social svg { width: 18px; height: 18px; fill: rgba(255,255,255,0.6); }
+        .footer h4 { font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 20px; }
+        .footer-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+        .footer-links a { font-size: 14px; color: rgba(255,255,255,0.5); }
+        .footer-links a:hover { color: var(--yellow); }
+        .footer-contact-item { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 16px; }
+        .footer-contact-item svg { width: 18px; height: 18px; fill: var(--yellow); flex-shrink: 0; margin-top: 2px; }
+        .footer-contact-item a, .footer-contact-item span { font-size: 14px; color: rgba(255,255,255,0.5); }
+        .footer-contact-item a:hover { color: var(--yellow); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+        .footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.3); }
+        .footer-bottom-links { display: flex; gap: 24px; }
+        .footer-bottom-links a { font-size: 13px; color: rgba(255,255,255,0.3); }
+        .footer-bottom-links a:hover { color: rgba(255,255,255,0.7); }
+
+        /* ANIMATIONS */
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s var(--ease-out); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .pricing-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
+            .pricing-card.featured { transform: scale(1); }
+            .pricing-card.featured:hover { transform: translateY(-4px); }
+            .faq-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--navy); flex-direction: column; justify-content: center; align-items: center; gap: 28px; z-index: 999; }
+            .nav-links.open { display: flex; }
+            .nav-toggle { display: flex; z-index: 1001; }
+            .nav-links a { font-size: 20px; color: var(--white); }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .cta-card { padding: 40px 24px; }
+            .cta-actions { flex-direction: column; align-items: center; }
+            .btn { width: 100%; justify-content: center; max-width: 320px; }
+            .comparison-table thead th,
+            .comparison-table tbody td { padding: 12px 14px; font-size: 13px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="/index.html" class="nav-logo">
+                <img src="https://static.wixstatic.com/media/ab875a_1e3be18072b845028b4ea592384500b2~mv2.png" alt="Safer Charging Logo" class="nav-logo-img">
+                <span class="nav-logo-text">Safer Charging</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/risk-assessments.html">Risk Assessments</a></li>
+                <li><a href="/plans.html" class="active">Plans</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/contact.html" class="nav-cta">Book a Call</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-label">Service Plans</div>
+            <h1>Plans built around <em>your needs</em></h1>
+            <p>Whether you manage a handful of chargers or an entire network, we have a service plan that keeps your infrastructure safe, compliant, and running at its best.</p>
+        </div>
+    </section>
+
+    <!-- PRICING CARDS -->
+    <section>
+        <div class="container">
+            <div class="text-center">
+                <div class="section-label" style="justify-content: center;">Choose Your Plan</div>
+                <h2 class="section-title">Flexible plans for <em>every scale</em></h2>
+                <p class="section-subtitle">Each plan is designed to give you the right level of cover. Start with what you need today and scale up as your charging estate grows.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- ESSENTIAL -->
+                <div class="pricing-card reveal">
+                    <div class="pricing-tier">Tier 1</div>
+                    <div class="pricing-name">Essential</div>
+                    <p class="pricing-desc">Solid foundational cover for smaller installations that need reliable maintenance and support.</p>
+                    <div class="pricing-price">From &pound;49/mo</div>
+                    <div class="pricing-period">per charger, billed annually</div>
+                    <div class="pricing-divider"></div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            Annual condition inspection
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            Reactive maintenance cover
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            Phone and email support
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            Next business day response
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            Basic compliance documentation
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            Hardware agnostic service
+                        </li>
+                    </ul>
+                    <a href="/contact.html" class="pricing-btn">Get Started</a>
+                </div>
+
+                <!-- PROFESSIONAL -->
+                <div class="pricing-card featured reveal reveal-delay-1">
+                    <div class="pricing-badge">Recommended</div>
+                    <div class="pricing-tier">Tier 2</div>
+                    <div class="pricing-name">Professional</div>
+                    <p class="pricing-desc">Proactive cover for growing estates where uptime and compliance are business critical.</p>
+                    <div class="pricing-price">From &pound;89/mo</div>
+                    <div class="pricing-period">per charger, billed annually</div>
+                    <div class="pricing-divider"></div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            Everything in Essential, plus
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            Proactive AI driven monitoring
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            Quarterly inspections and reports
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            Priority four hour response SLA
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            Risk assessments included
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            Dedicated support portal
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            Performance reporting and analytics
+                        </li>
+                    </ul>
+                    <a href="/contact.html" class="pricing-btn">Get Started</a>
+                </div>
+
+                <!-- ENTERPRISE -->
+                <div class="pricing-card reveal reveal-delay-2">
+                    <div class="pricing-tier">Tier 3</div>
+                    <div class="pricing-name">Enterprise</div>
+                    <p class="pricing-desc">Full service cover for CPOs, OEMs, and large estates that demand the highest standards.</p>
+                    <div class="pricing-price">Contact Us</div>
+                    <div class="pricing-period">custom pricing for your network</div>
+                    <div class="pricing-divider"></div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            Everything in Professional, plus
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            24/7 emergency call out
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            Dedicated account manager
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            Custom SLAs tailored to your needs
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            White label support options
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            Network wide coverage UK wide
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            Strategic consultancy and planning
+                        </li>
+                    </ul>
+                    <a href="/contact.html" class="pricing-btn">Talk to Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURE COMPARISON -->
+    <section class="comparison-section">
+        <div class="container">
+            <div class="text-center">
+                <div class="section-label" style="justify-content: center;">Compare Plans</div>
+                <h2 class="section-title">Full feature <em>comparison</em></h2>
+                <p class="section-subtitle">See exactly what is included at every level so you can choose with confidence.</p>
+            </div>
+
+            <div class="table-wrapper reveal">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Essential</th>
+                            <th class="highlight-col">Professional</th>
+                            <th>Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Reactive maintenance</td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="highlight-col check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                        </tr>
+                        <tr>
+                            <td>Proactive monitoring</td>
+                            <td class="dash-icon">&mdash;</td>
+                            <td class="highlight-col check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                        </tr>
+                        <tr>
+                            <td>Inspections</td>
+                            <td>Annual</td>
+                            <td class="highlight-col">Quarterly</td>
+                            <td>Quarterly+</td>
+                        </tr>
+                        <tr>
+                            <td>Response time</td>
+                            <td>Next business day</td>
+                            <td class="highlight-col">4 hours</td>
+                            <td>Custom SLA</td>
+                        </tr>
+                        <tr>
+                            <td>Phone and email support</td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="highlight-col check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                        </tr>
+                        <tr>
+                            <td>Risk assessments</td>
+                            <td class="dash-icon">&mdash;</td>
+                            <td class="highlight-col check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                        </tr>
+                        <tr>
+                            <td>Compliance documentation</td>
+                            <td>Basic</td>
+                            <td class="highlight-col">Full</td>
+                            <td>Full</td>
+                        </tr>
+                        <tr>
+                            <td>Performance reporting</td>
+                            <td class="dash-icon">&mdash;</td>
+                            <td class="highlight-col check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                        </tr>
+                        <tr>
+                            <td>Dedicated support portal</td>
+                            <td class="dash-icon">&mdash;</td>
+                            <td class="highlight-col check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                        </tr>
+                        <tr>
+                            <td>24/7 emergency call out</td>
+                            <td class="dash-icon">&mdash;</td>
+                            <td class="highlight-col dash-icon">&mdash;</td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                        </tr>
+                        <tr>
+                            <td>Dedicated account manager</td>
+                            <td class="dash-icon">&mdash;</td>
+                            <td class="highlight-col dash-icon">&mdash;</td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                        </tr>
+                        <tr>
+                            <td>White label options</td>
+                            <td class="dash-icon">&mdash;</td>
+                            <td class="highlight-col dash-icon">&mdash;</td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                        </tr>
+                        <tr>
+                            <td>Network wide coverage</td>
+                            <td class="dash-icon">&mdash;</td>
+                            <td class="highlight-col dash-icon">&mdash;</td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                        </tr>
+                        <tr>
+                            <td>Strategic consultancy</td>
+                            <td class="dash-icon">&mdash;</td>
+                            <td class="highlight-col dash-icon">&mdash;</td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+        <div class="container">
+            <div class="text-center">
+                <div class="section-label" style="justify-content: center;">Common Questions</div>
+                <h2 class="section-title">Frequently <em>asked</em></h2>
+                <p class="section-subtitle">Answers to the questions we hear most often about our service plans.</p>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        Can I switch plans later?
+                    </div>
+                    <p class="faq-answer">Absolutely. You can upgrade or adjust your plan at any time as your charging estate grows. We will simply pro rata the difference and update your cover straight away.</p>
+                </div>
+
+                <div class="faq-item reveal reveal-delay-1">
+                    <div class="faq-question">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        Do you work with all charger brands?
+                    </div>
+                    <p class="faq-answer">Yes. We are completely hardware agnostic and work across every major manufacturer and platform. Whether you have a single brand estate or a mixed portfolio, we have you covered.</p>
+                </div>
+
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        What areas do you cover?
+                    </div>
+                    <p class="faq-answer">We provide coverage across the whole of the UK. For Enterprise customers we can arrange dedicated regional engineers for faster response times.</p>
+                </div>
+
+                <div class="faq-item reveal reveal-delay-1">
+                    <div class="faq-question">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        Are parts and materials included?
+                    </div>
+                    <p class="faq-answer">Standard consumables and common parts are included in Professional and Enterprise plans. For larger component replacements, we provide transparent pricing with no hidden markups.</p>
+                </div>
+
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        What is proactive monitoring?
+                    </div>
+                    <p class="faq-answer">Using AI driven data intelligence, we monitor your charger performance remotely and flag potential issues before they cause downtime. This means fewer call outs and better uptime for your estate.</p>
+                </div>
+
+                <div class="faq-item reveal reveal-delay-1">
+                    <div class="faq-question">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        Is there a minimum contract period?
+                    </div>
+                    <p class="faq-answer">Our standard plans run on a 12 month rolling agreement. Enterprise plans are flexible and can be tailored to match your procurement cycles. We are always happy to discuss what works best for you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-card reveal">
+                <h2>Need a plan tailored to your estate?</h2>
+                <p>Get a custom quote based on the size, location, and requirements of your charging infrastructure.</p>
+                <div class="cta-actions">
+                    <a href="/contact.html" class="btn btn-primary">
+                        Get a Custom Quote
+                        <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="/services.html" class="btn btn-outline">Explore Our Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/index.html" class="nav-logo" style="margin-bottom: 4px;">
+                        <img src="https://static.wixstatic.com/media/ab875a_1e3be18072b845028b4ea592384500b2~mv2.png" alt="Safer Charging Logo" class="nav-logo-img">
+                        <span class="nav-logo-text">Safer Charging</span>
+                    </a>
+                    <p>Independent EV charging maintenance, risk assessments, and consultancy. Keeping charge points safe, compliant, and operational across the UK.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/company/safer-charging" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61573841676004" target="_blank" rel="noopener" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="/services.html">Maintenance and Aftercare</a></li>
+                        <li><a href="/risk-assessments.html">Risk Assessments</a></li>
+                        <li><a href="/services.html#consultancy">Consultancy</a></li>
+                        <li><a href="/services.html#cpo">CPO and OEM Support</a></li>
+                        <li><a href="/plans.html">Service Plans</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/about.html#academy">Arcane Academy</a></li>
+                        <li><a href="https://www.chargesafe.uk" target="_blank" rel="noopener">ChargeSafe</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Get in Touch</h4>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <a href="mailto:hello@safercharging.co.uk">hello@safercharging.co.uk</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        <a href="tel:+447356112325">07356 112 325</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>Bedfordshire, UK</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 &ndash; 2026 Safer Charging Limited. All rights reserved. Company no. 15822485. VAT: 472 4756 68.</p>
+                <div class="footer-bottom-links">
+                    <a href="/privacy.html">Privacy Statement</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 50); });
+        const toggle = document.getElementById('navToggle');
+        const links = document.getElementById('navLinks');
+        toggle.addEventListener('click', () => { links.classList.toggle('open'); });
+        links.querySelectorAll('a').forEach(a => { a.addEventListener('click', () => links.classList.remove('open')); });
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        reveals.forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

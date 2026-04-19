@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Safer Charging - Get in Touch</title>
+    <meta name="description" content="Get in touch with Safer Charging for EV charging maintenance, risk assessments, and consultancy. Book a call or send us a message today.">
+    <link rel="canonical" href="https://www.safercharging.co.uk/contact">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://static.wixstatic.com/media/ab875a_1681593b88304360b33051c6f4a0d8e0~mv2.png/v1/fill/w_32,h_32/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://static.wixstatic.com/media/ab875a_1681593b88304360b33051c6f4a0d8e0~mv2.png/v1/fill/w_180,h_180/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy: #0B1232;
+            --navy-light: #141D45;
+            --navy-mid: #1A2550;
+            --yellow: #E8DE25;
+            --yellow-soft: #F0E94D;
+            --yellow-glow: rgba(232, 222, 37, 0.15);
+            --teal: #156082;
+            --teal-light: #1B7BA3;
+            --purple: #5F5478;
+            --purple-light: #7A6F94;
+            --off-white: #F7F6F1;
+            --warm-grey: #E8E6DF;
+            --text-dark: #0B1232;
+            --text-mid: #4A4A5A;
+            --text-light: #6B6B7B;
+            --white: #FFFFFF;
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --section-pad: clamp(80px, 10vw, 140px);
+            --container: 1200px;
+            --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+        body { font-family: var(--font-body); font-size: 16px; line-height: 1.7; color: var(--text-dark); background: var(--white); overflow-x: hidden; }
+        img { max-width: 100%; height: auto; display: block; }
+        a { text-decoration: none; color: inherit; transition: all 0.3s var(--ease); }
+        .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
+        section { padding: var(--section-pad) 0; }
+
+        /* NAV */
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 20px 0; transition: all 0.4s var(--ease); background: rgba(11, 18, 50, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        .nav.scrolled { padding: 12px 0; box-shadow: 0 4px 30px rgba(0,0,0,0.15); }
+        .nav-inner { max-width: var(--container); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { display: flex; align-items: center; gap: 12px; }
+        .nav-logo-img { height: 42px; width: auto; }
+        .nav-logo-text { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--white); }
+        .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+        .nav-links a { color: rgba(255,255,255,0.8); font-size: 14px; font-weight: 500; position: relative; }
+        .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--yellow); transition: width 0.3s var(--ease); }
+        .nav-links a:hover { color: var(--white); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a.active { color: var(--yellow); }
+        .nav-links a.active::after { width: 100%; }
+        .nav-cta { background: var(--yellow) !important; color: var(--navy) !important; padding: 10px 24px; border-radius: 8px; font-weight: 600 !important; }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover { background: var(--yellow-soft) !important; transform: translateY(-1px); }
+        .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; background: none; border: none; }
+        .nav-toggle span { width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: all 0.3s var(--ease); }
+
+        /* PAGE HERO */
+        .page-hero {
+            background: var(--navy);
+            padding: 160px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(21, 96, 130, 0.15) 0%, transparent 70%);
+        }
+
+        .page-hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--yellow);
+            margin-bottom: 16px;
+        }
+
+        .page-hero-label::before {
+            content: '';
+            width: 24px;
+            height: 2px;
+            background: var(--yellow);
+        }
+
+        .page-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.15;
+            max-width: 700px;
+            margin-bottom: 20px;
+        }
+
+        .page-hero h1 em { font-style: normal; color: var(--yellow); }
+
+        .page-hero p {
+            font-size: 18px;
+            color: rgba(255,255,255,0.6);
+            max-width: 560px;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* SECTION STYLES */
+        .section-label { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; }
+        .section-label::before { content: ''; width: 24px; height: 2px; background: var(--teal); }
+        .section-title { font-family: var(--font-display); font-size: clamp(32px, 4vw, 48px); font-weight: 700; color: var(--navy); line-height: 1.15; margin-bottom: 20px; }
+        .section-title em { font-style: normal; color: var(--teal); }
+
+        /* CONTACT LAYOUT */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 60px;
+            align-items: start;
+        }
+
+        /* CONTACT FORM */
+        .contact-form-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 48px;
+            box-shadow: 0 8px 40px rgba(11, 18, 50, 0.06);
+            border: 1px solid var(--warm-grey);
+        }
+
+        .contact-form-card h2 {
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .contact-form-card > p {
+            font-size: 15px;
+            color: var(--text-mid);
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            letter-spacing: 0.3px;
+        }
+
+        .form-group label .required {
+            color: #D44;
+            margin-left: 2px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1.5px solid var(--warm-grey);
+            border-radius: 10px;
+            font-family: var(--font-body);
+            font-size: 15px;
+            color: var(--text-dark);
+            background: var(--white);
+            transition: all 0.3s var(--ease);
+            outline: none;
+            appearance: none;
+            -webkit-appearance: none;
+        }
+
+        .form-group select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%234A4A5A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 44px;
+            cursor: pointer;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-light);
+            font-weight: 300;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--teal);
+            box-shadow: 0 0 0 4px rgba(21, 96, 130, 0.08);
+        }
+
+        .form-group input:valid:not(:placeholder-shown),
+        .form-group select:valid:not([value=""]),
+        .form-group textarea:valid:not(:placeholder-shown) {
+            border-color: #2D9E6C;
+        }
+
+        .form-group input:invalid:not(:placeholder-shown):not(:focus),
+        .form-group textarea:invalid:not(:placeholder-shown):not(:focus) {
+            border-color: #D44;
+            box-shadow: 0 0 0 4px rgba(221, 68, 68, 0.06);
+        }
+
+        .form-submit {
+            margin-top: 8px;
+        }
+
+        .btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 32px; border-radius: 10px; font-size: 15px; font-weight: 600; cursor: pointer; border: none; transition: all 0.3s var(--ease); }
+        .btn-primary { background: var(--yellow); color: var(--navy); }
+        .btn-primary:hover { background: var(--yellow-soft); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(232,222,37,0.3); }
+        .btn-outline { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.3); }
+        .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.05); transform: translateY(-2px); }
+        .btn-teal { background: var(--teal); color: var(--white); }
+        .btn-teal:hover { background: var(--teal-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(21, 96, 130, 0.3); }
+        .btn-arrow { transition: transform 0.3s var(--ease); }
+        .btn:hover .btn-arrow { transform: translateX(4px); }
+        .btn-full { width: 100%; justify-content: center; }
+
+        /* SIDEBAR */
+        .contact-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .sidebar-card {
+            background: var(--off-white);
+            border-radius: 20px;
+            padding: 36px;
+        }
+
+        .sidebar-card h3 {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .contact-detail {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .contact-detail:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-detail-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: var(--yellow-glow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-detail-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .contact-detail-text {
+            padding-top: 2px;
+        }
+
+        .contact-detail-text span {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-bottom: 4px;
+        }
+
+        .contact-detail-text a,
+        .contact-detail-text p {
+            font-size: 15px;
+            color: var(--text-dark);
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        .contact-detail-text a:hover {
+            color: var(--teal);
+        }
+
+        /* SOCIAL CARD */
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-link {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s var(--ease);
+            border: 1.5px solid var(--warm-grey);
+        }
+
+        .social-link:hover {
+            background: var(--navy);
+            border-color: var(--navy);
+        }
+
+        .social-link svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--navy);
+            transition: fill 0.3s var(--ease);
+        }
+
+        .social-link:hover svg {
+            fill: var(--yellow);
+        }
+
+        /* BOOK A CALL SECTION */
+        .book-call-section {
+            background: var(--navy);
+        }
+
+        .book-call-card {
+            background: linear-gradient(135deg, var(--teal) 0%, var(--navy-light) 100%);
+            border-radius: 24px;
+            padding: 64px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 48px;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-call-card::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(232,222,37,0.08) 0%, transparent 70%);
+        }
+
+        .book-call-content {
+            position: relative;
+        }
+
+        .book-call-content .section-label {
+            color: var(--yellow);
+        }
+
+        .book-call-content .section-label::before {
+            background: var(--yellow);
+        }
+
+        .book-call-content h2 {
+            font-family: var(--font-display);
+            font-size: clamp(28px, 3.5vw, 38px);
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 14px;
+            line-height: 1.2;
+        }
+
+        .book-call-content h2 em {
+            font-style: normal;
+            color: var(--yellow);
+        }
+
+        .book-call-content p {
+            font-size: 17px;
+            color: rgba(255,255,255,0.6);
+            max-width: 500px;
+            line-height: 1.7;
+        }
+
+        .book-call-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .book-call-features {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 28px;
+        }
+
+        .book-call-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .book-call-feature svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        .book-call-feature span {
+            font-size: 15px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* CTA BANNER */
+        .cta-banner {
+            background: var(--off-white);
+        }
+
+        .cta-card {
+            background: linear-gradient(135deg, var(--purple) 0%, var(--navy) 100%);
+            border-radius: 24px;
+            padding: 64px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-card::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(232,222,37,0.08) 0%, transparent 70%);
+        }
+
+        .cta-card h2 {
+            font-family: var(--font-display);
+            font-size: clamp(28px, 3.5vw, 38px);
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 14px;
+            position: relative;
+        }
+
+        .cta-card p {
+            font-size: 17px;
+            color: rgba(255,255,255,0.6);
+            max-width: 500px;
+            margin: 0 auto 32px;
+            position: relative;
+        }
+
+        .cta-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            position: relative;
+            flex-wrap: wrap;
+        }
+
+        /* FOOTER */
+        .footer { background: var(--navy); padding: 80px 0 40px; border-top: 1px solid rgba(255,255,255,0.05); }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 60px; }
+        .footer-brand p { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.7; margin-top: 16px; max-width: 280px; }
+        .footer-social { display: flex; gap: 12px; margin-top: 24px; }
+        .footer-social a { width: 40px; height: 40px; border-radius: 10px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; transition: all 0.3s var(--ease); }
+        .footer-social a:hover { background: var(--yellow); }
+        .footer-social a:hover svg { fill: var(--navy); }
+        .footer-social svg { width: 18px; height: 18px; fill: rgba(255,255,255,0.6); }
+        .footer h4 { font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 20px; }
+        .footer-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+        .footer-links a { font-size: 14px; color: rgba(255,255,255,0.5); }
+        .footer-links a:hover { color: var(--yellow); }
+        .footer-contact-item { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 16px; }
+        .footer-contact-item svg { width: 18px; height: 18px; fill: var(--yellow); flex-shrink: 0; margin-top: 2px; }
+        .footer-contact-item a, .footer-contact-item span { font-size: 14px; color: rgba(255,255,255,0.5); }
+        .footer-contact-item a:hover { color: var(--yellow); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+        .footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.3); }
+        .footer-bottom-links { display: flex; gap: 24px; }
+        .footer-bottom-links a { font-size: 13px; color: rgba(255,255,255,0.3); }
+        .footer-bottom-links a:hover { color: rgba(255,255,255,0.7); }
+
+        /* ANIMATIONS */
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s var(--ease-out); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+            .contact-sidebar { order: -1; }
+            .book-call-card { grid-template-columns: 1fr; text-align: center; padding: 48px; }
+            .book-call-content p { max-width: none; }
+            .book-call-actions { align-items: center; }
+            .book-call-features { align-items: center; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--navy); flex-direction: column; justify-content: center; align-items: center; gap: 28px; z-index: 999; }
+            .nav-links.open { display: flex; }
+            .nav-toggle { display: flex; z-index: 1001; }
+            .nav-links a { font-size: 20px; color: var(--white); }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .contact-form-card { padding: 32px 24px; }
+            .form-row { grid-template-columns: 1fr; }
+            .book-call-card { padding: 40px 24px; }
+            .cta-card { padding: 40px 24px; }
+            .cta-actions { flex-direction: column; align-items: center; }
+            .btn { width: 100%; justify-content: center; max-width: 320px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="/index.html" class="nav-logo">
+                <img src="https://static.wixstatic.com/media/ab875a_1e3be18072b845028b4ea592384500b2~mv2.png" alt="Safer Charging Logo" class="nav-logo-img">
+                <span class="nav-logo-text">Safer Charging</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/risk-assessments.html">Risk Assessments</a></li>
+                <li><a href="/plans.html">Plans</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html" class="active">Contact</a></li>
+                <li><a href="/contact.html" class="nav-cta">Book a Call</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-label">Get in Touch</div>
+            <h1>Let's talk about your <em>charging infrastructure</em></h1>
+            <p>Whether you need maintenance support, a risk assessment, or independent advice, we are here to help. Drop us a message or book a call and we will get back to you promptly.</p>
+        </div>
+    </section>
+
+    <!-- CONTACT FORM + SIDEBAR -->
+    <section>
+        <div class="container">
+            <div class="contact-grid">
+                <!-- FORM -->
+                <div class="contact-form-card reveal">
+                    <h2>Send us a message</h2>
+                    <p>Fill in the form below and a member of our team will be in touch within one working day.</p>
+
+                    <form id="contactForm" action="#" method="POST" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Name <span class="required">*</span></label>
+                                <input type="text" id="name" name="name" placeholder="Your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" placeholder="you@company.co.uk" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone" placeholder="Your phone number">
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Company</label>
+                                <input type="text" id="company" name="company" placeholder="Your organisation">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">Service Interest</label>
+                            <select id="service" name="service">
+                                <option value="" selected>Select a service</option>
+                                <option value="maintenance">Maintenance</option>
+                                <option value="risk-assessment">Risk Assessment</option>
+                                <option value="consultancy">Consultancy</option>
+                                <option value="cpo-oem">CPO / OEM Support</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message <span class="required">*</span></label>
+                            <textarea id="message" name="message" placeholder="Tell us about your requirements or ask us anything" required></textarea>
+                        </div>
+
+                        <div class="form-submit">
+                            <button type="submit" class="btn btn-primary btn-full">
+                                Send Message
+                                <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- SIDEBAR -->
+                <div class="contact-sidebar">
+                    <!-- Contact Details -->
+                    <div class="sidebar-card reveal reveal-delay-1">
+                        <h3>Contact details</h3>
+
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            </div>
+                            <div class="contact-detail-text">
+                                <span>Email</span>
+                                <a href="mailto:hello@safercharging.co.uk">hello@safercharging.co.uk</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                            </div>
+                            <div class="contact-detail-text">
+                                <span>Phone</span>
+                                <a href="tel:+447356112325">07356 112 325</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            </div>
+                            <div class="contact-detail-text">
+                                <span>Location</span>
+                                <p>Bedfordshire, UK</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="sidebar-card reveal reveal-delay-2">
+                        <h3>Follow us</h3>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/company/safer-charging" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+                                <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg>
+                            </a>
+                            <a href="https://www.facebook.com/profile.php?id=61573841676004" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+                                <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Response Time -->
+                    <div class="sidebar-card reveal reveal-delay-3" style="background: var(--navy); border: 1px solid rgba(255,255,255,0.08);">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+                            <div style="width: 10px; height: 10px; border-radius: 50%; background: #2D9E6C; animation: pulse 2s ease infinite;"></div>
+                            <span style="font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.7); letter-spacing: 0.5px;">Typically responds within 4 hours</span>
+                        </div>
+                        <p style="font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.6;">Our team is available Monday to Friday, 8am to 6pm. For urgent matters outside of these hours, please call us directly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOK A CALL -->
+    <section class="book-call-section" id="bookings">
+        <div class="container">
+            <div class="book-call-card reveal">
+                <div class="book-call-content">
+                    <div class="section-label">Free Discovery Call</div>
+                    <h2>Book a call with <em>our team</em></h2>
+                    <p>Not sure where to start? Book a free 30 minute discovery call and we will help you understand your options, assess your current setup, and recommend the right path forward.</p>
+
+                    <div class="book-call-features">
+                        <div class="book-call-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>No obligation, completely free</span>
+                        </div>
+                        <div class="book-call-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>Speak directly with an EV charging specialist</span>
+                        </div>
+                        <div class="book-call-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>Get tailored advice for your situation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="book-call-actions">
+                    <a href="/bookings" class="btn btn-primary" style="padding: 20px 48px; font-size: 17px;">
+                        Book a Call
+                        <svg class="btn-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="tel:+447356112325" class="btn btn-outline">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        Or call us now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/index.html" class="nav-logo" style="margin-bottom: 4px;">
+                        <img src="https://static.wixstatic.com/media/ab875a_1e3be18072b845028b4ea592384500b2~mv2.png" alt="Safer Charging Logo" class="nav-logo-img">
+                        <span class="nav-logo-text">Safer Charging</span>
+                    </a>
+                    <p>Independent EV charging maintenance, risk assessments, and consultancy. Keeping charge points safe, compliant, and operational across the UK.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/company/safer-charging" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61573841676004" target="_blank" rel="noopener" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="/services.html">Maintenance and Aftercare</a></li>
+                        <li><a href="/risk-assessments.html">Risk Assessments</a></li>
+                        <li><a href="/services.html#consultancy">Consultancy</a></li>
+                        <li><a href="/services.html#cpo">CPO and OEM Support</a></li>
+                        <li><a href="/plans.html">Service Plans</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/about.html#academy">Arcane Academy</a></li>
+                        <li><a href="https://www.chargesafe.uk" target="_blank" rel="noopener">ChargeSafe</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Get in Touch</h4>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <a href="mailto:hello@safercharging.co.uk">hello@safercharging.co.uk</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        <a href="tel:+447356112325">07356 112 325</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>Bedfordshire, UK</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 &ndash; 2026 Safer Charging Limited. All rights reserved. Company no. 15822485. VAT: 472 4756 68.</p>
+                <div class="footer-bottom-links">
+                    <a href="/privacy.html">Privacy Statement</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+
+    <script>
+        // Nav scroll
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 50); });
+
+        // Mobile menu
+        const toggle = document.getElementById('navToggle');
+        const links = document.getElementById('navLinks');
+        toggle.addEventListener('click', () => { links.classList.toggle('open'); });
+        links.querySelectorAll('a').forEach(a => { a.addEventListener('click', () => links.classList.remove('open')); });
+
+        // Scroll reveal
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        reveals.forEach(el => observer.observe(el));
+
+        // Form validation
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const message = document.getElementById('message');
+            let valid = true;
+
+            [name, email, message].forEach(field => {
+                if (!field.value.trim()) {
+                    field.style.borderColor = '#D44';
+                    field.style.boxShadow = '0 0 0 4px rgba(221, 68, 68, 0.06)';
+                    valid = false;
+                } else {
+                    field.style.borderColor = '#2D9E6C';
+                    field.style.boxShadow = '0 0 0 4px rgba(45, 158, 108, 0.06)';
+                }
+            });
+
+            if (email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+                email.style.borderColor = '#D44';
+                email.style.boxShadow = '0 0 0 4px rgba(221, 68, 68, 0.06)';
+                valid = false;
+            }
+
+            if (valid) {
+                const btn = form.querySelector('button[type="submit"]');
+                btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Message sent';
+                btn.style.background = '#2D9E6C';
+                btn.style.color = '#fff';
+                btn.disabled = true;
+
+                // Reset after 4 seconds
+                setTimeout(() => {
+                    form.reset();
+                    btn.innerHTML = 'Send Message <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+                    btn.style.background = '';
+                    btn.style.color = '';
+                    btn.disabled = false;
+                    [name, email, message].forEach(f => { f.style.borderColor = ''; f.style.boxShadow = ''; });
+                }, 4000);
+            }
+        });
+
+        // Reset styles on input
+        document.querySelectorAll('#contactForm input, #contactForm textarea, #contactForm select').forEach(field => {
+            field.addEventListener('input', function() {
+                this.style.borderColor = '';
+                this.style.boxShadow = '';
+            });
+        });
+    </script>
+</body>
+</html>

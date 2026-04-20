@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | Safer Charging - EV Charging Maintenance & Consultancy</title>
-    <meta name="description" content="Comprehensive EV charging services including proactive maintenance, risk assessments, EVCICR inspections, independent consultancy, and CPO support across the UK.">
-    <link rel="canonical" href="https://www.safercharging.co.uk/services">
+    <title>Our Team | Safer Charging - Meet the Experts Behind the Mission</title>
+    <meta name="description" content="Meet the leadership and advisory board behind Safer Charging. Industry veterans with decades of experience in EV charging, energy, and electrical infrastructure.">
+    <link rel="canonical" href="https://www.safercharging.co.uk/team">
     <link rel="icon" type="image/png" sizes="32x32" href="https://static.wixstatic.com/media/ab875a_1681593b88304360b33051c6f4a0d8e0~mv2.png/v1/fill/w_32,h_32/favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="https://static.wixstatic.com/media/ab875a_1681593b88304360b33051c6f4a0d8e0~mv2.png/v1/fill/w_180,h_180/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,7 +47,7 @@
         .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
         section { padding: var(--section-pad) 0; }
 
-        /* NAV (same as index) */
+        /* NAV */
         .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 20px 0; transition: all 0.4s var(--ease); background: rgba(11, 18, 50, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
         .nav.scrolled { padding: 12px 0; box-shadow: 0 4px 30px rgba(0,0,0,0.15); }
         .nav-inner { max-width: var(--container); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
@@ -74,7 +74,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .page-hero::before {
             content: '';
             position: absolute;
@@ -84,7 +83,6 @@
             height: 600px;
             background: radial-gradient(circle, rgba(21, 96, 130, 0.15) 0%, transparent 70%);
         }
-
         .page-hero-label {
             display: inline-flex;
             align-items: center;
@@ -96,14 +94,12 @@
             color: var(--yellow);
             margin-bottom: 16px;
         }
-
         .page-hero-label::before {
             content: '';
             width: 24px;
             height: 2px;
             background: var(--yellow);
         }
-
         .page-hero h1 {
             font-family: var(--font-display);
             font-size: clamp(36px, 5vw, 56px);
@@ -113,142 +109,293 @@
             max-width: 700px;
             margin-bottom: 20px;
         }
-
         .page-hero h1 em { font-style: normal; color: var(--yellow); }
-
         .page-hero p {
             font-size: 18px;
             color: rgba(255,255,255,0.6);
             max-width: 560px;
             line-height: 1.7;
-            font-weight: 300;
         }
 
-        /* SECTION STYLES */
-        .section-label { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; }
-        .section-label::before { content: ''; width: 24px; height: 2px; background: var(--teal); }
-        .section-title { font-family: var(--font-display); font-size: clamp(32px, 4vw, 48px); font-weight: 700; color: var(--navy); line-height: 1.15; margin-bottom: 20px; }
+        /* SECTION LABELS + TITLES */
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 16px;
+        }
+        .section-label::before {
+            content: '';
+            width: 24px;
+            height: 2px;
+            background: var(--teal);
+        }
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(28px, 3.5vw, 42px);
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
         .section-title em { font-style: normal; color: var(--teal); }
+        .section-subtitle {
+            font-size: 17px;
+            color: var(--text-mid);
+            max-width: 600px;
+            line-height: 1.7;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+        .section-header .section-subtitle { margin: 0 auto; }
 
-        /* SERVICE DETAIL BLOCKS */
-        .service-detail {
+        /* LEADERSHIP — FEATURED CARD */
+        .leader-feature {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
+            grid-template-columns: 400px 1fr;
+            gap: 64px;
             align-items: center;
         }
+        .leader-photo-wrap {
+            position: relative;
+        }
+        .leader-photo-wrap::before {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: -12px;
+            right: 12px;
+            bottom: 12px;
+            border: 2px solid var(--yellow);
+            border-radius: 20px;
+            opacity: 0.3;
+        }
+        .leader-photo {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border-radius: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .leader-role-badge {
+            position: absolute;
+            bottom: 24px;
+            left: 24px;
+            background: var(--yellow);
+            color: var(--navy);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 8px 20px;
+            border-radius: 8px;
+            z-index: 2;
+        }
+        .leader-info h2 {
+            font-family: var(--font-display);
+            font-size: clamp(32px, 4vw, 44px);
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+        .leader-info .role {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--teal);
+            margin-bottom: 24px;
+        }
+        .leader-info p {
+            font-size: 16px;
+            color: var(--text-mid);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+        .leader-stats {
+            display: flex;
+            gap: 32px;
+            margin-top: 32px;
+            padding-top: 32px;
+            border-top: 1px solid var(--warm-grey);
+        }
+        .leader-stat {
+            text-align: center;
+        }
+        .leader-stat-number {
+            font-family: var(--font-display);
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--teal);
+            line-height: 1;
+        }
+        .leader-stat-label {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-top: 6px;
+        }
+        .leader-social {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 28px;
+            padding: 10px 20px;
+            background: var(--off-white);
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--teal);
+            transition: all 0.3s var(--ease);
+        }
+        .leader-social:hover {
+            background: var(--teal);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+        .leader-social svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
 
-        .service-detail.reverse { direction: rtl; }
-        .service-detail.reverse > * { direction: ltr; }
+        /* ADVISORY BOARD GRID */
+        .board-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+        .board-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.06);
+            transition: all 0.4s var(--ease);
+        }
+        .board-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(11, 18, 50, 0.1);
+            border-color: rgba(21, 96, 130, 0.15);
+        }
+        .board-card-photo {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            object-position: top center;
+        }
+        .board-card-body {
+            padding: 28px;
+        }
+        .board-card-body h3 {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+        .board-card-role {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--teal);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+        .board-card-body p {
+            font-size: 14px;
+            color: var(--text-mid);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        .board-card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--teal);
+            transition: all 0.3s var(--ease);
+        }
+        .board-card-link:hover {
+            color: var(--navy);
+        }
+        .board-card-link svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
 
-        .service-detail-content h2 {
+        /* JOIN SECTION */
+        .join-section {
+            background: var(--off-white);
+        }
+        .join-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+        .join-content h2 {
             font-family: var(--font-display);
             font-size: clamp(28px, 3.5vw, 38px);
             font-weight: 700;
-            color: var(--navy);
+            color: var(--text-dark);
             line-height: 1.2;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
-
-        .service-detail-content h2 em { font-style: normal; color: var(--teal); }
-
-        .service-detail-content > p {
+        .join-content h2 em { font-style: normal; color: var(--teal); }
+        .join-content p {
             font-size: 16px;
             color: var(--text-mid);
-            line-height: 1.75;
-            margin-bottom: 28px;
+            line-height: 1.8;
+            margin-bottom: 32px;
         }
-
-        .service-features {
+        .join-values {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 20px;
         }
-
-        .service-feature {
+        .join-value {
             display: flex;
-            gap: 14px;
+            gap: 16px;
             align-items: flex-start;
         }
-
-        .service-feature-check {
-            width: 24px;
-            height: 24px;
-            border-radius: 6px;
+        .join-value-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
             background: var(--yellow-glow);
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            margin-top: 2px;
         }
-
-        .service-feature-check svg { width: 14px; height: 14px; }
-
-        .service-feature p {
+        .join-value-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--teal);
+            fill: none;
+            stroke-width: 2;
+        }
+        .join-value h4 {
             font-size: 15px;
-            color: var(--text-mid);
-            line-height: 1.6;
-        }
-
-        .service-feature strong { color: var(--text-dark); font-weight: 600; }
-
-        .service-visual {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 24px 60px rgba(11, 18, 50, 0.08);
-        }
-
-        .service-visual img {
-            width: 100%;
-            aspect-ratio: 4/3;
-            object-fit: cover;
-        }
-
-        .service-visual-badge {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background: var(--navy);
-            color: var(--yellow);
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-size: 12px;
             font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            color: var(--text-dark);
+            margin-bottom: 4px;
         }
-
-        /* DIVIDER */
-        .section-divider {
-            border: none;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--warm-grey), transparent);
-            margin: 0;
+        .join-value p {
+            font-size: 14px;
+            color: var(--text-mid);
+            margin-bottom: 0;
         }
-
-        /* DARK SECTION */
-        .dark-section {
-            background: var(--navy);
-        }
-
-        .dark-section .section-label { color: var(--yellow); }
-        .dark-section .section-label::before { background: var(--yellow); }
-        .dark-section .section-title { color: var(--white); }
-        .dark-section .section-title em { color: var(--yellow); }
-        .dark-section .service-detail-content h2 { color: var(--white); }
-        .dark-section .service-detail-content h2 em { color: var(--yellow); }
-        .dark-section .service-detail-content > p { color: rgba(255,255,255,0.6); }
-        .dark-section .service-feature p { color: rgba(255,255,255,0.5); }
-        .dark-section .service-feature strong { color: rgba(255,255,255,0.85); }
-        .dark-section .service-visual { box-shadow: 0 24px 60px rgba(0,0,0,0.3); }
 
         /* CTA BANNER */
-        .cta-banner {
-            background: var(--off-white);
-        }
-
+        .cta-banner { background: var(--off-white); }
         .cta-card {
             background: linear-gradient(135deg, var(--teal) 0%, var(--navy) 100%);
             border-radius: 24px;
@@ -257,7 +404,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .cta-card::before {
             content: '';
             position: absolute;
@@ -267,7 +413,6 @@
             height: 400px;
             background: radial-gradient(circle, rgba(232,222,37,0.08) 0%, transparent 70%);
         }
-
         .cta-card h2 {
             font-family: var(--font-display);
             font-size: clamp(28px, 3.5vw, 38px);
@@ -276,7 +421,6 @@
             margin-bottom: 14px;
             position: relative;
         }
-
         .cta-card p {
             font-size: 17px;
             color: rgba(255,255,255,0.6);
@@ -284,7 +428,6 @@
             margin: 0 auto 32px;
             position: relative;
         }
-
         .cta-actions {
             display: flex;
             gap: 16px;
@@ -292,7 +435,6 @@
             position: relative;
             flex-wrap: wrap;
         }
-
         .btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 32px; border-radius: 10px; font-size: 15px; font-weight: 600; cursor: pointer; border: none; transition: all 0.3s var(--ease); }
         .btn-primary { background: var(--yellow); color: var(--navy); }
         .btn-primary:hover { background: var(--yellow-soft); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(232,222,37,0.3); }
@@ -300,6 +442,9 @@
         .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.05); transform: translateY(-2px); }
         .btn-arrow { transition: transform 0.3s var(--ease); }
         .btn:hover .btn-arrow { transform: translateX(4px); }
+
+        /* DIVIDER */
+        .section-divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, var(--warm-grey), transparent); margin: 0; }
 
         /* FOOTER */
         .footer { background: var(--navy); padding: 80px 0 40px; border-top: 1px solid rgba(255,255,255,0.05); }
@@ -329,11 +474,14 @@
         .reveal.visible { opacity: 1; transform: translateY(0); }
         .reveal-delay-1 { transition-delay: 0.1s; }
         .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
 
         /* RESPONSIVE */
         @media (max-width: 1024px) {
-            .service-detail { grid-template-columns: 1fr; gap: 40px; }
-            .service-detail.reverse { direction: ltr; }
+            .leader-feature { grid-template-columns: 1fr; gap: 40px; }
+            .leader-photo-wrap { max-width: 360px; }
+            .board-grid { grid-template-columns: repeat(2, 1fr); }
+            .join-grid { grid-template-columns: 1fr; gap: 40px; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
         }
 
@@ -342,6 +490,8 @@
             .nav-links.open { display: flex; }
             .nav-toggle { display: flex; z-index: 1001; }
             .nav-links a { font-size: 20px; color: var(--white); }
+            .board-grid { grid-template-columns: 1fr; }
+            .leader-stats { flex-wrap: wrap; gap: 24px; }
             .footer-grid { grid-template-columns: 1fr; gap: 32px; }
             .cta-card { padding: 40px 24px; }
             .cta-actions { flex-direction: column; align-items: center; }
@@ -359,11 +509,11 @@
                 <span class="nav-logo-text">Safer Charging</span>
             </a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="/services.html" class="active">Services</a></li>
+                <li><a href="/services.html">Services</a></li>
                 <li><a href="/risk-assessments.html">Risk Assessments</a></li>
                 <li><a href="/plans.html">Plans</a></li>
                 <li><a href="/about.html">About</a></li>
-                <li><a href="/team.html">Team</a></li>
+                <li><a href="/team.html" class="active">Team</a></li>
                 <li><a href="/contact.html">Contact</a></li>
                 <li><a href="/contact.html" class="nav-cta">Book a Call</a></li>
             </ul>
@@ -376,52 +526,44 @@
     <!-- PAGE HERO -->
     <section class="page-hero">
         <div class="container">
-            <div class="page-hero-label">Our Services</div>
-            <h1>Comprehensive EV charging <em>support</em></h1>
-            <p>From proactive maintenance to independent consultancy, we cover every aspect of keeping your charge points operational, safe, and compliant.</p>
+            <div class="page-hero-label">Our Team</div>
+            <h1>The people behind <em>Safer Charging</em></h1>
+            <p>Industry veterans with decades of combined experience in EV charging, energy infrastructure, and electrical engineering. We are building the standard for charge point safety in the UK.</p>
         </div>
     </section>
 
-    <!-- SERVICE 1: MAINTENANCE -->
-    <section id="maintenance">
+    <!-- LEADERSHIP -->
+    <section id="leadership">
         <div class="container">
-            <div class="service-detail reveal">
-                <div class="service-detail-content">
-                    <div class="section-label">Core Service</div>
-                    <h2>Maintenance and <em>Aftercare</em></h2>
-                    <p>Charge point aftercare just got easier. Our proactive and reactive maintenance plans are designed to minimise downtime, extend the life of your equipment, and give you peace of mind that your charging infrastructure is in expert hands.</p>
-
-                    <div class="service-features">
-                        <div class="service-feature">
-                            <div class="service-feature-check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                            </div>
-                            <p><strong>Proactive monitoring</strong> using AI driven data intelligence to catch issues before they cause downtime</p>
+            <div class="leader-feature reveal">
+                <div class="leader-photo-wrap">
+                    <img src="https://static.wixstatic.com/media/ab875a_2e9adb4a75e1414b997f005c4dbee987~mv2.jpg/v1/fill/w_800,h_1000,al_c,q_85,enc_avif,quality_auto/chris-cheetham.jpg" alt="Chris Cheetham, Founder and CEO of Safer Charging" class="leader-photo">
+                    <div class="leader-role-badge">Founder and CEO</div>
+                </div>
+                <div class="leader-info">
+                    <div class="section-label">Leadership</div>
+                    <h2>Chris Cheetham</h2>
+                    <div class="role">Founder and Chief Executive Officer</div>
+                    <p>Chris founded Safer Charging with a clear mission: to create an independent, trustworthy partner for EV charging maintenance and aftercare. With extensive experience in the EV charging industry, he recognised that too many charge point owners were left without reliable support once installation was complete.</p>
+                    <p>His vision for the company centres on independence. By remaining hardware and software agnostic, Safer Charging can serve every client without the conflicts of interest that come with manufacturer tied service providers. Under Chris's leadership, the company has secured SafeContractor certification, SSIP accreditation, and a place as finalists in the Great British Entrepreneur Awards 2025.</p>
+                    <div class="leader-stats">
+                        <div class="leader-stat">
+                            <div class="leader-stat-number">100+</div>
+                            <div class="leader-stat-label">Sites managed</div>
                         </div>
-                        <div class="service-feature">
-                            <div class="service-feature-check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                            </div>
-                            <p><strong>Reactive support</strong> with 24/7 call out available UK wide with transparent SLA backed response times</p>
+                        <div class="leader-stat">
+                            <div class="leader-stat-number">UK</div>
+                            <div class="leader-stat-label">Wide coverage</div>
                         </div>
-                        <div class="service-feature">
-                            <div class="service-feature-check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                            </div>
-                            <p><strong>Legacy estate specialists</strong> bringing older hardware back to life rather than unnecessary replacements</p>
-                        </div>
-                        <div class="service-feature">
-                            <div class="service-feature-check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                            </div>
-                            <p><strong>Hardware agnostic</strong> so we work with every manufacturer and platform on the market</p>
+                        <div class="leader-stat">
+                            <div class="leader-stat-number">24/7</div>
+                            <div class="leader-stat-label">Emergency support</div>
                         </div>
                     </div>
-                </div>
-
-                <div class="service-visual">
-                    <img src="https://static.wixstatic.com/media/ab875a_c82701258f0e40aeaabf05b0de4dfb68~mv2.jpg/v1/fill/w_800,h_616,al_c,q_85,enc_avif,quality_auto/Engineers_edited.jpg" alt="EV charger being serviced by a maintenance engineer">
-                    <div class="service-visual-badge">Core Service</div>
+                    <a href="https://www.linkedin.com/in/christopher-cheetham-06185873/" target="_blank" rel="noopener" class="leader-social">
+                        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg>
+                        Connect on LinkedIn
+                    </a>
                 </div>
             </div>
         </div>
@@ -429,138 +571,106 @@
 
     <hr class="section-divider">
 
-    <!-- SERVICE 2: RISK ASSESSMENTS -->
-    <section id="risk">
+    <!-- ADVISORY BOARD -->
+    <section id="advisory">
         <div class="container">
-            <div class="service-detail reverse reveal">
-                <div class="service-detail-content">
-                    <div class="section-label">Compliance</div>
-                    <h2>Risk Assessments and <em>Compliance</em></h2>
-                    <p>As the responsible person for your site, knowing what risks are present and how to manage them effectively is essential. Our comprehensive assessments give you the clarity and documentation you need.</p>
+            <div class="section-header">
+                <div class="section-label" style="justify-content: center;">Advisory Board</div>
+                <h2 class="section-title">Guided by <em>experience</em></h2>
+                <p class="section-subtitle">Our advisory board brings deep expertise across the energy sector, electrical infrastructure, and business strategy. They ensure Safer Charging remains at the forefront of industry standards and best practice.</p>
+            </div>
 
-                    <div class="service-features">
-                        <div class="service-feature">
-                            <div class="service-feature-check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                            </div>
-                            <p><strong>Fire safety checks</strong> specific to EV charging installations with actionable recommendations</p>
-                        </div>
-                        <div class="service-feature">
-                            <div class="service-feature-check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                            </div>
-                            <p><strong>EVCICR inspections</strong> carried out by certified EV experts to the latest standards</p>
-                        </div>
-                        <div class="service-feature">
-                            <div class="service-feature-check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                            </div>
-                            <p><strong>Installation condition reports</strong> with detailed documentation you can present to stakeholders</p>
-                        </div>
-                        <div class="service-feature">
-                            <div class="service-feature-check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                            </div>
-                            <p><strong>Regulatory guidance</strong> helping you stay ahead of evolving UK compliance requirements</p>
-                        </div>
+            <div class="board-grid">
+                <!-- Andy Murdy -->
+                <div class="board-card reveal reveal-delay-1">
+                    <img src="https://static.wixstatic.com/media/ab875a_9fbd2c46bfa646d2b5b264cb10ac5e16~mv2.jpg/v1/fill/w_600,h_600,al_c,q_80,enc_avif,quality_auto/Andy_Edit.jpg" alt="Andy Murdy, Advisory Board Member" class="board-card-photo">
+                    <div class="board-card-body">
+                        <h3>Andy Murdy</h3>
+                        <div class="board-card-role">Advisory Board</div>
+                        <p>Andy brings extensive experience in the energy and electrical infrastructure sectors. His strategic insight and industry connections help Safer Charging navigate the evolving EV landscape and build partnerships that drive growth.</p>
+                        <a href="https://www.linkedin.com/in/andy-murdy-4baa842/" target="_blank" rel="noopener" class="board-card-link">
+                            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg>
+                            LinkedIn Profile
+                        </a>
                     </div>
                 </div>
 
-                <div class="service-visual">
-                    <img src="https://static.wixstatic.com/media/ab875a_040ff05e29df4e23ad017ac9f48b28fa~mv2.png/v1/fill/w_800,h_502,al_c,q_90,enc_avif,quality_auto/Office%20Charge%20point.png" alt="Engineer conducting a risk assessment on an electrical installation">
-                    <div class="service-visual-badge">Compliance</div>
+                <!-- Chris Chandler -->
+                <div class="board-card reveal reveal-delay-2">
+                    <img src="https://static.wixstatic.com/media/ab875a_b3ce2648eea244e1b6865cea0ccf87b4~mv2.jpg/v1/fill/w_600,h_600,al_c,q_80,enc_avif,quality_auto/chris-chandler.jpg" alt="Chris Chandler, Advisory Board Member" class="board-card-photo">
+                    <div class="board-card-body">
+                        <h3>Chris Chandler</h3>
+                        <div class="board-card-role">Advisory Board</div>
+                        <p>Chris contributes deep technical expertise and a strong understanding of compliance and safety standards within the electrical sector. His guidance ensures that Safer Charging's processes and services meet the highest professional benchmarks.</p>
+                        <a href="https://www.linkedin.com/in/chris-chandler-756b9813/" target="_blank" rel="noopener" class="board-card-link">
+                            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg>
+                            LinkedIn Profile
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Alastair Marr -->
+                <div class="board-card reveal reveal-delay-3">
+                    <img src="https://static.wixstatic.com/media/ab875a_d6996c7295d84fd1b5a91c02c10f8ab2~mv2.jpg/v1/fill/w_600,h_600,al_c,q_80,enc_avif,quality_auto/alastair-marr.jpg" alt="Alastair Marr, Advisory Board Member" class="board-card-photo">
+                    <div class="board-card-body">
+                        <h3>Alastair Marr</h3>
+                        <div class="board-card-role">Advisory Board</div>
+                        <p>Alastair brings a wealth of business development and operational knowledge. His experience in scaling service led businesses provides invaluable guidance as Safer Charging expands its reach across the UK.</p>
+                        <a href="https://www.facebook.com/profile.php?id=61573841676004" target="_blank" rel="noopener" class="board-card-link">
+                            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                            Connect
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <hr class="section-divider">
-
-    <!-- SERVICE 3: CONSULTANCY -->
-    <section class="dark-section" id="consultancy">
+    <!-- JOIN / CULTURE SECTION -->
+    <section class="join-section">
         <div class="container">
-            <div class="service-detail reveal">
-                <div class="service-detail-content">
-                    <div class="section-label">Advisory</div>
-                    <h2>Independent <em>Consultancy</em></h2>
-                    <p>We have seen the good, the bad, and everything in between. Our years of specialist experience in EV charging mean we can reduce risk, avoid pitfalls, and guide you toward cost effective decisions that are right for your business.</p>
-
-                    <div class="service-features">
-                        <div class="service-feature">
-                            <div class="service-feature-check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div class="join-grid reveal">
+                <div class="join-content">
+                    <div class="section-label">Our Culture</div>
+                    <h2>Built on values that <em>matter</em></h2>
+                    <p>Every member of our team shares a commitment to doing things properly. No shortcuts, no conflicts of interest, and no compromises on safety. We are building something that the EV industry genuinely needs.</p>
+                    <div class="join-values">
+                        <div class="join-value">
+                            <div class="join-value-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                             </div>
-                            <p><strong>Hardware and software agnostic</strong> recommendations with no ties to any manufacturer or vendor</p>
+                            <div>
+                                <h4>Safety First, Always</h4>
+                                <p>Every decision we make starts with what is safest for end users and site operators.</p>
+                            </div>
                         </div>
-                        <div class="service-feature">
-                            <div class="service-feature-check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <div class="join-value">
+                            <div class="join-value-icon">
+                                <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
                             </div>
-                            <p><strong>Remote or on site assessments</strong> depending on the complexity and scale of your project</p>
+                            <div>
+                                <h4>Full Transparency</h4>
+                                <p>Independent and agnostic. We tell it like it is, without conflicts of interest.</p>
+                            </div>
                         </div>
-                        <div class="service-feature">
-                            <div class="service-feature-check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <div class="join-value">
+                            <div class="join-value-icon">
+                                <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                             </div>
-                            <p><strong>New project planning</strong> from site assessment through to equipment selection and deployment strategy</p>
-                        </div>
-                        <div class="service-feature">
-                            <div class="service-feature-check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <div>
+                                <h4>Genuine Expertise</h4>
+                                <p>Certified professionals who live and breathe EV charging infrastructure.</p>
                             </div>
-                            <p><strong>Future proofing</strong> ensuring your investment scales as your needs grow and regulations evolve</p>
                         </div>
                     </div>
                 </div>
-
-                <div class="service-visual">
-                    <img src="https://images.pexels.com/photos/9800000/pexels-photo-9800000.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Consultants reviewing EV charging project plans">
-                    <div class="service-visual-badge">Advisory</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICE 4: CPO & OEM -->
-    <section id="cpo">
-        <div class="container">
-            <div class="service-detail reverse reveal">
-                <div class="service-detail-content">
-                    <div class="section-label">Partnership</div>
-                    <h2>CPO and <em>OEM Support</em></h2>
-                    <p>We understand the commercial pressures charge point operators and equipment manufacturers face. Our dedicated support helps you scale operations, maximise uptime, and deliver a better experience for your end users.</p>
-
-                    <div class="service-features">
-                        <div class="service-feature">
-                            <div class="service-feature-check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                            </div>
-                            <p><strong>Network wide maintenance</strong> at scale with consistent quality and reporting across all your sites</p>
-                        </div>
-                        <div class="service-feature">
-                            <div class="service-feature-check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                            </div>
-                            <p><strong>White label support</strong> options so your customers experience seamless service under your brand</p>
-                        </div>
-                        <div class="service-feature">
-                            <div class="service-feature-check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                            </div>
-                            <p><strong>Revenue protection</strong> through proactive maintenance that keeps charge points earning</p>
-                        </div>
-                        <div class="service-feature">
-                            <div class="service-feature-check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                            </div>
-                            <p><strong>Flexible SLAs</strong> tailored to the demands of your network and your customer expectations</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="service-visual">
-                    <img src="https://images.pexels.com/photos/9800004/pexels-photo-9800004.jpeg?auto=compress&cs=tinysrgb&w=800" alt="A network of EV charging stations at a commercial location">
-                    <div class="service-visual-badge">Partnership</div>
+                <div style="background: linear-gradient(135deg, var(--navy) 0%, var(--teal) 100%); border-radius: 24px; padding: 48px; display: flex; flex-direction: column; justify-content: center; gap: 24px;">
+                    <div style="font-family: var(--font-display); font-size: 28px; font-weight: 700; color: var(--white); line-height: 1.3;">Interested in working with us?</div>
+                    <p style="font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.7;">We are always looking for talented engineers and EV specialists who share our commitment to safety and excellence. Get in touch to find out more about opportunities at Safer Charging.</p>
+                    <a href="/contact.html" class="btn btn-primary" style="width: fit-content;">
+                        Get in Touch
+                        <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
                 </div>
             </div>
         </div>
@@ -570,14 +680,14 @@
     <section class="cta-banner">
         <div class="container">
             <div class="cta-card reveal">
-                <h2>Not sure which service you need?</h2>
-                <p>Book a free discovery call and we will help you work out the right approach for your situation.</p>
+                <h2>Ready to work with our team?</h2>
+                <p>Talk to our experts about keeping your EV charging infrastructure safe, compliant, and operational.</p>
                 <div class="cta-actions">
                     <a href="/contact.html" class="btn btn-primary">
                         Book a Call
                         <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
-                    <a href="/plans.html" class="btn btn-outline">View Service Plans</a>
+                    <a href="/services.html" class="btn btn-outline">Explore Our Services</a>
                 </div>
             </div>
         </div>

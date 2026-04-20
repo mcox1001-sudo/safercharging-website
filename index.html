@@ -218,6 +218,61 @@
             transition: all 0.3s var(--ease);
         }
 
+        /* ===== LOADER ===== */
+        .site-loader {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: var(--navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 32px;
+            transition: opacity 0.6s var(--ease), visibility 0.6s;
+        }
+        .site-loader.loaded {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        .loader-logo {
+            width: 80px;
+            height: 80px;
+            animation: loaderPulse 1.2s ease-in-out infinite;
+        }
+        .loader-bar-track {
+            width: 200px;
+            height: 3px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .loader-bar-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--yellow), var(--yellow-soft));
+            border-radius: 3px;
+            animation: loaderFill 1.8s var(--ease) forwards;
+        }
+        .loader-text {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.3);
+            animation: fadeUp 0.6s var(--ease-out) 0.3s both;
+        }
+        @keyframes loaderPulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+        }
+        @keyframes loaderFill {
+            0% { width: 0%; }
+            60% { width: 70%; }
+            100% { width: 100%; }
+        }
+
         /* ===== HERO ===== */
         .hero {
             position: relative;
@@ -1215,6 +1270,13 @@
 </head>
 <body>
 
+    <!-- LOADER -->
+    <div class="site-loader" id="siteLoader">
+        <img src="https://static.wixstatic.com/media/ab875a_1e3be18072b845028b4ea592384500b2~mv2.png" alt="Safer Charging" class="loader-logo">
+        <div class="loader-bar-track"><div class="loader-bar-fill"></div></div>
+        <div class="loader-text">Safer Charging</div>
+    </div>
+
     <!-- NAVIGATION -->
     <nav class="nav" id="nav">
         <div class="nav-inner">
@@ -1228,6 +1290,7 @@
                 <li><a href="/risk-assessments.html">Risk Assessments</a></li>
                 <li><a href="/plans.html">Plans</a></li>
                 <li><a href="/about.html">About</a></li>
+                <li><a href="/team.html">Team</a></li>
                 <li><a href="/contact.html">Contact</a></li>
                 <li><a href="/contact.html" class="nav-cta">Book a Call</a></li>
             </ul>
@@ -1241,8 +1304,7 @@
     <!-- HERO -->
     <section class="hero">
         <div class="hero-video-wrap">
-            <video autoplay muted loop playsinline poster="">
-                <!-- Replace with your own hero video or a stock EV charging video -->
+            <video autoplay muted loop playsinline poster="https://static.wixstatic.com/media/ab875a_c82701258f0e40aeaabf05b0de4dfb68~mv2.jpg/v1/fill/w_1920,h_1080,al_c,q_85,enc_avif,quality_auto/Engineers_edited.jpg">
                 <source src="https://cdn.coverr.co/videos/coverr-charging-an-electric-car-1573/1080p.mp4" type="video/mp4">
             </video>
         </div>
@@ -1439,7 +1501,7 @@
                 <div class="why-visual reveal reveal-delay-2">
                     <div class="why-image-main">
                         <!-- Replace with actual image of engineers working on EV chargers -->
-                        <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=800&q=80" alt="Engineer servicing an EV charging point">
+                        <img src="https://static.wixstatic.com/media/ab875a_c82701258f0e40aeaabf05b0de4dfb68~mv2.jpg/v1/fill/w_800,h_616,al_c,q_85,enc_avif,quality_auto/Engineers_edited.jpg" alt="Engineer servicing an EV charging point">
                     </div>
                     <div class="why-float-card">
                         <div class="why-float-icon">
@@ -1467,7 +1529,7 @@
             <div class="personas-grid">
                 <div class="persona-card reveal">
                     <div class="persona-img">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80" alt="A female installer reviewing EV charging equipment">
+                        <img src="https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=600" alt="A female installer reviewing EV charging equipment">
                         <div class="persona-tag">Installer</div>
                     </div>
                     <div class="persona-body">
@@ -1479,7 +1541,7 @@
 
                 <div class="persona-card reveal reveal-delay-1">
                     <div class="persona-img">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80" alt="A male charge point operator reviewing data">
+                        <img src="https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=600" alt="A male charge point operator reviewing data">
                         <div class="persona-tag">CPO</div>
                     </div>
                     <div class="persona-body">
@@ -1491,7 +1553,7 @@
 
                 <div class="persona-card reveal reveal-delay-2">
                     <div class="persona-img">
-                        <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=600&q=80" alt="A female fleet manager at a charging depot">
+                        <img src="https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=600" alt="A female fleet manager at a charging depot">
                         <div class="persona-tag">Fleet</div>
                     </div>
                     <div class="persona-body">
@@ -1539,6 +1601,12 @@
 
                 <div class="brand-card arcane reveal reveal-delay-1">
                     <div class="brand-card-label">Learn With Us</div>
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                        <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(95,84,120,0.3); display: flex; align-items: center; justify-content: center;">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7A6F94" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/></svg>
+                        </div>
+                        <span style="font-family: var(--font-display); font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--purple-light);">ACA</span>
+                    </div>
                     <h3>Arcane Charging Academy</h3>
                     <p>Our training and resource hub with useful content for all experience levels. From understanding your kW from your kWh to advanced maintenance techniques.</p>
                     <a href="/about.html#academy" class="btn-brand purple">
@@ -1613,6 +1681,7 @@
                     <h4>Company</h4>
                     <ul class="footer-links">
                         <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/team.html">Our Team</a></li>
                         <li><a href="/about.html#academy">Arcane Academy</a></li>
                         <li><a href="https://www.chargesafe.uk" target="_blank" rel="noopener">ChargeSafe</a></li>
                         <li><a href="/contact.html">Contact</a></li>
@@ -1646,6 +1715,22 @@
     </footer>
 
     <script>
+        // Loader — dismiss after video starts or 2.2s max
+        (function() {
+            const loader = document.getElementById('siteLoader');
+            const video = document.querySelector('.hero-video-wrap video');
+            let dismissed = false;
+            function dismiss() {
+                if (dismissed) return;
+                dismissed = true;
+                loader.classList.add('loaded');
+            }
+            if (video) {
+                video.addEventListener('canplaythrough', function() { setTimeout(dismiss, 400); }, { once: true });
+            }
+            setTimeout(dismiss, 2200);
+        })();
+
         // Scroll-aware nav
         const nav = document.getElementById('nav');
         window.addEventListener('scroll', () => {

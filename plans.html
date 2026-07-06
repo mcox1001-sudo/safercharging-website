@@ -574,6 +574,14 @@
         .page-hero .container, .page-head .container { position:relative; z-index:3; }
         @media (max-width:1000px){ .hero-scene{ display:none; } }
         @media (prefers-reduced-motion: reduce){ .cs-flow,.cs-bar,.cs-ring,.cs-bolt,.cs-glow,.cs-p{ animation:none !important; } }
+    
+        /* ===== real-image hero media ===== */
+        .ph-media { position:absolute; inset:0; z-index:0; overflow:hidden; }
+        .ph-media img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; animation: phKen 32s ease-in-out infinite alternate; }
+        @keyframes phKen { from{transform:scale(1.05);} to{transform:scale(1.15);} }
+        .ph-scrim { position:absolute; inset:0; background: linear-gradient(100deg, rgba(7,18,51,0.95) 0%, rgba(11,27,63,0.72) 52%, rgba(11,27,63,0.5) 100%), linear-gradient(0deg, rgba(7,18,51,0.55), transparent 48%); }
+        .page-hero .container { position:relative; z-index:2; }
+        @media (prefers-reduced-motion: reduce){ .ph-media img{ animation:none; } }
     </style>
 </head>
 <body>
@@ -603,27 +611,7 @@
 
     <!-- PAGE HERO -->
     <section class="page-hero" id="content">
-        <div class="hero-scene" aria-hidden="true">
-            <svg viewBox="0 0 480 420">
-                <defs><radialGradient id="csg" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#E8B923" stop-opacity="0.5"/><stop offset="1" stop-color="#E8B923" stop-opacity="0"/></radialGradient></defs>
-                <circle class="cs-glow" cx="332" cy="250" r="78"/>
-                <rect class="cs-body" x="70" y="118" width="88" height="258" rx="16" stroke-width="2"/>
-                <rect x="84" y="140" width="60" height="76" rx="8" fill="rgba(11,27,63,0.55)" class="cs-gold" stroke-width="2"/>
-                <path class="cs-bolt" d="M118 150 L103 178 h9 l-3 20 18 -30 h-10 z"/>
-                <rect x="90" y="198" width="48" height="10" rx="3" fill="rgba(255,255,255,0.12)"/>
-                <rect class="cs-bar" x="90" y="198" width="48" height="10" rx="3"/>
-                <line class="cs-line" x1="66" y1="376" x2="162" y2="376" stroke-width="2"/>
-                <path class="cs-line" fill="none" stroke-width="7" stroke-linecap="round" d="M158 250 C 214 250, 240 264, 306 254"/>
-                <path class="cs-flow" fill="none" stroke-width="3" stroke-linecap="round" d="M158 250 C 214 250, 240 264, 306 254"/>
-                <rect x="300" y="242" width="20" height="24" rx="4" fill="rgba(11,27,63,0.75)" class="cs-gold" stroke-width="2"/>
-                <circle cx="332" cy="252" r="20" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
-                <circle cx="332" cy="252" r="8" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
-                <circle class="cs-ring" cx="332" cy="252" r="28" fill="none" stroke-width="3.5" stroke-linecap="round"/>
-                <circle class="cs-p cs-p1" cx="112" cy="118" r="3"/>
-                <circle class="cs-p cs-p2" cx="130" cy="118" r="2.5"/>
-                <circle class="cs-p cs-p3" cx="98" cy="118" r="2"/>
-            </svg>
-        </div>
+        <div class="ph-media"><img src="https://images.pexels.com/photos/4678065/pexels-photo-4678065.jpeg?auto=compress&cs=tinysrgb&w=1920" onerror="this.onerror=null;this.src='https://static.wixstatic.com/media/ab875a_c82701258f0e40aeaabf05b0de4dfb68~mv2.jpg/v1/fill/w_1600,h_1000,al_c,q_85,enc_avif,quality_auto/Engineers_edited.jpg'" alt="Public electric vehicle charge point"><div class="ph-scrim"></div></div>
         <div class="container">
             <div class="page-hero-label">Service Plans</div>
             <h1>Plans built around <em>your needs</em></h1>

@@ -516,6 +516,30 @@
         .hero-proof-key, .proof-stat, .feature-float-stat, .stat-num, .plan-price, .price-amount { font-variant-numeric: tabular-nums; }
         .skip-link { position: absolute; left: 12px; top: -70px; z-index: 3000; background: var(--gold); color: var(--navy); padding: 11px 20px; border-radius: 8px; font-weight: 700; font-size: 14px; transition: top 0.25s ease; }
         .skip-link:focus-visible, .skip-link:focus { top: 12px; }
+    
+        /* ===== animated charging hero scene (bespoke, no external media) ===== */
+        .hero-scene { position:absolute; z-index:2; right:2%; top:50%; transform:translateY(-50%); width:min(40vw,440px); pointer-events:none; opacity:0; animation: csIn 1.1s cubic-bezier(0.22,1,0.36,1) 0.3s forwards; }
+        .hero-scene svg { width:100%; height:auto; overflow:visible; }
+        @keyframes csIn { from{opacity:0;} to{opacity:1;} }
+        .cs-line { stroke: rgba(255,255,255,0.34); }
+        .cs-body { fill: rgba(255,255,255,0.03); stroke: rgba(255,255,255,0.34); }
+        .cs-gold { stroke: var(--gold-soft, #D6A32E); }
+        .cs-flow { stroke: var(--lime, #E8B923); stroke-dasharray:2 15; animation: csFlow 0.9s linear infinite; }
+        @keyframes csFlow { to { stroke-dashoffset:-34; } }
+        .cs-bar { fill: var(--gold, #C28F1C); transform-origin:bottom; transform-box:fill-box; animation: csBar 3.2s cubic-bezier(0.25,0.46,0.45,0.94) infinite; }
+        @keyframes csBar { 0%{transform:scaleY(0);} 65%{transform:scaleY(1);} 100%{transform:scaleY(1); opacity:0.55;} }
+        .cs-ring { stroke: var(--gold-soft, #D6A32E); stroke-dasharray:176; stroke-dashoffset:176; transform:rotate(-90deg); transform-origin:center; transform-box:fill-box; animation: csRing 3.2s cubic-bezier(0.25,0.46,0.45,0.94) infinite; }
+        @keyframes csRing { 0%{stroke-dashoffset:176;} 70%{stroke-dashoffset:0;} 100%{stroke-dashoffset:0; opacity:0.5;} }
+        .cs-bolt { fill: var(--gold-soft, #D6A32E); animation: csBolt 2.2s ease-in-out infinite; }
+        @keyframes csBolt { 0%,100%{opacity:0.9;} 50%{opacity:0.35;} }
+        .cs-glow { fill: url(#csg); animation: csGlow 3.2s ease-in-out infinite; }
+        @keyframes csGlow { 0%,100%{opacity:0.25;} 60%{opacity:0.6;} }
+        .cs-p { fill: var(--gold-soft, #D6A32E); opacity:0; transform-box:fill-box; }
+        .cs-p1{animation:csP 3s ease-in infinite;} .cs-p2{animation:csP 3s ease-in 1s infinite;} .cs-p3{animation:csP 3s ease-in 2s infinite;}
+        @keyframes csP { 0%{opacity:0; transform:translateY(0);} 30%{opacity:0.9;} 100%{opacity:0; transform:translateY(-30px);} }
+        .page-hero .container, .page-head .container { position:relative; z-index:3; }
+        @media (max-width:1000px){ .hero-scene{ display:none; } }
+        @media (prefers-reduced-motion: reduce){ .cs-flow,.cs-bar,.cs-ring,.cs-bolt,.cs-glow,.cs-p{ animation:none !important; } }
     </style>
 </head>
 <body>
@@ -545,6 +569,27 @@
 
     <!-- PAGE HERO -->
     <section class="page-hero" id="content">
+        <div class="hero-scene" aria-hidden="true">
+            <svg viewBox="0 0 480 420">
+                <defs><radialGradient id="csg" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#E8B923" stop-opacity="0.5"/><stop offset="1" stop-color="#E8B923" stop-opacity="0"/></radialGradient></defs>
+                <circle class="cs-glow" cx="332" cy="250" r="78"/>
+                <rect class="cs-body" x="70" y="118" width="88" height="258" rx="16" stroke-width="2"/>
+                <rect x="84" y="140" width="60" height="76" rx="8" fill="rgba(11,27,63,0.55)" class="cs-gold" stroke-width="2"/>
+                <path class="cs-bolt" d="M118 150 L103 178 h9 l-3 20 18 -30 h-10 z"/>
+                <rect x="90" y="198" width="48" height="10" rx="3" fill="rgba(255,255,255,0.12)"/>
+                <rect class="cs-bar" x="90" y="198" width="48" height="10" rx="3"/>
+                <line class="cs-line" x1="66" y1="376" x2="162" y2="376" stroke-width="2"/>
+                <path class="cs-line" fill="none" stroke-width="7" stroke-linecap="round" d="M158 250 C 214 250, 240 264, 306 254"/>
+                <path class="cs-flow" fill="none" stroke-width="3" stroke-linecap="round" d="M158 250 C 214 250, 240 264, 306 254"/>
+                <rect x="300" y="242" width="20" height="24" rx="4" fill="rgba(11,27,63,0.75)" class="cs-gold" stroke-width="2"/>
+                <circle cx="332" cy="252" r="20" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+                <circle cx="332" cy="252" r="8" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+                <circle class="cs-ring" cx="332" cy="252" r="28" fill="none" stroke-width="3.5" stroke-linecap="round"/>
+                <circle class="cs-p cs-p1" cx="112" cy="118" r="3"/>
+                <circle class="cs-p cs-p2" cx="130" cy="118" r="2.5"/>
+                <circle class="cs-p cs-p3" cx="98" cy="118" r="2"/>
+            </svg>
+        </div>
         <div class="container">
             <div class="page-hero-label">Our Team</div>
             <h1>The people behind <em>Safer Charging</em></h1>

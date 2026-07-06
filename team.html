@@ -10,29 +10,39 @@
     <link rel="apple-touch-icon" sizes="180x180" href="https://static.wixstatic.com/media/ab875a_1681593b88304360b33051c6f4a0d8e0~mv2.png/v1/fill/w_180,h_180/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Enriqueta:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --navy: #0B1232;
-            --navy-light: #141D45;
-            --navy-mid: #1A2550;
-            --yellow: #E8DE25;
-            --yellow-soft: #F0E94D;
-            --yellow-glow: rgba(232, 222, 37, 0.15);
-            --teal: #156082;
-            --teal-light: #1B7BA3;
-            --purple: #5F5478;
-            --purple-light: #7A6F94;
-            --off-white: #F7F6F1;
-            --warm-grey: #E8E6DF;
-            --text-dark: #0B1232;
-            --text-mid: #4A4A5A;
-            --text-light: #6B6B7B;
+            /* ===== Safer Charging brand v2 ===== */
+            --navy: #0B1B3F;          /* Primary */
+            --navy-light: #10245A;
+            --navy-mid: #16306E;
+            --navy-deep: #071233;
+            --gold: #C28F1C;          /* Secondary — rules, emphasis, CTAs */
+            --gold-soft: #D6A32E;
+            --gold-deep: #A5781A;
+            --lime: #E8B923;          /* Accent only — small highlights */
+            /* legacy names remapped to brand so existing rules restyle automatically */
+            --yellow: #C28F1C;
+            --yellow-soft: #D6A32E;
+            --yellow-glow: rgba(232, 185, 35, 0.18);
+            --teal: #C28F1C;
+            --teal-light: #D6A32E;
+            --purple: #3F4A48;
+            --purple-light: #566462;
+            --slate: #3F4A48;         /* Secondary text, captions */
+            --mist: #EFF2F8;          /* Panel & table backgrounds */
+            --ink: #111111;           /* Body text on light */
+            --off-white: #EFF2F8;
+            --warm-grey: #E1E7F2;
+            --text-dark: #0B1B3F;
+            --text-mid: #3F4A48;
+            --text-light: #6C7581;
             --white: #FFFFFF;
-            --font-display: 'Playfair Display', Georgia, serif;
+            --font-display: 'Enriqueta', Georgia, 'Times New Roman', serif;
             --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             --section-pad: clamp(80px, 10vw, 140px);
             --container: 1200px;
@@ -81,7 +91,7 @@
             right: -200px;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(21, 96, 130, 0.15) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(22, 48, 110, 0.15) 0%, transparent 70%);
         }
         .page-hero-label {
             display: inline-flex;
@@ -280,7 +290,7 @@
         .board-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 60px rgba(11, 18, 50, 0.1);
-            border-color: rgba(21, 96, 130, 0.15);
+            border-color: rgba(22, 48, 110, 0.15);
         }
         .board-card-photo {
             width: 100%;
@@ -411,7 +421,7 @@
             right: -100px;
             width: 400px;
             height: 400px;
-            background: radial-gradient(circle, rgba(232,222,37,0.08) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(232,185,35,0.08) 0%, transparent 70%);
         }
         .cta-card h2 {
             font-family: var(--font-display);
@@ -437,7 +447,7 @@
         }
         .btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 32px; border-radius: 10px; font-size: 15px; font-weight: 600; cursor: pointer; border: none; transition: all 0.3s var(--ease); }
         .btn-primary { background: var(--yellow); color: var(--navy); }
-        .btn-primary:hover { background: var(--yellow-soft); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(232,222,37,0.3); }
+        .btn-primary:hover { background: var(--yellow-soft); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(232,185,35,0.3); }
         .btn-outline { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.3); }
         .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.05); transform: translateY(-2px); }
         .btn-arrow { transition: transform 0.3s var(--ease); }
@@ -510,12 +520,12 @@
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="/services.html">Services</a></li>
-                <li><a href="/risk-assessments.html">Risk Assessments</a></li>
+                <li><a href="/risk-assessments.html">Compliance</a></li>
                 <li><a href="/plans.html">Plans</a></li>
+                <li><a href="/news.html">News</a></li>
                 <li><a href="/about.html">About</a></li>
-                <li><a href="/team.html" class="active">Team</a></li>
                 <li><a href="/contact.html">Contact</a></li>
-                <li><a href="/contact.html" class="nav-cta">Book a Call</a></li>
+                <li><a href="/contact.html" class="nav-cta">Book a Charge Point Audit</a></li>
             </ul>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
                 <span></span><span></span><span></span>
@@ -716,7 +726,7 @@
                     <h4>Services</h4>
                     <ul class="footer-links">
                         <li><a href="/services.html">Maintenance and Aftercare</a></li>
-                        <li><a href="/risk-assessments.html">Risk Assessments</a></li>
+                        <li><a href="/risk-assessments.html">Compliance</a></li>
                         <li><a href="/services.html#consultancy">Consultancy</a></li>
                         <li><a href="/services.html#cpo">CPO and OEM Support</a></li>
                         <li><a href="/plans.html">Service Plans</a></li>
@@ -727,6 +737,7 @@
                     <ul class="footer-links">
                         <li><a href="/about.html">About Us</a></li>
                         <li><a href="/team.html">Our Team</a></li>
+                        <li><a href="/news.html">News &amp; insights</a></li>
                         <li><a href="/about.html#academy">Arcane Academy</a></li>
                         <li><a href="https://www.chargesafe.uk" target="_blank" rel="noopener">ChargeSafe</a></li>
                         <li><a href="/contact.html">Contact</a></li>

@@ -10,29 +10,39 @@
     <link rel="apple-touch-icon" sizes="180x180" href="https://static.wixstatic.com/media/ab875a_1681593b88304360b33051c6f4a0d8e0~mv2.png/v1/fill/w_180,h_180/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Enriqueta:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --navy: #0B1232;
-            --navy-light: #141D45;
-            --navy-mid: #1A2550;
-            --yellow: #E8DE25;
-            --yellow-soft: #F0E94D;
-            --yellow-glow: rgba(232, 222, 37, 0.15);
-            --teal: #156082;
-            --teal-light: #1B7BA3;
-            --purple: #5F5478;
-            --purple-light: #7A6F94;
-            --off-white: #F7F6F1;
-            --warm-grey: #E8E6DF;
-            --text-dark: #0B1232;
-            --text-mid: #4A4A5A;
-            --text-light: #6B6B7B;
+            /* ===== Safer Charging brand v2 ===== */
+            --navy: #0B1B3F;          /* Primary */
+            --navy-light: #10245A;
+            --navy-mid: #16306E;
+            --navy-deep: #071233;
+            --gold: #C28F1C;          /* Secondary — rules, emphasis, CTAs */
+            --gold-soft: #D6A32E;
+            --gold-deep: #A5781A;
+            --lime: #E8B923;          /* Accent only — small highlights */
+            /* legacy names remapped to brand so existing rules restyle automatically */
+            --yellow: #C28F1C;
+            --yellow-soft: #D6A32E;
+            --yellow-glow: rgba(232, 185, 35, 0.18);
+            --teal: #C28F1C;
+            --teal-light: #D6A32E;
+            --purple: #3F4A48;
+            --purple-light: #566462;
+            --slate: #3F4A48;         /* Secondary text, captions */
+            --mist: #EFF2F8;          /* Panel & table backgrounds */
+            --ink: #111111;           /* Body text on light */
+            --off-white: #EFF2F8;
+            --warm-grey: #E1E7F2;
+            --text-dark: #0B1B3F;
+            --text-mid: #3F4A48;
+            --text-light: #6C7581;
             --white: #FFFFFF;
-            --font-display: 'Playfair Display', Georgia, serif;
+            --font-display: 'Enriqueta', Georgia, 'Times New Roman', serif;
             --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             --section-pad: clamp(80px, 10vw, 140px);
             --container: 1200px;
@@ -82,7 +92,7 @@
             right: -200px;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(21, 96, 130, 0.15) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(22, 48, 110, 0.15) 0%, transparent 70%);
         }
 
         .page-hero-label {
@@ -332,7 +342,7 @@
             left: calc(50% + 40px);
             width: calc(100% - 48px);
             height: 2px;
-            background: linear-gradient(90deg, var(--yellow), rgba(232, 222, 37, 0.2));
+            background: linear-gradient(90deg, var(--yellow), rgba(232, 185, 35, 0.2));
             z-index: 0;
         }
 
@@ -422,7 +432,7 @@
             right: -100px;
             width: 400px;
             height: 400px;
-            background: radial-gradient(circle, rgba(232,222,37,0.08) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(232,185,35,0.08) 0%, transparent 70%);
         }
 
         .cta-card h2 {
@@ -452,7 +462,7 @@
 
         .btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 32px; border-radius: 10px; font-size: 15px; font-weight: 600; cursor: pointer; border: none; transition: all 0.3s var(--ease); }
         .btn-primary { background: var(--yellow); color: var(--navy); }
-        .btn-primary:hover { background: var(--yellow-soft); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(232,222,37,0.3); }
+        .btn-primary:hover { background: var(--yellow-soft); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(232,185,35,0.3); }
         .btn-outline { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.3); }
         .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.05); transform: translateY(-2px); }
         .btn-arrow { transition: transform 0.3s var(--ease); }
@@ -524,12 +534,12 @@
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="/services.html">Services</a></li>
-                <li><a href="/risk-assessments.html" class="active">Risk Assessments</a></li>
+                <li><a href="/risk-assessments.html" class="active">Compliance</a></li>
                 <li><a href="/plans.html">Plans</a></li>
+                <li><a href="/news.html">News</a></li>
                 <li><a href="/about.html">About</a></li>
-                <li><a href="/team.html">Team</a></li>
                 <li><a href="/contact.html">Contact</a></li>
-                <li><a href="/contact.html" class="nav-cta">Book a Call</a></li>
+                <li><a href="/contact.html" class="nav-cta">Book a Charge Point Audit</a></li>
             </ul>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
                 <span></span><span></span><span></span>
@@ -556,28 +566,28 @@
             <div class="why-grid">
                 <div class="why-card reveal reveal-delay-1">
                     <div class="why-card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#C28F1C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
                     </div>
                     <h3>Fire Safety</h3>
                     <p>EV charging creates thermal risks that traditional fire safety assessments simply do not cover. Lithium ion battery incidents require specialist understanding and targeted mitigation strategies.</p>
                 </div>
                 <div class="why-card reveal reveal-delay-2">
                     <div class="why-card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#C28F1C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                     </div>
                     <h3>Compliance</h3>
                     <p>UK regulations around EV charging are evolving rapidly. A comprehensive risk assessment ensures you meet current requirements and positions you ahead of upcoming changes.</p>
                 </div>
                 <div class="why-card reveal reveal-delay-3">
                     <div class="why-card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#C28F1C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
                     </div>
                     <h3>Liability</h3>
                     <p>If something goes wrong and you cannot demonstrate that a proper risk assessment was carried out, the liability falls squarely on the responsible person. Documented assessments are your defence.</p>
                 </div>
                 <div class="why-card reveal">
                     <div class="why-card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#C28F1C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
                     </div>
                     <h3>Insurance</h3>
                     <p>Insurers increasingly require evidence of EV specific risk assessments before providing or renewing cover. Without one, you may face higher premiums or gaps in your policy.</p>
@@ -600,25 +610,25 @@
                     <div class="service-features">
                         <div class="service-feature">
                             <div class="service-feature-check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#C28F1C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             </div>
                             <p><strong>Thermal risk evaluation</strong> assessing charge point placement, cable management, and proximity to combustible materials</p>
                         </div>
                         <div class="service-feature">
                             <div class="service-feature-check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#C28F1C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             </div>
                             <p><strong>Emergency response planning</strong> with EV specific protocols for fire services, staff, and site users</p>
                         </div>
                         <div class="service-feature">
                             <div class="service-feature-check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#C28F1C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             </div>
                             <p><strong>Actionable recommendations</strong> prioritised by severity so you know exactly where to focus resources first</p>
                         </div>
                         <div class="service-feature">
                             <div class="service-feature-check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#C28F1C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             </div>
                             <p><strong>Suitable for all site types</strong> including car parks, depots, commercial premises, and residential developments</p>
                         </div>
@@ -647,25 +657,25 @@
                     <div class="service-features">
                         <div class="service-feature">
                             <div class="service-feature-check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#C28F1C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             </div>
                             <p><strong>Certified EV specialists</strong> with deep knowledge of charge point hardware, wiring standards, and common installation faults</p>
                         </div>
                         <div class="service-feature">
                             <div class="service-feature-check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#C28F1C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             </div>
                             <p><strong>Latest standards compliance</strong> inspecting against current IET Wiring Regulations and EV specific guidance</p>
                         </div>
                         <div class="service-feature">
                             <div class="service-feature-check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#C28F1C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             </div>
                             <p><strong>Defect identification</strong> catching issues from improper earthing to inadequate protection devices before they become dangerous</p>
                         </div>
                         <div class="service-feature">
                             <div class="service-feature-check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#B1AB2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#C28F1C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             </div>
                             <p><strong>Independent and impartial</strong> with no ties to any installer or manufacturer, so findings are always objective</p>
                         </div>
@@ -694,25 +704,25 @@
                     <div class="service-features">
                         <div class="service-feature">
                             <div class="service-feature-check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#C28F1C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             </div>
                             <p><strong>Stakeholder ready reports</strong> formatted for boards, landlords, insurers, and local authorities with executive summaries</p>
                         </div>
                         <div class="service-feature">
                             <div class="service-feature-check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#C28F1C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             </div>
                             <p><strong>Photographic evidence</strong> documenting the condition of every element inspected for a complete audit trail</p>
                         </div>
                         <div class="service-feature">
                             <div class="service-feature-check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#C28F1C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             </div>
                             <p><strong>Compliance evidence</strong> clearly mapping findings to specific regulations and standards so you can demonstrate due diligence</p>
                         </div>
                         <div class="service-feature">
                             <div class="service-feature-check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#C28F1C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             </div>
                             <p><strong>Remediation roadmap</strong> with prioritised actions, estimated timescales, and guidance on addressing each finding</p>
                         </div>
@@ -772,23 +782,23 @@
 
                     <ul class="compliance-list">
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#C28F1C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             BS 7671 IET Wiring Regulations (18th Edition) and associated guidance notes
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#C28F1C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             The Regulatory Reform (Fire Safety) Order 2005 as it applies to EV charging locations
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#C28F1C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             IET Code of Practice for Electric Vehicle Charging Equipment Installation
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#C28F1C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             Electric Vehicles (Smart Charge Points) Regulations 2021
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#C28F1C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             OZEV grant scheme technical requirements and best practice guidance
                         </li>
                     </ul>
@@ -841,7 +851,7 @@
                     <h4>Services</h4>
                     <ul class="footer-links">
                         <li><a href="/services.html">Maintenance and Aftercare</a></li>
-                        <li><a href="/risk-assessments.html">Risk Assessments</a></li>
+                        <li><a href="/risk-assessments.html">Compliance</a></li>
                         <li><a href="/services.html#consultancy">Consultancy</a></li>
                         <li><a href="/services.html#cpo">CPO and OEM Support</a></li>
                         <li><a href="/plans.html">Service Plans</a></li>
@@ -852,6 +862,7 @@
                     <ul class="footer-links">
                         <li><a href="/about.html">About Us</a></li>
                         <li><a href="/team.html">Our Team</a></li>
+                        <li><a href="/news.html">News &amp; insights</a></li>
                         <li><a href="/about.html#academy">Arcane Academy</a></li>
                         <li><a href="https://www.chargesafe.uk" target="_blank" rel="noopener">ChargeSafe</a></li>
                         <li><a href="/contact.html">Contact</a></li>

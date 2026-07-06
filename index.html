@@ -85,26 +85,22 @@
         .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; background: none; border: none; }
         .nav-toggle span { width: 26px; height: 2px; background: var(--white); border-radius: 2px; transition: all 0.3s var(--ease); }
 
-        /* ===== LOADER (bespoke: connectors meet, charge line fills) ===== */
-        .site-loader { position: fixed; inset: 0; z-index: 9999; background: var(--navy); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 20px; transition: opacity 0.6s var(--ease), visibility 0.6s; }
+        /* ===== LOADER: the real logo's two halves connect ===== */
+        .site-loader { position: fixed; inset: 0; z-index: 9999; background: var(--navy); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 22px; transition: opacity 0.6s var(--ease), visibility 0.6s; }
         .site-loader.loaded { opacity: 0; visibility: hidden; pointer-events: none; }
-        .loader-anim { width: 250px; height: 80px; }
-        .loader-anim svg { width: 100%; height: 100%; overflow: visible; }
-        .lp-track { stroke: rgba(255,255,255,0.13); }
-        .lp-fill { stroke-dasharray: 200; stroke-dashoffset: 200; animation: lpDraw 1s var(--ease) 0.7s forwards; }
-        .lp-left { transform: translateX(-58px); opacity: 0; animation: lpInL 0.72s var(--ease-out) 0.12s forwards; }
-        .lp-right { transform: translateX(58px); opacity: 0; animation: lpInR 0.72s var(--ease-out) 0.12s forwards; }
-        .lp-bolt { opacity: 0; transform: scale(0.5); transform-origin: 131px 34px; transform-box: view-box; animation: lpPop 0.5s var(--ease-out) 0.66s forwards; }
-        .lp-node { opacity: 0; animation: lpFade 0.4s ease 0.85s forwards; }
-        @keyframes lpInL { to { transform: translateX(0); opacity: 1; } }
-        @keyframes lpInR { to { transform: translateX(0); opacity: 1; } }
-        @keyframes lpDraw { to { stroke-dashoffset: 0; } }
-        @keyframes lpPop { 0% { opacity: 0; transform: scale(0.5); } 60% { opacity: 1; transform: scale(1.18); } 100% { opacity: 1; transform: scale(1); } }
-        @keyframes lpFade { to { opacity: 1; } }
-        .loader-word { font-family: var(--font-display); font-size: 23px; font-weight: 700; letter-spacing: 0.2px; color: #fff; opacity: 0; animation: lpWord 0.6s var(--ease-out) 1.05s both; }
-        .loader-tag { font-size: 10.5px; font-weight: 600; letter-spacing: 2.4px; text-transform: uppercase; color: var(--gold-soft); opacity: 0; animation: lpWord 0.6s var(--ease-out) 1.22s both; }
+        .logo-assemble { position: relative; display: inline-block; }
+        .la-base { height: 72px; width: auto; visibility: hidden; }            /* sizes the box to the real logo */
+        .la-half { position: absolute; top: 0; left: 0; height: 72px; width: auto; opacity: 0; }
+        .la-half.lh-l { clip-path: inset(0 50% 0 0); -webkit-clip-path: inset(0 50% 0 0); animation: joinL 0.95s var(--ease-out) 0.25s forwards; }
+        .la-half.lh-r { clip-path: inset(0 0 0 50%); -webkit-clip-path: inset(0 0 0 50%); animation: joinR 0.95s var(--ease-out) 0.25s forwards; }
+        @keyframes joinL { 0% { opacity: 0; transform: translateX(-52px); } 55% { opacity: 1; } 100% { opacity: 1; transform: translateX(0); } }
+        @keyframes joinR { 0% { opacity: 0; transform: translateX(52px); } 55% { opacity: 1; } 100% { opacity: 1; transform: translateX(0); } }
+        /* the spark where the two halves connect */
+        .la-spark { position: absolute; left: 50%; top: -6px; bottom: -6px; width: 2px; transform: translateX(-50%) scaleY(0); background: linear-gradient(var(--lime), var(--gold), transparent); opacity: 0; animation: laSpark 0.6s var(--ease-out) 1.05s forwards; }
+        @keyframes laSpark { 0% { opacity: 0; transform: translateX(-50%) scaleY(0); } 45% { opacity: 1; transform: translateX(-50%) scaleY(1); } 100% { opacity: 0; transform: translateX(-50%) scaleY(1); } }
+        .loader-tag { font-size: 10.5px; font-weight: 600; letter-spacing: 2.4px; text-transform: uppercase; color: var(--gold-soft); opacity: 0; animation: lpWord 0.6s var(--ease-out) 1.25s both; }
         @keyframes lpWord { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-        @media (prefers-reduced-motion: reduce) { .lp-left,.lp-right,.lp-fill,.lp-bolt,.lp-node,.loader-word,.loader-tag { animation: none !important; opacity: 1 !important; transform: none !important; stroke-dashoffset: 0 !important; } }
+        @media (prefers-reduced-motion: reduce) { .la-half,.la-spark,.loader-tag { animation: none !important; opacity: 1 !important; transform: none !important; } }
 
         /* ===== HERO (editorial: asymmetric, caption rail) ===== */
         .hero { position: relative; min-height: 100vh; min-height: 100dvh; display: flex; align-items: center; overflow: hidden; background: var(--navy); }
@@ -115,6 +111,28 @@
         .hero.video-playing .hero-video { opacity: 1; }
         @keyframes kenburns { 0% { transform: scale(1.05) translate(0,0); } 100% { transform: scale(1.16) translate(-1.5%, -1%); } }
         .hero-scrim { position: absolute; inset: 0; z-index: 3; background: linear-gradient(100deg, rgba(7,18,51,0.95) 0%, rgba(11,27,63,0.8) 46%, rgba(11,27,63,0.4) 100%), linear-gradient(0deg, rgba(7,18,51,0.9) 0%, rgba(7,18,51,0) 42%); }
+
+        /* animated live-charging hero scene (bespoke, no external media) */
+        .hero-scene { position: absolute; z-index: 4; right: 3%; top: 48%; transform: translateY(-50%); width: min(42vw, 480px); pointer-events: none; opacity: 0; animation: fadeUp 1.2s var(--ease-out) 0.7s forwards; }
+        .hero-scene svg { width: 100%; height: auto; overflow: visible; }
+        .cs-line { stroke: rgba(255,255,255,0.34); }
+        .cs-body { fill: rgba(255,255,255,0.03); stroke: rgba(255,255,255,0.34); }
+        .cs-gold { stroke: var(--gold-soft); }
+        .cs-flow { stroke: var(--lime); stroke-dasharray: 2 15; animation: csFlow 0.9s linear infinite; }
+        @keyframes csFlow { to { stroke-dashoffset: -34; } }
+        .cs-bar { fill: var(--gold); transform-origin: bottom; transform-box: fill-box; animation: csBar 3.2s var(--ease) infinite; }
+        @keyframes csBar { 0% { transform: scaleY(0); } 65% { transform: scaleY(1); } 100% { transform: scaleY(1); opacity: 0.55; } }
+        .cs-ring { stroke: var(--gold-soft); stroke-dasharray: 176; stroke-dashoffset: 176; transform: rotate(-90deg); transform-origin: center; transform-box: fill-box; animation: csRing 3.2s var(--ease) infinite; }
+        @keyframes csRing { 0% { stroke-dashoffset: 176; } 70% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 0; opacity: 0.5; } }
+        .cs-bolt { fill: var(--gold-soft); animation: csBolt 2.2s ease-in-out infinite; }
+        @keyframes csBolt { 0%,100% { opacity: 0.9; } 50% { opacity: 0.35; } }
+        .cs-glow { fill: url(#csg); animation: csGlow 3.2s ease-in-out infinite; }
+        @keyframes csGlow { 0%,100% { opacity: 0.25; } 60% { opacity: 0.6; } }
+        .cs-p { fill: var(--gold-soft); opacity: 0; transform-box: fill-box; }
+        .cs-p1 { animation: csP 3s ease-in infinite; } .cs-p2 { animation: csP 3s ease-in 1s infinite; } .cs-p3 { animation: csP 3s ease-in 2s infinite; }
+        @keyframes csP { 0% { opacity: 0; transform: translateY(0); } 30% { opacity: 0.9; } 100% { opacity: 0; transform: translateY(-30px); } }
+        @media (max-width: 1000px) { .hero-scene { display: none; } }
+        @media (prefers-reduced-motion: reduce) { .cs-flow,.cs-bar,.cs-ring,.cs-bolt,.cs-glow,.cs-p { animation: none !important; } .cs-ring { stroke-dashoffset: 44; } .cs-bar { transform: scaleY(0.75); } }
 
         .hero-content { position: relative; z-index: 5; max-width: var(--container); margin: 0 auto; padding: 150px 32px 130px; width: 100%; }
         .hero-kicker { display: flex; align-items: center; gap: 14px; margin-bottom: 34px; animation: fadeUp 0.8s var(--ease-out) 0.2s both; }
@@ -349,31 +367,14 @@
 <body>
     <a href="#hero" class="skip-link">Skip to content</a>
 
-    <!-- LOADER: two connectors slide together, charge line fills, then the site -->
+    <!-- LOADER: the real Safer Charging logo, split in two, its halves connect -->
     <div class="site-loader" id="siteLoader">
-        <div class="loader-anim" aria-hidden="true">
-            <svg viewBox="0 0 262 80" role="img" aria-label="Connecting">
-                <defs><linearGradient id="lpg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#C28F1C"/><stop offset="1" stop-color="#E8B923"/></linearGradient></defs>
-                <line class="lp-track" x1="30" y1="46" x2="232" y2="46" stroke-width="3" stroke-linecap="round"/>
-                <line class="lp-fill" x1="30" y1="46" x2="232" y2="46" stroke="url(#lpg)" stroke-width="3" stroke-linecap="round"/>
-                <circle class="lp-node" cx="30" cy="46" r="4" fill="#E8B923"/>
-                <circle class="lp-node" cx="232" cy="46" r="4" fill="#E8B923"/>
-                <g class="lp-left" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="58" y1="46" x2="98" y2="46"/>
-                    <rect x="98" y="36" width="22" height="20" rx="5"/>
-                    <line x1="120" y1="41" x2="127" y2="41"/>
-                    <line x1="120" y1="51" x2="127" y2="51"/>
-                </g>
-                <g class="lp-right" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="140" y="34" width="26" height="24" rx="6"/>
-                    <line x1="133" y1="41" x2="140" y2="41"/>
-                    <line x1="133" y1="51" x2="140" y2="51"/>
-                    <line x1="166" y1="46" x2="204" y2="46"/>
-                </g>
-                <path class="lp-bolt" d="M134 18 L122 40 h8 l-3 16 15 -22 h-8 z" fill="#E8B923"/>
-            </svg>
+        <div class="logo-assemble" role="img" aria-label="Safer Charging">
+            <img class="la-base" src="https://static.wixstatic.com/media/ab875a_1e3be18072b845028b4ea592384500b2~mv2.png" alt="Safer Charging">
+            <img class="la-half lh-l" src="https://static.wixstatic.com/media/ab875a_1e3be18072b845028b4ea592384500b2~mv2.png" alt="" aria-hidden="true">
+            <img class="la-half lh-r" src="https://static.wixstatic.com/media/ab875a_1e3be18072b845028b4ea592384500b2~mv2.png" alt="" aria-hidden="true">
+            <span class="la-spark" aria-hidden="true"></span>
         </div>
-        <div class="loader-word">Safer Charging</div>
         <div class="loader-tag">The EV charge point maintenance specialists</div>
     </div>
 
@@ -407,6 +408,33 @@
             </video>
         </div>
         <div class="hero-scrim"></div>
+
+        <div class="hero-scene" aria-hidden="true">
+            <svg viewBox="0 0 480 420">
+                <defs><radialGradient id="csg" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#E8B923" stop-opacity="0.5"/><stop offset="1" stop-color="#E8B923" stop-opacity="0"/></radialGradient></defs>
+                <circle class="cs-glow" cx="332" cy="250" r="78"/>
+                <!-- charge station pillar -->
+                <rect class="cs-body" x="70" y="118" width="88" height="258" rx="16" stroke-width="2"/>
+                <rect x="84" y="140" width="60" height="76" rx="8" fill="rgba(11,27,63,0.55)" class="cs-gold" stroke-width="2"/>
+                <path class="cs-bolt" d="M118 150 L103 178 h9 l-3 20 18 -30 h-10 z"/>
+                <rect x="90" y="198" width="48" height="10" rx="3" fill="rgba(255,255,255,0.12)"/>
+                <rect class="cs-bar" x="90" y="198" width="48" height="10" rx="3"/>
+                <line class="cs-line" x1="66" y1="376" x2="162" y2="376" stroke-width="2"/>
+                <!-- cable -->
+                <path class="cs-line" fill="none" stroke-width="7" stroke-linecap="round" d="M158 250 C 214 250, 240 264, 306 254"/>
+                <path class="cs-flow" fill="none" stroke-width="3" stroke-linecap="round" d="M158 250 C 214 250, 240 264, 306 254"/>
+                <!-- connector -->
+                <rect x="300" y="242" width="20" height="24" rx="4" fill="rgba(11,27,63,0.75)" class="cs-gold" stroke-width="2"/>
+                <!-- charge port + charging ring -->
+                <circle cx="332" cy="252" r="20" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+                <circle cx="332" cy="252" r="8" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+                <circle class="cs-ring" cx="332" cy="252" r="28" fill="none" stroke-width="3.5" stroke-linecap="round"/>
+                <!-- rising energy particles -->
+                <circle class="cs-p cs-p1" cx="112" cy="118" r="3"/>
+                <circle class="cs-p cs-p2" cx="130" cy="118" r="2.5"/>
+                <circle class="cs-p cs-p3" cx="98" cy="118" r="2"/>
+            </svg>
+        </div>
 
         <div class="hero-content">
             <div class="hero-kicker">

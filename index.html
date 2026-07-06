@@ -85,15 +85,26 @@
         .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; background: none; border: none; }
         .nav-toggle span { width: 26px; height: 2px; background: var(--white); border-radius: 2px; transition: all 0.3s var(--ease); }
 
-        /* ===== LOADER ===== */
-        .site-loader { position: fixed; inset: 0; z-index: 9999; background: var(--navy); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 30px; transition: opacity 0.6s var(--ease), visibility 0.6s; }
+        /* ===== LOADER (bespoke: connectors meet, charge line fills) ===== */
+        .site-loader { position: fixed; inset: 0; z-index: 9999; background: var(--navy); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 20px; transition: opacity 0.6s var(--ease), visibility 0.6s; }
         .site-loader.loaded { opacity: 0; visibility: hidden; pointer-events: none; }
-        .loader-logo { width: 72px; height: 72px; animation: loaderPulse 1.3s ease-in-out infinite; }
-        .loader-bar-track { width: 180px; height: 2px; background: rgba(255,255,255,0.1); overflow: hidden; }
-        .loader-bar-fill { height: 100%; width: 0%; background: var(--gold); animation: loaderFill 1.8s var(--ease) forwards; }
-        .loader-text { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.32); }
-        @keyframes loaderPulse { 0%,100% { transform: scale(1); opacity: 0.85; } 50% { transform: scale(1.05); opacity: 1; } }
-        @keyframes loaderFill { 0% { width: 0%; } 60% { width: 72%; } 100% { width: 100%; } }
+        .loader-anim { width: 250px; height: 80px; }
+        .loader-anim svg { width: 100%; height: 100%; overflow: visible; }
+        .lp-track { stroke: rgba(255,255,255,0.13); }
+        .lp-fill { stroke-dasharray: 200; stroke-dashoffset: 200; animation: lpDraw 1s var(--ease) 0.7s forwards; }
+        .lp-left { transform: translateX(-58px); opacity: 0; animation: lpInL 0.72s var(--ease-out) 0.12s forwards; }
+        .lp-right { transform: translateX(58px); opacity: 0; animation: lpInR 0.72s var(--ease-out) 0.12s forwards; }
+        .lp-bolt { opacity: 0; transform: scale(0.5); transform-origin: 131px 34px; transform-box: view-box; animation: lpPop 0.5s var(--ease-out) 0.66s forwards; }
+        .lp-node { opacity: 0; animation: lpFade 0.4s ease 0.85s forwards; }
+        @keyframes lpInL { to { transform: translateX(0); opacity: 1; } }
+        @keyframes lpInR { to { transform: translateX(0); opacity: 1; } }
+        @keyframes lpDraw { to { stroke-dashoffset: 0; } }
+        @keyframes lpPop { 0% { opacity: 0; transform: scale(0.5); } 60% { opacity: 1; transform: scale(1.18); } 100% { opacity: 1; transform: scale(1); } }
+        @keyframes lpFade { to { opacity: 1; } }
+        .loader-word { font-family: var(--font-display); font-size: 23px; font-weight: 700; letter-spacing: 0.2px; color: #fff; opacity: 0; animation: lpWord 0.6s var(--ease-out) 1.05s both; }
+        .loader-tag { font-size: 10.5px; font-weight: 600; letter-spacing: 2.4px; text-transform: uppercase; color: var(--gold-soft); opacity: 0; animation: lpWord 0.6s var(--ease-out) 1.22s both; }
+        @keyframes lpWord { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+        @media (prefers-reduced-motion: reduce) { .lp-left,.lp-right,.lp-fill,.lp-bolt,.lp-node,.loader-word,.loader-tag { animation: none !important; opacity: 1 !important; transform: none !important; stroke-dashoffset: 0 !important; } }
 
         /* ===== HERO (editorial: asymmetric, caption rail) ===== */
         .hero { position: relative; min-height: 100vh; min-height: 100dvh; display: flex; align-items: center; overflow: hidden; background: var(--navy); }
@@ -137,6 +148,15 @@
         .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.08); transform: translateY(-2px); }
         .btn-arrow { transition: transform 0.3s var(--ease); }
         .btn:hover .btn-arrow { transform: translateX(4px); }
+
+        /* ===== ACCREDITATION STRIP (bigger, visual, clickable) ===== */
+        .accred { background: var(--paper); border-bottom: 1px solid var(--line); padding: 34px 0; }
+        .accred-inner { display: flex; align-items: center; justify-content: center; gap: 44px; flex-wrap: wrap; }
+        .accred-label { font-size: 11.5px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--slate); }
+        .accred-logos { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+        .accred-item { display: flex; align-items: center; justify-content: center; height: 78px; padding: 12px 24px; background: #fff; border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 6px 18px rgba(11,27,63,0.06); transition: all 0.3s var(--ease); }
+        .accred-item:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(11,27,63,0.13); border-color: var(--gold); }
+        .accred-item img { height: 100%; width: auto; max-width: 170px; object-fit: contain; }
 
         /* ===== EDITORIAL SECTION SYSTEM ===== */
         .ed { padding: clamp(90px, 12vw, 168px) 0; position: relative; }
@@ -329,11 +349,32 @@
 <body>
     <a href="#hero" class="skip-link">Skip to content</a>
 
-    <!-- LOADER -->
+    <!-- LOADER: two connectors slide together, charge line fills, then the site -->
     <div class="site-loader" id="siteLoader">
-        <img src="https://static.wixstatic.com/media/ab875a_1e3be18072b845028b4ea592384500b2~mv2.png" alt="Safer Charging" class="loader-logo">
-        <div class="loader-bar-track"><div class="loader-bar-fill"></div></div>
-        <div class="loader-text">Safer Charging</div>
+        <div class="loader-anim" aria-hidden="true">
+            <svg viewBox="0 0 262 80" role="img" aria-label="Connecting">
+                <defs><linearGradient id="lpg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#C28F1C"/><stop offset="1" stop-color="#E8B923"/></linearGradient></defs>
+                <line class="lp-track" x1="30" y1="46" x2="232" y2="46" stroke-width="3" stroke-linecap="round"/>
+                <line class="lp-fill" x1="30" y1="46" x2="232" y2="46" stroke="url(#lpg)" stroke-width="3" stroke-linecap="round"/>
+                <circle class="lp-node" cx="30" cy="46" r="4" fill="#E8B923"/>
+                <circle class="lp-node" cx="232" cy="46" r="4" fill="#E8B923"/>
+                <g class="lp-left" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="58" y1="46" x2="98" y2="46"/>
+                    <rect x="98" y="36" width="22" height="20" rx="5"/>
+                    <line x1="120" y1="41" x2="127" y2="41"/>
+                    <line x1="120" y1="51" x2="127" y2="51"/>
+                </g>
+                <g class="lp-right" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="140" y="34" width="26" height="24" rx="6"/>
+                    <line x1="133" y1="41" x2="140" y2="41"/>
+                    <line x1="133" y1="51" x2="140" y2="51"/>
+                    <line x1="166" y1="46" x2="204" y2="46"/>
+                </g>
+                <path class="lp-bolt" d="M134 18 L122 40 h8 l-3 16 15 -22 h-8 z" fill="#E8B923"/>
+            </svg>
+        </div>
+        <div class="loader-word">Safer Charging</div>
+        <div class="loader-tag">The EV charge point maintenance specialists</div>
     </div>
 
     <!-- NAV -->
@@ -396,6 +437,20 @@
                 <div class="hero-rail-item"><span class="hero-rail-k">Audit-led</span><span class="hero-rail-l">Every engagement starts with the facts</span></div>
                 <div class="hero-rail-item"><span class="hero-rail-k">Independent</span><span class="hero-rail-l">Manufacturer agnostic</span></div>
                 <div class="hero-rail-item"><span class="hero-rail-k">Bedfordshire, UK</span><span class="hero-rail-l">Nationwide coverage</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACCREDITATIONS -->
+    <section class="accred" aria-label="Accreditations and recognition">
+        <div class="container">
+            <div class="accred-inner">
+                <span class="accred-label">Accredited &amp; recognised</span>
+                <div class="accred-logos">
+                    <a href="https://www.safecontractor.com/" target="_blank" rel="noopener" class="accred-item" aria-label="SafeContractor accredited (opens in a new tab)"><img src="https://static.wixstatic.com/media/ab875a_428de7a7c5e44d99bd007a6ed07ac839~mv2.png" alt="SafeContractor accredited"></a>
+                    <a href="https://ssip.org.uk/" target="_blank" rel="noopener" class="accred-item" aria-label="SSIP accredited (opens in a new tab)"><img src="https://static.wixstatic.com/media/ab875a_7a8e370e904f4d66a77cef3ded16967d~mv2.jpg" alt="SSIP (Safety Schemes in Procurement) accredited"></a>
+                    <a href="https://greatbritishentrepreneurawards.com/" target="_blank" rel="noopener" class="accred-item" aria-label="Great British Entrepreneur Awards 2025 Finalist (opens in a new tab)"><img src="https://static.wixstatic.com/media/ab875a_c5add99e2cab4a578adf89ce38b0cc58~mv2.png" alt="Great British Entrepreneur Awards 2025 Finalist"></a>
+                </div>
             </div>
         </div>
     </section>
@@ -620,9 +675,9 @@
                         <a href="https://www.facebook.com/profile.php?id=61573841676004" target="_blank" rel="noopener" aria-label="Safer Charging on Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
                     </div>
                     <div class="footer-certs">
-                        <img src="https://static.wixstatic.com/media/ab875a_428de7a7c5e44d99bd007a6ed07ac839~mv2.png" alt="SafeContractor accredited" class="footer-cert">
-                        <img src="https://static.wixstatic.com/media/ab875a_7a8e370e904f4d66a77cef3ded16967d~mv2.jpg" alt="SSIP (Safety Schemes in Procurement) accredited" class="footer-cert">
-                        <a href="https://greatbritishentrepreneurawards.com/" target="_blank" rel="noopener"><img src="https://static.wixstatic.com/media/ab875a_c5add99e2cab4a578adf89ce38b0cc58~mv2.png" alt="Great British Entrepreneur Awards 2025 Finalist" class="footer-cert"></a>
+                        <a href="https://www.safecontractor.com/" target="_blank" rel="noopener" aria-label="SafeContractor accredited (opens in a new tab)"><img src="https://static.wixstatic.com/media/ab875a_428de7a7c5e44d99bd007a6ed07ac839~mv2.png" alt="SafeContractor accredited" class="footer-cert"></a>
+                        <a href="https://ssip.org.uk/" target="_blank" rel="noopener" aria-label="SSIP accredited (opens in a new tab)"><img src="https://static.wixstatic.com/media/ab875a_7a8e370e904f4d66a77cef3ded16967d~mv2.jpg" alt="SSIP (Safety Schemes in Procurement) accredited" class="footer-cert"></a>
+                        <a href="https://greatbritishentrepreneurawards.com/" target="_blank" rel="noopener" aria-label="Great British Entrepreneur Awards 2025 Finalist (opens in a new tab)"><img src="https://static.wixstatic.com/media/ab875a_c5add99e2cab4a578adf89ce38b0cc58~mv2.png" alt="Great British Entrepreneur Awards 2025 Finalist" class="footer-cert"></a>
                     </div>
                 </div>
                 <div>
@@ -668,8 +723,11 @@
             const loader = document.getElementById('siteLoader');
             let dismissed = false;
             function dismiss() { if (dismissed) return; dismissed = true; loader.classList.add('loaded'); }
-            window.addEventListener('load', () => setTimeout(dismiss, 300));
-            setTimeout(dismiss, 2200);
+            // Hold long enough for the connect-and-charge intro to play, then reveal the site.
+            const MIN = 1950, start = performance.now();
+            function ready() { setTimeout(dismiss, Math.max(0, MIN - (performance.now() - start))); }
+            if (document.readyState === 'complete') ready(); else window.addEventListener('load', ready);
+            setTimeout(dismiss, 2900); // safety cap
         })();
         (function() {
             const hero = document.getElementById('hero'); const video = document.getElementById('heroVideo');

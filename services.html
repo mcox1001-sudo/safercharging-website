@@ -357,9 +357,19 @@
             .cta-actions { flex-direction: column; align-items: center; }
             .btn { width: 100%; justify-content: center; max-width: 320px; }
         }
+    
+        /* ===== Redesign-skill polish: interaction states, a11y, type detail ===== */
+        a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+        .btn:active, .nav-cta:active, .btn-brand:active, .btn-full:active, .read-link:active { transform: translateY(1px) scale(0.99); }
+        h1, h2, h3, .section-title, .hero h1, .vision-quote, .art-head h1, .featured-body h2, .page-head h1, .positioning-lead { text-wrap: balance; }
+        p, .hero-sub, .section-desc, .art-standfirst { text-wrap: pretty; }
+        .hero-proof-key, .proof-stat, .feature-float-stat, .stat-num, .plan-price, .price-amount { font-variant-numeric: tabular-nums; }
+        .skip-link { position: absolute; left: 12px; top: -70px; z-index: 3000; background: var(--gold); color: var(--navy); padding: 11px 20px; border-radius: 8px; font-weight: 700; font-size: 14px; transition: top 0.25s ease; }
+        .skip-link:focus-visible, .skip-link:focus { top: 12px; }
     </style>
 </head>
 <body>
+    <a href="#content" class="skip-link">Skip to content</a>
 
     <!-- NAV -->
     <nav class="nav" id="nav">
@@ -384,7 +394,7 @@
     </nav>
 
     <!-- PAGE HERO -->
-    <section class="page-hero">
+    <section class="page-hero" id="content">
         <div class="container">
             <div class="page-hero-label">Our Services</div>
             <h1>Comprehensive EV charging <em>support</em></h1>

@@ -158,9 +158,19 @@ a { text-decoration:none; color:inherit; transition:color 0.3s var(--ease); }
   .art-share{ margin-left:0; width:100%; } .footer-grid{ grid-template-columns:1fr; }
   .art-body p, .art-body li{ font-size:16.5px; }
 }
-</style>
+
+        /* ===== Redesign-skill polish: interaction states, a11y, type detail ===== */
+        a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+        .btn:active, .nav-cta:active, .btn-brand:active, .btn-full:active, .read-link:active { transform: translateY(1px) scale(0.99); }
+        h1, h2, h3, .section-title, .hero h1, .vision-quote, .art-head h1, .featured-body h2, .page-head h1, .positioning-lead { text-wrap: balance; }
+        p, .hero-sub, .section-desc, .art-standfirst { text-wrap: pretty; }
+        .hero-proof-key, .proof-stat, .feature-float-stat, .stat-num, .plan-price, .price-amount { font-variant-numeric: tabular-nums; }
+        .skip-link { position: absolute; left: 12px; top: -70px; z-index: 3000; background: var(--gold); color: var(--navy); padding: 11px 20px; border-radius: 8px; font-weight: 700; font-size: 14px; transition: top 0.25s ease; }
+        .skip-link:focus-visible, .skip-link:focus { top: 12px; }
+    </style>
 </head>
 <body>
+    <a href="#content" class="skip-link">Skip to content</a>
 
     <nav class="nav" id="nav">
         <div class="nav-inner">
@@ -179,7 +189,7 @@ a { text-decoration:none; color:inherit; transition:color 0.3s var(--ease); }
     </nav>
 
 <article>
-  <header class="art-head">
+  <header class="art-head" id="content">
     <div class="container"><div class="art-head-inner">
       <nav class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="news.html">News &amp; Insights</a> &nbsp;/&nbsp; Compliance</nav>
       <span class="art-cat">Compliance</span>

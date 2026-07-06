@@ -42,9 +42,19 @@ img{max-width:100%;height:auto;display:block;}
 .footer{background:var(--navy-deep);color:rgba(255,255,255,0.6);padding:40px 0;text-align:center;}
 .footer p{font-size:12.5px;}
 .footer a{color:rgba(255,255,255,0.7);} .footer a:hover{color:var(--gold-soft);}
-</style>
+
+        /* ===== Redesign-skill polish: interaction states, a11y, type detail ===== */
+        a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+        .btn:active, .nav-cta:active, .btn-brand:active, .btn-full:active, .read-link:active { transform: translateY(1px) scale(0.99); }
+        h1, h2, h3, .section-title, .hero h1, .vision-quote, .art-head h1, .featured-body h2, .page-head h1, .positioning-lead { text-wrap: balance; }
+        p, .hero-sub, .section-desc, .art-standfirst { text-wrap: pretty; }
+        .hero-proof-key, .proof-stat, .feature-float-stat, .stat-num, .plan-price, .price-amount { font-variant-numeric: tabular-nums; }
+        .skip-link { position: absolute; left: 12px; top: -70px; z-index: 3000; background: var(--gold); color: var(--navy); padding: 11px 20px; border-radius: 8px; font-weight: 700; font-size: 14px; transition: top 0.25s ease; }
+        .skip-link:focus-visible, .skip-link:focus { top: 12px; }
+    </style>
 </head>
 <body>
+    <a href="#content" class="skip-link">Skip to content</a>
 <nav class="nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo"><img src="https://static.wixstatic.com/media/ab875a_1e3be18072b845028b4ea592384500b2~mv2.png" alt="Safer Charging Logo" class="nav-logo-img"><span class="nav-logo-text">Safer Charging</span></a>
@@ -52,7 +62,7 @@ img{max-width:100%;height:auto;display:block;}
   </div>
 </nav>
 
-<header class="p-head">
+<header class="p-head" id="content">
   <div class="narrow"><div class="p-head-inner">
     <div class="p-eyebrow">Legal</div>
     <h1>Privacy Statement</h1>

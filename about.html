@@ -604,6 +604,7 @@
         .ph-scrim { position:absolute; inset:0; background: linear-gradient(100deg, rgba(7,18,51,0.95) 0%, rgba(11,27,63,0.72) 52%, rgba(11,27,63,0.5) 100%), linear-gradient(0deg, rgba(7,18,51,0.55), transparent 48%); }
         .page-hero .container { position:relative; z-index:2; }
         @media (prefers-reduced-motion: reduce){ .ph-media img{ animation:none; } }
+            .ph-video-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; background:var(--navy); }
     </style>
 </head>
 <body>
@@ -633,7 +634,7 @@
 
     <!-- PAGE HERO -->
     <section class="page-hero" id="content">
-        <div class="ph-media"><img src="https://images.pexels.com/photos/9800000/pexels-photo-9800000.jpeg?auto=compress&cs=tinysrgb&w=1920" onerror="this.onerror=null;this.src='https://static.wixstatic.com/media/ab875a_c82701258f0e40aeaabf05b0de4dfb68~mv2.jpg/v1/fill/w_1600,h_1000,al_c,q_85,enc_avif,quality_auto/Engineers_edited.jpg'" alt="Electric vehicle charging station"><div class="ph-scrim"></div></div>
+        <div class="ph-media"><video class="ph-video-bg" autoplay muted loop playsinline preload="none" poster="https://images.pexels.com/photos/9800000/pexels-photo-9800000.jpeg?auto=compress&cs=tinysrgb&w=1920"><source src="https://videos.pexels.com/video-files/9790183/9790183-hd_1920_1080_30fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/9790183/9790183-hd_1920_1080_25fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/9790183/9790183-uhd_2560_1440_30fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/9790183/9790183-sd_960_506_30fps.mp4" type="video/mp4"></video><div class="ph-scrim"></div></div>
         <div class="container">
             <div class="page-hero-label">About Us</div>
             <h1>Independent EV charging <em>experts</em></h1>

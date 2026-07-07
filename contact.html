@@ -21,16 +21,16 @@
             --navy-light: #10245A;
             --navy-mid: #16306E;
             --navy-deep: #071233;
-            --gold: #C28F1C;          /* Secondary — rules, emphasis, CTAs */
-            --gold-soft: #D6A32E;
-            --gold-deep: #A5781A;
+            --gold: #D9A31A;          /* Secondary — rules, emphasis, CTAs */
+            --gold-soft: #E8B923;
+            --gold-deep: #B8860B;
             --lime: #E8B923;          /* Accent only — small highlights */
             /* legacy names remapped to brand so existing rules restyle automatically */
-            --yellow: #C28F1C;
-            --yellow-soft: #D6A32E;
+            --yellow: #D9A31A;
+            --yellow-soft: #E8B923;
             --yellow-glow: rgba(232, 185, 35, 0.18);
-            --teal: #C28F1C;
-            --teal-light: #D6A32E;
+            --teal: #D9A31A;
+            --teal-light: #E8B923;
             --purple: #3F4A48;
             --purple-light: #566462;
             --slate: #3F4A48;         /* Secondary text, captions */
@@ -589,18 +589,18 @@
         @keyframes csIn { from{opacity:0;} to{opacity:1;} }
         .cs-line { stroke: rgba(255,255,255,0.34); }
         .cs-body { fill: rgba(255,255,255,0.03); stroke: rgba(255,255,255,0.34); }
-        .cs-gold { stroke: var(--gold-soft, #D6A32E); }
+        .cs-gold { stroke: var(--gold-soft, #E8B923); }
         .cs-flow { stroke: var(--lime, #E8B923); stroke-dasharray:2 15; animation: csFlow 0.9s linear infinite; }
         @keyframes csFlow { to { stroke-dashoffset:-34; } }
-        .cs-bar { fill: var(--gold, #C28F1C); transform-origin:bottom; transform-box:fill-box; animation: csBar 3.2s cubic-bezier(0.25,0.46,0.45,0.94) infinite; }
+        .cs-bar { fill: var(--gold, #D9A31A); transform-origin:bottom; transform-box:fill-box; animation: csBar 3.2s cubic-bezier(0.25,0.46,0.45,0.94) infinite; }
         @keyframes csBar { 0%{transform:scaleY(0);} 65%{transform:scaleY(1);} 100%{transform:scaleY(1); opacity:0.55;} }
-        .cs-ring { stroke: var(--gold-soft, #D6A32E); stroke-dasharray:176; stroke-dashoffset:176; transform:rotate(-90deg); transform-origin:center; transform-box:fill-box; animation: csRing 3.2s cubic-bezier(0.25,0.46,0.45,0.94) infinite; }
+        .cs-ring { stroke: var(--gold-soft, #E8B923); stroke-dasharray:176; stroke-dashoffset:176; transform:rotate(-90deg); transform-origin:center; transform-box:fill-box; animation: csRing 3.2s cubic-bezier(0.25,0.46,0.45,0.94) infinite; }
         @keyframes csRing { 0%{stroke-dashoffset:176;} 70%{stroke-dashoffset:0;} 100%{stroke-dashoffset:0; opacity:0.5;} }
-        .cs-bolt { fill: var(--gold-soft, #D6A32E); animation: csBolt 2.2s ease-in-out infinite; }
+        .cs-bolt { fill: var(--gold-soft, #E8B923); animation: csBolt 2.2s ease-in-out infinite; }
         @keyframes csBolt { 0%,100%{opacity:0.9;} 50%{opacity:0.35;} }
         .cs-glow { fill: url(#csg); animation: csGlow 3.2s ease-in-out infinite; }
         @keyframes csGlow { 0%,100%{opacity:0.25;} 60%{opacity:0.6;} }
-        .cs-p { fill: var(--gold-soft, #D6A32E); opacity:0; transform-box:fill-box; }
+        .cs-p { fill: var(--gold-soft, #E8B923); opacity:0; transform-box:fill-box; }
         .cs-p1{animation:csP 3s ease-in infinite;} .cs-p2{animation:csP 3s ease-in 1s infinite;} .cs-p3{animation:csP 3s ease-in 2s infinite;}
         @keyframes csP { 0%{opacity:0; transform:translateY(0);} 30%{opacity:0.9;} 100%{opacity:0; transform:translateY(-30px);} }
         .page-hero .container, .page-head .container { position:relative; z-index:3; }
@@ -784,15 +784,15 @@
 
                     <div class="book-call-features">
                         <div class="book-call-feature">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#C28F1C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             <span>No obligation, completely free</span>
                         </div>
                         <div class="book-call-feature">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#C28F1C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             <span>Speak directly with an EV charging specialist</span>
                         </div>
                         <div class="book-call-feature">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#C28F1C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             <span>Get tailored advice for your situation</span>
                         </div>
                     </div>

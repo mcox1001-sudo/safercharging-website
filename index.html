@@ -51,7 +51,7 @@
 
         :root {
             --navy: #0B1B3F; --navy-light: #10245A; --navy-mid: #16306E; --navy-deep: #071233;
-            --gold: #C28F1C; --gold-soft: #D6A32E; --gold-deep: #A5781A; --lime: #E8B923;
+            --gold: #D9A31A; --gold-soft: #E8B923; --gold-deep: #B8860B; --lime: #E8B923;
             --slate: #3F4A48; --mist: #EFF2F8; --ink: #111111; --warm-grey: #E1E7F2; --line: #DBE1EC;
             --paper: #F6F4EF; /* warm off-white for editorial sections */
             --text-mid: #3F4A48; --text-light: #6C7581; --white: #FFFFFF;
@@ -80,7 +80,7 @@
         .nav-links a { color: rgba(255,255,255,0.82); font-size: 14.5px; font-weight: 500; letter-spacing: 0.2px; position: relative; }
         .nav-links a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: var(--gold); transition: width 0.3s var(--ease); }
         .nav-links a:hover { color: var(--white); } .nav-links a:hover::after { width: 100%; }
-        .nav-cta { background: var(--gold) !important; color: var(--navy) !important; padding: 11px 22px; border-radius: 6px; font-weight: 700 !important; font-size: 14px !important; box-shadow: 0 6px 20px rgba(194,143,28,0.28); }
+        .nav-cta { background: var(--gold) !important; color: var(--navy) !important; padding: 11px 22px; border-radius: 6px; font-weight: 700 !important; font-size: 14px !important; box-shadow: 0 6px 20px rgba(217,163,26,0.28); }
         .nav-cta::after { display: none !important; } .nav-cta:hover { background: var(--gold-soft) !important; transform: translateY(-1px); }
         .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; background: none; border: none; }
         .nav-toggle span { width: 26px; height: 2px; background: var(--white); border-radius: 2px; transition: all 0.3s var(--ease); }
@@ -160,8 +160,8 @@
 
         /* ===== BUTTONS ===== */
         .btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 30px; border-radius: 6px; font-size: 15px; font-weight: 600; cursor: pointer; border: none; transition: all 0.3s var(--ease); font-family: var(--font-body); }
-        .btn-primary { background: var(--gold); color: var(--navy); box-shadow: 0 10px 34px rgba(194,143,28,0.32); }
-        .btn-primary:hover { background: var(--gold-soft); transform: translateY(-2px); box-shadow: 0 14px 40px rgba(194,143,28,0.4); }
+        .btn-primary { background: var(--gold); color: var(--navy); box-shadow: 0 10px 34px rgba(217,163,26,0.32); }
+        .btn-primary:hover { background: var(--gold-soft); transform: translateY(-2px); box-shadow: 0 14px 40px rgba(217,163,26,0.4); }
         .btn-outline { background: rgba(255,255,255,0.04); color: var(--white); border: 1.5px solid rgba(255,255,255,0.28); }
         .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.08); transform: translateY(-2px); }
         .btn-arrow { transition: transform 0.3s var(--ease); }
@@ -188,13 +188,13 @@
         .ed.dark .ed-index .no { color: var(--gold-soft); } .ed.dark .ed-index .lbl { color: rgba(255,255,255,0.6); }
         .ed-h { font-family: var(--font-display); font-size: clamp(30px, 4vw, 50px); font-weight: 700; color: var(--navy); line-height: 1.08; letter-spacing: -0.6px; max-width: 20ch; }
         .ed.dark .ed-h { color: #fff; }
-        .ed-h em { font-style: italic; font-weight: 600; color: var(--gold-deep); }
+        .ed-h em { font-style: italic; font-weight: 600; color: var(--gold); }
         .ed.dark .ed-h em { color: var(--gold-soft); }
 
         /* ===== POSITIONING (offset two-column, overlap) ===== */
         .pos-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(40px, 7vw, 96px); align-items: start; }
         .pos-lead { font-family: var(--font-display); font-size: clamp(26px, 3vw, 40px); font-weight: 600; line-height: 1.24; color: var(--navy); letter-spacing: -0.5px; }
-        .pos-lead .hl { color: var(--gold-deep); font-style: italic; }
+        .pos-lead .hl { color: var(--gold); font-style: italic; }
         .pos-img { width: 100%; margin-top: 34px; border-radius: 14px; aspect-ratio: 16 / 10; object-fit: cover; box-shadow: 0 22px 54px rgba(11,27,63,0.16); background: var(--navy); }
         .pos-right { padding-top: 10px; }
         .pos-right > p { color: var(--text-mid); font-size: 17px; margin-bottom: 30px; max-width: 46ch; }
@@ -212,7 +212,7 @@
         .manifesto-aside p { color: var(--text-mid); font-size: 15.5px; max-width: 30ch; }
         .m-list { border-top: 1px solid var(--line); }
         .m-row { display: grid; grid-template-columns: 96px 1fr; gap: 30px; padding: 40px 8px 40px 0; border-bottom: 1px solid var(--line); transition: padding 0.35s var(--ease), background 0.35s var(--ease); }
-        .m-row:hover { padding-left: 16px; padding-right: 0; background: linear-gradient(90deg, rgba(194,143,28,0.05), transparent); }
+        .m-row:hover { padding-left: 16px; padding-right: 0; background: linear-gradient(90deg, rgba(217,163,26,0.05), transparent); }
         .m-num { font-family: var(--font-display); font-size: clamp(40px, 4vw, 62px); font-weight: 400; line-height: 0.9; color: var(--line); transition: color 0.35s var(--ease); font-variant-numeric: tabular-nums; }
         .m-row:hover .m-num { color: var(--gold); }
         .m-row h3 { font-family: var(--font-display); font-size: clamp(21px, 2.1vw, 27px); font-weight: 700; color: var(--navy); margin-bottom: 12px; line-height: 1.2; }
@@ -299,7 +299,7 @@
 
         /* ===== CTA ===== */
         .cta { background: var(--navy); position: relative; overflow: hidden; padding: clamp(80px, 10vw, 140px) 0; }
-        .cta::before { content: ''; position: absolute; top: -30%; right: -8%; width: 540px; height: 540px; background: radial-gradient(circle, rgba(194,143,28,0.2), transparent 66%); }
+        .cta::before { content: ''; position: absolute; top: -30%; right: -8%; width: 540px; height: 540px; background: radial-gradient(circle, rgba(217,163,26,0.2), transparent 66%); }
         .cta-grid { position: relative; z-index: 2; display: grid; grid-template-columns: 1.3fr 1fr; gap: 50px; align-items: center; }
         .cta h2 { font-family: var(--font-display); font-size: clamp(28px, 3.4vw, 46px); font-weight: 700; color: #fff; line-height: 1.1; letter-spacing: -0.5px; max-width: 16ch; }
         .cta p { color: rgba(255,255,255,0.74); font-size: 17px; margin-top: 18px; max-width: 42ch; }

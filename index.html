@@ -726,8 +726,14 @@
     <script>
         (function() {
             const loader = document.getElementById('siteLoader');
+            if (!loader) return;
+            // Play the intro only once per browser session — clicking the logo home
+            // should NOT replay the loading screen.
+            var seen;
+            try { seen = sessionStorage.getItem('sc_intro_done'); } catch (e) { seen = null; }
+            if (seen) { loader.classList.add('loaded'); loader.style.display = 'none'; return; }
             let dismissed = false;
-            function dismiss() { if (dismissed) return; dismissed = true; loader.classList.add('loaded'); }
+            function dismiss() { if (dismissed) return; dismissed = true; loader.classList.add('loaded'); try { sessionStorage.setItem('sc_intro_done', '1'); } catch (e) {} }
             // Hold long enough for the connect-and-charge intro to play, then reveal the site.
             const MIN = 1950, start = performance.now();
             function ready() { setTimeout(dismiss, Math.max(0, MIN - (performance.now() - start))); }

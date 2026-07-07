@@ -21,16 +21,16 @@
             --navy-light: #10245A;
             --navy-mid: #16306E;
             --navy-deep: #071233;
-            --gold: #D9A31A;          /* Secondary — rules, emphasis, CTAs */
-            --gold-soft: #E8B923;
-            --gold-deep: #B8860B;
-            --lime: #E8B923;          /* Accent only — small highlights */
+            --gold: #E8DE25;          /* Secondary — rules, emphasis, CTAs */
+            --gold-soft: #F0E94D;
+            --gold-deep: #C28F1C;
+            --lime: #E8DE25;          /* Accent only — small highlights */
             /* legacy names remapped to brand so existing rules restyle automatically */
-            --yellow: #D9A31A;
-            --yellow-soft: #E8B923;
+            --yellow: #E8DE25;
+            --yellow-soft: #E8DE25;
             --yellow-glow: rgba(232, 185, 35, 0.18);
-            --teal: #D9A31A;
-            --teal-light: #E8B923;
+            --teal: #E8DE25;
+            --teal-light: #E8DE25;
             --purple: #3F4A48;
             --purple-light: #566462;
             --slate: #3F4A48;         /* Secondary text, captions */
@@ -69,7 +69,7 @@
         .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--yellow); transition: width 0.3s var(--ease); }
         .nav-links a:hover { color: var(--white); }
         .nav-links a:hover::after { width: 100%; }
-        .nav-links a.active { color: var(--yellow); }
+        .nav-links a.active { color: var(--gold-deep); }
         .nav-links a.active::after { width: 100%; }
         .nav-cta { background: var(--yellow) !important; color: var(--navy) !important; padding: 10px 24px; border-radius: 8px; font-weight: 600 !important; }
         .nav-cta::after { display: none !important; }
@@ -103,7 +103,7 @@
             font-weight: 700;
             letter-spacing: 2.5px;
             text-transform: uppercase;
-            color: var(--yellow);
+            color: var(--gold-deep);
             margin-bottom: 16px;
         }
 
@@ -124,7 +124,7 @@
             margin-bottom: 20px;
         }
 
-        .page-hero h1 em { font-style: normal; color: var(--yellow); }
+        .page-hero h1 em { font-style: normal; color: var(--gold-deep); }
 
         .page-hero p {
             font-size: 18px;
@@ -135,10 +135,10 @@
         }
 
         /* SECTION STYLES */
-        .section-label { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; }
+        .section-label { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 16px; }
         .section-label::before { content: ''; width: 24px; height: 2px; background: var(--teal); }
         .section-title { font-family: var(--font-display); font-size: clamp(32px, 4vw, 48px); font-weight: 700; color: var(--navy); line-height: 1.15; margin-bottom: 20px; }
-        .section-title em { font-style: normal; color: var(--teal); }
+        .section-title em { font-style: normal; color: var(--gold-deep); }
         .section-subtitle { font-size: 17px; color: var(--text-mid); max-width: 600px; margin: 0 auto 60px; line-height: 1.7; }
         .text-center { text-align: center; }
 
@@ -200,11 +200,11 @@
             font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: var(--teal);
+            color: var(--gold-deep);
             margin-bottom: 8px;
         }
 
-        .pricing-card.featured .pricing-tier { color: var(--yellow); }
+        .pricing-card.featured .pricing-tier { color: var(--gold-deep); }
 
         .pricing-name {
             font-family: var(--font-display);
@@ -233,7 +233,7 @@
             margin-bottom: 4px;
         }
 
-        .pricing-card.featured .pricing-price { color: var(--yellow); }
+        .pricing-card.featured .pricing-price { color: var(--gold-deep); }
 
         .pricing-period {
             font-size: 14px;
@@ -303,7 +303,7 @@
         .pricing-card.featured .pricing-btn {
             background: var(--yellow);
             color: var(--navy);
-            border-color: var(--yellow);
+            border-color: var(--gold-deep);
         }
 
         .pricing-card.featured .pricing-btn:hover {
@@ -343,7 +343,7 @@
 
         .comparison-table thead th.highlight-col {
             background: var(--navy-light);
-            color: var(--yellow);
+            color: var(--gold-deep);
         }
 
         .comparison-table tbody td {
@@ -373,7 +373,7 @@
         }
 
         .comparison-table .check-icon {
-            color: var(--teal);
+            color: var(--gold-deep);
         }
 
         .comparison-table .dash-icon {
@@ -405,7 +405,7 @@
 
         .faq-item:hover {
             box-shadow: 0 8px 24px rgba(11, 18, 50, 0.05);
-            border-color: var(--teal);
+            border-color: var(--gold-deep);
         }
 
         .faq-question {
@@ -423,7 +423,7 @@
             height: 20px;
             flex-shrink: 0;
             margin-top: 2px;
-            color: var(--teal);
+            color: var(--gold-deep);
         }
 
         .faq-answer {
@@ -502,11 +502,11 @@
         .footer h4 { font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 20px; }
         .footer-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
         .footer-links a { font-size: 14px; color: rgba(255,255,255,0.5); }
-        .footer-links a:hover { color: var(--yellow); }
+        .footer-links a:hover { color: var(--gold-deep); }
         .footer-contact-item { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 16px; }
         .footer-contact-item svg { width: 18px; height: 18px; fill: var(--yellow); flex-shrink: 0; margin-top: 2px; }
         .footer-contact-item a, .footer-contact-item span { font-size: 14px; color: rgba(255,255,255,0.5); }
-        .footer-contact-item a:hover { color: var(--yellow); }
+        .footer-contact-item a:hover { color: var(--gold-deep); }
         .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
         .footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.3); }
         .footer-bottom-links { display: flex; gap: 24px; }
@@ -557,18 +557,18 @@
         @keyframes csIn { from{opacity:0;} to{opacity:1;} }
         .cs-line { stroke: rgba(255,255,255,0.34); }
         .cs-body { fill: rgba(255,255,255,0.03); stroke: rgba(255,255,255,0.34); }
-        .cs-gold { stroke: var(--gold-soft, #E8B923); }
-        .cs-flow { stroke: var(--lime, #E8B923); stroke-dasharray:2 15; animation: csFlow 0.9s linear infinite; }
+        .cs-gold { stroke: var(--gold-soft, #E8DE25); }
+        .cs-flow { stroke: var(--lime, #E8DE25); stroke-dasharray:2 15; animation: csFlow 0.9s linear infinite; }
         @keyframes csFlow { to { stroke-dashoffset:-34; } }
-        .cs-bar { fill: var(--gold, #D9A31A); transform-origin:bottom; transform-box:fill-box; animation: csBar 3.2s cubic-bezier(0.25,0.46,0.45,0.94) infinite; }
+        .cs-bar { fill: var(--gold, #E8DE25); transform-origin:bottom; transform-box:fill-box; animation: csBar 3.2s cubic-bezier(0.25,0.46,0.45,0.94) infinite; }
         @keyframes csBar { 0%{transform:scaleY(0);} 65%{transform:scaleY(1);} 100%{transform:scaleY(1); opacity:0.55;} }
-        .cs-ring { stroke: var(--gold-soft, #E8B923); stroke-dasharray:176; stroke-dashoffset:176; transform:rotate(-90deg); transform-origin:center; transform-box:fill-box; animation: csRing 3.2s cubic-bezier(0.25,0.46,0.45,0.94) infinite; }
+        .cs-ring { stroke: var(--gold-soft, #E8DE25); stroke-dasharray:176; stroke-dashoffset:176; transform:rotate(-90deg); transform-origin:center; transform-box:fill-box; animation: csRing 3.2s cubic-bezier(0.25,0.46,0.45,0.94) infinite; }
         @keyframes csRing { 0%{stroke-dashoffset:176;} 70%{stroke-dashoffset:0;} 100%{stroke-dashoffset:0; opacity:0.5;} }
-        .cs-bolt { fill: var(--gold-soft, #E8B923); animation: csBolt 2.2s ease-in-out infinite; }
+        .cs-bolt { fill: var(--gold-soft, #E8DE25); animation: csBolt 2.2s ease-in-out infinite; }
         @keyframes csBolt { 0%,100%{opacity:0.9;} 50%{opacity:0.35;} }
         .cs-glow { fill: url(#csg); animation: csGlow 3.2s ease-in-out infinite; }
         @keyframes csGlow { 0%,100%{opacity:0.25;} 60%{opacity:0.6;} }
-        .cs-p { fill: var(--gold-soft, #E8B923); opacity:0; transform-box:fill-box; }
+        .cs-p { fill: var(--gold-soft, #E8DE25); opacity:0; transform-box:fill-box; }
         .cs-p1{animation:csP 3s ease-in infinite;} .cs-p2{animation:csP 3s ease-in 1s infinite;} .cs-p3{animation:csP 3s ease-in 2s infinite;}
         @keyframes csP { 0%{opacity:0; transform:translateY(0);} 30%{opacity:0.9;} 100%{opacity:0; transform:translateY(-30px);} }
         .page-hero .container, .page-head .container { position:relative; z-index:3; }
@@ -640,27 +640,27 @@
                     <div class="pricing-divider"></div>
                     <ul class="pricing-features">
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             Annual condition inspection
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             Reactive maintenance cover
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             Phone and email support
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             Next business day response
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             Basic compliance documentation
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             Hardware agnostic service
                         </li>
                     </ul>
@@ -678,31 +678,31 @@
                     <div class="pricing-divider"></div>
                     <ul class="pricing-features">
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             Everything in Essential, plus
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             Proactive, preventative maintenance
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             Quarterly inspections and reports
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             Priority four hour response SLA
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             Risk assessments included
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             Dedicated support portal
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             Performance reporting and analytics
                         </li>
                     </ul>
@@ -719,31 +719,31 @@
                     <div class="pricing-divider"></div>
                     <ul class="pricing-features">
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             Everything in Professional, plus
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             24/7 emergency call out
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             Dedicated account manager
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             Custom SLAs tailored to your needs
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             White label support options
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             Network wide coverage UK wide
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             Strategic consultancy and planning
                         </li>
                     </ul>
@@ -775,15 +775,15 @@
                     <tbody>
                         <tr>
                             <td>Reactive maintenance</td>
-                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-                            <td class="highlight-col check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="highlight-col check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
                         </tr>
                         <tr>
                             <td>Proactive monitoring</td>
                             <td class="dash-icon">&mdash;</td>
-                            <td class="highlight-col check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="highlight-col check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
                         </tr>
                         <tr>
                             <td>Inspections</td>
@@ -799,15 +799,15 @@
                         </tr>
                         <tr>
                             <td>Phone and email support</td>
-                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-                            <td class="highlight-col check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="highlight-col check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
                         </tr>
                         <tr>
                             <td>Risk assessments</td>
                             <td class="dash-icon">&mdash;</td>
-                            <td class="highlight-col check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="highlight-col check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
                         </tr>
                         <tr>
                             <td>Compliance documentation</td>
@@ -818,44 +818,44 @@
                         <tr>
                             <td>Performance reporting</td>
                             <td class="dash-icon">&mdash;</td>
-                            <td class="highlight-col check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="highlight-col check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
                         </tr>
                         <tr>
                             <td>Dedicated support portal</td>
                             <td class="dash-icon">&mdash;</td>
-                            <td class="highlight-col check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="highlight-col check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
                         </tr>
                         <tr>
                             <td>24/7 emergency call out</td>
                             <td class="dash-icon">&mdash;</td>
                             <td class="highlight-col dash-icon">&mdash;</td>
-                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
                         </tr>
                         <tr>
                             <td>Dedicated account manager</td>
                             <td class="dash-icon">&mdash;</td>
                             <td class="highlight-col dash-icon">&mdash;</td>
-                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
                         </tr>
                         <tr>
                             <td>White label options</td>
                             <td class="dash-icon">&mdash;</td>
                             <td class="highlight-col dash-icon">&mdash;</td>
-                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
                         </tr>
                         <tr>
                             <td>Network wide coverage</td>
                             <td class="dash-icon">&mdash;</td>
                             <td class="highlight-col dash-icon">&mdash;</td>
-                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
                         </tr>
                         <tr>
                             <td>Strategic consultancy</td>
                             <td class="dash-icon">&mdash;</td>
                             <td class="highlight-col dash-icon">&mdash;</td>
-                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
                         </tr>
                     </tbody>
                 </table>

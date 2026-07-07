@@ -21,16 +21,16 @@
             --navy-light: #10245A;
             --navy-mid: #16306E;
             --navy-deep: #071233;
-            --gold: #D9A31A;          /* Secondary — rules, emphasis, CTAs */
-            --gold-soft: #E8B923;
-            --gold-deep: #B8860B;
-            --lime: #E8B923;          /* Accent only — small highlights */
+            --gold: #E8DE25;          /* Secondary — rules, emphasis, CTAs */
+            --gold-soft: #F0E94D;
+            --gold-deep: #C28F1C;
+            --lime: #E8DE25;          /* Accent only — small highlights */
             /* legacy names remapped to brand so existing rules restyle automatically */
-            --yellow: #D9A31A;
-            --yellow-soft: #E8B923;
+            --yellow: #E8DE25;
+            --yellow-soft: #E8DE25;
             --yellow-glow: rgba(232, 185, 35, 0.18);
-            --teal: #D9A31A;
-            --teal-light: #E8B923;
+            --teal: #E8DE25;
+            --teal-light: #E8DE25;
             --purple: #3F4A48;
             --purple-light: #566462;
             --slate: #3F4A48;         /* Secondary text, captions */
@@ -69,7 +69,7 @@
         .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--yellow); transition: width 0.3s var(--ease); }
         .nav-links a:hover { color: var(--white); }
         .nav-links a:hover::after { width: 100%; }
-        .nav-links a.active { color: var(--yellow); }
+        .nav-links a.active { color: var(--gold-deep); }
         .nav-links a.active::after { width: 100%; }
         .nav-cta { background: var(--yellow) !important; color: var(--navy) !important; padding: 10px 24px; border-radius: 8px; font-weight: 600 !important; }
         .nav-cta::after { display: none !important; }
@@ -103,7 +103,7 @@
             font-weight: 700;
             letter-spacing: 2.5px;
             text-transform: uppercase;
-            color: var(--yellow);
+            color: var(--gold-deep);
             margin-bottom: 16px;
         }
 
@@ -124,7 +124,7 @@
             margin-bottom: 20px;
         }
 
-        .page-hero h1 em { font-style: normal; color: var(--yellow); }
+        .page-hero h1 em { font-style: normal; color: var(--gold-deep); }
 
         .page-hero p {
             font-size: 18px;
@@ -135,10 +135,10 @@
         }
 
         /* SECTION STYLES */
-        .section-label { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; }
+        .section-label { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 16px; }
         .section-label::before { content: ''; width: 24px; height: 2px; background: var(--teal); }
         .section-title { font-family: var(--font-display); font-size: clamp(32px, 4vw, 48px); font-weight: 700; color: var(--navy); line-height: 1.15; margin-bottom: 20px; }
-        .section-title em { font-style: normal; color: var(--teal); }
+        .section-title em { font-style: normal; color: var(--gold-deep); }
         .section-subtitle { font-size: 17px; color: var(--text-mid); max-width: 620px; line-height: 1.75; }
 
         /* STORY SECTION */
@@ -176,7 +176,7 @@
             top: 20px;
             left: 20px;
             background: var(--navy);
-            color: var(--yellow);
+            color: var(--gold-deep);
             padding: 8px 16px;
             border-radius: 8px;
             font-size: 12px;
@@ -201,7 +201,7 @@
             margin: 0 auto 24px;
         }
 
-        .mission-quote em { font-style: normal; color: var(--yellow); }
+        .mission-quote em { font-style: normal; color: var(--gold-deep); }
 
         .mission-desc {
             font-size: 17px;
@@ -248,7 +248,7 @@
         .value-icon.teal { background: rgba(22, 48, 110, 0.1); }
         .value-icon.teal svg { stroke: var(--teal); fill: none; }
         .value-icon.yellow { background: var(--yellow-glow); }
-        .value-icon.yellow svg { stroke: #D9A31A; fill: none; }
+        .value-icon.yellow svg { stroke: #E8DE25; fill: none; }
         .value-icon.purple { background: rgba(63, 74, 72, 0.1); }
         .value-icon.purple svg { stroke: var(--purple); fill: none; }
         .value-icon.navy { background: rgba(11, 18, 50, 0.06); }
@@ -288,7 +288,7 @@
             margin-bottom: 16px;
         }
 
-        .brand-feature-content h2 em { font-style: normal; color: var(--teal); }
+        .brand-feature-content h2 em { font-style: normal; color: var(--gold-deep); }
 
         .brand-feature-content > p {
             font-size: 16px;
@@ -350,7 +350,7 @@
             top: 20px;
             left: 20px;
             background: var(--navy);
-            color: var(--yellow);
+            color: var(--gold-deep);
             padding: 8px 16px;
             border-radius: 8px;
             font-size: 12px;
@@ -365,7 +365,7 @@
             gap: 8px;
             font-size: 15px;
             font-weight: 600;
-            color: var(--teal);
+            color: var(--gold-deep);
             transition: all 0.3s var(--ease);
         }
 
@@ -378,17 +378,17 @@
             background: var(--navy);
         }
 
-        .dark-section .section-label { color: var(--yellow); }
+        .dark-section .section-label { color: var(--gold-deep); }
         .dark-section .section-label::before { background: var(--yellow); }
         .dark-section .section-title { color: var(--white); }
-        .dark-section .section-title em { color: var(--yellow); }
+        .dark-section .section-title em { color: var(--gold-deep); }
         .dark-section .brand-feature-content h2 { color: var(--white); }
-        .dark-section .brand-feature-content h2 em { color: var(--yellow); }
+        .dark-section .brand-feature-content h2 em { color: var(--gold-deep); }
         .dark-section .brand-feature-content > p { color: rgba(255,255,255,0.6); }
         .dark-section .brand-highlight p { color: rgba(255,255,255,0.5); }
         .dark-section .brand-highlight strong { color: rgba(255,255,255,0.85); }
         .dark-section .brand-visual { box-shadow: 0 24px 60px rgba(0,0,0,0.3); }
-        .dark-section .brand-link { color: var(--yellow); }
+        .dark-section .brand-link { color: var(--gold-deep); }
 
         /* ACCREDITATIONS */
         .accreditations-section {
@@ -521,11 +521,11 @@
         .footer h4 { font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 20px; }
         .footer-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
         .footer-links a { font-size: 14px; color: rgba(255,255,255,0.5); }
-        .footer-links a:hover { color: var(--yellow); }
+        .footer-links a:hover { color: var(--gold-deep); }
         .footer-contact-item { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 16px; }
         .footer-contact-item svg { width: 18px; height: 18px; fill: var(--yellow); flex-shrink: 0; margin-top: 2px; }
         .footer-contact-item a, .footer-contact-item span { font-size: 14px; color: rgba(255,255,255,0.5); }
-        .footer-contact-item a:hover { color: var(--yellow); }
+        .footer-contact-item a:hover { color: var(--gold-deep); }
         .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
         .footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.3); }
         .footer-bottom-links { display: flex; gap: 24px; }
@@ -579,18 +579,18 @@
         @keyframes csIn { from{opacity:0;} to{opacity:1;} }
         .cs-line { stroke: rgba(255,255,255,0.34); }
         .cs-body { fill: rgba(255,255,255,0.03); stroke: rgba(255,255,255,0.34); }
-        .cs-gold { stroke: var(--gold-soft, #E8B923); }
-        .cs-flow { stroke: var(--lime, #E8B923); stroke-dasharray:2 15; animation: csFlow 0.9s linear infinite; }
+        .cs-gold { stroke: var(--gold-soft, #E8DE25); }
+        .cs-flow { stroke: var(--lime, #E8DE25); stroke-dasharray:2 15; animation: csFlow 0.9s linear infinite; }
         @keyframes csFlow { to { stroke-dashoffset:-34; } }
-        .cs-bar { fill: var(--gold, #D9A31A); transform-origin:bottom; transform-box:fill-box; animation: csBar 3.2s cubic-bezier(0.25,0.46,0.45,0.94) infinite; }
+        .cs-bar { fill: var(--gold, #E8DE25); transform-origin:bottom; transform-box:fill-box; animation: csBar 3.2s cubic-bezier(0.25,0.46,0.45,0.94) infinite; }
         @keyframes csBar { 0%{transform:scaleY(0);} 65%{transform:scaleY(1);} 100%{transform:scaleY(1); opacity:0.55;} }
-        .cs-ring { stroke: var(--gold-soft, #E8B923); stroke-dasharray:176; stroke-dashoffset:176; transform:rotate(-90deg); transform-origin:center; transform-box:fill-box; animation: csRing 3.2s cubic-bezier(0.25,0.46,0.45,0.94) infinite; }
+        .cs-ring { stroke: var(--gold-soft, #E8DE25); stroke-dasharray:176; stroke-dashoffset:176; transform:rotate(-90deg); transform-origin:center; transform-box:fill-box; animation: csRing 3.2s cubic-bezier(0.25,0.46,0.45,0.94) infinite; }
         @keyframes csRing { 0%{stroke-dashoffset:176;} 70%{stroke-dashoffset:0;} 100%{stroke-dashoffset:0; opacity:0.5;} }
-        .cs-bolt { fill: var(--gold-soft, #E8B923); animation: csBolt 2.2s ease-in-out infinite; }
+        .cs-bolt { fill: var(--gold-soft, #E8DE25); animation: csBolt 2.2s ease-in-out infinite; }
         @keyframes csBolt { 0%,100%{opacity:0.9;} 50%{opacity:0.35;} }
         .cs-glow { fill: url(#csg); animation: csGlow 3.2s ease-in-out infinite; }
         @keyframes csGlow { 0%,100%{opacity:0.25;} 60%{opacity:0.6;} }
-        .cs-p { fill: var(--gold-soft, #E8B923); opacity:0; transform-box:fill-box; }
+        .cs-p { fill: var(--gold-soft, #E8DE25); opacity:0; transform-box:fill-box; }
         .cs-p1{animation:csP 3s ease-in infinite;} .cs-p2{animation:csP 3s ease-in 1s infinite;} .cs-p3{animation:csP 3s ease-in 2s infinite;}
         @keyframes csP { 0%{opacity:0; transform:translateY(0);} 30%{opacity:0.9;} 100%{opacity:0; transform:translateY(-30px);} }
         .page-hero .container, .page-head .container { position:relative; z-index:3; }
@@ -666,7 +666,7 @@
     <!-- MISSION -->
     <section class="mission-section">
         <div class="container reveal">
-            <div class="section-label" style="color: var(--yellow); justify-content: center;">
+            <div class="section-label" style="color: var(--gold-deep); justify-content: center;">
                 <span style="width: 24px; height: 2px; background: var(--yellow); display: inline-block;"></span>
                 Our Mission
             </div>
@@ -752,19 +752,19 @@
                     <div class="brand-feature-highlights">
                         <div class="brand-highlight">
                             <div class="brand-highlight-check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             </div>
                             <p><strong>Safety standards and best practice</strong> developed from real world experience maintaining charge points across the UK</p>
                         </div>
                         <div class="brand-highlight">
                             <div class="brand-highlight-check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             </div>
                             <p><strong>Independent guidance</strong> with no ties to any manufacturer, so you get honest, unbiased recommendations</p>
                         </div>
                         <div class="brand-highlight">
                             <div class="brand-highlight-check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             </div>
                             <p><strong>Practical resources</strong> that make it straightforward to improve safety outcomes at any scale</p>
                         </div>
@@ -797,19 +797,19 @@
                     <div class="brand-feature-highlights">
                         <div class="brand-highlight">
                             <div class="brand-highlight-check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             </div>
                             <p><strong>Content for all experience levels</strong> from complete beginners to seasoned engineers</p>
                         </div>
                         <div class="brand-highlight">
                             <div class="brand-highlight-check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             </div>
                             <p><strong>Practical, real world knowledge</strong> drawn directly from our maintenance and consultancy work</p>
                         </div>
                         <div class="brand-highlight">
                             <div class="brand-highlight-check">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#D9A31A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             </div>
                             <p><strong>Regularly updated</strong> with new articles, guides, and resources as the industry evolves</p>
                         </div>

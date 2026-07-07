@@ -293,6 +293,8 @@
             box-shadow: 0 20px 60px rgba(11, 18, 50, 0.1);
             border-color: rgba(22, 48, 110, 0.15);
         }
+        .board-card-open { border: 1px dashed rgba(22, 48, 110, 0.28); background: var(--mist, #EFF2F8); }
+        .board-card-open .board-card-role { opacity: 0.8; }
         .board-card-photo {
             width: 100%;
             aspect-ratio: 1 / 1;
@@ -665,16 +667,16 @@
                     </div>
                 </div>
 
-                <!-- Alastair Marr -->
-                <div class="board-card reveal reveal-delay-3">
-                    <img src="https://static.wixstatic.com/media/ab875a_d6996c7295d84fd1b5a91c02c10f8ab2~mv2.jpg/v1/fill/w_600,h_600,al_c,q_80,enc_avif,quality_auto/alastair-marr.jpg" alt="Alastair Marr, Advisory Board Member" class="board-card-photo">
+                <!-- Advisory seat — appointment pending -->
+                <div class="board-card board-card-open reveal reveal-delay-3">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Crect width='600' height='600' fill='%230B1B3F'/%3E%3Ccircle cx='300' cy='242' r='76' fill='none' stroke='%23E8DE25' stroke-width='6' opacity='0.8'/%3E%3Cpath d='M182 432a118 118 0 0 1 236 0' fill='none' stroke='%23E8DE25' stroke-width='6' opacity='0.8'/%3E%3C/svg%3E" alt="Advisory board seat currently open" class="board-card-photo">
                     <div class="board-card-body">
-                        <h3>Alastair Marr</h3>
+                        <h3>Advisory seat open</h3>
                         <div class="board-card-role">Advisory Board</div>
-                        <p>Alastair brings a wealth of business development and operational knowledge. His experience in scaling service led businesses provides invaluable guidance as Safer Charging expands its reach across the UK.</p>
-                        <a href="https://www.facebook.com/profile.php?id=61573841676004" target="_blank" rel="noopener" class="board-card-link">
-                            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-                            Connect
+                        <p>We are strengthening our advisory board and this seat is reserved for an incoming appointment. If you have senior experience in EV infrastructure, safety or scaling service businesses, we would like to hear from you.</p>
+                        <a href="contact.html" class="board-card-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            Get in touch
                         </a>
                     </div>
                 </div>

@@ -644,7 +644,7 @@
 
     <!-- PAGE HERO -->
     <section class="page-hero" id="content">
-        <div class="ph-media"><video class="ph-video-bg" autoplay muted loop playsinline preload="none" poster="https://static.wixstatic.com/media/ab875a_040ff05e29df4e23ad017ac9f48b28fa~mv2.png/v1/fill/w_1200,h_760,al_c,q_90,enc_avif,quality_auto/Office%20Charge%20point.png" aria-label="EV charge points in a car park"><source src="https://videos.pexels.com/video-files/4817951/4817951-hd_1920_1080_30fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/4817951/4817951-hd_1920_1080_25fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/4817951/4817951-uhd_2560_1440_30fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/4817951/4817951-sd_960_506_30fps.mp4" type="video/mp4"><source src="https://cdn.coverr.co/videos/coverr-charging-an-electric-car-1573/1080p.mp4" type="video/mp4"></video><div class="ph-scrim"></div></div>
+        <div class="ph-media"><video class="ph-video-bg" autoplay muted loop playsinline preload="auto" poster="https://static.wixstatic.com/media/ab875a_040ff05e29df4e23ad017ac9f48b28fa~mv2.png/v1/fill/w_1200,h_760,al_c,q_90,enc_avif,quality_auto/Office%20Charge%20point.png" aria-label="EV charge points in a car park"><source src="https://videos.pexels.com/video-files/4817951/4817951-hd_1920_1080_30fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/4817951/4817951-hd_1920_1080_25fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/4817951/4817951-uhd_2560_1440_30fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/4817951/4817951-sd_960_506_30fps.mp4" type="video/mp4"><source src="https://cdn.coverr.co/videos/coverr-charging-an-electric-car-1573/1080p.mp4" type="video/mp4"></video><div class="ph-scrim"></div></div>
         <div class="container">
             <div class="page-hero-label">Get in Touch</div>
             <h1>Let's talk about your <em>charging infrastructure</em></h1>
@@ -956,5 +956,6 @@
             });
         });
     </script>
+<script data-autoplay-nudge>document.querySelectorAll("video").forEach(function(v){v.muted=true;var p=v.play&&v.play();if(p&&p.catch)p.catch(function(){});});</script>
 </body>
 </html>

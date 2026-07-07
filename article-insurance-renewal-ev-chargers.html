@@ -208,7 +208,7 @@ a { text-decoration:none; color:inherit; transition:color 0.3s var(--ease); }
     </div></div>
   </header>
 
-  <div class="art-hero-img"><video autoplay muted loop playsinline preload="none" poster="https://images.pexels.com/photos/4678065/pexels-photo-4678065.jpeg?auto=compress&cs=tinysrgb&w=1600" aria-label="EV charge point inspection carried out ahead of an insurance renewal"><source src="https://cdn.coverr.co/videos/coverr-charging-an-electric-car-1573/1080p.mp4" type="video/mp4"></video></div>
+  <div class="art-hero-img"><video autoplay muted loop playsinline preload="auto" poster="https://images.pexels.com/photos/4678065/pexels-photo-4678065.jpeg?auto=compress&cs=tinysrgb&w=1600" aria-label="EV charge point inspection carried out ahead of an insurance renewal"><source src="https://cdn.coverr.co/videos/coverr-charging-an-electric-car-1573/1080p.mp4" type="video/mp4"></video></div>
 
   <div class="art-body">
     <div class="narrow">
@@ -310,5 +310,6 @@ a { text-decoration:none; color:inherit; transition:color 0.3s var(--ease); }
       l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.remove('open')));
     </script>
 
+<script data-autoplay-nudge>document.querySelectorAll("video").forEach(function(v){v.muted=true;var p=v.play&&v.play();if(p&&p.catch)p.catch(function(){});});</script>
 </body>
 </html>

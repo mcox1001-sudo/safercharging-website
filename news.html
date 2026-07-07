@@ -308,7 +308,7 @@
 
     <!-- PAGE HEADER -->
     <header class="page-head" id="content">
-        <div class="ph-media"><video class="ph-video-bg" autoplay muted loop playsinline preload="none" poster="https://images.pexels.com/photos/8853502/pexels-photo-8853502.jpeg?auto=compress&cs=tinysrgb&w=1920" aria-label="Electric vehicle charging station"><source src="https://videos.pexels.com/video-files/9790183/9790183-hd_1920_1080_30fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/9790183/9790183-hd_1920_1080_25fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/9790183/9790183-uhd_2560_1440_30fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/9790183/9790183-sd_960_506_30fps.mp4" type="video/mp4"><source src="https://cdn.coverr.co/videos/coverr-charging-an-electric-car-1573/1080p.mp4" type="video/mp4"></video><div class="ph-scrim"></div></div>
+        <div class="ph-media"><video class="ph-video-bg" autoplay muted loop playsinline preload="auto" poster="https://images.pexels.com/photos/8853502/pexels-photo-8853502.jpeg?auto=compress&cs=tinysrgb&w=1920" aria-label="Electric vehicle charging station"><source src="https://videos.pexels.com/video-files/9790183/9790183-hd_1920_1080_30fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/9790183/9790183-hd_1920_1080_25fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/9790183/9790183-uhd_2560_1440_30fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/9790183/9790183-sd_960_506_30fps.mp4" type="video/mp4"><source src="https://cdn.coverr.co/videos/coverr-charging-an-electric-car-1573/1080p.mp4" type="video/mp4"></video><div class="ph-scrim"></div></div>
         <div class="container">
             <div class="page-head-inner">
                 <nav class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; News &amp; Insights</nav>
@@ -504,5 +504,6 @@
         toggle.addEventListener('click', () => links.classList.toggle('open'));
         links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
     </script>
+<script data-autoplay-nudge>document.querySelectorAll("video").forEach(function(v){v.muted=true;var p=v.play&&v.play();if(p&&p.catch)p.catch(function(){});});</script>
 </body>
 </html>

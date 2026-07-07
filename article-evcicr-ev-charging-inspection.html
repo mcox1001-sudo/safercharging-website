@@ -205,7 +205,7 @@ a { text-decoration:none; color:inherit; transition:color 0.3s var(--ease); }
       </div>
     </div></div>
   </header>
-  <div class="art-hero-img"><video autoplay muted loop playsinline preload="none" poster="https://images.pexels.com/photos/9800000/pexels-photo-9800000.jpeg?auto=compress&cs=tinysrgb&w=1600" aria-label="Authorised professional carrying out an EV charging installation condition inspection"><source src="https://cdn.coverr.co/videos/coverr-charging-an-electric-car-1573/1080p.mp4" type="video/mp4"></video></div>
+  <div class="art-hero-img"><video autoplay muted loop playsinline preload="auto" poster="https://images.pexels.com/photos/9800000/pexels-photo-9800000.jpeg?auto=compress&cs=tinysrgb&w=1600" aria-label="Authorised professional carrying out an EV charging installation condition inspection"><source src="https://cdn.coverr.co/videos/coverr-charging-an-electric-car-1573/1080p.mp4" type="video/mp4"></video></div>
   <div class="art-body">
     <div class="narrow">
       <div class="tldr"><h2>The short version</h2><p>A standard Electrical Installation Condition Report (EICR) checks a building's fixed wiring, but it was never designed for the specific loads, siting and protection of EV charge points. Safer Charging created the UK's first Electric Vehicle Charging Installation Condition Report (EVCICR): it covers everything a standard EICR does, to BS 7671 18th Edition, then adds the checks that are specific to charging. It is non-intrusive, and can be expanded to include extras such as RCD testing and DC rapid filter cleaning.</p></div>
@@ -287,5 +287,6 @@ a { text-decoration:none; color:inherit; transition:color 0.3s var(--ease); }
       t.addEventListener('click',()=>l.classList.toggle('open'));
       l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.remove('open')));
     </script>
+<script data-autoplay-nudge>document.querySelectorAll("video").forEach(function(v){v.muted=true;var p=v.play&&v.play();if(p&&p.catch)p.catch(function(){});});</script>
 </body>
 </html>

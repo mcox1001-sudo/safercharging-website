@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0B1B3F">
     <title>Plans &amp; Pricing | Safer Charging - EV Charging Service Plans</title>
     <meta name="description" content="Flexible EV charging service plans from Safer Charging. Choose from Essential, Professional, or Enterprise packages for maintenance, inspections, and support across the UK.">
     <link rel="canonical" href="https://www.safercharging.co.uk/plans">
@@ -540,6 +541,13 @@
             .btn { width: 100%; justify-content: center; max-width: 320px; }
             .comparison-table thead th,
             .comparison-table tbody td { padding: 12px 14px; font-size: 13px; }
+            /* keep the feature-name column visible while the table scrolls sideways */
+            .comparison-table thead th:first-child,
+            .comparison-table tbody td:first-child { position: sticky; left: 0; z-index: 2; min-width: 150px; }
+            .comparison-table tbody td:first-child { background: var(--white); box-shadow: 6px 0 8px -6px rgba(11,18,50,0.12); }
+            .comparison-table thead th:first-child { background: var(--navy); }
+            .table-wrapper { position: relative; border-radius: 16px; }
+            .table-wrapper::after { content: 'Swipe to compare \\2192'; display: block; text-align: right; font-size: 11px; letter-spacing: 0.4px; color: var(--text-light); padding: 8px 4px 0; }
         }
     
         /* ===== Redesign-skill polish: interaction states, a11y, type detail ===== */

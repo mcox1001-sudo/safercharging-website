@@ -221,8 +221,12 @@
 
         /* ===== SERVICES (index rows, hover-slide) ===== */
         .svc { border-top: 2px solid var(--navy); margin-top: 52px; }
-        .svc-row { display: grid; grid-template-columns: 64px 1.1fr 1.4fr auto; gap: 28px; align-items: center; padding: 34px 12px 34px 0; border-bottom: 1px solid var(--line); transition: all 0.35s var(--ease); }
+        .svc-row { display: grid; grid-template-columns: 118px 40px 1.05fr 1.2fr auto; gap: 24px; align-items: center; padding: 26px 12px 26px 0; border-bottom: 1px solid var(--line); transition: all 0.35s var(--ease); }
         .svc-row:hover { padding-left: 16px; background: var(--paper); }
+        .svc-thumb { width: 118px; height: 78px; border-radius: 10px; overflow: hidden; box-shadow: 0 8px 20px rgba(11,27,63,0.12); background: var(--navy); }
+        .svc-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--ease); }
+        .svc-row:hover .svc-thumb img { transform: scale(1.08); }
+        @media (max-width: 720px) { .svc-thumb { display: none; } }
         .svc-row .svc-no { font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--gold-deep); font-variant-numeric: tabular-nums; }
         .svc-row h3 { font-family: var(--font-display); font-size: clamp(20px, 2vw, 26px); font-weight: 700; color: var(--navy); line-height: 1.15; }
         .svc-row .svc-desc { font-size: 15.5px; color: var(--text-mid); max-width: 48ch; }
@@ -504,25 +508,25 @@
             <h2 class="ed-h reveal">Comprehensive charge point <em>support</em>.</h2>
             <div class="svc">
                 <a href="services.html" class="svc-row reveal">
-                    <span class="svc-no">01</span>
+                    <div class="svc-thumb"><img src="https://static.wixstatic.com/media/ab875a_040ff05e29df4e23ad017ac9f48b28fa~mv2.png/v1/fill/w_400,h_264,al_c,q_90,enc_avif,quality_auto/Office%20Charge%20point.png" alt="EV charge points being maintained"></div><span class="svc-no">01</span>
                     <h3>Maintenance &amp; aftercare</h3>
                     <span class="svc-desc">Preventative and reactive maintenance under a clear plan, sized to your estate, to minimise downtime.</span>
                     <span class="svc-go"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
                 </a>
                 <a href="risk-assessments.html" class="svc-row reveal">
-                    <span class="svc-no">02</span>
+                    <div class="svc-thumb"><img src="https://images.pexels.com/photos/9800004/pexels-photo-9800004.jpeg?auto=compress&cs=tinysrgb&w=400" alt="EV charger inspection"></div><span class="svc-no">02</span>
                     <h3>Fire risk &amp; compliance</h3>
                     <span class="svc-desc">EV-specific electrical inspection and fire risk assessment — plus the remediation, with insurer-ready reporting.</span>
                     <span class="svc-go"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
                 </a>
                 <a href="contact.html" class="svc-row reveal">
-                    <span class="svc-no">03</span>
+                    <div class="svc-thumb"><img src="https://images.pexels.com/photos/4699781/pexels-photo-4699781.jpeg?auto=compress&cs=tinysrgb&w=400" alt="EV charge point audit"></div><span class="svc-no">03</span>
                     <h3>Charge Point Audit</h3>
                     <span class="svc-desc">A non-invasive survey that maps the estate and gives an honest picture of condition, risk and compliance.</span>
                     <span class="svc-go"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
                 </a>
                 <a href="services.html#partners" class="svc-row reveal">
-                    <span class="svc-no">04</span>
+                    <div class="svc-thumb"><img src="https://images.pexels.com/photos/9800029/pexels-photo-9800029.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Network of EV charge points"></div><span class="svc-no">04</span>
                     <h3>CPO, OEM &amp; installer partnership</h3>
                     <span class="svc-desc">The maintenance arm for your installed base. No new install or design, so no channel conflict.</span>
                     <span class="svc-go"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>

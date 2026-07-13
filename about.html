@@ -831,6 +831,59 @@
         </div>
     </section>
 
+    <!-- WHO WE WORK WITH (CUSTOMERS) -->
+    <section class="customers-section" id="customers">
+        <style>
+            .customers-section{padding:var(--section-pad,110px) 0;background:var(--white,#fff);}
+            .cust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px;}
+            .cust-card{background:var(--mist,#EFF2F8);border:1px solid rgba(11,27,63,0.06);border-radius:16px;padding:30px 28px;}
+            .cust-card .cust-ico{width:44px;height:44px;border-radius:11px;background:var(--navy,#0B1B3F);display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+            .cust-card .cust-ico svg{width:22px;height:22px;stroke:var(--gold-soft,#F0E94D);fill:none;stroke-width:2;}
+            .cust-card h3{font-family:var(--font-display,Georgia,serif);font-size:20px;font-weight:700;color:var(--navy,#0B1B3F);margin-bottom:8px;}
+            .cust-card p{font-size:14.5px;color:var(--text-mid,#3F4A48);line-height:1.6;}
+            @media(max-width:900px){.cust-grid{grid-template-columns:1fr;}}
+        </style>
+        <div class="container">
+            <div style="text-align:center;margin-bottom:8px;" class="reveal">
+                <div class="section-label" style="justify-content:center;">Who we work with</div>
+                <h2 class="section-title">Trusted where charging <em>has to work</em></h2>
+                <p class="section-subtitle" style="margin:0 auto;">We are independent and manufacturer-agnostic, so we serve the whole estate rather than one hardware brand. Most clients come to us after being let down by an installer, an operator or a manufacturer.</p>
+            </div>
+            <div class="cust-grid">
+                <div class="cust-card reveal reveal-delay-1">
+                    <div class="cust-ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                    <h3>Public sector &amp; blue light</h3>
+                    <p>Police and fire fleets, NHS, local authorities and education — estates where uptime and compliance are not optional, and where evidence matters.</p>
+                </div>
+                <div class="cust-card reveal reveal-delay-2">
+                    <div class="cust-ico"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></div>
+                    <h3>Commercial property</h3>
+                    <p>Property owners and managing agents who carry the compliance responsibility for chargers on their sites, often without a formal operator in place.</p>
+                </div>
+                <div class="cust-card reveal reveal-delay-3">
+                    <div class="cust-ico"><svg viewBox="0 0 24 24"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7M5.5 21a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM18.5 21a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"/></svg></div>
+                    <h3>Fleet operators</h3>
+                    <p>From a handful of depot chargers to networks scaling toward thousands of sockets, needing dependable first and second-line response as they grow.</p>
+                </div>
+                <div class="cust-card reveal reveal-delay-1">
+                    <div class="cust-ico"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg></div>
+                    <h3>Charge point operators</h3>
+                    <p>CPOs who want maintenance and inspection handled as one technical discipline, so their networks stay compliant and available at scale.</p>
+                </div>
+                <div class="cust-card reveal reveal-delay-2">
+                    <div class="cust-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 13l2 2 4-4"/></svg></div>
+                    <h3>EV installers</h3>
+                    <p>Installers who partner with us to give their clients aftercare — a collaborator on delivery, never a competitor for the install.</p>
+                </div>
+                <div class="cust-card reveal reveal-delay-3">
+                    <div class="cust-ico"><svg viewBox="0 0 24 24"><path d="M20 7h-3V4a2 2 0 00-2-2H9a2 2 0 00-2 2v3H4a2 2 0 00-2 2v9a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2zM9 7V4h6v3"/></svg></div>
+                    <h3>Charge point manufacturers</h3>
+                    <p>Manufacturers we support on inspection and rectification, and through the Charge Safe accreditation and inspection products we hold the licence to.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ACCREDITATIONS -->
     <section class="accreditations-section" id="accreditations">
         <div class="container">
@@ -934,8 +987,18 @@
             .proof-actions .btn-primary:hover{background:var(--gold-soft,#F0E94D);transform:translateY(-2px);}
             .proof-actions .btn-ghost{background:rgba(255,255,255,0.05);color:#fff;border:1.5px solid rgba(255,255,255,0.28);}
             .proof-actions .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,0.1);}
+            /* Case study cards */
+            .cs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:52px;position:relative;z-index:2;}
+            .cs-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:18px;padding:32px 30px;display:flex;flex-direction:column;}
+            .cs-tag{display:inline-flex;align-self:flex-start;gap:8px;font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold-soft,#F0E94D);background:rgba(232,222,37,0.08);border:1px solid rgba(232,222,37,0.22);border-radius:100px;padding:6px 14px;margin-bottom:16px;}
+            .cs-card h3{font-family:var(--font-display,Georgia,serif);font-size:21px;font-weight:700;color:#fff;line-height:1.25;margin-bottom:8px;}
+            .cs-scale{font-size:13px;font-weight:600;color:rgba(255,255,255,0.55);letter-spacing:0.3px;margin-bottom:16px;}
+            .cs-card p{font-size:15px;color:rgba(255,255,255,0.74);line-height:1.62;margin-bottom:16px;}
+            .cs-result{margin-top:auto;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1);font-size:14.5px;color:#fff;}
+            .cs-result strong{color:var(--gold-soft,#F0E94D);font-weight:600;}
+            @media(max-width:820px){.cs-grid{grid-template-columns:1fr;}}
             /* Quote grid — hidden until real, approved testimonials are added below */
-            .quote-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:56px;position:relative;z-index:2;}
+            .quote-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:24px;position:relative;z-index:2;}
             .quote-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:18px;padding:30px 30px 26px;}
             .quote-card p{font-size:16.5px;color:#fff;line-height:1.6;margin-bottom:18px;}
             .quote-card .who{font-size:13.5px;color:rgba(255,255,255,0.6);}
@@ -944,18 +1007,56 @@
         </style>
         <div class="container">
             <div class="proof-inner reveal">
-                <div class="section-label">Proof &amp; references</div>
-                <h2>Case studies and references, <em>on request</em></h2>
-                <p class="lead">We treat our clients' names as confidential and reference them externally only with their permission. If you would like to see detailed case studies from live estates, or speak directly to a current client, we are happy to arrange references relevant to your sector and site type.</p>
-                <div class="proof-actions">
-                    <a href="contact.html" class="btn btn-primary">Request client references <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    <a href="news.html" class="btn btn-ghost">Read our field notes</a>
+                <div class="section-label">Case studies</div>
+                <h2>Real estates, real <em>outcomes</em></h2>
+                <p class="lead">Client names stay confidential — we reference them externally only with permission. These are real, anonymised engagements. Named references, with contract detail, are available to serious enquiries on request.</p>
+            </div>
+
+            <div class="cs-grid">
+                <!-- Anonymised from Master Tender & Portals Pack, tab 7. Do not add client names without written permission. -->
+                <div class="cs-card reveal reveal-delay-1">
+                    <span class="cs-tag">Blue light · Police fleet</span>
+                    <h3>An estate no one else would take on</h3>
+                    <div class="cs-scale">27 chargers · 8 sites · mixed manufacturers</div>
+                    <p>The installer and operator had gone quiet, and the manufacturers would not engage because the hardware was out of warranty. Rather than a costly full swap-out, we adopted the estate. We began with a Charge Point Audit across all eight sites, then inside a week completed back-office migration — SIM changes, new RFID cards, fuel-card integration — alongside EICR and PPM testing and a livery changeover.</p>
+                    <div class="cs-result"><strong>Result:</strong> an uptime the fleet had never reached under the previous operator, now held with proactive and reactive maintenance and full visibility of every unit.</div>
+                </div>
+
+                <div class="cs-card reveal reveal-delay-2">
+                    <span class="cs-tag">Commercial property</span>
+                    <h3>A routine assessment that wasn't</h3>
+                    <div class="cs-scale">6 × 7kW · private underground car park</div>
+                    <p>It began as a routine fire risk assessment, which came back largely fine. The electrical inspection did not: the chargers had been so poorly installed that the whole installation had to be isolated on safety grounds. What looked like a few hundred pounds of routine work became a proper rectification.</p>
+                    <div class="cs-result"><strong>Result:</strong> an estate that is now <strong>genuinely safe and compliant</strong>, not merely certified — and the clearest reason we pair the inspection with the fix.</div>
+                </div>
+
+                <div class="cs-card reveal reveal-delay-1">
+                    <span class="cs-tag">Fleet operator · Scaling</span>
+                    <h3>Support that scales with the network</h3>
+                    <div class="cs-scale">~150 → several thousand sockets</div>
+                    <p>A fleet charging operator growing fast needed dependable first and second-line response as it scaled. We put in our Core Service Plan: intelligent proactive and reactive maintenance kept to minimal touchpoints, an annual inspection plus a lighter six-monthly RCD check, and a per-socket model where the unit cost falls as the network grows.</p>
+                    <div class="cs-result"><strong>Result:</strong> predictable cost as they expand, with support treated as a technical discipline rather than a cost centre.</div>
+                </div>
+
+                <div class="cs-card reveal reveal-delay-2">
+                    <span class="cs-tag">Blue light · Second force</span>
+                    <h3>Repeat work in a sector that's hard to win</h3>
+                    <div class="cs-scale">Fire risk &amp; site assessment · estate-wide</div>
+                    <p>Fire risk and site assessment across a second police estate, with a maintenance programme now in the pipeline. Blue-light buyers do not hand work out lightly, and they do not stay unless the delivery holds up.</p>
+                    <div class="cs-result"><strong>Result:</strong> a live relationship and repeat sector work — evidence that the standard travels from one estate to the next.</div>
                 </div>
             </div>
 
+            <div class="proof-actions reveal" style="margin-top:44px;">
+                <a href="contact.html" class="btn btn-primary">Request client references <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                <a href="news.html" class="btn btn-ghost">Read our field notes</a>
+            </div>
+
             <!-- ============================================================= -->
-            <!-- CEO: paste APPROVED client testimonials below and delete this  -->
-            <!-- comment wrapper to make them live. Do not invent quotes.       -->
+            <!-- TESTIMONIALS. CEO: per the brand guidelines and tender pack,    -->
+            <!-- no client is yet cleared to be named. When you have WRITTEN     -->
+            <!-- permission, paste approved quotes below and delete this comment -->
+            <!-- wrapper to make them live. Do not invent quotes.                -->
             <!--
             <div class="quote-grid">
                 <div class="quote-card">

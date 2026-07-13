@@ -63,7 +63,7 @@
         .nav.scrolled { padding: 12px 0; box-shadow: 0 4px 30px rgba(0,0,0,0.15); }
         .nav-inner { max-width: var(--container); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
         .nav-logo { display: flex; align-items: center; gap: 12px; }
-        .nav-logo-img { height: 42px; width: auto; }
+        .nav-logo-img { height: 42px; width: auto; } .nav-logo-img.nav-logo-wide{height:34px;width:auto;}
         .nav-logo-text { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--white); }
         .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
         .nav-links a { color: rgba(255,255,255,0.8); font-size: 14px; font-weight: 500; position: relative; }
@@ -599,10 +599,7 @@
     <!-- NAV -->
     <nav class="nav" id="nav">
         <div class="nav-inner">
-            <a href="index.html" class="nav-logo">
-                <img src="assets/sc-logo.png" alt="Safer Charging Logo" class="nav-logo-img">
-                <span class="nav-logo-text">Safer Charging</span>
-            </a>
+            <a href="index.html" class="nav-logo"><img src="assets/sc-logo-horizontal-white.png" alt="Safer Charging" class="nav-logo-img nav-logo-wide"></a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="services.html">Services</a></li>
                 <li><a href="risk-assessments.html">Compliance</a></li>

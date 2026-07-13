@@ -3,36 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0B1B3F">
     <title>Plans &amp; Pricing | Safer Charging - EV Charging Service Plans</title>
     <meta name="description" content="Flexible EV charging service plans from Safer Charging. Choose from Essential, Professional, or Enterprise packages for maintenance, inspections, and support across the UK.">
     <link rel="canonical" href="https://www.safercharging.co.uk/plans">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://static.wixstatic.com/media/ab875a_1681593b88304360b33051c6f4a0d8e0~mv2.png/v1/fill/w_32,h_32/favicon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://static.wixstatic.com/media/ab875a_1681593b88304360b33051c6f4a0d8e0~mv2.png/v1/fill/w_180,h_180/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/sc-favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/sc-favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Enriqueta:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --navy: #0B1232;
-            --navy-light: #141D45;
-            --navy-mid: #1A2550;
+            /* ===== Safer Charging brand v2 ===== */
+            --navy: #0B1B3F;          /* Primary */
+            --navy-light: #10245A;
+            --navy-mid: #16306E;
+            --navy-deep: #071233;
+            --gold: #E8DE25;          /* Secondary, rules, emphasis, CTAs */
+            --gold-soft: #F0E94D;
+            --gold-deep: #C28F1C;
+            --lime: #E8DE25;          /* Accent only, small highlights */
+            /* legacy names remapped to brand so existing rules restyle automatically */
             --yellow: #E8DE25;
-            --yellow-soft: #F0E94D;
-            --yellow-glow: rgba(232, 222, 37, 0.15);
-            --teal: #156082;
-            --teal-light: #1B7BA3;
-            --purple: #5F5478;
-            --purple-light: #7A6F94;
-            --off-white: #F7F6F1;
-            --warm-grey: #E8E6DF;
-            --text-dark: #0B1232;
-            --text-mid: #4A4A5A;
-            --text-light: #6B6B7B;
+            --yellow-soft: #E8DE25;
+            --yellow-glow: rgba(232, 185, 35, 0.18);
+            --teal: #E8DE25;
+            --teal-light: #E8DE25;
+            --purple: #3F4A48;
+            --purple-light: #566462;
+            --slate: #3F4A48;         /* Secondary text, captions */
+            --mist: #EFF2F8;          /* Panel & table backgrounds */
+            --ink: #111111;           /* Body text on light */
+            --off-white: #EFF2F8;
+            --warm-grey: #E1E7F2;
+            --text-dark: #0B1B3F;
+            --text-mid: #3F4A48;
+            --text-light: #6C7581;
             --white: #FFFFFF;
-            --font-display: 'Playfair Display', Georgia, serif;
+            --font-display: 'Enriqueta', Georgia, 'Times New Roman', serif;
             --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             --section-pad: clamp(80px, 10vw, 140px);
             --container: 1200px;
@@ -59,7 +70,7 @@
         .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--yellow); transition: width 0.3s var(--ease); }
         .nav-links a:hover { color: var(--white); }
         .nav-links a:hover::after { width: 100%; }
-        .nav-links a.active { color: var(--yellow); }
+        .nav-links a.active { color: var(--gold-deep); }
         .nav-links a.active::after { width: 100%; }
         .nav-cta { background: var(--yellow) !important; color: var(--navy) !important; padding: 10px 24px; border-radius: 8px; font-weight: 600 !important; }
         .nav-cta::after { display: none !important; }
@@ -82,7 +93,7 @@
             right: -200px;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(21, 96, 130, 0.15) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(22, 48, 110, 0.15) 0%, transparent 70%);
         }
 
         .page-hero-label {
@@ -93,7 +104,7 @@
             font-weight: 700;
             letter-spacing: 2.5px;
             text-transform: uppercase;
-            color: var(--yellow);
+            color: var(--gold-deep);
             margin-bottom: 16px;
         }
 
@@ -114,7 +125,7 @@
             margin-bottom: 20px;
         }
 
-        .page-hero h1 em { font-style: normal; color: var(--yellow); }
+        .page-hero h1 em { font-style: normal; color: var(--gold-deep); }
 
         .page-hero p {
             font-size: 18px;
@@ -125,10 +136,10 @@
         }
 
         /* SECTION STYLES */
-        .section-label { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; }
+        .section-label { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 16px; }
         .section-label::before { content: ''; width: 24px; height: 2px; background: var(--teal); }
         .section-title { font-family: var(--font-display); font-size: clamp(32px, 4vw, 48px); font-weight: 700; color: var(--navy); line-height: 1.15; margin-bottom: 20px; }
-        .section-title em { font-style: normal; color: var(--teal); }
+        .section-title em { font-style: normal; color: var(--gold-deep); }
         .section-subtitle { font-size: 17px; color: var(--text-mid); max-width: 600px; margin: 0 auto 60px; line-height: 1.7; }
         .text-center { text-align: center; }
 
@@ -190,11 +201,11 @@
             font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: var(--teal);
+            color: var(--gold-deep);
             margin-bottom: 8px;
         }
 
-        .pricing-card.featured .pricing-tier { color: var(--yellow); }
+        .pricing-card.featured .pricing-tier { color: var(--gold-deep); }
 
         .pricing-name {
             font-family: var(--font-display);
@@ -223,7 +234,7 @@
             margin-bottom: 4px;
         }
 
-        .pricing-card.featured .pricing-price { color: var(--yellow); }
+        .pricing-card.featured .pricing-price { color: var(--gold-deep); }
 
         .pricing-period {
             font-size: 14px;
@@ -293,14 +304,14 @@
         .pricing-card.featured .pricing-btn {
             background: var(--yellow);
             color: var(--navy);
-            border-color: var(--yellow);
+            border-color: var(--gold-deep);
         }
 
         .pricing-card.featured .pricing-btn:hover {
             background: var(--yellow-soft);
             border-color: var(--yellow-soft);
             transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(232, 222, 37, 0.3);
+            box-shadow: 0 8px 30px rgba(232, 185, 35, 0.3);
         }
 
         /* FEATURE COMPARISON TABLE */
@@ -333,7 +344,7 @@
 
         .comparison-table thead th.highlight-col {
             background: var(--navy-light);
-            color: var(--yellow);
+            color: var(--gold-deep);
         }
 
         .comparison-table tbody td {
@@ -351,7 +362,7 @@
         }
 
         .comparison-table tbody td.highlight-col {
-            background: rgba(232, 222, 37, 0.04);
+            background: rgba(232, 185, 35, 0.04);
         }
 
         .comparison-table tbody tr:last-child td {
@@ -359,11 +370,11 @@
         }
 
         .comparison-table tbody tr:hover {
-            background: rgba(21, 96, 130, 0.02);
+            background: rgba(22, 48, 110, 0.02);
         }
 
         .comparison-table .check-icon {
-            color: var(--teal);
+            color: var(--gold-deep);
         }
 
         .comparison-table .dash-icon {
@@ -395,7 +406,7 @@
 
         .faq-item:hover {
             box-shadow: 0 8px 24px rgba(11, 18, 50, 0.05);
-            border-color: var(--teal);
+            border-color: var(--gold-deep);
         }
 
         .faq-question {
@@ -413,7 +424,7 @@
             height: 20px;
             flex-shrink: 0;
             margin-top: 2px;
-            color: var(--teal);
+            color: var(--gold-deep);
         }
 
         .faq-answer {
@@ -444,7 +455,7 @@
             right: -100px;
             width: 400px;
             height: 400px;
-            background: radial-gradient(circle, rgba(232,222,37,0.08) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(232,185,35,0.08) 0%, transparent 70%);
         }
 
         .cta-card h2 {
@@ -474,7 +485,7 @@
 
         .btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 32px; border-radius: 10px; font-size: 15px; font-weight: 600; cursor: pointer; border: none; transition: all 0.3s var(--ease); }
         .btn-primary { background: var(--yellow); color: var(--navy); }
-        .btn-primary:hover { background: var(--yellow-soft); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(232,222,37,0.3); }
+        .btn-primary:hover { background: var(--yellow-soft); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(232,185,35,0.3); }
         .btn-outline { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.3); }
         .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.05); transform: translateY(-2px); }
         .btn-arrow { transition: transform 0.3s var(--ease); }
@@ -492,11 +503,11 @@
         .footer h4 { font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 20px; }
         .footer-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
         .footer-links a { font-size: 14px; color: rgba(255,255,255,0.5); }
-        .footer-links a:hover { color: var(--yellow); }
+        .footer-links a:hover { color: var(--gold-deep); }
         .footer-contact-item { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 16px; }
         .footer-contact-item svg { width: 18px; height: 18px; fill: var(--yellow); flex-shrink: 0; margin-top: 2px; }
         .footer-contact-item a, .footer-contact-item span { font-size: 14px; color: rgba(255,255,255,0.5); }
-        .footer-contact-item a:hover { color: var(--yellow); }
+        .footer-contact-item a:hover { color: var(--gold-deep); }
         .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
         .footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.3); }
         .footer-bottom-links { display: flex; gap: 24px; }
@@ -530,26 +541,77 @@
             .btn { width: 100%; justify-content: center; max-width: 320px; }
             .comparison-table thead th,
             .comparison-table tbody td { padding: 12px 14px; font-size: 13px; }
+            /* keep the feature-name column visible while the table scrolls sideways */
+            .comparison-table thead th:first-child,
+            .comparison-table tbody td:first-child { position: sticky; left: 0; z-index: 2; min-width: 150px; }
+            .comparison-table tbody td:first-child { background: var(--white); box-shadow: 6px 0 8px -6px rgba(11,18,50,0.12); }
+            .comparison-table thead th:first-child { background: var(--navy); }
+            .table-wrapper { position: relative; border-radius: 16px; }
+            .table-wrapper::after { content: 'Swipe to compare \\2192'; display: block; text-align: right; font-size: 11px; letter-spacing: 0.4px; color: var(--text-light); padding: 8px 4px 0; }
         }
+    
+        /* ===== Redesign-skill polish: interaction states, a11y, type detail ===== */
+        a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+        .btn:active, .nav-cta:active, .btn-brand:active, .btn-full:active, .read-link:active { transform: translateY(1px) scale(0.99); }
+        h1, h2, h3, .section-title, .hero h1, .vision-quote, .art-head h1, .featured-body h2, .page-head h1, .positioning-lead { text-wrap: balance; }
+        p, .hero-sub, .section-desc, .art-standfirst { text-wrap: pretty; }
+        .hero-proof-key, .proof-stat, .feature-float-stat, .stat-num, .plan-price, .price-amount { font-variant-numeric: tabular-nums; }
+        .skip-link { position: absolute; left: 12px; top: -70px; z-index: 3000; background: var(--gold); color: var(--navy); padding: 11px 20px; border-radius: 8px; font-weight: 700; font-size: 14px; transition: top 0.25s ease; }
+        .skip-link:focus-visible, .skip-link:focus { top: 12px; }
+    
+        /* ===== animated charging hero scene (bespoke, no external media) ===== */
+        .hero-scene { position:absolute; z-index:2; right:2%; top:50%; transform:translateY(-50%); width:min(40vw,440px); pointer-events:none; opacity:0; animation: csIn 1.1s cubic-bezier(0.22,1,0.36,1) 0.3s forwards; }
+        .hero-scene svg { width:100%; height:auto; overflow:visible; }
+        @keyframes csIn { from{opacity:0;} to{opacity:1;} }
+        .cs-line { stroke: rgba(255,255,255,0.34); }
+        .cs-body { fill: rgba(255,255,255,0.03); stroke: rgba(255,255,255,0.34); }
+        .cs-gold { stroke: var(--gold-soft, #E8DE25); }
+        .cs-flow { stroke: var(--lime, #E8DE25); stroke-dasharray:2 15; animation: csFlow 0.9s linear infinite; }
+        @keyframes csFlow { to { stroke-dashoffset:-34; } }
+        .cs-bar { fill: var(--gold, #E8DE25); transform-origin:bottom; transform-box:fill-box; animation: csBar 3.2s cubic-bezier(0.25,0.46,0.45,0.94) infinite; }
+        @keyframes csBar { 0%{transform:scaleY(0);} 65%{transform:scaleY(1);} 100%{transform:scaleY(1); opacity:0.55;} }
+        .cs-ring { stroke: var(--gold-soft, #E8DE25); stroke-dasharray:176; stroke-dashoffset:176; transform:rotate(-90deg); transform-origin:center; transform-box:fill-box; animation: csRing 3.2s cubic-bezier(0.25,0.46,0.45,0.94) infinite; }
+        @keyframes csRing { 0%{stroke-dashoffset:176;} 70%{stroke-dashoffset:0;} 100%{stroke-dashoffset:0; opacity:0.5;} }
+        .cs-bolt { fill: var(--gold-soft, #E8DE25); animation: csBolt 2.2s ease-in-out infinite; }
+        @keyframes csBolt { 0%,100%{opacity:0.9;} 50%{opacity:0.35;} }
+        .cs-glow { fill: url(#csg); animation: csGlow 3.2s ease-in-out infinite; }
+        @keyframes csGlow { 0%,100%{opacity:0.25;} 60%{opacity:0.6;} }
+        .cs-p { fill: var(--gold-soft, #E8DE25); opacity:0; transform-box:fill-box; }
+        .cs-p1{animation:csP 3s ease-in infinite;} .cs-p2{animation:csP 3s ease-in 1s infinite;} .cs-p3{animation:csP 3s ease-in 2s infinite;}
+        @keyframes csP { 0%{opacity:0; transform:translateY(0);} 30%{opacity:0.9;} 100%{opacity:0; transform:translateY(-30px);} }
+        .page-hero .container, .page-head .container { position:relative; z-index:3; }
+        @media (max-width:1000px){ .hero-scene{ display:none; } }
+        @media (prefers-reduced-motion: reduce){ .cs-flow,.cs-bar,.cs-ring,.cs-bolt,.cs-glow,.cs-p{ animation:none !important; } }
+    
+        /* ===== real-image hero media ===== */
+        .ph-media { position:absolute; inset:0; z-index:0; overflow:hidden; }
+        .ph-media img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; animation: phKen 32s ease-in-out infinite alternate; }
+        @keyframes phKen { from{transform:scale(1.05);} to{transform:scale(1.15);} }
+        .ph-scrim { position:absolute; inset:0; background: linear-gradient(100deg, rgba(7,18,51,0.95) 0%, rgba(11,27,63,0.72) 52%, rgba(11,27,63,0.5) 100%), linear-gradient(0deg, rgba(7,18,51,0.55), transparent 48%); }
+        .page-hero .container { position:relative; z-index:2; }
+        @media (prefers-reduced-motion: reduce){ .ph-media img{ animation:none; } }
+            .ph-video-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; background:var(--navy); }
     </style>
 </head>
 <body>
+    <a href="#content" class="skip-link">Skip to content</a>
 
     <!-- NAV -->
     <nav class="nav" id="nav">
         <div class="nav-inner">
-            <a href="/index.html" class="nav-logo">
-                <img src="https://static.wixstatic.com/media/ab875a_1e3be18072b845028b4ea592384500b2~mv2.png" alt="Safer Charging Logo" class="nav-logo-img">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/sc-logo.png" alt="Safer Charging Logo" class="nav-logo-img">
                 <span class="nav-logo-text">Safer Charging</span>
             </a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="/services.html">Services</a></li>
-                <li><a href="/risk-assessments.html">Risk Assessments</a></li>
-                <li><a href="/plans.html" class="active">Plans</a></li>
-                <li><a href="/about.html">About</a></li>
-                <li><a href="/team.html">Team</a></li>
-                <li><a href="/contact.html">Contact</a></li>
-                <li><a href="/contact.html" class="nav-cta">Book a Call</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="risk-assessments.html">Compliance</a></li>
+                <li><a href="plans.html" class="active">Plans</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="nav-cta">Book a Charge Point Audit</a></li>
             </ul>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
                 <span></span><span></span><span></span>
@@ -558,7 +620,8 @@
     </nav>
 
     <!-- PAGE HERO -->
-    <section class="page-hero">
+    <section class="page-hero" id="content">
+        <div class="ph-media"><video class="ph-video-bg" autoplay muted loop playsinline preload="auto" poster="https://images.pexels.com/photos/4678065/pexels-photo-4678065.jpeg?auto=compress&cs=tinysrgb&w=1920"><source src="https://videos.pexels.com/video-files/9788633/9788633-uhd_2560_1440_30fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/9788633/9788633-hd_1920_1080_30fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/9788633/9788633-hd_1920_1080_25fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/9788633/9788633-hd_1920_1080_24fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/9788633/9788633-hd_1280_720_30fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/9788633/9788633-hd_1280_720_25fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/9788633/9788633-sd_960_540_30fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/9788633/9788633-sd_640_360_30fps.mp4" type="video/mp4"><source src="https://cdn.coverr.co/videos/coverr-charging-an-electric-car-1573/1080p.mp4" type="video/mp4"></video><div class="ph-scrim"></div></div>
         <div class="container">
             <div class="page-hero-label">Service Plans</div>
             <h1>Plans built around <em>your needs</em></h1>
@@ -581,36 +644,36 @@
                     <div class="pricing-tier">Tier 1</div>
                     <div class="pricing-name">Essential</div>
                     <p class="pricing-desc">Solid foundational cover for smaller installations that need reliable maintenance and support.</p>
-                    <div class="pricing-price">From &pound;49/mo</div>
-                    <div class="pricing-period">per charger, billed annually</div>
+                    <div class="pricing-price">Contact Us</div>
+                    <div class="pricing-period">tailored to your estate</div>
                     <div class="pricing-divider"></div>
                     <ul class="pricing-features">
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             Annual condition inspection
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             Reactive maintenance cover
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             Phone and email support
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             Next business day response
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             Basic compliance documentation
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             Hardware agnostic service
                         </li>
                     </ul>
-                    <a href="/contact.html" class="pricing-btn">Get Started</a>
+                    <a href="contact.html" class="pricing-btn">Get Started</a>
                 </div>
 
                 <!-- PROFESSIONAL -->
@@ -619,8 +682,8 @@
                     <div class="pricing-tier">Tier 2</div>
                     <div class="pricing-name">Professional</div>
                     <p class="pricing-desc">Proactive cover for growing estates where uptime and compliance are business critical.</p>
-                    <div class="pricing-price">From &pound;89/mo</div>
-                    <div class="pricing-period">per charger, billed annually</div>
+                    <div class="pricing-price">Contact Us</div>
+                    <div class="pricing-period">tailored to your estate</div>
                     <div class="pricing-divider"></div>
                     <ul class="pricing-features">
                         <li>
@@ -629,7 +692,7 @@
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                            Proactive AI driven monitoring
+                            Proactive, preventative maintenance
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
@@ -652,7 +715,7 @@
                             Performance reporting and analytics
                         </li>
                     </ul>
-                    <a href="/contact.html" class="pricing-btn">Get Started</a>
+                    <a href="contact.html" class="pricing-btn">Get Started</a>
                 </div>
 
                 <!-- ENTERPRISE -->
@@ -665,35 +728,35 @@
                     <div class="pricing-divider"></div>
                     <ul class="pricing-features">
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             Everything in Professional, plus
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             24/7 emergency call out
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             Dedicated account manager
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             Custom SLAs tailored to your needs
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             White label support options
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             Network wide coverage UK wide
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             Strategic consultancy and planning
                         </li>
                     </ul>
-                    <a href="/contact.html" class="pricing-btn">Talk to Us</a>
+                    <a href="contact.html" class="pricing-btn">Talk to Us</a>
                 </div>
             </div>
         </div>
@@ -721,15 +784,15 @@
                     <tbody>
                         <tr>
                             <td>Reactive maintenance</td>
-                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-                            <td class="highlight-col check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="highlight-col check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
                         </tr>
                         <tr>
                             <td>Proactive monitoring</td>
-                            <td class="dash-icon">&mdash;</td>
-                            <td class="highlight-col check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="dash-icon">–</td>
+                            <td class="highlight-col check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
                         </tr>
                         <tr>
                             <td>Inspections</td>
@@ -745,15 +808,15 @@
                         </tr>
                         <tr>
                             <td>Phone and email support</td>
-                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-                            <td class="highlight-col check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="highlight-col check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
                         </tr>
                         <tr>
                             <td>Risk assessments</td>
-                            <td class="dash-icon">&mdash;</td>
-                            <td class="highlight-col check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="dash-icon">–</td>
+                            <td class="highlight-col check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
                         </tr>
                         <tr>
                             <td>Compliance documentation</td>
@@ -763,45 +826,45 @@
                         </tr>
                         <tr>
                             <td>Performance reporting</td>
-                            <td class="dash-icon">&mdash;</td>
-                            <td class="highlight-col check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="dash-icon">–</td>
+                            <td class="highlight-col check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
                         </tr>
                         <tr>
                             <td>Dedicated support portal</td>
-                            <td class="dash-icon">&mdash;</td>
-                            <td class="highlight-col check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="dash-icon">–</td>
+                            <td class="highlight-col check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
                         </tr>
                         <tr>
                             <td>24/7 emergency call out</td>
-                            <td class="dash-icon">&mdash;</td>
-                            <td class="highlight-col dash-icon">&mdash;</td>
-                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="dash-icon">–</td>
+                            <td class="highlight-col dash-icon">–</td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
                         </tr>
                         <tr>
                             <td>Dedicated account manager</td>
-                            <td class="dash-icon">&mdash;</td>
-                            <td class="highlight-col dash-icon">&mdash;</td>
-                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="dash-icon">–</td>
+                            <td class="highlight-col dash-icon">–</td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
                         </tr>
                         <tr>
                             <td>White label options</td>
-                            <td class="dash-icon">&mdash;</td>
-                            <td class="highlight-col dash-icon">&mdash;</td>
-                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="dash-icon">–</td>
+                            <td class="highlight-col dash-icon">–</td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
                         </tr>
                         <tr>
                             <td>Network wide coverage</td>
-                            <td class="dash-icon">&mdash;</td>
-                            <td class="highlight-col dash-icon">&mdash;</td>
-                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="dash-icon">–</td>
+                            <td class="highlight-col dash-icon">–</td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
                         </tr>
                         <tr>
                             <td>Strategic consultancy</td>
-                            <td class="dash-icon">&mdash;</td>
-                            <td class="highlight-col dash-icon">&mdash;</td>
-                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#156082" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+                            <td class="dash-icon">–</td>
+                            <td class="highlight-col dash-icon">–</td>
+                            <td class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
                         </tr>
                     </tbody>
                 </table>
@@ -856,7 +919,7 @@
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
                         What is proactive monitoring?
                     </div>
-                    <p class="faq-answer">Using AI driven data intelligence, we monitor your charger performance remotely and flag potential issues before they cause downtime. This means fewer call outs and better uptime for your estate.</p>
+                    <p class="faq-answer">We combine a non-invasive audit with preventative maintenance and electrical inspection to catch issues before they cause downtime. That means fewer reactive call outs and better uptime for your estate.</p>
                 </div>
 
                 <div class="faq-item reveal reveal-delay-1">
@@ -877,11 +940,11 @@
                 <h2>Need a plan tailored to your estate?</h2>
                 <p>Get a custom quote based on the size, location, and requirements of your charging infrastructure.</p>
                 <div class="cta-actions">
-                    <a href="/contact.html" class="btn btn-primary">
+                    <a href="contact.html" class="btn btn-primary">
                         Get a Custom Quote
                         <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
-                    <a href="/services.html" class="btn btn-outline">Explore Our Services</a>
+                    <a href="services.html" class="btn btn-outline">Explore Our Services</a>
                 </div>
             </div>
         </div>
@@ -892,8 +955,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="/index.html" class="nav-logo" style="margin-bottom: 4px;">
-                        <img src="https://static.wixstatic.com/media/ab875a_1e3be18072b845028b4ea592384500b2~mv2.png" alt="Safer Charging Logo" class="nav-logo-img">
+                    <a href="index.html" class="nav-logo" style="margin-bottom: 4px;">
+                        <img src="assets/sc-logo.png" alt="Safer Charging Logo" class="nav-logo-img">
                         <span class="nav-logo-text">Safer Charging</span>
                     </a>
                     <p>Independent EV charging maintenance, risk assessments, and consultancy. Keeping charge points safe, compliant, and operational across the UK.</p>
@@ -909,21 +972,22 @@
                 <div>
                     <h4>Services</h4>
                     <ul class="footer-links">
-                        <li><a href="/services.html">Maintenance and Aftercare</a></li>
-                        <li><a href="/risk-assessments.html">Risk Assessments</a></li>
-                        <li><a href="/services.html#consultancy">Consultancy</a></li>
-                        <li><a href="/services.html#cpo">CPO and OEM Support</a></li>
-                        <li><a href="/plans.html">Service Plans</a></li>
+                        <li><a href="services.html">Maintenance and Aftercare</a></li>
+                        <li><a href="risk-assessments.html">Compliance</a></li>
+                        <li><a href="services.html#consultancy">Consultancy</a></li>
+                        <li><a href="services.html#cpo">CPO and OEM Support</a></li>
+                        <li><a href="plans.html">Service Plans</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4>Company</h4>
                     <ul class="footer-links">
-                        <li><a href="/about.html">About Us</a></li>
-                        <li><a href="/team.html">Our Team</a></li>
-                        <li><a href="/about.html#academy">Arcane Academy</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="news.html">News &amp; insights</a></li>
+                        <li><a href="about.html#academy">Arcane Academy</a></li>
                         <li><a href="https://www.chargesafe.uk" target="_blank" rel="noopener">ChargeSafe</a></li>
-                        <li><a href="/contact.html">Contact</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div>
@@ -942,10 +1006,17 @@
                     </div>
                 </div>
             </div>
+            <div class="footer-group">
+                <style>.footer-group{border-top:1px solid rgba(255,255,255,0.1);margin-top:10px;padding:24px 0 6px;display:flex;flex-wrap:wrap;align-items:center;gap:16px 30px}.footer-group .fg-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.42);width:100%;margin-bottom:2px}.footer-group a.fg-brand{display:inline-flex;align-items:center;opacity:0.82;transition:opacity .3s ease}.footer-group a.fg-brand:hover{opacity:1}.footer-group a.fg-brand img{height:22px;width:auto;display:block}.footer-group a.fg-text{font-size:14px;color:rgba(255,255,255,0.72);font-weight:600;transition:color .3s ease}.footer-group a.fg-text:hover{color:#F0E94D}</style>
+                <span class="fg-label">Part of the group</span>
+                <a href="https://www.chargesafe.uk" target="_blank" rel="noopener" class="fg-brand" aria-label="ChargeSafe (opens in a new tab)"><img src="assets/chargesafe-logo-transparent.png" alt="ChargeSafe" style="height:22px;"></a>
+                <a href="https://www.arcanechargingacademy.co.uk" target="_blank" rel="noopener" class="fg-brand" aria-label="Arcane Charging Academy (opens in a new tab)"><img src="assets/arcane-academy-logo.png" alt="Arcane Charging Academy" style="height:30px;"></a>
+                <a href="charging-network.html" class="fg-text">Charging Network</a>
+            </div>
             <div class="footer-bottom">
                 <p>&copy; 2024 &ndash; 2026 Safer Charging Limited. All rights reserved. Company no. 15822485. VAT: 472 4756 68.</p>
                 <div class="footer-bottom-links">
-                    <a href="/privacy.html">Privacy Statement</a>
+                    <a href="privacy.html">Privacy Statement</a>
                 </div>
             </div>
         </div>
@@ -962,5 +1033,6 @@
         const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
         reveals.forEach(el => observer.observe(el));
     </script>
+<script data-autoplay-nudge>document.querySelectorAll("video").forEach(function(v){v.muted=true;var p=v.play&&v.play();if(p&&p.catch)p.catch(function(){});});</script>
 </body>
 </html>

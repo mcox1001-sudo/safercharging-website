@@ -22,10 +22,10 @@
             --navy-light: #10245A;
             --navy-mid: #16306E;
             --navy-deep: #071233;
-            --gold: #E8DE25;          /* Secondary — rules, emphasis, CTAs */
+            --gold: #E8DE25;          /* Secondary, rules, emphasis, CTAs */
             --gold-soft: #F0E94D;
             --gold-deep: #C28F1C;
-            --lime: #E8DE25;          /* Accent only — small highlights */
+            --lime: #E8DE25;          /* Accent only, small highlights */
             /* legacy names remapped to brand so existing rules restyle automatically */
             --yellow: #E8DE25;
             --yellow-soft: #E8DE25;
@@ -955,9 +955,9 @@
                     const body = [
                         'Name: ' + name.value,
                         'Email: ' + email.value,
-                        'Phone: ' + (document.getElementById('phone').value || '—'),
-                        'Company: ' + (document.getElementById('company').value || '—'),
-                        'Service interest: ' + (document.getElementById('service').value || '—'),
+                        'Phone: ' + (document.getElementById('phone').value || ', '),
+                        'Company: ' + (document.getElementById('company').value || ', '),
+                        'Service interest: ' + (document.getElementById('service').value || ', '),
                         '', 'Message:', message.value
                     ].join('\n');
                     window.location.href = 'mailto:hello@safercharging.co.uk'

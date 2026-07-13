@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 72" role="img" aria-label="Arcane Charging Academy">
-  <!-- PLACEHOLDER — CEO: replace with the real Arcane Charging Academy logo file (their real
-       brand asset is not available to this build). Swap this file's contents or point the
-       footer <img> at their hosted logo URL. -->
-  <circle cx="30" cy="36" r="22" fill="none" stroke="#F0E94D" stroke-width="4"/>
-  <path d="M30 20v16l11 7" fill="none" stroke="#F0E94D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="66" y="31" font-family="Inter, -apple-system, Segoe UI, sans-serif" font-size="19" font-weight="800" fill="#FFFFFF" letter-spacing="-0.3">Arcane</text>
-  <text x="66" y="53" font-family="Inter, -apple-system, Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#F0E94D" letter-spacing="1.5">CHARGING ACADEMY</text>
-</svg>

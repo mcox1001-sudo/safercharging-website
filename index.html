@@ -296,7 +296,10 @@
         .eco-btn { display: inline-flex; align-items: center; gap: 9px; font-size: 14px; font-weight: 600; align-self: flex-start; }
         .eco-card.big .eco-btn { color: var(--gold-soft); } .eco-card.small .eco-btn { color: var(--gold-deep); }
         .eco-btn:hover { gap: 13px; }
-        .eco-logo { height: 32px; width: auto; margin-bottom: 18px; }
+        .eco-logo { height: 32px; width: auto !important; max-width: none !important; margin-bottom: 18px; align-self: flex-start; }
+        .eco-logo-chip { display: inline-flex; align-items: center; align-self: flex-start; background: #fff; border-radius: 10px; padding: 10px 15px; margin-bottom: 20px; box-shadow: 0 6px 20px rgba(0,0,0,0.18); }
+        .eco-logo-chip img { height: 26px; width: auto !important; max-width: none !important; display: block; margin: 0; border-radius: 4px; }
+        .eco-card.small .eco-logo { height: 32px; }
 
         /* ===== CTA ===== */
         .cta { background: var(--navy); position: relative; overflow: hidden; padding: clamp(80px, 10vw, 140px) 0; }
@@ -636,13 +639,14 @@
             <div class="eco-grid">
                 <div class="eco-card big reveal">
                     <div class="eco-lab">Proud owners of</div>
-                    <img src="https://static.wixstatic.com/media/ab875a_a4551da30aee4397b3152f0c792bf4fd~mv2.png" alt="ChargeSafe Logo" class="eco-logo" style="filter: brightness(0) invert(1);">
+                    <span class="eco-logo-chip"><img src="assets/chargesafe-logo.png" alt="ChargeSafe"></span>
                     <h3>ChargeSafe</h3>
                     <p>Our dedicated platform for EV charging safety standards, compliance tools and best-practice resources — helping the industry raise the bar on charger safety.</p>
                     <a href="https://www.chargesafe.uk" class="eco-btn" target="_blank" rel="noopener">Visit ChargeSafe <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
                 </div>
                 <div class="eco-card small reveal rd-1">
                     <div class="eco-lab">Learn with us</div>
+                    <img src="assets/arcane-academy-logo.png" alt="Arcane Charging Academy" class="eco-logo">
                     <h3>Arcane Charging Academy</h3>
                     <p>Our training and resource hub with useful content for every experience level — from your kW to your kWh, to advanced maintenance techniques.</p>
                     <a href="about.html#academy" class="eco-btn">Explore the Academy <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>

@@ -867,6 +867,110 @@
         </div>
     </section>
 
+    <!-- PARTNERS & REFERRALS -->
+    <!-- CEO: add more partners by copying a .partner-card block. Set real referral URLs where marked #REPLACE-*. -->
+    <section class="partners-section" id="partners">
+        <style>
+            .partners-section{padding:var(--section-pad,110px) 0;background:var(--mist,#EFF2F8);}
+            .partners-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px;}
+            .partner-card{background:var(--white,#fff);border:1px solid rgba(11,27,63,0.08);border-radius:18px;padding:34px 30px;display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s var(--ease);}
+            .partner-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(11,27,63,0.1);}
+            .partner-kicker{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold-deep,#C28F1C);margin-bottom:14px;}
+            .partner-card h3{font-family:var(--font-display,Georgia,serif);font-size:23px;font-weight:700;color:var(--navy,#0B1B3F);margin-bottom:10px;}
+            .partner-card p{font-size:15px;color:var(--text-mid,#3F4A48);line-height:1.65;margin-bottom:22px;}
+            .partner-link{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;color:var(--navy,#0B1B3F);}
+            .partner-link svg{width:16px;height:16px;transition:transform .3s var(--ease);}
+            .partner-link:hover{color:var(--gold-deep,#C28F1C);} .partner-link:hover svg{transform:translateX(4px);}
+            .partner-card.join{background:var(--navy,#0B1B3F);border-color:transparent;}
+            .partner-card.join .partner-kicker{color:var(--gold-soft,#F0E94D);}
+            .partner-card.join h3{color:#fff;} .partner-card.join p{color:rgba(255,255,255,0.7);}
+            .partner-card.join .partner-link{color:var(--gold-soft,#F0E94D);}
+            @media(max-width:900px){.partners-grid{grid-template-columns:1fr;}}
+        </style>
+        <div class="container">
+            <div style="text-align:center;margin-bottom:8px;" class="reveal">
+                <div class="section-label" style="justify-content:center;">Partners &amp; referrals</div>
+                <h2 class="section-title">Working with the <em>wider network</em></h2>
+                <p class="section-subtitle" style="margin:0 auto;">We are independent and manufacturer-agnostic, so we work alongside installers, schemes and specialists rather than against them — and we are always glad to make an introduction.</p>
+            </div>
+            <div class="partners-grid">
+                <div class="partner-card reveal reveal-delay-1">
+                    <div class="partner-kicker">Referral partner</div>
+                    <h3>Charge Scheme</h3>
+                    <p>We refer clients to Charge Scheme where grant-backed and funded charging routes can reduce the cost of getting compliant, safe infrastructure in the ground.</p>
+                    <a class="partner-link" href="#REPLACE-WITH-CHARGE-SCHEME-REFERRAL-URL" target="_blank" rel="noopener">Visit Charge Scheme <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+                <div class="partner-card reveal reveal-delay-2">
+                    <div class="partner-kicker">Delivery network</div>
+                    <h3>UK installer network</h3>
+                    <p>A partner network of 560+ enriched UK EV installers gives us national coverage and joint-bid strength — a collaborator on delivery, never a competitor for your maintenance.</p>
+                    <a class="partner-link" href="services.html#partners">How we partner <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+                <div class="partner-card join reveal reveal-delay-3">
+                    <div class="partner-kicker">Become a partner</div>
+                    <h3>Refer, or partner with us</h3>
+                    <p>Installer, scheme, insurer or CPO? If you have clients who need independent maintenance and compliance, let's set up a referral arrangement that works both ways.</p>
+                    <a class="partner-link" href="contact.html">Start a conversation <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS & CASE STUDIES -->
+    <section class="proof-section" id="case-studies">
+        <style>
+            .proof-section{padding:var(--section-pad,110px) 0;background:var(--navy,#0B1B3F);position:relative;overflow:hidden;}
+            .proof-section::after{content:'';position:absolute;top:-15%;right:-6%;width:520px;height:520px;background:radial-gradient(circle,rgba(232,222,37,0.12),transparent 66%);pointer-events:none;}
+            .proof-inner{position:relative;z-index:2;max-width:820px;}
+            .proof-section .section-label{color:var(--gold-soft,#F0E94D);}
+            .proof-section .section-label::before{background:var(--gold-soft,#F0E94D);}
+            .proof-section h2{font-family:var(--font-display,Georgia,serif);font-size:clamp(30px,4vw,46px);font-weight:700;color:#fff;line-height:1.14;margin-bottom:18px;}
+            .proof-section h2 em{font-style:normal;color:var(--gold-soft,#F0E94D);}
+            .proof-section p.lead{font-size:18px;color:rgba(255,255,255,0.72);line-height:1.7;max-width:640px;}
+            .proof-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;}
+            .proof-actions .btn{display:inline-flex;align-items:center;gap:9px;padding:15px 28px;border-radius:9px;font-size:15px;font-weight:600;transition:all .3s var(--ease);}
+            .proof-actions .btn-primary{background:var(--gold,#E8DE25);color:var(--navy,#0B1B3F);}
+            .proof-actions .btn-primary:hover{background:var(--gold-soft,#F0E94D);transform:translateY(-2px);}
+            .proof-actions .btn-ghost{background:rgba(255,255,255,0.05);color:#fff;border:1.5px solid rgba(255,255,255,0.28);}
+            .proof-actions .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,0.1);}
+            /* Quote grid — hidden until real, approved testimonials are added below */
+            .quote-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:56px;position:relative;z-index:2;}
+            .quote-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:18px;padding:30px 30px 26px;}
+            .quote-card p{font-size:16.5px;color:#fff;line-height:1.6;margin-bottom:18px;}
+            .quote-card .who{font-size:13.5px;color:rgba(255,255,255,0.6);}
+            .quote-card .who strong{color:var(--gold-soft,#F0E94D);font-weight:600;}
+            @media(max-width:820px){.quote-grid{grid-template-columns:1fr;}}
+        </style>
+        <div class="container">
+            <div class="proof-inner reveal">
+                <div class="section-label">Proof &amp; references</div>
+                <h2>Case studies and references, <em>on request</em></h2>
+                <p class="lead">We treat our clients' names as confidential and reference them externally only with their permission. If you would like to see detailed case studies from live estates, or speak directly to a current client, we are happy to arrange references relevant to your sector and site type.</p>
+                <div class="proof-actions">
+                    <a href="contact.html" class="btn btn-primary">Request client references <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <a href="news.html" class="btn btn-ghost">Read our field notes</a>
+                </div>
+            </div>
+
+            <!-- ============================================================= -->
+            <!-- CEO: paste APPROVED client testimonials below and delete this  -->
+            <!-- comment wrapper to make them live. Do not invent quotes.       -->
+            <!--
+            <div class="quote-grid">
+                <div class="quote-card">
+                    <p>&ldquo;Real approved client quote goes here.&rdquo;</p>
+                    <div class="who"><strong>Full name</strong>, Role — Company</div>
+                </div>
+                <div class="quote-card">
+                    <p>&ldquo;Second approved client quote goes here.&rdquo;</p>
+                    <div class="who"><strong>Full name</strong>, Role — Company</div>
+                </div>
+            </div>
+            -->
+            <!-- ============================================================= -->
+        </div>
+    </section>
+
     <!-- CTA -->
     <section class="cta-banner">
         <div class="container">

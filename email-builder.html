@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0B1B3F">
+<title>HTML Email Builder | Safer Charging</title>
+<meta name="description" content="Build editable, on-brand HTML emails block by block and export email-safe HTML.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/sc-favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Enriqueta:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy:#0B1B3F;--navy-deep:#071233;--gold:#E8DE25;--gold-deep:#C28F1C;--lime:#E8B923;
+  --slate:#3F4A48;--mist:#EFF2F8;--line:#e4e8f0;--white:#fff;
+  --font-display:'Enriqueta',Georgia,serif;--font-body:'Inter',system-ui,sans-serif;
+  --ease:cubic-bezier(0.25,0.46,0.45,0.94);
+}
+html,body{height:100%;}
+body{font-family:var(--font-body);background:var(--mist);color:var(--navy);line-height:1.5;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+
+.bar{background:var(--navy);color:#fff;padding:12px 0;position:sticky;top:0;z-index:50;box-shadow:0 4px 24px rgba(0,0,0,.16);}
+.bar-in{max-width:1500px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;}
+.bar-logo img{height:28px;width:auto;display:block;}
+.bar-nav{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
+.bar-nav a{font-size:13px;font-weight:600;color:rgba(255,255,255,.82);padding:7px 11px;border-radius:8px;text-decoration:none;transition:.2s var(--ease);}
+.bar-nav a:hover{background:rgba(255,255,255,.1);color:#fff;}
+.bar-nav a.on{background:var(--gold);color:var(--navy);}
+.bar-actions{display:flex;gap:8px;flex-wrap:wrap;}
+.mini{display:inline-flex;align-items:center;gap:6px;padding:8px 13px;border-radius:8px;font-size:13px;font-weight:600;border:none;cursor:pointer;font-family:inherit;transition:.18s var(--ease);}
+.mini-gold{background:var(--gold);color:var(--navy);}
+.mini-gold:hover{background:#f0e94d;}
+.mini-line{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.22);}
+.mini-line:hover{background:rgba(255,255,255,.16);}
+
+.app{display:grid;grid-template-columns:300px minmax(0,1fr);gap:0;max-width:1500px;margin:0 auto;min-height:calc(100vh - 53px);}
+@media(max-width:900px){.app{grid-template-columns:1fr;}}
+
+/* Sidebar */
+.side{background:#fff;border-right:1px solid var(--line);padding:20px 18px 60px;overflow-y:auto;}
+@media(max-width:900px){.side{border-right:none;border-bottom:1px solid var(--line);}}
+.side h3{font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#8a93a6;margin:20px 0 10px;}
+.side h3:first-child{margin-top:0;}
+.palette{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.pbtn{display:flex;flex-direction:column;align-items:center;gap:5px;padding:12px 6px;border:1.5px solid var(--line);border-radius:10px;background:#fbfcfe;cursor:pointer;font-size:12px;font-weight:600;color:var(--navy);transition:.16s var(--ease);}
+.pbtn:hover{border-color:var(--gold-deep);background:#fff;transform:translateY(-1px);}
+.pbtn svg{width:20px;height:20px;stroke:var(--navy);}
+
+.set{margin-bottom:12px;}
+.set label{display:block;font-size:12px;font-weight:600;margin-bottom:5px;}
+.set input,.set select,.set textarea{width:100%;padding:9px 10px;border:1.5px solid var(--line);border-radius:8px;font-family:inherit;font-size:13px;color:var(--navy);background:#fbfcfe;}
+.set input:focus,.set select:focus,.set textarea:focus{outline:none;border-color:var(--gold-deep);background:#fff;}
+.set .rowset{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.set input[type=color]{padding:3px;height:38px;cursor:pointer;}
+.empty-sel{font-size:12.5px;color:#8a93a6;background:#f6f8fc;border:1px dashed var(--line);border-radius:10px;padding:14px;text-align:center;}
+
+/* Canvas */
+.canvaswrap{padding:26px 20px 90px;overflow-y:auto;}
+.canvas-tools{display:flex;align-items:center;gap:10px;justify-content:center;margin-bottom:16px;flex-wrap:wrap;}
+.fmt{display:flex;gap:4px;background:#fff;border:1px solid var(--line);border-radius:9px;padding:4px;}
+.fmt button{width:32px;height:30px;border:none;background:none;border-radius:6px;cursor:pointer;font-size:14px;font-weight:700;color:var(--navy);}
+.fmt button:hover{background:var(--mist);}
+.canvas-hint{font-size:12px;color:#8a93a6;}
+
+.sheet{max-width:640px;margin:0 auto;}
+.email{margin:0 auto;box-shadow:0 12px 44px rgba(11,27,63,.14);border-radius:6px;overflow:hidden;}
+
+.blk{position:relative;outline:2px solid transparent;transition:outline-color .15s;}
+.blk:hover{outline-color:rgba(194,143,28,.5);}
+.blk.sel{outline-color:var(--gold-deep);}
+.blk [contenteditable]{outline:none;}
+.blk [contenteditable]:focus{box-shadow:inset 0 0 0 2px rgba(194,143,28,.25);}
+.ctrls{position:absolute;top:-13px;right:8px;display:none;gap:3px;background:var(--navy);border-radius:8px;padding:3px;box-shadow:0 6px 18px rgba(0,0,0,.25);z-index:5;}
+.blk:hover .ctrls,.blk.sel .ctrls{display:flex;}
+.ctrls button{width:26px;height:24px;border:none;background:none;color:#fff;cursor:pointer;border-radius:5px;font-size:13px;line-height:1;display:flex;align-items:center;justify-content:center;}
+.ctrls button:hover{background:rgba(255,255,255,.18);}
+.ctrls button.del:hover{background:#e03131;}
+
+/* Modal */
+.modal{position:fixed;inset:0;background:rgba(7,18,51,.6);display:none;align-items:center;justify-content:center;z-index:200;padding:24px;}
+.modal.show{display:flex;}
+.modal-box{background:#fff;border-radius:14px;width:100%;max-width:720px;max-height:88vh;display:flex;flex-direction:column;overflow:hidden;}
+.modal-head{padding:16px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;}
+.modal-head h2{font-family:var(--font-display);font-size:18px;}
+.modal-head button{background:none;border:none;font-size:22px;cursor:pointer;color:var(--slate);}
+.modal iframe{border:none;width:100%;flex:1;min-height:420px;background:#eef2f8;}
+.modal textarea{border:none;width:100%;flex:1;min-height:420px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;padding:16px;resize:none;color:var(--navy);}
+
+.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(30px);background:var(--navy);color:#fff;padding:13px 22px;border-radius:11px;font-size:14px;font-weight:600;box-shadow:0 12px 40px rgba(0,0,0,.3);opacity:0;pointer-events:none;transition:.3s var(--ease);z-index:300;}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+</style>
+</head>
+<body>
+<div class="bar">
+  <div class="bar-in">
+    <a class="bar-logo" href="index.html" aria-label="Safer Charging"><img src="assets/sc-logo-horizontal-white.png" alt="Safer Charging"></a>
+    <nav class="bar-nav">
+      <a href="email-signature.html">Signature Creator</a>
+      <a href="email-builder.html" class="on">Email Builder</a>
+      <a href="index.html">&larr; Website</a>
+    </nav>
+    <div class="bar-actions">
+      <button class="mini mini-line" id="previewBtn">Preview</button>
+      <button class="mini mini-line" id="codeBtn">HTML</button>
+      <button class="mini mini-line" id="downloadBtn">Download</button>
+      <button class="mini mini-gold" id="copyBtn">Copy HTML</button>
+    </div>
+  </div>
+</div>
+
+<div class="app">
+  <!-- SIDEBAR -->
+  <aside class="side">
+    <h3>Add a block</h3>
+    <div class="palette" id="palette">
+      <button class="pbtn" data-add="heading"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M6 4v16M18 4v16M6 12h12"/></svg>Heading</button>
+      <button class="pbtn" data-add="text"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h11"/></svg>Text</button>
+      <button class="pbtn" data-add="button"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="8" width="18" height="8" rx="4"/></svg>Button</button>
+      <button class="pbtn" data-add="image"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 16l-5-5L5 20"/></svg>Image</button>
+      <button class="pbtn" data-add="header"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="4" width="18" height="6" rx="1"/><path d="M4 14h16M4 18h10"/></svg>Logo header</button>
+      <button class="pbtn" data-add="divider"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 12h16"/></svg>Divider</button>
+      <button class="pbtn" data-add="spacer"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 4v16M8 8l4-4 4 4M8 16l4 4 4-4"/></svg>Spacer</button>
+      <button class="pbtn" data-add="text2col"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="5" width="8" height="14"/><rect x="13" y="5" width="8" height="14"/></svg>2 columns</button>
+    </div>
+
+    <h3>Email settings</h3>
+    <div class="set"><label>Preheader <span style="color:#8a93a6;font-weight:400;">(inbox preview text)</span></label><input id="s_pre" type="text" placeholder="One line recipients see in the inbox"></div>
+    <div class="set"><label>Content width (px)</label><input id="s_width" type="number" min="480" max="700" step="10" value="600"></div>
+    <div class="set rowset">
+      <div><label>Page background</label><input id="s_bodyBg" type="color" value="#eef2f8"></div>
+      <div><label>Email background</label><input id="s_contentBg" type="color" value="#ffffff"></div>
+    </div>
+    <div class="set rowset">
+      <div><label>Accent / buttons</label><input id="s_accent" type="color" value="#0b1b3f"></div>
+      <div><label>Text colour</label><input id="s_text" type="color" value="#3f4a48"></div>
+    </div>
+    <div class="set"><label>Font</label>
+      <select id="s_font">
+        <option value="Arial, Helvetica, sans-serif">Arial (safest)</option>
+        <option value="'Helvetica Neue', Helvetica, Arial, sans-serif">Helvetica</option>
+        <option value="Georgia, 'Times New Roman', serif">Georgia (serif)</option>
+        <option value="Tahoma, Geneva, sans-serif">Tahoma</option>
+        <option value="Verdana, Geneva, sans-serif">Verdana</option>
+      </select>
+    </div>
+
+    <h3>Selected block</h3>
+    <div id="props"><div class="empty-sel">Click a block in the email to edit its settings. Click text directly to edit it.</div></div>
+
+    <h3>Danger zone</h3>
+    <button class="mini mini-line" style="color:#c0392b;border-color:#f0c4c4;background:#fdf3f3;width:100%;justify-content:center;" id="clearBtn">Clear &amp; start over</button>
+  </aside>
+
+  <!-- CANVAS -->
+  <main class="canvaswrap">
+    <div class="canvas-tools">
+      <div class="fmt" title="Formatting for the selected text">
+        <button data-cmd="bold" title="Bold"><b>B</b></button>
+        <button data-cmd="italic" title="Italic"><i>I</i></button>
+        <button data-cmd="underline" title="Underline"><u>U</u></button>
+        <button data-cmd="createLink" title="Add link">🔗</button>
+        <button data-cmd="removeFormat" title="Clear formatting">✕</button>
+      </div>
+      <span class="canvas-hint">Click text to edit · hover a block for move / duplicate / delete</span>
+    </div>
+    <div class="sheet"><div class="email" id="email"></div></div>
+  </main>
+</div>
+
+<!-- Preview modal -->
+<div class="modal" id="mPreview">
+  <div class="modal-box">
+    <div class="modal-head"><h2>Preview</h2><button data-close>&times;</button></div>
+    <iframe id="previewFrame" title="Email preview"></iframe>
+  </div>
+</div>
+<!-- Code modal -->
+<div class="modal" id="mCode">
+  <div class="modal-box">
+    <div class="modal-head"><h2>HTML source</h2><button data-close>&times;</button></div>
+    <textarea id="codeArea" spellcheck="false" readonly></textarea>
+  </div>
+</div>
+
+<div class="toast" id="toast">Copied</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const uid=()=>'b'+Math.random().toString(36).slice(2,9);
+const KEY='sc_email_builder_v1';
+
+let settings={preheader:'',width:600,bodyBg:'#eef2f8',contentBg:'#ffffff',accent:'#0b1b3f',text:'#3f4a48',font:"Arial, Helvetica, sans-serif"};
+let blocks=[];
+let selected=null;
+let savedRange=null;
+
+const LOGO_WHITE='https://safercharging-website.vercel.app/assets/sc-logo-horizontal-white.png';
+const LOGO_NAVY='https://safercharging-website.vercel.app/assets/sc-logo-horizontal.png';
+
+function defaults(type){
+  switch(type){
+    case 'header': return {logo:LOGO_WHITE,bg:'#0B1B3F',link:'https://safercharging.co.uk'};
+    case 'heading': return {text:'Your headline goes here',size:26,align:'left'};
+    case 'text': return {html:'Write your message here. Click to edit. Highlight text and use the B / I / link buttons above to format.',align:'left'};
+    case 'button': return {label:'Book a Charge Point Audit',url:'https://safercharging.co.uk/contact.html',align:'left'};
+    case 'image': return {src:LOGO_NAVY,alt:'Image',link:'',width:100,align:'center'};
+    case 'divider': return {};
+    case 'spacer': return {height:24};
+    case 'text2col': return {left:'Left column text. Click to edit.',right:'Right column text. Click to edit.'};
+  }
+  return {};
+}
+
+function seed(){
+  blocks=[
+    {id:uid(),type:'header',...defaults('header')},
+    {id:uid(),type:'heading',...defaults('heading'),text:'A quick update from Safer Charging'},
+    {id:uid(),type:'text',...defaults('text'),html:'Hi there,<br><br>This is your starting template. Edit this text, swap in your own headline, and add blocks from the left-hand panel. When you are done, hit <b>Copy HTML</b> and paste it into your email tool.'},
+    {id:uid(),type:'button',...defaults('button')},
+    {id:uid(),type:'divider'},
+    {id:uid(),type:'text',...defaults('text'),html:'<span style="font-size:12px;color:#8a93a6;">Safer Charging · EV charge point maintenance specialists · safercharging.co.uk</span>',align:'center'}
+  ];
+}
+
+/* ---------- persistence ---------- */
+function save(){localStorage.setItem(KEY,JSON.stringify({settings,blocks}));}
+function load(){
+  try{const d=JSON.parse(localStorage.getItem(KEY));if(d&&d.blocks&&d.blocks.length){settings=Object.assign(settings,d.settings||{});blocks=d.blocks;return true;}}catch(e){}
+  return false;
+}
+
+/* ---------- escaping ---------- */
+function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function urlHref(s){s=(s||'').trim();if(!s)return '';return /^(https?:|mailto:|tel:)/i.test(s)?s:'https://'+s;}
+
+/* ---------- editor rendering (WYSIWYG canvas) ---------- */
+function editorInner(b){
+  const pad='padding:16px 28px;';
+  switch(b.type){
+    case 'header':
+      return `<div style="background:${b.bg};text-align:center;padding:22px 28px;"><img src="${esc(b.logo)}" alt="logo" style="height:34px;width:auto;display:inline-block;"></div>`;
+    case 'heading':
+      return `<div style="${pad}text-align:${b.align};"><div contenteditable data-id="${b.id}" data-prop="text" style="font-family:${settings.font};font-size:${b.size}px;font-weight:bold;color:${settings.accent==='#ffffff'?'#0B1B3F':'#0B1B3F'};line-height:1.25;">${b.text}</div></div>`;
+    case 'text':
+      return `<div style="${pad}text-align:${b.align};"><div contenteditable data-id="${b.id}" data-prop="html" style="font-family:${settings.font};font-size:15px;color:${settings.text};line-height:1.6;">${b.html}</div></div>`;
+    case 'button':{
+      const j=b.align==='center'?'center':b.align==='right'?'flex-end':'flex-start';
+      return `<div style="${pad}display:flex;justify-content:${j};"><span style="background:${settings.accent};border-radius:8px;display:inline-block;"><span contenteditable data-id="${b.id}" data-prop="label" style="display:inline-block;padding:13px 26px;font-family:${settings.font};font-size:15px;font-weight:bold;color:#fff;">${b.label}</span></span></div>`;
+    }
+    case 'image':
+      return `<div style="${pad}text-align:${b.align};"><img src="${esc(b.src)}" alt="${esc(b.alt)}" style="width:${b.width}%;max-width:100%;height:auto;display:inline-block;border-radius:4px;"></div>`;
+    case 'divider':
+      return `<div style="padding:6px 28px;"><div style="border-top:1px solid #e4e8f0;"></div></div>`;
+    case 'spacer':
+      return `<div style="height:${b.height}px;background:repeating-linear-gradient(45deg,#f4f6fb,#f4f6fb 6px,#eef2f8 6px,#eef2f8 12px);"></div>`;
+    case 'text2col':
+      return `<div style="${pad}display:flex;gap:20px;">
+        <div contenteditable data-id="${b.id}" data-prop="left" style="flex:1;font-family:${settings.font};font-size:14px;color:${settings.text};line-height:1.6;">${b.left}</div>
+        <div contenteditable data-id="${b.id}" data-prop="right" style="flex:1;font-family:${settings.font};font-size:14px;color:${settings.text};line-height:1.6;">${b.right}</div>
+      </div>`;
+  }
+  return '';
+}
+
+function renderCanvas(){
+  const host=$('email');
+  host.style.width=settings.width+'px';
+  host.style.background=settings.contentBg;
+  host.innerHTML=blocks.map(b=>`
+    <div class="blk ${selected===b.id?'sel':''}" data-blk="${b.id}">
+      <div class="ctrls">
+        <button data-act="up" title="Move up">↑</button>
+        <button data-act="down" title="Move down">↓</button>
+        <button data-act="dup" title="Duplicate">⧉</button>
+        <button data-act="del" class="del" title="Delete">✕</button>
+      </div>
+      ${editorInner(b)}
+    </div>`).join('');
+  document.querySelector('.canvaswrap').style.background=settings.bodyBg;
+  wireCanvas();
+  renderProps();
+}
+
+function wireCanvas(){
+  document.querySelectorAll('#email [contenteditable]').forEach(el=>{
+    el.addEventListener('input',()=>{
+      const b=blocks.find(x=>x.id===el.dataset.id); if(!b)return;
+      b[el.dataset.prop]=el.innerHTML; save();
+    });
+    el.addEventListener('focus',()=>{selectBlock(el.dataset.id,true);});
+    el.addEventListener('blur',saveSelection);
+    el.addEventListener('keyup',saveSelection);
+    el.addEventListener('mouseup',saveSelection);
+  });
+  document.querySelectorAll('.blk').forEach(bl=>{
+    bl.addEventListener('mousedown',e=>{ if(!e.target.closest('.ctrls')) selectBlock(bl.dataset.blk,false); });
+    bl.querySelectorAll('.ctrls button').forEach(btn=>{
+      btn.addEventListener('click',e=>{e.stopPropagation();blockAction(bl.dataset.blk,btn.dataset.act);});
+    });
+  });
+}
+
+function saveSelection(){
+  const s=window.getSelection();
+  if(s.rangeCount && $('email').contains(s.anchorNode)) savedRange=s.getRangeAt(0).cloneRange();
+}
+function restoreSelection(){
+  if(!savedRange)return;
+  const s=window.getSelection();s.removeAllRanges();s.addRange(savedRange);
+}
+
+function selectBlock(id,fromText){
+  selected=id;
+  document.querySelectorAll('.blk').forEach(b=>b.classList.toggle('sel',b.dataset.blk===id));
+  renderProps();
+}
+
+function blockAction(id,act){
+  const i=blocks.findIndex(b=>b.id===id); if(i<0)return;
+  if(act==='up'&&i>0){[blocks[i-1],blocks[i]]=[blocks[i],blocks[i-1]];}
+  else if(act==='down'&&i<blocks.length-1){[blocks[i+1],blocks[i]]=[blocks[i],blocks[i+1]];}
+  else if(act==='dup'){const c=JSON.parse(JSON.stringify(blocks[i]));c.id=uid();blocks.splice(i+1,0,c);selected=c.id;}
+  else if(act==='del'){blocks.splice(i,1);if(selected===id)selected=null;}
+  save();renderCanvas();
+}
+
+function addBlock(type){
+  const b={id:uid(),type,...defaults(type)};
+  const i=blocks.findIndex(x=>x.id===selected);
+  if(i>=0)blocks.splice(i+1,0,b); else blocks.push(b);
+  selected=b.id;save();renderCanvas();
+  const node=document.querySelector(`[data-blk="${b.id}"]`);
+  if(node)node.scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+/* ---------- properties panel ---------- */
+function renderProps(){
+  const host=$('props');
+  const b=blocks.find(x=>x.id===selected);
+  if(!b){host.innerHTML='<div class="empty-sel">Click a block in the email to edit its settings. Click text directly to edit it.</div>';return;}
+  const alignSel=(v)=>`<select data-p="align"><option value="left"${v==='left'?' selected':''}>Left</option><option value="center"${v==='center'?' selected':''}>Center</option><option value="right"${v==='right'?' selected':''}>Right</option></select>`;
+  let h=`<div style="font-size:12px;font-weight:700;text-transform:capitalize;margin-bottom:10px;color:var(--navy);">${b.type.replace('text2col','2 columns')} block</div>`;
+  if(b.type==='heading'){
+    h+=`<div class="set"><label>Text size (px)</label><input type="number" min="14" max="44" data-p="size" value="${b.size}"></div><div class="set"><label>Alignment</label>${alignSel(b.align)}</div>`;
+  }else if(b.type==='text'){
+    h+=`<div class="set"><label>Alignment</label>${alignSel(b.align)}</div><div class="set" style="font-size:12px;color:#8a93a6;">Tip: click the text and use B / I / 🔗 above.</div>`;
+  }else if(b.type==='button'){
+    h+=`<div class="set"><label>Button link (URL)</label><input type="text" data-p="url" value="${esc(b.url)}"></div><div class="set"><label>Alignment</label>${alignSel(b.align)}</div>`;
+  }else if(b.type==='image'){
+    h+=`<div class="set"><label>Image URL</label><input type="text" data-p="src" value="${esc(b.src)}"></div>
+        <div class="set"><label>Alt text</label><input type="text" data-p="alt" value="${esc(b.alt)}"></div>
+        <div class="set"><label>Links to (optional URL)</label><input type="text" data-p="link" value="${esc(b.link)}"></div>
+        <div class="set"><label>Width: <span id="wv">${b.width}</span>%</label><input type="range" min="20" max="100" data-p="width" value="${b.width}"></div>
+        <div class="set"><label>Alignment</label>${alignSel(b.align)}</div>`;
+  }else if(b.type==='spacer'){
+    h+=`<div class="set"><label>Height: <span id="hv">${b.height}</span>px</label><input type="range" min="8" max="80" data-p="height" value="${b.height}"></div>`;
+  }else if(b.type==='header'){
+    h+=`<div class="set"><label>Logo URL</label><input type="text" data-p="logo" value="${esc(b.logo)}"></div>
+        <div class="set"><label>Bar colour</label><input type="color" data-p="bg" value="${b.bg}"></div>
+        <div class="set"><label>Links to (URL)</label><input type="text" data-p="link" value="${esc(b.link)}"></div>`;
+  }else{
+    h+=`<div class="set" style="font-size:12px;color:#8a93a6;">No settings — use the controls on the block to move, duplicate or delete it.</div>`;
+  }
+  host.innerHTML=h;
+  host.querySelectorAll('[data-p]').forEach(inp=>{
+    const ev=(inp.type==='range'||inp.tagName==='SELECT'||inp.type==='color')?'input':'input';
+    inp.addEventListener('input',()=>{
+      let val=inp.value;
+      if(inp.type==='number'||inp.type==='range')val=parseInt(val,10)||0;
+      b[inp.dataset.p]=val;
+      if(inp.dataset.p==='width'&&$('wv'))$('wv').textContent=val;
+      if(inp.dataset.p==='height'&&$('hv'))$('hv').textContent=val;
+      save();renderCanvasKeepSel();
+    });
+  });
+}
+function renderCanvasKeepSel(){const s=selected;renderCanvas();selected=s;}
+
+/* ---------- settings inputs ---------- */
+const setMap={s_pre:'preheader',s_width:'width',s_bodyBg:'bodyBg',s_contentBg:'contentBg',s_accent:'accent',s_text:'text',s_font:'font'};
+Object.entries(setMap).forEach(([id,key])=>{
+  const el=$(id);
+  el.addEventListener('input',()=>{
+    let v=el.value; if(id==='s_width')v=parseInt(v,10)||600;
+    settings[key]=v;save();renderCanvas();
+  });
+});
+function syncSettingsInputs(){
+  $('s_pre').value=settings.preheader;$('s_width').value=settings.width;$('s_bodyBg').value=settings.bodyBg;
+  $('s_contentBg').value=settings.contentBg;$('s_accent').value=settings.accent;$('s_text').value=settings.text;$('s_font').value=settings.font;
+}
+
+/* ---------- palette + formatting ---------- */
+document.querySelectorAll('[data-add]').forEach(b=>b.addEventListener('click',()=>addBlock(b.dataset.add)));
+document.querySelectorAll('.fmt button').forEach(btn=>{
+  btn.addEventListener('mousedown',e=>e.preventDefault());
+  btn.addEventListener('click',()=>{
+    restoreSelection();
+    const cmd=btn.dataset.cmd;
+    if(cmd==='createLink'){const url=prompt('Link URL:','https://');if(url)document.execCommand('createLink',false,urlHref(url));}
+    else document.execCommand(cmd,false,null);
+    // persist the edited block html
+    const el=document.activeElement;
+    const ce=window.getSelection().anchorNode&&window.getSelection().anchorNode.parentElement.closest('[contenteditable]');
+    if(ce){const b=blocks.find(x=>x.id===ce.dataset.id);if(b){b[ce.dataset.prop]=ce.innerHTML;save();}}
+  });
+});
+
+/* ---------- EXPORT: email-safe HTML ---------- */
+function exportInner(b){
+  const f=settings.font;
+  switch(b.type){
+    case 'header':
+      return `<tr><td align="center" bgcolor="${b.bg}" style="background:${b.bg};padding:24px 28px;">
+        ${b.link?`<a href="${urlHref(b.link)}" target="_blank" style="text-decoration:none;">`:''}
+        <img src="${esc(b.logo)}" alt="Safer Charging" height="34" style="height:34px;width:auto;border:0;display:inline-block;">
+        ${b.link?'</a>':''}</td></tr>`;
+    case 'heading':
+      return `<tr><td align="${b.align}" style="padding:18px 28px 6px;font-family:${f};font-size:${b.size}px;line-height:1.25;font-weight:bold;color:#0B1B3F;">${b.text}</td></tr>`;
+    case 'text':
+      return `<tr><td align="${b.align}" style="padding:8px 28px;font-family:${f};font-size:15px;line-height:1.6;color:${settings.text};">${b.html}</td></tr>`;
+    case 'button':{
+      const al=b.align==='center'?'center':b.align==='right'?'right':'left';
+      return `<tr><td align="${al}" style="padding:14px 28px;">
+        <table border="0" cellpadding="0" cellspacing="0"><tr>
+          <td align="center" bgcolor="${settings.accent}" style="border-radius:8px;">
+            <a href="${urlHref(b.url)}" target="_blank" style="display:inline-block;padding:13px 28px;font-family:${f};font-size:15px;font-weight:bold;color:#ffffff;text-decoration:none;border-radius:8px;">${b.label}</a>
+          </td></tr></table></td></tr>`;
+    }
+    case 'image':{
+      const img=`<img src="${esc(b.src)}" alt="${esc(b.alt)}" width="${Math.round((settings.width-56)*b.width/100)}" style="width:${b.width}%;max-width:100%;height:auto;border:0;display:inline-block;">`;
+      return `<tr><td align="${b.align}" style="padding:12px 28px;">${b.link?`<a href="${urlHref(b.link)}" target="_blank">${img}</a>`:img}</td></tr>`;
+    }
+    case 'divider':
+      return `<tr><td style="padding:8px 28px;"><table width="100%" cellpadding="0" cellspacing="0"><tr><td style="border-top:1px solid #e4e8f0;font-size:0;line-height:0;">&nbsp;</td></tr></table></td></tr>`;
+    case 'spacer':
+      return `<tr><td style="height:${b.height}px;line-height:${b.height}px;font-size:0;">&nbsp;</td></tr>`;
+    case 'text2col':
+      return `<tr><td style="padding:8px 28px;"><table width="100%" cellpadding="0" cellspacing="0"><tr>
+        <td valign="top" width="48%" style="font-family:${f};font-size:14px;line-height:1.6;color:${settings.text};">${b.left}</td>
+        <td width="4%">&nbsp;</td>
+        <td valign="top" width="48%" style="font-family:${f};font-size:14px;line-height:1.6;color:${settings.text};">${b.right}</td>
+      </tr></table></td></tr>`;
+  }
+  return '';
+}
+
+function exportHTML(){
+  const rows=blocks.map(exportInner).join('\n');
+  const pre=settings.preheader?`<div style="display:none;max-height:0;overflow:hidden;opacity:0;">${esc(settings.preheader)}</div>`:'';
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Safer Charging</title>
+</head>
+<body style="margin:0;padding:0;background:${settings.bodyBg};">
+${pre}
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:${settings.bodyBg};">
+  <tr><td align="center" style="padding:24px 12px;">
+    <table role="presentation" width="${settings.width}" cellpadding="0" cellspacing="0" style="width:${settings.width}px;max-width:100%;background:${settings.contentBg};border-radius:8px;overflow:hidden;">
+${rows}
+    </table>
+  </td></tr>
+</table>
+</body>
+</html>`;
+}
+
+/* ---------- top actions ---------- */
+let tT;
+function toast(m){const t=$('toast');t.textContent=m;t.classList.add('show');clearTimeout(tT);tT=setTimeout(()=>t.classList.remove('show'),1800);}
+$('copyBtn').addEventListener('click',async()=>{
+  try{await navigator.clipboard.writeText(exportHTML());toast('Email HTML copied');}
+  catch(e){$('codeArea').removeAttribute('readonly');$('codeArea').value=exportHTML();$('codeArea').select();document.execCommand('copy');toast('Copied');}
+});
+$('downloadBtn').addEventListener('click',()=>{
+  const blob=new Blob([exportHTML()],{type:'text/html'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='safer-charging-email.html';a.click();URL.revokeObjectURL(a.href);toast('Downloaded');
+});
+$('previewBtn').addEventListener('click',()=>{$('previewFrame').srcdoc=exportHTML();$('mPreview').classList.add('show');});
+$('codeBtn').addEventListener('click',()=>{$('codeArea').value=exportHTML();$('mCode').classList.add('show');});
+document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>document.querySelectorAll('.modal').forEach(m=>m.classList.remove('show'))));
+document.querySelectorAll('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('show');}));
+$('clearBtn').addEventListener('click',()=>{if(confirm('Clear everything and start from the default template?')){seed();selected=null;save();renderCanvas();}});
+
+/* ---------- init ---------- */
+if(!load())seed();
+syncSettingsInputs();
+renderCanvas();
+</script>
+</body>
+</html>

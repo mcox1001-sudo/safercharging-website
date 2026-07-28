@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0B1B3F">
+<title>Email Signature Creator | Safer Charging</title>
+<meta name="description" content="Create a branded Safer Charging email signature and copy it straight into Gmail, Outlook or Apple Mail.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/sc-favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Enriqueta:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy:#0B1B3F;--navy-deep:#071233;--gold:#E8DE25;--gold-deep:#C28F1C;--lime:#E8B923;
+  --slate:#3F4A48;--mist:#EFF2F8;--line:#e4e8f0;--white:#fff;
+  --font-display:'Enriqueta',Georgia,serif;--font-body:'Inter',system-ui,sans-serif;
+  --ease:cubic-bezier(0.25,0.46,0.45,0.94);
+}
+html{-webkit-font-smoothing:antialiased;}
+body{font-family:var(--font-body);background:var(--mist);color:var(--navy);line-height:1.5;}
+a{color:inherit;}
+
+/* Top bar */
+.bar{background:var(--navy);color:#fff;padding:14px 0;position:sticky;top:0;z-index:50;box-shadow:0 4px 24px rgba(0,0,0,.16);}
+.bar-in{max-width:1240px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.bar-logo img{height:30px;width:auto;display:block;}
+.bar-nav{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+.bar-nav a{font-size:13px;font-weight:600;color:rgba(255,255,255,.82);padding:8px 12px;border-radius:8px;text-decoration:none;transition:.2s var(--ease);}
+.bar-nav a:hover{background:rgba(255,255,255,.1);color:#fff;}
+.bar-nav a.on{background:var(--gold);color:var(--navy);}
+
+.wrap{max-width:1240px;margin:0 auto;padding:28px 24px 80px;}
+.head{margin:8px 0 22px;}
+.head .kick{font-size:12px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--gold-deep);}
+.head h1{font-family:var(--font-display);font-size:clamp(26px,3.4vw,38px);font-weight:700;margin:6px 0 8px;}
+.head p{color:var(--slate);max-width:640px;font-size:15px;}
+
+.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:26px;align-items:start;}
+@media(max-width:940px){.grid{grid-template-columns:1fr;}}
+
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 2px 14px rgba(11,27,63,.05);}
+.card h2{font-family:var(--font-display);font-size:18px;margin-bottom:4px;}
+.card .sub{font-size:13px;color:var(--slate);margin-bottom:18px;}
+
+.field{margin-bottom:14px;}
+.field label{display:block;font-size:12.5px;font-weight:600;margin-bottom:5px;color:var(--navy);}
+.field input,.field select,.field textarea{
+  width:100%;padding:10px 12px;border:1.5px solid var(--line);border-radius:9px;font-family:inherit;
+  font-size:14px;color:var(--navy);background:#fbfcfe;transition:.18s var(--ease);
+}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold-deep);background:#fff;box-shadow:0 0 0 3px rgba(194,143,28,.12);}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+@media(max-width:520px){.row{grid-template-columns:1fr;}}
+.subtle{font-size:11.5px;color:#8a93a6;margin-top:4px;}
+
+.toggles{display:flex;flex-wrap:wrap;gap:10px 18px;margin:6px 0 4px;}
+.toggle{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:500;cursor:pointer;}
+.toggle input{width:auto;}
+
+.swatches{display:flex;gap:8px;flex-wrap:wrap;}
+.sw{width:30px;height:30px;border-radius:8px;border:2px solid #fff;box-shadow:0 0 0 1.5px var(--line);cursor:pointer;transition:.15s;}
+.sw:hover{transform:scale(1.08);}
+.sw.sel{box-shadow:0 0 0 2px var(--navy);}
+
+.divider{height:1px;background:var(--line);margin:18px 0;}
+
+/* Preview */
+.previewwrap{position:sticky;top:82px;}
+.preview-note{font-size:12px;color:var(--slate);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.dot{width:8px;height:8px;border-radius:50%;background:#37b24d;box-shadow:0 0 0 3px rgba(55,178,77,.18);}
+.stage{background:#fff;border:1px solid var(--line);border-radius:14px;padding:30px 26px;min-height:150px;overflow:auto;}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:10px;font-size:14px;font-weight:600;border:none;cursor:pointer;font-family:inherit;transition:.2s var(--ease);}
+.btn-primary{background:var(--gold);color:var(--navy);box-shadow:0 8px 22px rgba(232,222,37,.32);}
+.btn-primary:hover{background:#f0e94d;transform:translateY(-1px);}
+.btn-ghost{background:#fff;color:var(--navy);border:1.5px solid var(--line);}
+.btn-ghost:hover{border-color:var(--navy);}
+.btn:active{transform:translateY(1px);}
+
+.hint{background:#f3f6fc;border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-top:18px;font-size:13px;color:var(--slate);}
+.hint h3{font-size:13px;color:var(--navy);margin-bottom:8px;letter-spacing:.3px;text-transform:uppercase;}
+.hint ol{margin:0 0 0 18px;}
+.hint li{margin-bottom:5px;}
+.hint b{color:var(--navy);}
+
+.code{margin-top:16px;}
+.code summary{cursor:pointer;font-size:13px;font-weight:600;color:var(--gold-deep);}
+.code textarea{width:100%;height:180px;margin-top:10px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;border:1.5px solid var(--line);border-radius:10px;padding:12px;background:#fbfcfe;color:var(--navy);resize:vertical;}
+
+.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(30px);background:var(--navy);color:#fff;padding:13px 22px;border-radius:11px;font-size:14px;font-weight:600;box-shadow:0 12px 40px rgba(0,0,0,.3);opacity:0;pointer-events:none;transition:.3s var(--ease);z-index:100;}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+.foot{text-align:center;color:#9aa3b4;font-size:12.5px;padding:26px 0 0;}
+</style>
+</head>
+<body>
+<div class="bar">
+  <div class="bar-in">
+    <a class="bar-logo" href="index.html" aria-label="Safer Charging"><img src="assets/sc-logo-horizontal-white.png" alt="Safer Charging"></a>
+    <nav class="bar-nav">
+      <a href="email-signature.html" class="on">Signature Creator</a>
+      <a href="email-builder.html">Email Builder</a>
+      <a href="index.html">&larr; Website</a>
+    </nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="head">
+    <div class="kick">Team tools</div>
+    <h1>Email signature creator</h1>
+    <p>Fill in the details, watch the preview update, then copy your signature straight into Gmail, Outlook or Apple Mail. Everything is on-brand and built to render reliably across email clients.</p>
+  </div>
+
+  <div class="grid">
+    <!-- FORM -->
+    <div class="card">
+      <h2>Your details</h2>
+      <div class="sub">Start from a saved team member, or enter your own.</div>
+
+      <div class="field">
+        <label for="preset">Quick fill</label>
+        <select id="preset">
+          <option value="">— Blank / enter manually —</option>
+          <option value="chris">Chris Cheetham — Founder &amp; Managing Director</option>
+          <option value="ben">Benjamin Wood — Sales Operations Manager</option>
+          <option value="dan">Daniel Murphy — UK Field Service Manager</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <div class="field"><label for="name">Full name</label><input id="name" type="text" placeholder="Jane Smith"></div>
+        <div class="field"><label for="title">Job title</label><input id="title" type="text" placeholder="Field Service Engineer"></div>
+      </div>
+      <div class="field"><label for="company">Company</label><input id="company" type="text" value="Safer Charging"></div>
+
+      <div class="row">
+        <div class="field"><label for="mobile">Mobile</label><input id="mobile" type="text" placeholder="07123 456789"></div>
+        <div class="field"><label for="office">Office phone</label><input id="office" type="text" placeholder="0330 000 0000"></div>
+      </div>
+      <div class="row">
+        <div class="field"><label for="email">Email</label><input id="email" type="email" placeholder="jane@safercharging.co.uk"></div>
+        <div class="field"><label for="website">Website</label><input id="website" type="text" value="safercharging.co.uk"></div>
+      </div>
+      <div class="field"><label for="linkedin">LinkedIn URL <span class="subtle">(optional)</span></label><input id="linkedin" type="text" placeholder="https://www.linkedin.com/in/..."></div>
+      <div class="field"><label for="tagline">Tagline <span class="subtle">(optional, shown under name)</span></label><input id="tagline" type="text" placeholder="EV charge point maintenance specialists"></div>
+
+      <div class="divider"></div>
+
+      <h2>Branding</h2>
+      <div class="sub">Logo shown on the left of the signature.</div>
+      <div class="field">
+        <label for="logo">Logo image URL</label>
+        <input id="logo" type="text" value="https://safercharging-website.vercel.app/assets/sc-logo-horizontal.png">
+        <div class="subtle">Uses the live hosted logo so it renders in email. Update to your safercharging.co.uk URL once the domain is live.</div>
+      </div>
+      <div class="field">
+        <label>Accent colour</label>
+        <div class="swatches" id="swatches">
+          <span class="sw sel" data-c="#C28F1C" style="background:#C28F1C" title="Gold"></span>
+          <span class="sw" data-c="#0B1B3F" style="background:#0B1B3F" title="Navy"></span>
+          <span class="sw" data-c="#E8B923" style="background:#E8B923" title="Lime"></span>
+          <span class="sw" data-c="#3F4A48" style="background:#3F4A48" title="Slate"></span>
+        </div>
+      </div>
+
+      <div class="toggles">
+        <label class="toggle"><input type="checkbox" id="showLogo" checked> Show logo</label>
+        <label class="toggle"><input type="checkbox" id="showCta" checked> Show "Book an audit" button</label>
+        <label class="toggle"><input type="checkbox" id="showDisc"> Show confidentiality note</label>
+      </div>
+    </div>
+
+    <!-- PREVIEW -->
+    <div class="previewwrap">
+      <div class="card">
+        <div class="preview-note"><span class="dot"></span> Live preview — this is exactly what recipients will see</div>
+        <div class="stage" id="stage"></div>
+        <div class="actions">
+          <button class="btn btn-primary" id="copyRich">Copy signature</button>
+          <button class="btn btn-ghost" id="copyHtml">Copy HTML source</button>
+          <button class="btn btn-ghost" id="download">Download .html</button>
+        </div>
+
+        <details class="code">
+          <summary>View / edit HTML source</summary>
+          <textarea id="source" spellcheck="false" readonly></textarea>
+        </details>
+
+        <div class="hint">
+          <h3>How to install it</h3>
+          <ol>
+            <li><b>Gmail:</b> Settings (gear) → See all settings → General → Signature → create/select one → click in the box → paste (Ctrl/Cmd&nbsp;+&nbsp;V) → Save changes.</li>
+            <li><b>Outlook (new / web):</b> Settings → Accounts → Signatures → New signature → paste → Save.</li>
+            <li><b>Apple Mail:</b> Mail → Settings → Signatures → create one, then paste. (Untick "Always match my default message font".)</li>
+          </ol>
+          <div style="margin-top:8px;">Use <b>Copy signature</b> for a ready-to-paste signature. Use <b>Copy HTML source</b> only where a tool asks for raw HTML.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">Safer Charging · internal tool · nothing you type here is sent anywhere — it all runs in your browser.</div>
+</div>
+
+<div class="toast" id="toast">Copied</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const fields = ['name','title','company','mobile','office','email','website','linkedin','tagline','logo'];
+const toggles = ['showLogo','showCta','showDisc'];
+let accent = '#C28F1C';
+
+const presets = {
+  chris:{name:'Chris Cheetham',title:'Founder & Managing Director',email:'chris@safercharging.co.uk',tagline:'EV charge point maintenance specialists',linkedin:''},
+  ben:{name:'Benjamin Wood',title:'Sales Operations Manager',email:'ben@safercharging.co.uk',tagline:'EV charge point maintenance specialists',linkedin:'https://www.linkedin.com/in/benjamin-wood-032050185/'},
+  dan:{name:'Daniel Murphy',title:'UK Field Service Manager',email:'dan@safercharging.co.uk',tagline:'EV charge point maintenance specialists',linkedin:'https://www.linkedin.com/in/daniel-m-0889b6394/'}
+};
+
+function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function telHref(s){return 'tel:'+(s||'').replace(/[^+\d]/g,'');}
+function urlHref(s){s=(s||'').trim();if(!s)return '';return /^https?:\/\//i.test(s)?s:'https://'+s;}
+
+function buildSignature(){
+  const v = {};
+  fields.forEach(f=>v[f]=$(f).value.trim());
+  const showLogo=$('showLogo').checked, showCta=$('showCta').checked, showDisc=$('showDisc').checked;
+  const web = v.website.replace(/^https?:\/\//i,'').replace(/\/$/,'');
+  const line = (label,inner)=>`<tr><td style="padding:1px 0;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#3F4A48;"><span style="display:inline-block;width:52px;color:#9aa3b4;">${label}</span>${inner}</td></tr>`;
+
+  let contact = '';
+  if(v.mobile) contact += line('Mobile', `<a href="${telHref(v.mobile)}" style="color:#0B1B3F;text-decoration:none;">${esc(v.mobile)}</a>`);
+  if(v.office) contact += line('Office', `<a href="${telHref(v.office)}" style="color:#0B1B3F;text-decoration:none;">${esc(v.office)}</a>`);
+  if(v.email)  contact += line('Email', `<a href="mailto:${esc(v.email)}" style="color:#0B1B3F;text-decoration:none;">${esc(v.email)}</a>`);
+  if(web)      contact += line('Web', `<a href="${urlHref(v.website)}" style="color:${accent};text-decoration:none;font-weight:bold;">${esc(web)}</a>`);
+  if(v.linkedin) contact += line('LinkedIn', `<a href="${urlHref(v.linkedin)}" style="color:${accent};text-decoration:none;">View profile</a>`);
+
+  const logoCell = (showLogo && v.logo) ? `
+      <td style="padding:0 20px 0 0;vertical-align:top;border-right:3px solid ${accent};">
+        <img src="${esc(v.logo)}" alt="${esc(v.company)}" width="150" style="display:block;border:0;width:150px;max-width:150px;height:auto;">
+      </td>` : '';
+
+  const cta = showCta ? `
+      <tr><td style="padding:12px 0 0;">
+        <a href="https://safercharging.co.uk/contact.html" style="background:${accent};color:#ffffff;font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;text-decoration:none;padding:9px 16px;border-radius:6px;display:inline-block;">Book a Charge Point Audit</a>
+      </td></tr>` : '';
+
+  const disc = showDisc ? `
+    <tr><td style="padding:14px 0 0;font-family:Arial,Helvetica,sans-serif;font-size:10px;line-height:14px;color:#aeb6c4;">
+      This email and any attachments are confidential and intended solely for the addressee. If you have received it in error, please notify the sender and delete it.
+    </td></tr>` : '';
+
+  return `<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;">
+  <tr>
+    ${logoCell}
+    <td style="padding:0 0 0 ${showLogo&&v.logo?'20px':'0'};vertical-align:top;">
+      <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;">
+        <tr><td style="font-family:Arial,Helvetica,sans-serif;font-size:17px;font-weight:bold;color:#0B1B3F;padding:0 0 1px;">${esc(v.name)||'Your Name'}</td></tr>
+        <tr><td style="font-family:Arial,Helvetica,sans-serif;font-size:12.5px;color:#3F4A48;padding:0 0 2px;">${esc(v.title)}${v.title&&v.company?', ':''}<span style="color:#0B1B3F;font-weight:bold;">${esc(v.company)}</span></td></tr>
+        ${v.tagline?`<tr><td style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:${accent};font-weight:bold;letter-spacing:.3px;padding:0 0 8px;">${esc(v.tagline)}</td></tr>`:'<tr><td style="height:8px;line-height:8px;font-size:0;">&nbsp;</td></tr>'}
+        ${contact}
+        ${cta}
+        ${disc}
+      </table>
+    </td>
+  </tr>
+</table>`;
+}
+
+function render(){
+  const html = buildSignature();
+  $('stage').innerHTML = html;
+  $('source').value = html;
+}
+
+// wire inputs
+fields.concat(toggles).forEach(id=>{
+  const el=$(id); if(!el) return;
+  el.addEventListener(el.type==='checkbox'?'change':'input', render);
+});
+
+// swatches
+document.querySelectorAll('.sw').forEach(s=>{
+  s.addEventListener('click',()=>{
+    document.querySelectorAll('.sw').forEach(x=>x.classList.remove('sel'));
+    s.classList.add('sel'); accent=s.dataset.c; render();
+  });
+});
+
+// preset
+$('preset').addEventListener('change',e=>{
+  const p=presets[e.target.value]; if(!p) return;
+  Object.keys(p).forEach(k=>{ if($(k)) $(k).value=p[k]; });
+  render();
+});
+
+// toast
+let tT;
+function toast(msg){const t=$('toast');t.textContent=msg;t.classList.add('show');clearTimeout(tT);tT=setTimeout(()=>t.classList.remove('show'),1800);}
+
+// copy rich (formatted) signature
+$('copyRich').addEventListener('click',async()=>{
+  const html=buildSignature();
+  try{
+    await navigator.clipboard.write([new ClipboardItem({
+      'text/html':new Blob([html],{type:'text/html'}),
+      'text/plain':new Blob([$('stage').innerText],{type:'text/plain'})
+    })]);
+    toast('Signature copied — now paste into your email settings');
+  }catch(err){
+    // fallback: select the rendered node and execCommand
+    const r=document.createRange();r.selectNode($('stage'));
+    const sel=window.getSelection();sel.removeAllRanges();sel.addRange(r);
+    try{document.execCommand('copy');toast('Signature copied');}catch(e){toast('Press Ctrl/Cmd+C to copy');}
+    sel.removeAllRanges();
+  }
+});
+$('copyHtml').addEventListener('click',async()=>{
+  try{await navigator.clipboard.writeText(buildSignature());toast('HTML source copied');}
+  catch(e){$('source').removeAttribute('readonly');$('source').select();document.execCommand('copy');toast('HTML copied');}
+});
+$('download').addEventListener('click',()=>{
+  const blob=new Blob([`<!doctype html><meta charset="utf-8"><body>${buildSignature()}</body>`],{type:'text/html'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);
+  a.download=(($('name').value||'signature').toLowerCase().replace(/[^a-z0-9]+/g,'-'))+'-signature.html';
+  a.click();URL.revokeObjectURL(a.href);toast('Downloaded');
+});
+
+render();
+</script>
+</body>
+</html>

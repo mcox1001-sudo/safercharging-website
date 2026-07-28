@@ -1,20 +1,24 @@
 # Safer Charging website — deployment & go-live guide
 
-This is a **static website** (plain HTML/CSS/JS — no build step, no server). That
-makes it cheap and simple to host. It currently lives at
-`https://safercharging-website.vercel.app` and is deployed automatically by Vercel.
+This is a **static website** (plain HTML/CSS/JS — no build step, no server, no
+`package.json`). That makes it cheap and simple to host anywhere, including
+**AWS Amplify Hosting**.
 
-This guide covers three things:
+The repo includes `amplify.yml` at the root, so Amplify needs **zero configuration**
+— it deploys the files as-is with no build step.
+
+This guide covers:
 
 1. Move the code into the Safer Charging repo (`SaferChargingLimited/website-`)
-2. Deploy it on Vercel from that repo
+2. Deploy it on **AWS Amplify**
 3. Point the live domain **safercharging.co.uk** (currently on Wix/Squarespace) at it
+4. (Optional) Vercel, as an alternative/backup host
 
 ---
 
 ## 1. Move the code into `SaferChargingLimited/website-`
 
-Run these from your own computer (you need Git installed and access to the
+Run these from your own computer (you need Git installed and push access to the
 SaferChargingLimited org). The source repo is public, so this copies everything —
 **full history included**.
 
@@ -34,50 +38,63 @@ Notes:
 
 ---
 
-## 2. Deploy on Vercel (free, recommended)
+## 2. Deploy on AWS Amplify
 
-Vercel hosts static sites for free and redeploys automatically on every push.
+1. Sign in to the **AWS Console** with the account that should own this (ideally a
+   Safer Charging company AWS account, not a personal one) → search for **Amplify** →
+   open **AWS Amplify**.
+2. **Amplify Hosting → Create app → Host web app** (or "New app → Host web app" on
+   older console versions).
+3. Choose **GitHub** as the source, authorize AWS Amplify's GitHub App if prompted,
+   and grant it access to the **SaferChargingLimited** organization (and specifically
+   the `website-` repo, if GitHub asks you to scope it).
+4. Select repository `SaferChargingLimited/website-` and branch `main`.
+5. **Build settings**: Amplify will detect `amplify.yml` in the repo root
+   automatically — you should see a build spec with empty build commands and
+   `baseDirectory: /`. Leave it as detected. No environment variables are needed.
+6. Click **Save and deploy**. The first deploy takes 1–2 minutes (there's nothing to
+   compile — it's just uploading the files).
+7. You'll get a live URL like `https://main.xxxxxxxxxx.amplifyapp.com`. Open it and
+   click through a few pages to confirm everything looks right before touching the
+   domain.
 
-1. Go to https://vercel.com and sign in (use the account that should own the site —
-   ideally a Safer Charging Google/GitHub login, not a personal one).
-2. **Add New… → Project**.
-3. **Import** the `SaferChargingLimited/website-` repo. (You may need to click
-   "Adjust GitHub App Permissions" and grant Vercel access to the SaferChargingLimited
-   org.)
-4. Framework preset: **Other** (it's a static site). Leave build & output settings
-   empty. Click **Deploy**.
-5. After ~30 seconds you'll get a live `*.vercel.app` URL. Confirm the site looks
-   right there before touching the domain.
+### Custom error page (recommended)
+The site has a branded `404.html`. Wire it up so unknown URLs show it instead of a
+raw AWS error:
+- In the Amplify app → **App settings → Rewrites and redirects** → **Add rule**:
+  - Source address: `/<*>`
+  - Target address: `/404.html`
+  - Type: **404 (Not Found)**
 
-> Alternative host: this site also runs as-is on Netlify, Cloudflare Pages, or GitHub
-> Pages. Vercel is what it's already set up for, so it's the least effort.
+### Every push auto-deploys
+Once connected, any push to `main` on `SaferChargingLimited/website-` triggers a new
+Amplify build+deploy automatically (usually live within a couple of minutes).
 
 ---
 
-## 3. Point safercharging.co.uk at the new site
+## 3. Point safercharging.co.uk at Amplify
 
-The domain currently serves the Wix/Squarespace site. Going live = changing two DNS
-records so the domain resolves to Vercel instead. **Do this only when you're happy
-with the Vercel preview**, as it switches the live site over.
+The domain currently serves the Wix/Squarespace site. Going live = changing DNS so
+the domain resolves to Amplify instead. **Do this only once you're happy with the
+`amplifyapp.com` preview**, since it switches the live site over.
 
-### Step 3a — Add the domain in Vercel
-In your Vercel project: **Settings → Domains → Add** and enter:
-- `safercharging.co.uk`
-- `www.safercharging.co.uk`
+### Step 3a — Add the domain in Amplify
+In your Amplify app → **App settings → Domain management → Add domain**:
+- Enter `safercharging.co.uk`.
+- Amplify will offer to manage both the root domain and `www` — accept the default
+  (root redirects to `www`, or vice versa — either is fine, pick whichever you prefer
+  as the canonical version).
+- Choose **"I have my own DNS"** if the domain's nameservers are NOT AWS Route 53
+  (they're currently on Wix/Squarespace, so this is almost certainly correct).
 
-Vercel will show you the exact DNS records it needs. They are normally:
-
-| Type  | Name / Host | Value                     |
-|-------|-------------|---------------------------|
-| A     | `@`         | `76.76.21.21`             |
-| CNAME | `www`       | `cname.vercel-dns.com`    |
-
-**Use whatever Vercel's Domains screen shows** — treat the table above as the typical
-values, but Vercel's dashboard is the source of truth.
+Amplify will generate the exact DNS records it needs — normally a `CNAME` for `www`
+pointing at an Amplify-provided target, and either a `CNAME`/`ALIAS` or Amplify's
+provided value for the root `@` record. **Use exactly what the Amplify console
+shows you** — the values are unique per app and per AWS region.
 
 ### Step 3b — Find where the domain's DNS is managed
 This is the part people get wrong. The DNS is controlled wherever the domain's
-**nameservers** point — that's usually the same place the domain was bought:
+**nameservers** point — usually the same place the domain was bought:
 - **Wix**: Wix Dashboard → your site → **Settings → Domains** → select the domain →
   **DNS Records** / "Advanced".
 - **Squarespace**: Account → **Domains** → select the domain → **DNS Settings**
@@ -87,23 +104,22 @@ This is the part people get wrong. The DNS is controlled wherever the domain's
   registrar. Log in there instead.
 
 ### Step 3c — Update the records
-In the DNS manager for the domain:
-1. Find the existing **A record** for `@` (the root) that points at Wix/Squarespace —
-   **edit it** to `76.76.21.21` (or delete and re-add).
-2. Find the existing **CNAME** for `www` — point it to `cname.vercel-dns.com`.
-3. If Wix/Squarespace shows the site as "connected" to their builder, you may also need
-   to **disconnect** it from their site so their records stop overriding yours.
+In the DNS manager for the domain, add/edit the records Amplify gave you in Step 3a
+(typically a `CNAME` for `www` and a record for the root `@`). If Wix/Squarespace
+shows the site as "connected" to their builder, you may also need to **disconnect**
+it there first so their records stop overriding yours.
 
 ### Step 3d — ⚠️ Do NOT touch email
-**Leave every `MX` record and any `TXT` records (SPF/DKIM/DMARC) exactly as they are.**
-Those run Safer Charging's email. Only change the `A` (@) and `CNAME` (www) records
-above. Touching MX will break email.
+**Leave every `MX` record and any `TXT` records (SPF/DKIM/DMARC) exactly as they
+are.** Those run Safer Charging's email. Only add/change the records Amplify asked
+for. Touching MX will break email.
 
 ### Step 3e — Wait & verify
 - DNS changes take anywhere from a few minutes to ~24–48 hours to propagate (usually
   under an hour).
-- Vercel auto-issues a free SSL certificate once it sees the records — the domain in
-  Vercel's Domains list will flip to a green "Valid Configuration".
+- Amplify auto-issues a free SSL certificate once it verifies the records — the
+  domain in Amplify's Domain management screen will flip from "Pending verification"
+  to **"Available"**.
 - Test `https://safercharging.co.uk` and `https://www.safercharging.co.uk` in an
   incognito window.
 
@@ -111,11 +127,29 @@ above. Touching MX will break email.
 
 ## Rollback
 
-If anything looks wrong after the switch, set the `A`/`CNAME` records back to the
+If anything looks wrong after the switch, set the DNS records back to the
 Wix/Squarespace values (screenshot them **before** you change anything) and the old
 site returns once DNS propagates.
 
 ## Updating the site later
 
-Any push to the `main` branch of `SaferChargingLimited/website-` redeploys production
-automatically. No manual steps.
+Any push to the `main` branch of `SaferChargingLimited/website-` redeploys
+automatically on Amplify. No manual steps, no build to run.
+
+---
+
+## 4. Alternative: Vercel (already live, works today)
+
+This code is also already deployed and live on Vercel, in case you want a second
+opinion or a stop-gap while Amplify is being set up:
+`https://safercharging-website.vercel.app`
+
+To run this same repo on Vercel instead of/alongside Amplify:
+1. https://vercel.com → **Add New… → Project** → import `SaferChargingLimited/website-`.
+2. Framework preset: **Other**. Leave build & output settings empty. **Deploy**.
+3. **Settings → Domains** → add `safercharging.co.uk` + `www` → Vercel shows you an
+   `A` record (`76.76.21.21`) for `@` and a `CNAME` (`cname.vercel-dns.com`) for `www`
+   — set those at your DNS host, same MX/email warning as above applies.
+
+Only point the domain at **one** host at a time (Amplify *or* Vercel) — pick
+whichever your team prefers to manage long-term.

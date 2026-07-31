@@ -350,7 +350,8 @@
             .fig-grid { grid-template-columns: repeat(2, 1fr); }
             .fig:nth-child(n) { margin-top: 0; }
             .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
-            .hero-rail { position: static; background: var(--navy-deep); }
+            .hero { flex-direction: column; }
+            .hero-rail { position: static; background: var(--navy-deep); width: 100%; }
         }
         @media (max-width: 720px) {
             .container, .nav-inner, .hero-content { padding-left: 22px; padding-right: 22px; }
@@ -406,7 +407,7 @@
     <!-- HERO -->
     <section class="hero" id="hero">
         <div class="hero-media">
-            <img class="hero-fallback" src="https://images.pexels.com/photos/37576187/pexels-photo-37576187.jpeg?auto=compress&cs=tinysrgb&w=1920" onerror="this.onerror=null;this.src=\'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzBCMUIzRiIvPjxwYXRoIGQ9Ik0yMTQgOTIgTDE3NiAxNzQgaDI4IGwtMTQgNjIgNTAgLTg4IGgtMzAgeiIgZmlsbD0iI0U4REUyNSIgb3BhY2l0eT0iMC44NSIvPjwvc3ZnPg==\'" alt="A car park of electric vehicle charge points">
+            <img class="hero-fallback" src="https://images.pexels.com/photos/37576187/pexels-photo-37576187.jpeg?auto=compress&cs=tinysrgb&w=1920" onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzBCMUIzRiIvPjxwYXRoIGQ9Ik0yMTQgOTIgTDE3NiAxNzQgaDI4IGwtMTQgNjIgNTAgLTg4IGgtMzAgeiIgZmlsbD0iI0U4REUyNSIgb3BhY2l0eT0iMC44NSIvPjwvc3ZnPg=='" alt="A car park of electric vehicle charge points">
             <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="auto"
                    poster="https://images.pexels.com/photos/37576187/pexels-photo-37576187.jpeg?auto=compress&cs=tinysrgb&w=1920"><source src="https://videos.pexels.com/video-files/4817951/4817951-uhd_2560_1440_30fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/4817951/4817951-hd_1920_1080_30fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/4817951/4817951-hd_1920_1080_25fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/4817951/4817951-hd_1920_1080_24fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/4817951/4817951-hd_1280_720_30fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/4817951/4817951-hd_1280_720_25fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/4817951/4817951-sd_960_540_30fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/4817951/4817951-sd_640_360_30fps.mp4" type="video/mp4"><source src="https://cdn.coverr.co/videos/coverr-charging-an-electric-car-1573/1080p.mp4" type="video/mp4"></video>
         </div>
@@ -508,25 +509,25 @@
             <h2 class="ed-h reveal">Comprehensive charge point <em>support</em>.</h2>
             <div class="svc">
                 <a href="services.html" class="svc-row reveal">
-                    <div class="svc-thumb"><img src="https://static.wixstatic.com/media/ab875a_040ff05e29df4e23ad017ac9f48b28fa~mv2.png/v1/fill/w_400,h_264,al_c,q_90,enc_avif,quality_auto/Office%20Charge%20point.png" onerror="this.onerror=null;this.src=\'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzBCMUIzRiIvPjxwYXRoIGQ9Ik0yMTQgOTIgTDE3NiAxNzQgaDI4IGwtMTQgNjIgNTAgLTg4IGgtMzAgeiIgZmlsbD0iI0U4REUyNSIgb3BhY2l0eT0iMC44NSIvPjwvc3ZnPg==\'" alt="EV charge points being maintained"></div><span class="svc-no">01</span>
+                    <div class="svc-thumb"><img src="https://static.wixstatic.com/media/ab875a_040ff05e29df4e23ad017ac9f48b28fa~mv2.png/v1/fill/w_400,h_264,al_c,q_90,enc_avif,quality_auto/Office%20Charge%20point.png" onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzBCMUIzRiIvPjxwYXRoIGQ9Ik0yMTQgOTIgTDE3NiAxNzQgaDI4IGwtMTQgNjIgNTAgLTg4IGgtMzAgeiIgZmlsbD0iI0U4REUyNSIgb3BhY2l0eT0iMC44NSIvPjwvc3ZnPg=='" alt="EV charge points being maintained"></div><span class="svc-no">01</span>
                     <h3>Maintenance &amp; aftercare</h3>
                     <span class="svc-desc">Preventative and reactive maintenance under a clear plan, sized to your estate, to minimise downtime.</span>
                     <span class="svc-go"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
                 </a>
                 <a href="risk-assessments.html" class="svc-row reveal">
-                    <div class="svc-thumb"><img src="https://images.pexels.com/photos/9800004/pexels-photo-9800004.jpeg?auto=compress&cs=tinysrgb&w=400" onerror="this.onerror=null;this.src=\'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzBCMUIzRiIvPjxwYXRoIGQ9Ik0yMTQgOTIgTDE3NiAxNzQgaDI4IGwtMTQgNjIgNTAgLTg4IGgtMzAgeiIgZmlsbD0iI0U4REUyNSIgb3BhY2l0eT0iMC44NSIvPjwvc3ZnPg==\'" alt="EV charger inspection"></div><span class="svc-no">02</span>
+                    <div class="svc-thumb"><img src="https://images.pexels.com/photos/9800004/pexels-photo-9800004.jpeg?auto=compress&cs=tinysrgb&w=400" onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzBCMUIzRiIvPjxwYXRoIGQ9Ik0yMTQgOTIgTDE3NiAxNzQgaDI4IGwtMTQgNjIgNTAgLTg4IGgtMzAgeiIgZmlsbD0iI0U4REUyNSIgb3BhY2l0eT0iMC44NSIvPjwvc3ZnPg=='" alt="EV charger inspection"></div><span class="svc-no">02</span>
                     <h3>Fire risk &amp; compliance</h3>
                     <span class="svc-desc">EV-specific electrical inspection and fire risk assessment, plus the remediation, with insurer-ready reporting.</span>
                     <span class="svc-go"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
                 </a>
                 <a href="contact.html" class="svc-row reveal">
-                    <div class="svc-thumb"><img src="https://images.pexels.com/photos/4699781/pexels-photo-4699781.jpeg?auto=compress&cs=tinysrgb&w=400" onerror="this.onerror=null;this.src=\'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzBCMUIzRiIvPjxwYXRoIGQ9Ik0yMTQgOTIgTDE3NiAxNzQgaDI4IGwtMTQgNjIgNTAgLTg4IGgtMzAgeiIgZmlsbD0iI0U4REUyNSIgb3BhY2l0eT0iMC44NSIvPjwvc3ZnPg==\'" alt="EV charge point audit"></div><span class="svc-no">03</span>
+                    <div class="svc-thumb"><img src="https://images.pexels.com/photos/4699781/pexels-photo-4699781.jpeg?auto=compress&cs=tinysrgb&w=400" onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzBCMUIzRiIvPjxwYXRoIGQ9Ik0yMTQgOTIgTDE3NiAxNzQgaDI4IGwtMTQgNjIgNTAgLTg4IGgtMzAgeiIgZmlsbD0iI0U4REUyNSIgb3BhY2l0eT0iMC44NSIvPjwvc3ZnPg=='" alt="EV charge point audit"></div><span class="svc-no">03</span>
                     <h3>Charge Point Audit</h3>
                     <span class="svc-desc">A non-invasive survey that maps the estate and gives an honest picture of condition, risk and compliance.</span>
                     <span class="svc-go"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
                 </a>
-                <a href="services.html#partners" class="svc-row reveal">
-                    <div class="svc-thumb"><img src="https://images.pexels.com/photos/9800029/pexels-photo-9800029.jpeg?auto=compress&cs=tinysrgb&w=400" onerror="this.onerror=null;this.src=\'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzBCMUIzRiIvPjxwYXRoIGQ9Ik0yMTQgOTIgTDE3NiAxNzQgaDI4IGwtMTQgNjIgNTAgLTg4IGgtMzAgeiIgZmlsbD0iI0U4REUyNSIgb3BhY2l0eT0iMC44NSIvPjwvc3ZnPg==\'" alt="Network of EV charge points"></div><span class="svc-no">04</span>
+                <a href="services.html#cpo" class="svc-row reveal">
+                    <div class="svc-thumb"><img src="https://images.pexels.com/photos/9800029/pexels-photo-9800029.jpeg?auto=compress&cs=tinysrgb&w=400" onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzBCMUIzRiIvPjxwYXRoIGQ9Ik0yMTQgOTIgTDE3NiAxNzQgaDI4IGwtMTQgNjIgNTAgLTg4IGgtMzAgeiIgZmlsbD0iI0U4REUyNSIgb3BhY2l0eT0iMC44NSIvPjwvc3ZnPg=='" alt="Network of EV charge points"></div><span class="svc-no">04</span>
                     <h3>CPO, OEM &amp; installer partnership</h3>
                     <span class="svc-desc">The maintenance arm for your installed base. No new install or design, so no channel conflict.</span>
                     <span class="svc-go"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
@@ -574,7 +575,7 @@
             <div class="fig-grid">
                 <div class="fig reveal"><div class="fig-num">500</div><h4>Socket operator trial</h4><p>Combined preventative maintenance and inspection across a national operator's estate, now in its next phase.</p></div>
                 <div class="fig reveal rd-1"><div class="fig-num">Blue&nbsp;light</div><h4>Public sector estates</h4><p>Maintenance and compliance already trusted by several UK police forces, via recognised buying-group frameworks.</p></div>
-                <div class="fig reveal rd-2"><div class="fig-num">560<span style="font-size:0.55em;">+</span></div><h4>UK installer network</h4><p>A partner network of enriched UK EV installers, coverage and joint-bid strength, never a competitor.</p></div>
+                <div class="fig reveal rd-2"><div class="fig-num">560<span style="font-size:0.55em;">+</span></div><h4>UK installer network</h4><p>A UK-wide partner network giving us national coverage and joint-bid strength, a collaborator on delivery, never a competitor for your maintenance.</p></div>
                 <div class="fig reveal rd-3"><div class="fig-num">99<span style="font-size:0.55em;">%</span></div><h4>The reliability bar</h4><p>The uptime rapid networks must now hit under the Public Charge Point Regulations. Maintenance is how you get there.</p></div>
             </div>
             <p class="fig-note">Client names are treated as sensitive and used only with permission. Figures reflect delivered work; we back service levels only where we have the local resource to deliver them.</p>
@@ -607,7 +608,7 @@
                     <div><h3>A partner who actually picks up</h3><p>A handful of chargers that need to just work, and the big providers put smaller sites at the back of the queue. We're the opposite: responsive, simple, audit-first.</p></div>
                     <span class="dir-idx">04</span>
                 </a>
-                <a href="services.html#partners" class="dir-row reveal">
+                <a href="services.html#cpo" class="dir-row reveal">
                     <span class="dir-tag">Installers &amp; OEMs</span>
                     <div><h3>A partner, not a competitor</h3><p>Your customers expect ongoing maintenance and tenders ask for a credible partner. We never touch new install or design, we're the maintenance arm for your installed base.</p></div>
                     <span class="dir-idx">05</span>
@@ -690,7 +691,7 @@
                         <li><a href="services.html">Maintenance &amp; aftercare</a></li>
                         <li><a href="risk-assessments.html">Fire risk &amp; compliance</a></li>
                         <li><a href="contact.html">Charge Point Audit</a></li>
-                        <li><a href="services.html#partners">CPO &amp; OEM support</a></li>
+                        <li><a href="services.html#cpo">CPO &amp; OEM support</a></li>
                         <li><a href="plans.html">Maintenance plans</a></li>
                     </ul>
                 </div>

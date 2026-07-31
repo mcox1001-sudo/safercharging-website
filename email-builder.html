@@ -228,14 +228,40 @@ function seed(){
 
 /* ---------- persistence ---------- */
 function save(){localStorage.setItem(KEY,JSON.stringify({settings,blocks}));}
+const RICH_PROPS=['html','text','label','left','right'];
 function load(){
-  try{const d=JSON.parse(localStorage.getItem(KEY));if(d&&d.blocks&&d.blocks.length){settings=Object.assign(settings,d.settings||{});blocks=d.blocks;return true;}}catch(e){}
+  try{
+    const d=JSON.parse(localStorage.getItem(KEY));
+    if(d&&d.blocks&&d.blocks.length){
+      settings=Object.assign(settings,d.settings||{});
+      blocks=d.blocks;
+      // sanitize anything already sitting in localStorage from before this was added
+      blocks.forEach(b=>RICH_PROPS.forEach(p=>{if(typeof b[p]==='string')b[p]=sanitizeHTML(b[p]);}));
+      return true;
+    }
+  }catch(e){}
   return false;
 }
 
 /* ---------- escaping ---------- */
 function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function urlHref(s){s=(s||'').trim();if(!s)return '';return /^(https?:|mailto:|tel:)/i.test(s)?s:'https://'+s;}
+
+/* Strip anything that shouldn't end up in an email that gets sent to real recipients:
+   script/style tags, on* event handlers, and javascript: URLs picked up from a paste. */
+function sanitizeHTML(html){
+  const tpl=document.createElement('template');
+  tpl.innerHTML=html||'';
+  tpl.content.querySelectorAll('script,style,iframe,object,embed').forEach(n=>n.remove());
+  tpl.content.querySelectorAll('*').forEach(el=>{
+    [...el.attributes].forEach(attr=>{
+      const name=attr.name.toLowerCase();
+      if(name.startsWith('on')) el.removeAttribute(attr.name);
+      if((name==='href'||name==='src')&&/^\s*javascript:/i.test(attr.value)) el.removeAttribute(attr.name);
+    });
+  });
+  return tpl.innerHTML;
+}
 
 /* ---------- editor rendering (WYSIWYG canvas) ---------- */
 function editorInner(b){
@@ -289,7 +315,7 @@ function wireCanvas(){
   document.querySelectorAll('#email [contenteditable]').forEach(el=>{
     el.addEventListener('input',()=>{
       const b=blocks.find(x=>x.id===el.dataset.id); if(!b)return;
-      b[el.dataset.prop]=el.innerHTML; save();
+      b[el.dataset.prop]=sanitizeHTML(el.innerHTML); save();
     });
     el.addEventListener('focus',()=>{selectBlock(el.dataset.id,true);});
     el.addEventListener('blur',saveSelection);
@@ -406,7 +432,7 @@ document.querySelectorAll('.fmt button').forEach(btn=>{
     // persist the edited block html
     const el=document.activeElement;
     const ce=window.getSelection().anchorNode&&window.getSelection().anchorNode.parentElement.closest('[contenteditable]');
-    if(ce){const b=blocks.find(x=>x.id===ce.dataset.id);if(b){b[ce.dataset.prop]=ce.innerHTML;save();}}
+    if(ce){const b=blocks.find(x=>x.id===ce.dataset.id);if(b){b[ce.dataset.prop]=sanitizeHTML(ce.innerHTML);save();}}
   });
 });
 
@@ -416,7 +442,7 @@ function exportInner(b){
   switch(b.type){
     case 'header':
       return `<tr><td align="center" bgcolor="${b.bg}" style="background:${b.bg};padding:24px 28px;">
-        ${b.link?`<a href="${urlHref(b.link)}" target="_blank" style="text-decoration:none;">`:''}
+        ${b.link?`<a href="${urlHref(b.link)}" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">`:''}
         <img src="${esc(b.logo)}" alt="Safer Charging" height="34" style="height:34px;width:auto;border:0;display:inline-block;">
         ${b.link?'</a>':''}</td></tr>`;
     case 'heading':
@@ -428,12 +454,12 @@ function exportInner(b){
       return `<tr><td align="${al}" style="padding:14px 28px;">
         <table border="0" cellpadding="0" cellspacing="0"><tr>
           <td align="center" bgcolor="${settings.accent}" style="border-radius:8px;">
-            <a href="${urlHref(b.url)}" target="_blank" style="display:inline-block;padding:13px 28px;font-family:${f};font-size:15px;font-weight:bold;color:#ffffff;text-decoration:none;border-radius:8px;">${b.label}</a>
+            <a href="${urlHref(b.url)}" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:13px 28px;font-family:${f};font-size:15px;font-weight:bold;color:#ffffff;text-decoration:none;border-radius:8px;">${b.label}</a>
           </td></tr></table></td></tr>`;
     }
     case 'image':{
       const img=`<img src="${esc(b.src)}" alt="${esc(b.alt)}" width="${Math.round((settings.width-56)*b.width/100)}" style="width:${b.width}%;max-width:100%;height:auto;border:0;display:inline-block;">`;
-      return `<tr><td align="${b.align}" style="padding:12px 28px;">${b.link?`<a href="${urlHref(b.link)}" target="_blank">${img}</a>`:img}</td></tr>`;
+      return `<tr><td align="${b.align}" style="padding:12px 28px;">${b.link?`<a href="${urlHref(b.link)}" target="_blank" rel="noopener noreferrer">${img}</a>`:img}</td></tr>`;
     }
     case 'divider':
       return `<tr><td style="padding:8px 28px;"><table width="100%" cellpadding="0" cellspacing="0"><tr><td style="border-top:1px solid #e4e8f0;font-size:0;line-height:0;">&nbsp;</td></tr></table></td></tr>`;

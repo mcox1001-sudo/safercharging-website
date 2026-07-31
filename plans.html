@@ -324,7 +324,6 @@
             border-collapse: collapse;
             background: var(--white);
             border-radius: 16px;
-            overflow: hidden;
             box-shadow: 0 4px 24px rgba(11, 18, 50, 0.04);
         }
 
@@ -383,7 +382,9 @@
 
         .table-wrapper {
             overflow-x: auto;
+            overflow-y: hidden;
             -webkit-overflow-scrolling: touch;
+            border-radius: 16px;
         }
 
         /* FAQ SECTION */
@@ -546,8 +547,8 @@
             .comparison-table tbody td:first-child { position: sticky; left: 0; z-index: 2; min-width: 150px; }
             .comparison-table tbody td:first-child { background: var(--white); box-shadow: 6px 0 8px -6px rgba(11,18,50,0.12); }
             .comparison-table thead th:first-child { background: var(--navy); }
-            .table-wrapper { position: relative; border-radius: 16px; }
-            .table-wrapper::after { content: 'Swipe to compare \\2192'; display: block; text-align: right; font-size: 11px; letter-spacing: 0.4px; color: var(--text-light); padding: 8px 4px 0; }
+            .table-wrapper { position: relative; }
+            .table-wrapper::after { content: 'Swipe to compare \2192'; display: block; text-align: right; font-size: 11px; letter-spacing: 0.4px; color: var(--text-light); padding: 8px 4px 0; }
         }
     
         /* ===== Redesign-skill polish: interaction states, a11y, type detail ===== */

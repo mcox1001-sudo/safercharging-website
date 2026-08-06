@@ -93,25 +93,30 @@ h1,h2{text-wrap:balance;} p{text-wrap:pretty;}
     <p class="p-lead">Safer Charging Limited have published the below policies governing safe usage, data, and associated interactions with our services. We encourage you to view the policies below before engaging with our services:</p>
 
     <!-- Order and document names are exactly as published on the live policies-and-terms page.
-         Items marked .doc-pending are awaiting their live URL. To activate one: change the wrapping
-         <div class="doc doc-pending"> to <a class="doc" href="..."> (add target/rel if external),
-         and swap the .doc-wait span for the .doc-go "Read" span used by the live entries below. -->
+         All six entries are linked. Five point at safercharging.co.uk, which resolves to the Wix
+         site today; those will 404 once the domain is cut over to this build unless the documents
+         are ported across first. The Privacy Notice is already hosted here. -->
+    <!-- The .doc-pending / .doc-wait styles are retained for any future document added before its
+         URL is known: wrap it in a div with those classes instead of an anchor. -->
     <div class="doc-list">
 
-      <!-- A URL was supplied for /chargesafe-surveyor-app-terms, but that slug reads as a terms
-           document while this entry is a Privacy Notice. Left unlinked pending confirmation rather
-           than pointing a privacy notice at a terms page. -->
-      <div class="doc doc-pending">
+      <!-- Slug reads /chargesafe-surveyor-app-terms while the document is titled a Privacy Notice.
+           Confirmed by the CEO as the correct URL for this entry. -->
+      <a class="doc" href="https://www.safercharging.co.uk/chargesafe-surveyor-app-terms" target="_blank" rel="noopener">
         <span class="doc-ico"><svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"/><line x1="10" y1="18" x2="14" y2="18"/></svg></span>
         <span class="doc-main"><h2>ChargeSafe Surveyor App Privacy Notice</h2></span>
-        <span class="doc-wait">Link to confirm</span>
-      </div>
+        <span class="doc-go">Read
+          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </span>
+      </a>
 
-      <div class="doc doc-pending">
+      <a class="doc" href="https://www.safercharging.co.uk/chargesafe-platform-terms" target="_blank" rel="noopener">
         <span class="doc-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
         <span class="doc-main"><h2>ChargeSafe Platform Terms</h2></span>
-        <span class="doc-wait">Link to confirm</span>
-      </div>
+        <span class="doc-go">Read
+          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </span>
+      </a>
 
       <a class="doc" href="https://www.safercharging.co.uk/cookie-policy" target="_blank" rel="noopener">
         <span class="doc-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="9.5" cy="10" r="1"/><circle cx="14.5" cy="13.5" r="1"/><circle cx="10" cy="15" r="1"/></svg></span>
@@ -121,11 +126,13 @@ h1,h2{text-wrap:balance;} p{text-wrap:pretty;}
         </span>
       </a>
 
-      <div class="doc doc-pending">
+      <a class="doc" href="https://www.safercharging.co.uk/general-terms" target="_blank" rel="noopener">
         <span class="doc-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg></span>
         <span class="doc-main"><h2>Safer Charging Standard Terms of Purchase</h2></span>
-        <span class="doc-wait">Link to confirm</span>
-      </div>
+        <span class="doc-go">Read
+          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </span>
+      </a>
 
       <a class="doc" href="privacy.html">
         <span class="doc-ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
@@ -135,11 +142,13 @@ h1,h2{text-wrap:balance;} p{text-wrap:pretty;}
         </span>
       </a>
 
-      <div class="doc doc-pending">
+      <a class="doc" href="https://www.safercharging.co.uk/terms-of-use" target="_blank" rel="noopener">
         <span class="doc-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M12 3a15 15 0 010 18 15 15 0 010-18z"/></svg></span>
         <span class="doc-main"><h2>Safer Charging Website &amp; App Terms of Use</h2></span>
-        <span class="doc-wait">Link to confirm</span>
-      </div>
+        <span class="doc-go">Read
+          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </span>
+      </a>
 
     </div>
 

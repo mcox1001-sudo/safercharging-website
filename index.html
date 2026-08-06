@@ -111,7 +111,7 @@
         .hero-video { z-index: 2; opacity: 0; transition: opacity 1.2s var(--ease); }
         .hero.video-playing .hero-video { opacity: 1; }
         @keyframes kenburns { 0% { transform: scale(1.05) translate(0,0); } 100% { transform: scale(1.16) translate(-1.5%, -1%); } }
-        .hero-scrim { position: absolute; inset: 0; z-index: 3; background: linear-gradient(100deg, rgba(7,18,51,0.95) 0%, rgba(11,27,63,0.8) 46%, rgba(11,27,63,0.4) 100%), linear-gradient(0deg, rgba(7,18,51,0.9) 0%, rgba(7,18,51,0) 42%); }
+        .hero-scrim { position: absolute; inset: 0; z-index: 3; background: linear-gradient(100deg, rgba(7,18,51,0.88) 0%, rgba(11,27,63,0.64) 52%, rgba(11,27,63,0.15) 100%), linear-gradient(0deg, rgba(7,18,51,0.68) 0%, rgba(7,18,51,0) 34%); }
 
         /* animated live-charging hero scene (bespoke, no external media) */
         .hero-scene { position: absolute; z-index: 4; right: 3%; top: 48%; transform: translateY(-50%); width: min(42vw, 480px); pointer-events: none; opacity: 0; animation: fadeUp 1.2s var(--ease-out) 0.7s forwards; }
@@ -282,7 +282,7 @@
         .vision-by { margin-top: 34px; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.5); }
 
         /* ===== ECOSYSTEM (asymmetric: one large, one small) ===== */
-        .eco-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; margin-top: 54px; }
+        .eco-grid { display: grid; grid-template-columns: 1.25fr 1fr 1fr; gap: 24px; margin-top: 54px; }
         .eco-card { border: 1px solid var(--line); padding: 44px 42px; position: relative; overflow: hidden; transition: all 0.4s var(--ease); background: var(--white); display: flex; flex-direction: column; }
         .eco-card.big { border-radius: 2px 34px 2px 2px; background: var(--navy); color: #fff; }
         .eco-card.small { border-radius: 2px 2px 34px 2px; }
@@ -454,7 +454,7 @@
                 <div class="accred-logos">
                     <a href="https://www.safecontractor.com/" target="_blank" rel="noopener" class="accred-item" aria-label="SafeContractor accredited (opens in a new tab)"><img src="https://static.wixstatic.com/media/ab875a_428de7a7c5e44d99bd007a6ed07ac839~mv2.png" alt="SafeContractor accredited"></a>
                     <a href="https://ssip.org.uk/" target="_blank" rel="noopener" class="accred-item" aria-label="SSIP accredited (opens in a new tab)"><img src="https://static.wixstatic.com/media/ab875a_7a8e370e904f4d66a77cef3ded16967d~mv2.jpg" alt="SSIP (Safety Schemes in Procurement) accredited"></a>
-                    <a href="https://greatbritishentrepreneurawards.com/" target="_blank" rel="noopener" class="accred-item" aria-label="Great British Entrepreneur Awards 2025 Finalist (opens in a new tab)"><img src="https://static.wixstatic.com/media/ab875a_c5add99e2cab4a578adf89ce38b0cc58~mv2.png" alt="Great British Entrepreneur Awards 2025 Finalist"></a>
+                    <a href="https://greatbritishentrepreneurawards.com/" target="_blank" rel="noopener" class="accred-item" aria-label="Great British Entrepreneur Awards Finalist 2025 and 2026 (opens in a new tab)"><img src="https://static.wixstatic.com/media/ab875a_c5add99e2cab4a578adf89ce38b0cc58~mv2.png" alt="Great British Entrepreneur Awards Finalist 2025 and 2026"></a>
                 </div>
             </div>
         </div>
@@ -578,6 +578,25 @@
                 <div class="fig reveal rd-2"><div class="fig-num">560<span style="font-size:0.55em;">+</span></div><h4>UK installer network</h4><p>A UK-wide partner network giving us national coverage and joint-bid strength, a collaborator on delivery, never a competitor for your maintenance.</p></div>
                 <div class="fig reveal rd-3"><div class="fig-num">99<span style="font-size:0.55em;">%</span></div><h4>The reliability bar</h4><p>The uptime rapid networks must now hit under the Public Charge Point Regulations. Maintenance is how you get there.</p></div>
             </div>
+            <style>
+                .fig-quote{position:relative;margin-top:52px;background:rgba(255,255,255,0.045);border:1px solid rgba(232,222,37,0.26);border-radius:20px;padding:38px 40px 32px;}
+                .fig-quote::before{content:'\201C';position:absolute;top:58px;left:16px;z-index:0;font-family:var(--font-display);font-size:112px;line-height:1;color:rgba(232,222,37,0.12);pointer-events:none;}
+                .fig-quote .fq-tag{position:relative;z-index:2;display:inline-flex;align-items:center;font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold-soft);background:rgba(232,222,37,0.08);border:1px solid rgba(232,222,37,0.22);border-radius:100px;padding:6px 14px;margin-bottom:18px;}
+                .fig-quote blockquote{position:relative;z-index:2;margin:0 0 22px;font-size:clamp(16.5px,1.7vw,19px);line-height:1.62;color:#fff;text-wrap:pretty;}
+                .fig-quote .fq-who{border-top:1px solid rgba(255,255,255,0.12);padding-top:18px;font-size:13.5px;line-height:1.6;color:rgba(255,255,255,0.6);}
+                .fig-quote .fq-who strong{display:block;font-size:15px;color:#fff;font-weight:700;}
+                .fig-quote .fq-who .fq-org{display:block;color:var(--gold-soft);font-weight:600;margin-top:3px;}
+                @media(max-width:640px){.fig-quote{padding:30px 22px 26px;}.fig-quote::before{left:10px;font-size:82px;}}
+            </style>
+            <figure class="fig-quote reveal">
+                <span class="fq-tag">Official client reference</span>
+                <blockquote>Safer Charging has provided excellent support to us on our EV charging infrastructure projects, delivering high-quality Specialist FRA consultancy, EV technical maintenance reviews, and practical recommendations throughout. Their professionalism, expertise, and attention to detail have been outstanding, and the quality of their work has consistently exceeded expectations.</blockquote>
+                <figcaption class="fq-who">
+                    <strong>Philip Belton BEng (Hons) IEng MEI MIHEEM</strong>
+                    Energy Manager, Estate &amp; Facilities Services Department
+                    <span class="fq-org">Kent and Essex Police</span>
+                </figcaption>
+            </figure>
             <p class="fig-note">Client names are treated as sensitive and used only with permission. Figures reflect delivered work; we back service levels only where we have the local resource to deliver them.</p>
         </div>
     </section>
@@ -646,7 +665,17 @@
                     <img src="assets/arcane-academy-logo.png" alt="Arcane Charging Academy" class="eco-logo">
                     <h3>Arcane Charging Academy</h3>
                     <p>Our training and resource hub with useful content for every experience level, from your kW to your kWh, to advanced maintenance techniques.</p>
-                    <a href="https://www.arcanechargingacademy.co.uk" class="eco-btn" target="_blank" rel="noopener">Visit the Academy <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+                    <a href="about.html#academy" class="eco-btn">Explore the Academy <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+                <div class="eco-card small reveal rd-2">
+                    <div class="eco-lab">Client portal</div>
+                    <!-- ACN: awaiting the Charging Network logo file AND the live portal login URL.
+                         Until the portal URL is supplied this points at the holding page. To finish:
+                         add <img src="assets/charging-network-logo.png" class="eco-logo"> above the h3
+                         and change the href below to the external portal login. -->
+                    <h3>Arcane Charging Network</h3>
+                    <p>Our client portal for live estate visibility, giving existing clients one place to see the condition, compliance and service history of every charge point we look after.</p>
+                    <a href="charging-network.html" class="eco-btn">Client login <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                 </div>
             </div>
         </div>
@@ -682,7 +711,7 @@
                     <div class="footer-certs">
                         <a href="https://www.safecontractor.com/" target="_blank" rel="noopener" aria-label="SafeContractor accredited (opens in a new tab)"><img src="https://static.wixstatic.com/media/ab875a_428de7a7c5e44d99bd007a6ed07ac839~mv2.png" alt="SafeContractor accredited" class="footer-cert"></a>
                         <a href="https://ssip.org.uk/" target="_blank" rel="noopener" aria-label="SSIP accredited (opens in a new tab)"><img src="https://static.wixstatic.com/media/ab875a_7a8e370e904f4d66a77cef3ded16967d~mv2.jpg" alt="SSIP (Safety Schemes in Procurement) accredited" class="footer-cert"></a>
-                        <a href="https://greatbritishentrepreneurawards.com/" target="_blank" rel="noopener" aria-label="Great British Entrepreneur Awards 2025 Finalist (opens in a new tab)"><img src="https://static.wixstatic.com/media/ab875a_c5add99e2cab4a578adf89ce38b0cc58~mv2.png" alt="Great British Entrepreneur Awards 2025 Finalist" class="footer-cert"></a>
+                        <a href="https://greatbritishentrepreneurawards.com/" target="_blank" rel="noopener" aria-label="Great British Entrepreneur Awards Finalist 2025 and 2026 (opens in a new tab)"><img src="https://static.wixstatic.com/media/ab875a_c5add99e2cab4a578adf89ce38b0cc58~mv2.png" alt="Great British Entrepreneur Awards Finalist 2025 and 2026" class="footer-cert"></a>
                     </div>
                 </div>
                 <div>

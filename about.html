@@ -942,6 +942,9 @@
             .partner-card.join .partner-kicker{color:var(--gold-soft,#F0E94D);}
             .partner-card.join h3{color:#fff;} .partner-card.join p{color:rgba(255,255,255,0.7);}
             .partner-card.join .partner-link{color:var(--gold-soft,#F0E94D);}
+            /* Referral partner whose destination URL has not been supplied yet. Rendered as a
+               non-interactive label so the card never presents a dead link. */
+            .partner-link.pending{color:var(--text-light,#6C7581);font-weight:600;cursor:default;}
             @media(max-width:900px){.partners-grid{grid-template-columns:1fr;}}
         </style>
         <div class="container">
@@ -955,7 +958,7 @@
                     <div class="partner-kicker">Referral partner</div>
                     <h3>Charge Scheme</h3>
                     <p>We refer clients to Charge Scheme where grant-backed and funded charging routes can reduce the cost of getting compliant, safe infrastructure in the ground.</p>
-                    <a class="partner-link" href="#REPLACE-WITH-CHARGE-SCHEME-REFERRAL-URL" target="_blank" rel="noopener">Visit Charge Scheme <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <span class="partner-link pending">Referral link to follow</span>
                 </div>
                 <div class="partner-card reveal reveal-delay-2">
                     <div class="partner-kicker">Delivery network</div>

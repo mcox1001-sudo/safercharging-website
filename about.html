@@ -1011,15 +1011,32 @@
             .quote-card .who strong{color:var(--gold-soft,#F0E94D);font-weight:600;}
             @media(max-width:820px){.quote-grid{grid-template-columns:1fr;}}
             /* Featured named reference (published with written permission) */
-            .quote-feature{position:relative;z-index:2;margin-top:44px;background:rgba(255,255,255,0.05);border:1px solid rgba(232,222,37,0.28);border-radius:20px;padding:40px 42px 34px;}
-            .quote-feature::before{content:'\201C';position:absolute;top:52px;left:16px;z-index:0;font-family:var(--font-display,Georgia,serif);font-size:120px;line-height:1;color:rgba(232,222,37,0.13);pointer-events:none;}
-            .quote-feature .qf-tag{position:relative;z-index:2;display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold-soft,#F0E94D);background:rgba(232,222,37,0.08);border:1px solid rgba(232,222,37,0.22);border-radius:100px;padding:6px 14px;margin-bottom:20px;}
-            .quote-feature blockquote{position:relative;z-index:2;margin:0 0 24px;font-size:clamp(17px,2vw,20px);line-height:1.62;color:#fff;text-wrap:pretty;}
-            .quote-feature .qf-who{border-top:1px solid rgba(255,255,255,0.12);padding-top:20px;font-size:14px;line-height:1.6;color:rgba(255,255,255,0.62);}
-            .quote-feature .qf-who .qf-name{display:block;font-size:15.5px;font-weight:700;color:#fff;letter-spacing:0.2px;}
-            .quote-feature .qf-who .qf-role{display:block;color:rgba(255,255,255,0.78);}
-            .quote-feature .qf-who .qf-org{display:block;color:var(--gold-soft,#F0E94D);font-weight:600;margin-top:4px;}
-            @media(max-width:640px){.quote-feature{padding:32px 24px 28px;}.quote-feature::before{left:14px;font-size:84px;}}
+            /* Client reference. Deliberately not a card: no panel, no border, no radius.
+               A rule-and-kicker masthead, the quote set large in the display serif with the
+               opening mark hung into the margin, and a crest lockup for attribution. */
+            .ref{position:relative;z-index:2;margin-top:46px;max-width:1000px;}
+            .ref-kicker{display:flex;align-items:center;gap:14px;font-size:11px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:var(--gold-soft,#F0E94D);margin-bottom:24px;}
+            .ref-kicker::before{content:'';flex:none;width:46px;height:2px;background:var(--gold,#E8DE25);}
+            .ref-q{margin:0;font-family:var(--font-display,Georgia,serif);font-weight:400;font-size:clamp(20px,2.4vw,31px);line-height:1.44;letter-spacing:-0.2px;color:#fff;text-wrap:pretty;text-indent:-0.42em;}
+            .ref-src{display:flex;align-items:center;gap:26px;margin-top:34px;flex-wrap:wrap;}
+            .ref-crests{display:flex;align-items:center;gap:12px;flex:none;}
+            /* Crests sit on a white plate because force crests are full-colour artwork.
+               If the file is missing the plate becomes an outlined wordmark instead, so the
+               lockup still reads as finished. Drop-in filenames are in assets/README.md. */
+            .crest{display:flex;align-items:center;justify-content:center;height:58px;min-width:58px;padding:8px 12px;background:#fff;border-radius:10px;}
+            .crest img{height:100%;width:auto;max-width:130px;object-fit:contain;}
+            .crest.crest-text{background:transparent;border:1px solid rgba(255,255,255,0.28);padding:0 15px;}
+            .crest-fb{display:none;font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.92);line-height:1.4;text-align:center;}
+            .crest.crest-text .crest-fb{display:block;}
+            .ref-who{padding-left:26px;border-left:1px solid rgba(255,255,255,0.16);font-size:14px;line-height:1.62;color:rgba(255,255,255,0.62);}
+            .ref-who b{display:block;font-family:var(--font-body),sans-serif;font-size:15.5px;font-weight:700;color:#fff;}
+            .ref-who .ref-org{display:block;margin-top:4px;color:var(--gold-soft,#F0E94D);font-weight:600;letter-spacing:0.3px;}
+            @media(max-width:640px){
+                .ref{margin-top:36px;}
+                .ref-q{text-indent:0;}
+                .ref-src{gap:20px;}
+                .ref-who{flex:1 1 100%;padding-left:0;border-left:none;padding-top:18px;border-top:1px solid rgba(255,255,255,0.14);}
+            }
         </style>
         <div class="container">
             <div class="proof-inner reveal">
@@ -1030,14 +1047,20 @@
 
             <!-- Official client reference. Published with written permission (supplied by the CEO, Aug 2026).
                  Quote and attribution are reproduced exactly as provided. Do not paraphrase or trim. -->
-            <figure class="quote-feature reveal">
-                <span class="qf-tag">Official client reference</span>
-                <blockquote>Safer Charging has provided excellent support to us on our EV charging infrastructure projects, delivering high-quality Specialist FRA consultancy, EV technical maintenance reviews, and practical recommendations throughout. Their professionalism, expertise, and attention to detail have been outstanding, and the quality of their work has consistently exceeded expectations.</blockquote>
-                <figcaption class="qf-who">
-                    <span class="qf-name">Philip Belton BEng (Hons) IEng MEI MIHEEM</span>
-                    <span class="qf-role">Energy Manager, Estate &amp; Facilities Services Department</span>
-                    Kent &amp; Essex Support Services Directorate
-                    <span class="qf-org">Kent and Essex Police</span>
+            <figure class="ref reveal">
+                <div class="ref-kicker">Official client reference</div>
+                <blockquote class="ref-q">&ldquo;Safer Charging has provided excellent support to us on our EV charging infrastructure projects, delivering high-quality Specialist FRA consultancy, EV technical maintenance reviews, and practical recommendations throughout. Their professionalism, expertise, and attention to detail have been outstanding, and the quality of their work has consistently exceeded expectations.&rdquo;</blockquote>
+                <figcaption class="ref-src">
+                    <span class="ref-crests">
+                        <span class="crest"><img src="assets/kent-police-logo.png" alt="Kent Police" onerror="this.onerror=null;this.closest('.crest').classList.add('crest-text');this.remove();"><span class="crest-fb">Kent<br>Police</span></span>
+                        <span class="crest"><img src="assets/essex-police-logo.png" alt="Essex Police" onerror="this.onerror=null;this.closest('.crest').classList.add('crest-text');this.remove();"><span class="crest-fb">Essex<br>Police</span></span>
+                    </span>
+                    <span class="ref-who">
+                        <b>Philip Belton BEng (Hons) IEng MEI MIHEEM</b>
+                        Energy Manager, Estate &amp; Facilities Services Department<br>
+                        Kent &amp; Essex Support Services Directorate
+                        <span class="ref-org">Kent and Essex Police</span>
+                    </span>
                 </figcaption>
             </figure>
 

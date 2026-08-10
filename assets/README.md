@@ -26,31 +26,58 @@ Until the files exist, each slot falls back to an outlined "KENT POLICE" /
 "ESSEX POLICE" wordmark, so the block still reads as finished. No layout
 change is needed when the artwork lands.
 
-Note on permission: the quote itself is published with written permission.
-Reproducing force crests is a separate grant and both forces normally require
-sign-off on how their identity is used by a supplier. Confirm that before the
-artwork goes live.
+**Source the artwork from the forces, not from the web.** Both Kent and Essex
+Police license their crest through a formal IP licence, and the approved
+artwork is issued with the licence. Crest files found on logo aggregator sites
+are frequently redraws or superseded versions, and using one would misrepresent
+a force's identity on a commercial site even where permission has been granted.
+Ask the force contact for the crest as supplied under the licence.
 
-## Images still hot-linked from Wix — action needed before cutover
+## Wix media — migrated, no longer a cutover blocker
 
-14 `<img src>` attributes across index.html, about.html and team.html still
-point at `static.wixstatic.com`. Those files live on Wix's CDN and are tied to
-the Wix site. They will keep loading for as long as that subscription is
-active, and break the moment it lapses — which is likely to be shortly after
-the domain is pointed at this build.
+All 26 `static.wixstatic.com` references (14 `<img src>`, 7 `og:image` meta
+tags and 5 JSON-LD `image` properties, across 9 pages) have been repointed at
+files committed in this repo. Nothing on the site now depends on the Wix
+subscription staying active.
 
-Export each from the Wix media manager and commit it here, then update the
-`src`. The distinct files are:
+The committed files, and the Wix media ids they came from:
 
-    team.html    chris-cheetham.jpg         → assets/team/chris-cheetham.jpg
-    team.html    Andy_Edit.jpg              → assets/team/andy-murdy.jpg
-    team.html    chris-chandler.jpg         → assets/team/chris-chandler.jpg
-    index.html   Office Charge point.png
-    index/about  ab875a_428de7a7c5e44d99bd007a6ed07ac839~mv2.png
-    index/about  ab875a_7a8e370e904f4d66a77cef3ded16967d~mv2.jpg
-    index/about  ab875a_c5add99e2cab4a578adf89ce38b0cc58~mv2.png
-    about.html   ab875a_a4551da30aee4397b3152f0c792bf4fd~mv2.png
+    assets/team/chris-cheetham.jpg          ab875a_2e9adb4a75e1414b997f005c4dbee987
+    assets/team/andy-murdy.jpg              ab875a_9fbd2c46bfa646d2b5b264cb10ac5e16
+    assets/team/chris-chandler.jpg          ab875a_b3ce2648eea244e1b6865cea0ccf87b4
+    assets/services/office-charge-point.jpg ab875a_040ff05e29df4e23ad017ac9f48b28fa
+    assets/accreditations/safecontractor.png ab875a_428de7a7c5e44d99bd007a6ed07ac839
+    assets/accreditations/ssip.jpg          ab875a_7a8e370e904f4d66a77cef3ded16967d
+    assets/accreditations/gbea-finalist.png ab875a_c5add99e2cab4a578adf89ce38b0cc58
+    assets/chargesafe-wordmark-reversed.png ab875a_a4551da30aee4397b3152f0c792bf4fd
+    assets/og/engineers-1200x630.jpg        ab875a_c82701258f0e40aeaabf05b0de4dfb68
+    assets/og/engineers-1600x900.jpg        ab875a_c82701258f0e40aeaabf05b0de4dfb68
 
-Every one of these already has an inline `onerror` fallback, so a broken URL
-degrades to a placeholder rather than a missing-image icon — but that is a
-safety net, not a fix.
+Photos reproduce the crop Wix was serving (cover, centre-aligned) at roughly
+1.5x the displayed size so they stay sharp on retina screens. The two social
+card sizes match the two transforms that were in use. Total added weight is
+about 900KB for all ten files.
+
+The inline `onerror` fallbacks were left in place throughout.
+
+## Still missing
+
+**ChargeSafe logo for light backgrounds.** The repo holds two versions, both
+built for dark backgrounds: `chargesafe-logo.png` (navy plate) and
+`chargesafe-logo-transparent.png` (white text, thin dark outline).
+`chargesafe-wordmark-reversed.png`, pulled from Wix and used in the About page
+brand section, is a pure white-out — on a light background the shield and the
+word "Charge" disappear entirely and only "Safe" reads. The whole live Wix
+site was searched and no light-background version exists anywhere on it. It
+needs to come from the original brand artwork.
+
+**Charging Network / Arcane Charging Network logo.** Not present in this repo
+and not present anywhere on the live Wix site either. The only Arcane mark
+that exists is the Arcane Charging *Academy* logo, already committed as
+`arcane-academy-logo.png`. The Network is a different brand and its logo has
+never been published.
+
+**Great British Entrepreneur Awards 2026 badge.** The committed badge reads
+"Finalist 2025" only. Alt text across the site claims finalist status for both
+2025 and 2026, which has been confirmed as correct, so the 2026 artwork is
+still needed to match the claim.

@@ -177,6 +177,20 @@
         .accred-item:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(11,27,63,0.13); border-color: var(--gold); }
         .accred-item img { height: 100%; width: auto; max-width: 170px; object-fit: contain; }
 
+        /* ===== CLIENT REFERENCE BAND ===== */
+        .refband { background: var(--navy); color: #fff; padding: clamp(66px, 8vw, 104px) 0; position: relative; overflow: hidden; }
+        .refband::after { content: ''; position: absolute; top: -30%; right: -8%; width: 520px; height: 520px; background: radial-gradient(circle, rgba(232,222,37,0.13), transparent 66%); pointer-events: none; }
+        .refband-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; text-align: center; }
+        .refband-lbl { font-size: 11.5px; font-weight: 700; letter-spacing: 2.4px; text-transform: uppercase; color: var(--gold-soft); margin-bottom: 26px; }
+        .refband blockquote { font-family: var(--font-display); font-size: clamp(19px, 2.3vw, 27px); font-weight: 400; line-height: 1.5; color: #fff; letter-spacing: -0.2px; margin: 0 0 30px; text-wrap: pretty; }
+        .refband .who { font-size: 14px; line-height: 1.65; color: rgba(255,255,255,0.62); }
+        .refband .who strong { display: block; color: var(--gold-soft); font-weight: 600; font-size: 15px; margin-bottom: 3px; }
+        .refband-logos { display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; margin-top: 34px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.13); }
+        .refband-logos .rb-cap { width: 100%; font-size: 10.5px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 4px; }
+        .refband-logos span.rb-item { display: flex; align-items: center; justify-content: center; height: 62px; padding: 10px 20px; background: #fff; border-radius: 10px; }
+        .refband-logos img { height: 100%; width: auto; max-width: 140px; object-fit: contain; }
+        @media (max-width: 620px) { .refband-logos span.rb-item { height: 52px; } }
+
         /* ===== EDITORIAL SECTION SYSTEM ===== */
         .ed { padding: clamp(90px, 12vw, 168px) 0; position: relative; }
         .ed.paper { background: var(--paper); }
@@ -481,6 +495,24 @@
         </div>
     </section>
 
+    <!-- CLIENT REFERENCE -->
+    <section class="refband" aria-label="Client reference">
+        <div class="refband-inner">
+            <div class="refband-lbl">Client reference</div>
+            <blockquote>&ldquo;Safer Charging has provided excellent support to us on our EV charging infrastructure projects, delivering high-quality Specialist FRA consultancy, EV technical maintenance reviews, and practical recommendations throughout. Their professionalism, expertise, and attention to detail have been outstanding, and the quality of their work has consistently exceeded expectations.&rdquo;</blockquote>
+            <div class="who">
+                <strong>Philip Belton BEng (Hons) IEng MEI MIHEEM</strong>
+                Energy Manager, Estate &amp; Facilities Services Department<br>
+                Kent &amp; Essex Support Services Directorate, Kent and Essex Police
+            </div>
+            <div class="refband-logos">
+                <span class="rb-cap">Trusted by</span>
+                <span class="rb-item"><img src="assets/essex-police-logo.png" alt="Essex Police"></span>
+                <span class="rb-item"><img src="assets/kent-police-logo.png" alt="Kent Police"></span>
+            </div>
+        </div>
+    </section>
+
     <!-- 02 · MANIFESTO / PILLARS -->
     <section class="ed paper">
         <div class="container">
@@ -606,21 +638,6 @@
                     .ref-who{flex:1 1 100%;padding-left:0;border-left:none;padding-top:18px;border-top:1px solid rgba(255,255,255,0.14);}
                 }
             </style>
-            <figure class="ref reveal">
-                <div class="ref-kicker">Official client reference</div>
-                <blockquote class="ref-q">&ldquo;Safer Charging has provided excellent support to us on our EV charging infrastructure projects, delivering high-quality Specialist FRA consultancy, EV technical maintenance reviews, and practical recommendations throughout. Their professionalism, expertise, and attention to detail have been outstanding, and the quality of their work has consistently exceeded expectations.&rdquo;</blockquote>
-                <figcaption class="ref-src">
-                    <span class="ref-crests">
-                        <span class="crest"><img src="assets/kent-police-logo.png" alt="Kent Police" onerror="this.onerror=null;this.closest('.crest').classList.add('crest-text');this.remove();"><span class="crest-fb">Kent<br>Police</span></span>
-                        <span class="crest"><img src="assets/essex-police-logo.png" alt="Essex Police" onerror="this.onerror=null;this.closest('.crest').classList.add('crest-text');this.remove();"><span class="crest-fb">Essex<br>Police</span></span>
-                    </span>
-                    <span class="ref-who">
-                        <b>Philip Belton BEng (Hons) IEng MEI MIHEEM</b>
-                        Energy Manager, Estate &amp; Facilities Services Department
-                        <span class="ref-org">Kent and Essex Police</span>
-                    </span>
-                </figcaption>
-            </figure>
             <p class="fig-note">Client names are treated as sensitive and used only with permission. Figures reflect delivered work; we back service levels only where we have the local resource to deliver them.</p>
         </div>
     </section>

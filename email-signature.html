@@ -39,7 +39,7 @@ a{color:inherit;}
 .head p{color:var(--slate);max-width:640px;font-size:15px;}
 
 .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:26px;align-items:start;}
-@media(max-width:940px){.grid{grid-template-columns:1fr;}}
+@media(max-width:940px){.grid{grid-template-columns:minmax(0,1fr);}}
 
 .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 2px 14px rgba(11,27,63,.05);}
 .card h2{font-family:var(--font-display);font-size:18px;margin-bottom:4px;}
@@ -153,7 +153,7 @@ a{color:inherit;}
       <div class="sub">Logo shown on the left of the signature.</div>
       <div class="field">
         <label for="logo">Logo image URL</label>
-        <input id="logo" type="text" value="https://safercharging-website.vercel.app/assets/sc-logo-horizontal.png">
+        <input id="logo" type="text" value="https://www.safercharging.co.uk/assets/sc-logo-horizontal.png">
         <div class="subtle">Uses the live hosted logo so it renders in email. Update to your safercharging.co.uk URL once the domain is live.</div>
       </div>
       <div class="field">

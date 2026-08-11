@@ -58,13 +58,67 @@ Notes:
    click through a few pages to confirm everything looks right before touching the
    domain.
 
-### Custom error page (recommended)
-The site has a branded `404.html`. Wire it up so unknown URLs show it instead of a
-raw AWS error:
-- In the Amplify app → **App settings → Rewrites and redirects** → **Add rule**:
-  - Source address: `/<*>`
-  - Target address: `/404.html`
-  - Type: **404 (Not Found)**
+### ⚠️ Rewrites and redirects — required, not optional
+
+**Do this before pointing the domain at Amplify.** Skipping it breaks the site's
+entire search presence on day one.
+
+The published URLs are extensionless — `/plans`, `/about`, `/risk-assessments`.
+Every `<link rel="canonical">`, every `og:url` and all 20 entries in
+`sitemap.xml` use that form, because it matches the URL structure the live Wix
+site already uses. The files on disk are `plans.html`, `about.html` and so on.
+
+Vercel bridges that gap silently through `"cleanUrls": true` in `vercel.json`.
+**Amplify has no equivalent.** Without rules, every one of those published URLs
+returns 404 — the navigation still works, because internal links use `.html`,
+so the problem is invisible when you click around. What breaks is everything
+Google sees: canonicals pointing at dead URLs, a sitemap of 404s, and dead link
+previews on LinkedIn.
+
+`amplify-redirects.json` in the repo root holds the full rule set. To apply it:
+
+- Amplify app → **App settings → Rewrites and redirects** → **Open text editor**
+- Paste the contents of `amplify-redirects.json`, then **Save**
+
+The file contains three groups, and **order matters** — Amplify applies rules top
+to bottom and stops at the first match:
+
+1. **Legacy Wix URLs, 301.** `/about-us`, `/service-plan-packages`,
+   `/commercial-ev-charging-risk-assessments`, `/arcane-charging-academy`,
+   `/blog`, `/bookings` and `/inquiry-services-page` all change slug in this
+   build. Without these, every ranking and inbound link built up on the Wix site
+   lands on a 404 at cutover.
+
+   Three of them — `/cpo-oem`, `/existing-infrastructure` and
+   `/new-project-workflow` — have no equivalent page here and currently point at
+   `/services`. **Confirm those with Chris**, or build the pages.
+
+2. **Clean URLs, 200 rewrite.** One explicit rule per page rather than a regex.
+   Verbose, but a regex that appends `.html` risks catching `/assets/logo.png`
+   and there is no way to test that until it is live. If you add a page, add a
+   line here too — `node check-redirects.mjs` (below) will fail the build if you
+   forget.
+
+3. **404.** Everything unmatched renders the branded `404.html` with a real 404
+   status, so search engines drop it rather than indexing a soft 404.
+
+### Smoke test the first Amplify deploy
+
+The rules above are verified against this repo, but Amplify's rule engine itself
+could not be tested from the machine that wrote them. Spend two minutes on the
+`*.amplifyapp.com` URL before touching DNS:
+
+| Check | Expect |
+|---|---|
+| `/plans` | the plans page, address bar still `/plans`, **200** |
+| `/plans.html` | the same page (real file) |
+| `/assets/sc-logo-horizontal.png` | the image, **not** a 404 |
+| `/assets/video/hero-4817951.mp4` | the video streams |
+| `/about-us` | **301** to `/about` |
+| `/nonsense-page` | branded 404 page, **404** status |
+
+If `/plans` 404s, the rule set was not saved or the order was changed. If assets
+404, a rule is matching too broadly — check nothing was replaced with a regex.
 
 ### Every push auto-deploys
 Once connected, any push to `main` on `SaferChargingLimited/website-` triggers a new

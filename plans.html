@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0B1B3F">
     <title>Plans &amp; Pricing | Safer Charging - EV Charging Service Plans</title>
-    <meta name="description" content="Flexible EV charging service plans from Safer Charging. Choose from Essential, Professional, or Enterprise packages for maintenance, inspections, and support across the UK.">
+    <meta name="description" content="Flexible EV charging service plans from Safer Charging. Choose from Ad Hoc, Core, or Elite packages for maintenance, inspections, and support across the UK.">
     <link rel="canonical" href="https://www.safercharging.co.uk/plans">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/sc-favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/sc-favicon.png">
@@ -619,11 +619,72 @@
 
     <!-- PAGE HERO -->
     <section class="page-hero" id="content">
-        <div class="ph-media"><video class="ph-video-bg" autoplay muted loop playsinline preload="auto" poster="https://images.pexels.com/photos/4678065/pexels-photo-4678065.jpeg?auto=compress&cs=tinysrgb&w=1920"><source src="https://videos.pexels.com/video-files/9788633/9788633-uhd_2560_1440_30fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/9788633/9788633-hd_1920_1080_30fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/9788633/9788633-hd_1920_1080_25fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/9788633/9788633-hd_1920_1080_24fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/9788633/9788633-hd_1280_720_30fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/9788633/9788633-hd_1280_720_25fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/9788633/9788633-sd_960_540_30fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/9788633/9788633-sd_640_360_30fps.mp4" type="video/mp4"><source src="https://cdn.coverr.co/videos/coverr-charging-an-electric-car-1573/1080p.mp4" type="video/mp4"></video><div class="ph-scrim"></div></div>
+        <div class="ph-media"><video class="ph-video-bg" autoplay muted loop playsinline preload="auto" poster="assets/media/4678065.jpg"><source src="assets/video/hero-9790135.mp4" type="video/mp4"></video><div class="ph-scrim"></div></div>
         <div class="container">
             <div class="page-hero-label">Service Plans</div>
             <h1>Plans built around <em>your needs</em></h1>
             <p>Whether you manage a handful of chargers or an entire network, we have a service plan that keeps your infrastructure safe, compliant, and running at its best.</p>
+        </div>
+    </section>
+
+    <!-- START HERE: CHARGE POINT AUDIT -->
+    <section class="cpa-section" id="charge-point-audit">
+        <style>
+            .cpa-section{background:var(--mist);}
+            .cpa-wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+            @media(max-width:900px){.cpa-wrap{grid-template-columns:1fr;gap:36px;}}
+            .cpa-price-card{background:var(--navy);color:var(--white);border-radius:16px;padding:36px 34px;position:sticky;top:100px;}
+            @media(max-width:900px){.cpa-price-card{position:static;}}
+            .cpa-amount{font-family:var(--font-display);font-size:clamp(44px,6vw,60px);line-height:1;color:var(--gold);font-variant-numeric:tabular-nums;}
+            .cpa-amount span{font-size:18px;font-family:var(--font-body);font-weight:600;color:rgba(255,255,255,0.72);margin-left:8px;}
+            .cpa-sub{margin-top:12px;font-size:15px;line-height:1.6;color:rgba(255,255,255,0.72);}
+            .cpa-ladder{list-style:none;margin:26px 0 0;padding:22px 0 0;border-top:1px solid rgba(255,255,255,0.16);}
+            .cpa-ladder li{display:flex;justify-content:space-between;gap:16px;padding:7px 0;font-size:14.5px;color:rgba(255,255,255,0.82);font-variant-numeric:tabular-nums;}
+            .cpa-ladder li b{color:var(--white);font-weight:600;}
+            .cpa-ladder li.free b{color:var(--gold);}
+            .cpa-note{margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.16);font-size:12.5px;line-height:1.62;color:rgba(255,255,255,0.55);}
+            .cpa-incl{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:13px;}
+            .cpa-incl li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;line-height:1.6;color:var(--text-mid);}
+            .cpa-incl svg{width:19px;height:19px;flex-shrink:0;margin-top:2px;}
+            .cpa-btn{display:inline-flex;align-items:center;gap:10px;margin-top:30px;padding:15px 30px;background:var(--gold);color:var(--navy);border-radius:8px;font-weight:700;font-size:15px;}
+            .cpa-btn:hover{background:var(--gold-soft);}
+        </style>
+        <div class="container">
+            <div class="text-center" style="margin-bottom:52px;">
+                <div class="section-label" style="justify-content:center;">Start here</div>
+                <h2 class="section-title">Every plan starts with a <em>Charge Point Audit</em></h2>
+                <p class="section-subtitle">We do not quote a maintenance plan blind. The audit establishes what you actually have, what condition it is in, and what it will cost to keep compliant, so the plan that follows is priced on evidence rather than assumption.</p>
+            </div>
+
+            <div class="cpa-wrap">
+                <div class="reveal">
+                    <h3 style="font-family:var(--font-display);font-size:26px;color:var(--navy);margin-bottom:6px;">What is included</h3>
+                    <ul class="cpa-incl">
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="#C28F1C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>A site visit from an experienced assessor</span></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="#C28F1C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Visual assessment of all charging sockets and upstream infrastructure</span></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="#C28F1C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Individual charge point inspection reports</span></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="#C28F1C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Interactive map of all chargers and associated infrastructure</span></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="#C28F1C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Full asset register with detailed inventory</span></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="#C28F1C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>A compliance report carrying an executive summary across the estate, a detailed report per site and a prioritised action plan per site</span></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="#C28F1C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>A quotation for maintenance and servicing of every asset inspected</span></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="#C28F1C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Six months free access to the Aftercare Portal and the Ad Hoc service plan</span></li>
+                    </ul>
+                    <a href="risk-assessments.html" class="cpa-btn">See the full audit scope <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:16px;height:16px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+
+                <div class="cpa-price-card reveal reveal-delay-1">
+                    <div class="cpa-amount">&pound;500<span>per site</span></div>
+                    <p class="cpa-sub">The audit cost comes back to you. Take a maintenance plan afterwards and we deduct &pound;100 for every year of the term, so a five year plan makes the audit free.</p>
+                    <ul class="cpa-ladder">
+                        <li><span>1 year term</span><b>&pound;400</b></li>
+                        <li><span>2 year term</span><b>&pound;300</b></li>
+                        <li><span>3 year term</span><b>&pound;200</b></li>
+                        <li><span>4 year term</span><b>&pound;100</b></li>
+                        <li class="free"><span>5 year term</span><b>Free</b></li>
+                    </ul>
+                    <p class="cpa-note">Price covers a site of up to 30 sockets. Contact us for a bespoke quote above that. On street charging sites are priced on request.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -640,7 +701,7 @@
                 <!-- ESSENTIAL -->
                 <div class="pricing-card reveal">
                     <div class="pricing-tier">Tier 1</div>
-                    <div class="pricing-name">Essential</div>
+                    <div class="pricing-name">Ad Hoc</div>
                     <p class="pricing-desc">Solid foundational cover for smaller installations that need reliable maintenance and support.</p>
                     <div class="pricing-price">Contact Us</div>
                     <div class="pricing-period">tailored to your estate</div>
@@ -648,7 +709,7 @@
                     <ul class="pricing-features">
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                            Annual condition inspection
+                            Annual PPM inspection
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
@@ -678,7 +739,7 @@
                 <div class="pricing-card featured reveal reveal-delay-1">
                     <div class="pricing-badge">Recommended</div>
                     <div class="pricing-tier">Tier 2</div>
-                    <div class="pricing-name">Professional</div>
+                    <div class="pricing-name">Core</div>
                     <p class="pricing-desc">Proactive cover for growing estates where uptime and compliance are business critical.</p>
                     <div class="pricing-price">Contact Us</div>
                     <div class="pricing-period">tailored to your estate</div>
@@ -686,7 +747,7 @@
                     <ul class="pricing-features">
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                            Everything in Essential, plus
+                            Everything in Ad Hoc, plus
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
@@ -719,7 +780,7 @@
                 <!-- ENTERPRISE -->
                 <div class="pricing-card reveal reveal-delay-2">
                     <div class="pricing-tier">Tier 3</div>
-                    <div class="pricing-name">Enterprise</div>
+                    <div class="pricing-name">Elite</div>
                     <p class="pricing-desc">Full service cover for CPOs, OEMs, and large estates that demand the highest standards.</p>
                     <div class="pricing-price">Contact Us</div>
                     <div class="pricing-period">custom pricing for your network</div>
@@ -727,7 +788,7 @@
                     <ul class="pricing-features">
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                            Everything in Professional, plus
+                            Everything in Core, plus
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="#E8DE25" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
@@ -754,9 +815,72 @@
                             Strategic consultancy and planning
                         </li>
                     </ul>
+                    <div class="elite-bolton">
+                        <div class="elite-bolton-h">Optional bolt-ons, tailored to your needs</div>
+                        <ul>
+                            <li>Whitelabel maintenance</li>
+                            <li>Enhanced SLAs</li>
+                            <li>Unlimited call-out</li>
+                            <li>Full whitelabel support from first line onwards</li>
+                            <li>Comprehensive training suite for internal and external stakeholders</li>
+                        </ul>
+                    </div>
                     <a href="contact.html" class="pricing-btn">Talk to Us</a>
                 </div>
             </div>
+
+            <p class="terms-strip reveal">All plans carry multi-year contract options for additional discounts, with pricing secured for the length of the term. Monthly or annual payment options are available.</p>
+        </div>
+    </section>
+
+    <!-- ARCANE CHARGING PLATFORM -->
+    <section class="acp-section" id="platform">
+        <style>
+            .elite-bolton{margin-top:22px;padding-top:20px;border-top:1px dashed var(--warm-grey);}
+            .elite-bolton-h{font-size:12px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:12px;}
+            .elite-bolton ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
+            .elite-bolton li{position:relative;padding-left:18px;font-size:14.5px;line-height:1.55;color:var(--text-mid);}
+            .elite-bolton li::before{content:"+";position:absolute;left:0;top:0;color:var(--gold-deep);font-weight:700;}
+            .terms-strip{max-width:820px;margin:44px auto 0;text-align:center;font-size:15px;line-height:1.7;color:var(--text-mid);}
+
+            .acp-section{background:var(--navy);color:var(--white);}
+            .acp-section .section-title{color:var(--white);}
+            .acp-section .section-title em{color:var(--gold);}
+            .acp-section .section-subtitle{color:rgba(255,255,255,0.68);}
+            .acp-section .section-label{color:var(--gold);}
+            .acp-table-wrap{max-width:760px;margin:52px auto 0;overflow-x:auto;}
+            .acp-table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;}
+            .acp-table th,.acp-table td{padding:16px 18px;text-align:left;border-bottom:1px solid rgba(255,255,255,0.13);font-size:15.5px;}
+            .acp-table thead th{font-size:11.5px;letter-spacing:1.3px;text-transform:uppercase;color:rgba(255,255,255,0.55);font-weight:700;border-bottom-color:rgba(255,255,255,0.24);}
+            .acp-table td:first-child{color:var(--white);font-weight:600;}
+            .acp-table .was{color:rgba(255,255,255,0.45);text-decoration:line-through;}
+            .acp-table .now{color:var(--gold);font-weight:700;}
+            .acp-table tbody tr:last-child td{border-bottom:none;}
+            .acp-foot{max-width:760px;margin:26px auto 0;font-size:13.5px;line-height:1.7;color:rgba(255,255,255,0.55);}
+            @media(max-width:620px){.acp-table th,.acp-table td{padding:13px 11px;font-size:14px;}}
+        </style>
+        <div class="container">
+            <div class="text-center">
+                <div class="section-label" style="justify-content:center;">The platform</div>
+                <h2 class="section-title">Every client runs on the <em>Arcane Charging Platform</em></h2>
+                <p class="section-subtitle">Every site we look after is fed through our client portal, so compliance records, service history and live estate visibility sit in one place. Platform access is charged annually on the number of sites you have with us, and it is the total cost of the Ad Hoc plan.</p>
+            </div>
+
+            <div class="acp-table-wrap reveal">
+                <table class="acp-table">
+                    <thead>
+                        <tr><th>Sites with us</th><th>Standard annual</th><th>With discount</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1 to 3</td><td class="was">&pound;300</td><td class="now">&pound;150</td></tr>
+                        <tr><td>4 to 10</td><td class="was">&pound;400</td><td class="now">&pound;200</td></tr>
+                        <tr><td>11 to 50</td><td class="was">&pound;500</td><td class="now">&pound;250</td></tr>
+                        <tr><td>51 to 100</td><td class="was">&pound;1,500</td><td class="now">&pound;750</td></tr>
+                        <tr><td>101 and above</td><td colspan="2">Price on application</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="acp-foot">A 50 per cent discount applies in the first year, and thereafter for on-time annual payment. On the Ad Hoc plan this is the whole cost, with every other service priced individually as you use it. Core and Elite include platform access.</p>
         </div>
     </section>
 
@@ -774,9 +898,9 @@
                     <thead>
                         <tr>
                             <th>Feature</th>
-                            <th>Essential</th>
-                            <th class="highlight-col">Professional</th>
-                            <th>Enterprise</th>
+                            <th>Ad Hoc</th>
+                            <th class="highlight-col">Core</th>
+                            <th>Elite</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -901,7 +1025,7 @@
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
                         What areas do you cover?
                     </div>
-                    <p class="faq-answer">We provide coverage across the whole of the UK. For Enterprise customers we can arrange dedicated regional engineers for faster response times.</p>
+                    <p class="faq-answer">We provide coverage across the whole of the UK. For Elite customers we can arrange dedicated regional engineers for faster response times.</p>
                 </div>
 
                 <div class="faq-item reveal reveal-delay-1">
@@ -909,7 +1033,7 @@
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
                         Are parts and materials included?
                     </div>
-                    <p class="faq-answer">Standard consumables and common parts are included in Professional and Enterprise plans. For larger component replacements, we provide transparent pricing with no hidden markups.</p>
+                    <p class="faq-answer">Standard consumables and common parts are included in Core and Elite plans. For larger component replacements, we provide transparent pricing with no hidden markups.</p>
                 </div>
 
                 <div class="faq-item reveal">
@@ -925,7 +1049,7 @@
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
                         Is there a minimum contract period?
                     </div>
-                    <p class="faq-answer">Our standard plans run on a 12 month rolling agreement. Enterprise plans are flexible and can be tailored to match your procurement cycles. We are always happy to discuss what works best for you.</p>
+                    <p class="faq-answer">Our standard plans run on a 12 month rolling agreement. Elite plans are flexible and can be tailored to match your procurement cycles. We are always happy to discuss what works best for you.</p>
                 </div>
             </div>
         </div>
@@ -980,7 +1104,7 @@
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="team.html">Our Team</a></li>
                         <li><a href="news.html">News &amp; insights</a></li>
-                        <li><a href="about.html#academy">Arcane Academy</a></li>
+                        <li><a href="https://www.arcanechargingacademy.co.uk" target="_blank" rel="noopener">Arcane Charging Academy</a></li>
                         <li><a href="https://www.chargesafe.uk" target="_blank" rel="noopener">ChargeSafe</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
@@ -1002,16 +1126,17 @@
                 </div>
             </div>
             <div class="footer-group">
-                <style>.footer-group{border-top:1px solid rgba(255,255,255,0.1);margin-top:10px;padding:24px 0 6px;display:flex;flex-wrap:wrap;align-items:center;gap:16px 30px}.footer-group .fg-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.42);width:100%;margin-bottom:2px}.footer-group a.fg-brand{display:inline-flex;align-items:center;opacity:0.82;transition:opacity .3s ease}.footer-group a.fg-brand:hover{opacity:1}.footer-group a.fg-brand img{height:22px;width:auto;display:block}.footer-group a.fg-text{font-size:14px;color:rgba(255,255,255,0.72);font-weight:600;transition:color .3s ease}.footer-group a.fg-text:hover{color:#F0E94D}</style>
+                <style>.footer-group{border-top:1px solid rgba(255,255,255,0.1);margin-top:10px;padding:24px 0 6px;display:flex;flex-wrap:wrap;align-items:center;gap:16px 30px}.footer-group .fg-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.42);width:100%;margin-bottom:2px}.footer-group a.fg-brand{display:inline-flex;align-items:center;opacity:0.82;transition:opacity .3s ease}.footer-group a.fg-brand:hover{opacity:1}.footer-group a.fg-brand img{height:22px;width:auto;display:block}.footer-group a.fg-wordmark{display:inline-flex;align-items:center;height:22px;font-family:'Enriqueta',Georgia,serif;font-size:17px;font-weight:700;letter-spacing:.1px;color:rgba(255,255,255,0.92);opacity:.82;transition:opacity .3s ease,color .3s ease}.footer-group a.fg-wordmark:hover{opacity:1;color:#F0E94D}</style>
                 <span class="fg-label">Part of the group</span>
                 <a href="https://www.chargesafe.uk" target="_blank" rel="noopener" class="fg-brand" aria-label="ChargeSafe (opens in a new tab)"><img src="assets/chargesafe-logo-transparent.png" alt="ChargeSafe" style="height:22px;"></a>
                 <a href="https://www.arcanechargingacademy.co.uk" target="_blank" rel="noopener" class="fg-brand" aria-label="Arcane Charging Academy (opens in a new tab)"><img src="assets/arcane-academy-logo.png" alt="Arcane Charging Academy" style="height:30px;"></a>
-                <a href="charging-network.html" class="fg-text">Charging Network</a>
+                <!-- ACN: awaiting the Charging Network logo file. To swap: drop the artwork into assets/, then change class fg-wordmark to fg-brand and replace the text with an img tag (same pattern as the ChargeSafe and Arcane links above). --><a href="charging-network.html" class="fg-wordmark">Charging Network</a>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2024 &ndash; 2026 Safer Charging Limited. All rights reserved. Company no. 15822485. VAT: 472 4756 68.</p>
                 <div class="footer-bottom-links">
-                    <a href="privacy.html">Privacy Statement</a>
+                    <a href="privacy.html">Privacy Notice</a>
+                    <a href="policies-and-terms.html">Policies &amp; Terms</a>
                 </div>
             </div>
         </div>

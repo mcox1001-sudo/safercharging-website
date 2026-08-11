@@ -634,7 +634,7 @@
 
     <!-- PAGE HERO -->
     <section class="page-hero" id="content">
-        <div class="ph-media"><video class="ph-video-bg" autoplay muted loop playsinline preload="auto" poster="https://images.pexels.com/photos/9800000/pexels-photo-9800000.jpeg?auto=compress&cs=tinysrgb&w=1920"><source src="https://videos.pexels.com/video-files/9790135/9790135-uhd_2560_1440_30fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/9790135/9790135-hd_1920_1080_30fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/9790135/9790135-hd_1920_1080_25fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/9790135/9790135-hd_1920_1080_24fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/9790135/9790135-hd_1280_720_30fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/9790135/9790135-hd_1280_720_25fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/9790135/9790135-sd_960_540_30fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/9790135/9790135-sd_640_360_30fps.mp4" type="video/mp4"><source src="https://cdn.coverr.co/videos/coverr-charging-an-electric-car-1573/1080p.mp4" type="video/mp4"></video><div class="ph-scrim"></div></div>
+        <div class="ph-media"><video class="ph-video-bg" autoplay muted loop playsinline preload="auto" poster="assets/media/9800000.jpg"><source src="assets/video/hero-9790135.mp4" type="video/mp4"></video><div class="ph-scrim"></div></div>
         <div class="container">
             <div class="page-hero-label">About Us</div>
             <h1>Independent EV charging <em>experts</em></h1>
@@ -651,11 +651,11 @@
                     <h2 class="section-title">Built on experience, driven by <em>independence</em></h2>
                     <p>Safer Charging Limited was founded with a clear purpose: to give businesses and site owners an independent, trustworthy partner for EV charging maintenance and aftercare. Based in Bedfordshire, we work with organisations across the UK who need their charge points looked after properly, without the conflicts of interest that come with manufacturer tied service providers.</p>
                     <p>We are hardware and software agnostic. That means we work with every charger brand, every back office platform, and every type of installation. Our certified EV experts bring deep technical knowledge and a genuine passion for doing things right.</p>
-                    <p>As SafeContractor certified, SSIP accredited professionals and Great British Entrepreneur Awards 2025 finalists, we hold ourselves to the highest standards in everything we do. Our clients trust us because we tell it like it is, and we always put safety and uptime first.</p>
+                    <p>We are SafeContractor, SSIP accredited professionals with combined leadership experience of 22 years in electric vehicle charging. What we don't know is probably not worth knowing. All resource deployed to sites is highly skilled, with NICEIC Approved Contractor status as a minimum.</p>
                 </div>
 
                 <div class="story-visual">
-                    <img src="https://images.pexels.com/photos/37576187/pexels-photo-37576187.jpeg?auto=compress&cs=tinysrgb&w=800" alt="EV charging stations at a commercial site">
+                    <img src="assets/media/37576187.jpg" alt="EV charging stations at a commercial site">
                     <div class="story-visual-badge">Est. 2024</div>
                 </div>
             </div>
@@ -743,7 +743,11 @@
             <div class="brand-feature reveal">
                 <div class="brand-feature-content">
                     <div class="section-label"><span class="sec-num">02</span>Our Brand</div>
-                    <img src="https://static.wixstatic.com/media/ab875a_a4551da30aee4397b3152f0c792bf4fd~mv2.png" alt="ChargeSafe Logo" style="height: 36px; width: auto; margin-bottom: 16px;">
+                    <!-- The Wix artwork here was a pure white-out wordmark: on this light
+                         section the shield and the word "Charge" disappeared and only "Safe"
+                         read. Using the navy-plate lockup, which is legible on light
+                         backgrounds, until light-background brand artwork is supplied. -->
+                    <img src="assets/chargesafe-logo.png" alt="ChargeSafe Logo" style="height: 36px; width: auto; margin-bottom: 16px;">
                     <h2>ChargeSafe: Setting the standard for <em>EV charging safety</em></h2>
                     <p>ChargeSafe is our owned brand dedicated to raising safety standards across the EV charging industry. Through chargesafe.uk, we provide the resources, frameworks, and guidance that site owners and operators need to ensure their charging infrastructure meets the highest safety benchmarks.</p>
                     <p>Whether you are responsible for a single workplace charger or a nationwide public network, ChargeSafe gives you the tools and knowledge to protect your users, your assets, and your reputation.</p>
@@ -776,7 +780,7 @@
                 </div>
 
                 <div class="brand-visual">
-                    <img src="https://images.pexels.com/photos/4678065/pexels-photo-4678065.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="EV charger with safety signage">
+                    <img src="assets/media/4678065.jpg" alt="EV charger with safety signage">
                     <div class="brand-visual-badge">ChargeSafe</div>
                 </div>
             </div>
@@ -814,14 +818,20 @@
                         </div>
                     </div>
 
-                    <a href="news.html" class="brand-link" style="color: var(--gold);">
-                        Explore our insights
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </a>
+                    <div style="display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;">
+                        <a href="https://www.arcanechargingacademy.co.uk" target="_blank" rel="noopener" class="brand-link" style="color: var(--gold);">
+                            Visit Arcane Charging Academy
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </a>
+                        <a href="news.html" class="brand-link" style="color: var(--gold);">
+                            Explore our insights
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
                 </div>
 
                 <div class="brand-visual">
-                    <img src="https://images.pexels.com/photos/4699781/pexels-photo-4699781.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Training session with technical diagrams and learning materials">
+                    <img src="assets/media/4699781.jpg" alt="Training session with technical diagrams and learning materials">
                     <div class="brand-visual-badge">Academy</div>
                 </div>
             </div>
@@ -893,7 +903,7 @@
             <div class="accreditations-grid">
                 <div class="accreditation-card reveal reveal-delay-1">
                     <div class="accreditation-icon" style="background: none; width: auto; height: auto;">
-                        <img src="https://static.wixstatic.com/media/ab875a_428de7a7c5e44d99bd007a6ed07ac839~mv2.png" alt="SafeContractor accredited" style="height: 72px; width: auto;">
+                        <img src="assets/accreditations/safecontractor.png" alt="SafeContractor accredited" style="height: 72px; width: auto;">
                     </div>
                     <h3>SafeContractor Certified</h3>
                     <p>Recognised for meeting rigorous health and safety standards, giving our clients confidence that every job is carried out to the highest safety requirements.</p>
@@ -901,7 +911,7 @@
 
                 <div class="accreditation-card reveal reveal-delay-2">
                     <div class="accreditation-icon" style="background: none; width: auto; height: auto;">
-                        <img src="https://static.wixstatic.com/media/ab875a_7a8e370e904f4d66a77cef3ded16967d~mv2.jpg" alt="SSIP (Safety Schemes in Procurement) accredited" style="height: 72px; width: auto;">
+                        <img src="assets/accreditations/ssip.jpg" alt="SSIP (Safety Schemes in Procurement) accredited" style="height: 72px; width: auto;">
                     </div>
                     <h3>SSIP Accredited</h3>
                     <p>Our Safety Schemes in Procurement accreditation demonstrates that we meet and exceed the core criteria for health and safety management.</p>
@@ -909,10 +919,10 @@
 
                 <div class="accreditation-card reveal reveal-delay-3">
                     <div class="accreditation-icon" style="background: none; width: auto; height: auto;">
-                        <img src="https://static.wixstatic.com/media/ab875a_c5add99e2cab4a578adf89ce38b0cc58~mv2.png" alt="Great British Entrepreneur Awards 2025 Finalist" style="height: 72px; width: auto;">
+                        <img src="assets/accreditations/gbea-finalist.png" alt="Great British Entrepreneur Awards Finalist 2025 and 2026" style="height: 72px; width: auto;">
                     </div>
-                    <h3>GBEA 2025 Finalist</h3>
-                    <p>Selected as a finalist in the Great British Entrepreneur Awards 2025, recognising the innovation and impact of our work in the EV charging sector.</p>
+                    <h3>GBEA Finalist</h3>
+                    <p>Selected as a finalist in the Great British Entrepreneur Awards in both 2025 and 2026, recognising the innovation and impact of our work in the EV charging sector.</p>
                 </div>
             </div>
         </div>
@@ -936,6 +946,9 @@
             .partner-card.join .partner-kicker{color:var(--gold-soft,#F0E94D);}
             .partner-card.join h3{color:#fff;} .partner-card.join p{color:rgba(255,255,255,0.7);}
             .partner-card.join .partner-link{color:var(--gold-soft,#F0E94D);}
+            /* Referral partner whose destination URL has not been supplied yet. Rendered as a
+               non-interactive label so the card never presents a dead link. */
+            .partner-link.pending{color:var(--text-light,#6C7581);font-weight:600;cursor:default;}
             @media(max-width:900px){.partners-grid{grid-template-columns:1fr;}}
         </style>
         <div class="container">
@@ -948,8 +961,8 @@
                 <div class="partner-card reveal reveal-delay-1">
                     <div class="partner-kicker">Referral partner</div>
                     <h3>Charge Scheme</h3>
-                    <p>We refer clients to Charge Scheme where grant-backed and funded charging routes can reduce the cost of getting compliant, safe infrastructure in the ground.</p>
-                    <a class="partner-link" href="#REPLACE-WITH-CHARGE-SCHEME-REFERRAL-URL" target="_blank" rel="noopener">Visit Charge Scheme <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <p>Charge Scheme is a salary sacrifice product for fleets moving to electrification, letting employees drive an electric vehicle from gross salary. We refer clients across where it makes the move to electric cheaper to fund.</p>
+                    <a class="partner-link" href="https://www.chargescheme.com/?utm_source=Partnerships&amp;utm_campaign=SaferCharging&amp;utm_medium=Partnerships" target="_blank" rel="noopener" aria-label="Visit Charge Scheme (opens in a new tab)">Visit Charge Scheme <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                 </div>
                 <div class="partner-card reveal reveal-delay-2">
                     <div class="partner-kicker">Delivery network</div>
@@ -1001,13 +1014,59 @@
             .quote-card .who{font-size:13.5px;color:rgba(255,255,255,0.6);}
             .quote-card .who strong{color:var(--gold-soft,#F0E94D);font-weight:600;}
             @media(max-width:820px){.quote-grid{grid-template-columns:1fr;}}
+            /* Featured named reference (published with written permission) */
+            /* Client reference. Deliberately not a card: no panel, no border, no radius.
+               A rule-and-kicker masthead, the quote set large in the display serif with the
+               opening mark hung into the margin, and a crest lockup for attribution. */
+            .ref{position:relative;z-index:2;margin-top:46px;max-width:1000px;}
+            .ref-kicker{display:flex;align-items:center;gap:14px;font-size:11px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:var(--gold-soft,#F0E94D);margin-bottom:24px;}
+            .ref-kicker::before{content:'';flex:none;width:46px;height:2px;background:var(--gold,#E8DE25);}
+            .ref-q{margin:0;font-family:var(--font-display,Georgia,serif);font-weight:400;font-size:clamp(20px,2.4vw,31px);line-height:1.44;letter-spacing:-0.2px;color:#fff;text-wrap:pretty;text-indent:-0.42em;}
+            .ref-src{display:flex;align-items:center;gap:26px;margin-top:34px;flex-wrap:wrap;}
+            .ref-crests{display:flex;align-items:center;gap:12px;flex:none;}
+            /* Crests sit on a white plate because force crests are full-colour artwork.
+               If the file is missing the plate becomes an outlined wordmark instead, so the
+               lockup still reads as finished. Drop-in filenames are in assets/README.md. */
+            .crest{display:flex;align-items:center;justify-content:center;height:58px;min-width:58px;padding:8px 12px;background:#fff;border-radius:10px;}
+            .crest img{height:100%;width:auto;max-width:130px;object-fit:contain;}
+            .crest.crest-text{background:transparent;border:1px solid rgba(255,255,255,0.28);padding:0 15px;}
+            .crest-fb{display:none;font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.92);line-height:1.4;text-align:center;}
+            .crest.crest-text .crest-fb{display:block;}
+            .ref-who{padding-left:26px;border-left:1px solid rgba(255,255,255,0.16);font-size:14px;line-height:1.62;color:rgba(255,255,255,0.62);}
+            .ref-who b{display:block;font-family:var(--font-body),sans-serif;font-size:15.5px;font-weight:700;color:#fff;}
+            .ref-who .ref-org{display:block;margin-top:4px;color:var(--gold-soft,#F0E94D);font-weight:600;letter-spacing:0.3px;}
+            @media(max-width:640px){
+                .ref{margin-top:36px;}
+                .ref-q{text-indent:0;}
+                .ref-src{gap:20px;}
+                .ref-who{flex:1 1 100%;padding-left:0;border-left:none;padding-top:18px;border-top:1px solid rgba(255,255,255,0.14);}
+            }
         </style>
         <div class="container">
             <div class="proof-inner reveal">
                 <div class="section-label">Case studies</div>
                 <h2>Real estates, real <em>outcomes</em></h2>
-                <p class="lead">Client names stay confidential, we reference them externally only with permission. These are real, anonymised engagements. Named references, with contract detail, are available to serious enquiries on request.</p>
+                <p class="lead">Client names stay confidential, we reference them externally only with permission. The reference below is published with that permission; the engagements beneath it are real but anonymised. Further named references, with contract detail, are available to serious enquiries on request.</p>
             </div>
+
+            <!-- Official client reference. Published with written permission (supplied by the CEO, Aug 2026).
+                 Quote and attribution are reproduced exactly as provided. Do not paraphrase or trim. -->
+            <figure class="ref reveal">
+                <div class="ref-kicker">Official client reference</div>
+                <blockquote class="ref-q">&ldquo;Safer Charging has provided excellent support to us on our EV charging infrastructure projects, delivering high-quality Specialist FRA consultancy, EV technical maintenance reviews, and practical recommendations throughout. Their professionalism, expertise, and attention to detail have been outstanding, and the quality of their work has consistently exceeded expectations.&rdquo;</blockquote>
+                <figcaption class="ref-src">
+                    <span class="ref-crests">
+                        <span class="crest"><img src="assets/kent-police-logo.png" alt="Kent Police" onerror="this.onerror=null;this.closest('.crest').classList.add('crest-text');this.remove();"><span class="crest-fb">Kent<br>Police</span></span>
+                        <span class="crest"><img src="assets/essex-police-logo.png" alt="Essex Police" onerror="this.onerror=null;this.closest('.crest').classList.add('crest-text');this.remove();"><span class="crest-fb">Essex<br>Police</span></span>
+                    </span>
+                    <span class="ref-who">
+                        <b>Philip Belton BEng (Hons) IEng MEI MIHEEM</b>
+                        Energy Manager, Estate &amp; Facilities Services Department<br>
+                        Kent &amp; Essex Support Services Directorate
+                        <span class="ref-org">Kent and Essex Police</span>
+                    </span>
+                </figcaption>
+            </figure>
 
             <div class="cs-grid">
                 <!-- Anonymised from Master Tender & Portals Pack, tab 7. Do not add client names without written permission. -->
@@ -1050,9 +1109,9 @@
             </div>
 
             <!-- ============================================================= -->
-            <!-- TESTIMONIALS. CEO: per the brand guidelines and tender pack,    -->
-            <!-- no client is yet cleared to be named. When you have WRITTEN     -->
-            <!-- permission, paste approved quotes below and delete this comment -->
+            <!-- ADDITIONAL TESTIMONIALS. The Kent and Essex Police reference    -->
+            <!-- above is live. As further clients give WRITTEN permission,      -->
+            <!-- paste their approved quotes below and remove the comment        -->
             <!-- wrapper to make them live. Do not invent quotes.                -->
             <!--
             <div class="quote-grid">
@@ -1119,7 +1178,7 @@
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="team.html">Our Team</a></li>
                         <li><a href="news.html">News &amp; insights</a></li>
-                        <li><a href="about.html#academy">Arcane Academy</a></li>
+                        <li><a href="https://www.arcanechargingacademy.co.uk" target="_blank" rel="noopener">Arcane Charging Academy</a></li>
                         <li><a href="https://www.chargesafe.uk" target="_blank" rel="noopener">ChargeSafe</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
@@ -1141,16 +1200,17 @@
                 </div>
             </div>
             <div class="footer-group">
-                <style>.footer-group{border-top:1px solid rgba(255,255,255,0.1);margin-top:10px;padding:24px 0 6px;display:flex;flex-wrap:wrap;align-items:center;gap:16px 30px}.footer-group .fg-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.42);width:100%;margin-bottom:2px}.footer-group a.fg-brand{display:inline-flex;align-items:center;opacity:0.82;transition:opacity .3s ease}.footer-group a.fg-brand:hover{opacity:1}.footer-group a.fg-brand img{height:22px;width:auto;display:block}.footer-group a.fg-text{font-size:14px;color:rgba(255,255,255,0.72);font-weight:600;transition:color .3s ease}.footer-group a.fg-text:hover{color:#F0E94D}</style>
+                <style>.footer-group{border-top:1px solid rgba(255,255,255,0.1);margin-top:10px;padding:24px 0 6px;display:flex;flex-wrap:wrap;align-items:center;gap:16px 30px}.footer-group .fg-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.42);width:100%;margin-bottom:2px}.footer-group a.fg-brand{display:inline-flex;align-items:center;opacity:0.82;transition:opacity .3s ease}.footer-group a.fg-brand:hover{opacity:1}.footer-group a.fg-brand img{height:22px;width:auto;display:block}.footer-group a.fg-wordmark{display:inline-flex;align-items:center;height:22px;font-family:'Enriqueta',Georgia,serif;font-size:17px;font-weight:700;letter-spacing:.1px;color:rgba(255,255,255,0.92);opacity:.82;transition:opacity .3s ease,color .3s ease}.footer-group a.fg-wordmark:hover{opacity:1;color:#F0E94D}</style>
                 <span class="fg-label">Part of the group</span>
                 <a href="https://www.chargesafe.uk" target="_blank" rel="noopener" class="fg-brand" aria-label="ChargeSafe (opens in a new tab)"><img src="assets/chargesafe-logo-transparent.png" alt="ChargeSafe" style="height:22px;"></a>
                 <a href="https://www.arcanechargingacademy.co.uk" target="_blank" rel="noopener" class="fg-brand" aria-label="Arcane Charging Academy (opens in a new tab)"><img src="assets/arcane-academy-logo.png" alt="Arcane Charging Academy" style="height:30px;"></a>
-                <a href="charging-network.html" class="fg-text">Charging Network</a>
+                <!-- ACN: awaiting the Charging Network logo file. To swap: drop the artwork into assets/, then change class fg-wordmark to fg-brand and replace the text with an img tag (same pattern as the ChargeSafe and Arcane links above). --><a href="charging-network.html" class="fg-wordmark">Charging Network</a>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2024 &ndash; 2026 Safer Charging Limited. All rights reserved. Company no. 15822485. VAT: 472 4756 68.</p>
                 <div class="footer-bottom-links">
-                    <a href="privacy.html">Privacy Statement</a>
+                    <a href="privacy.html">Privacy Notice</a>
+                    <a href="policies-and-terms.html">Policies &amp; Terms</a>
                 </div>
             </div>
         </div>

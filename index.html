@@ -14,7 +14,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.safercharging.co.uk">
     <meta property="og:site_name" content="Safer Charging">
-    <meta property="og:image" content="https://static.wixstatic.com/media/ab875a_c82701258f0e40aeaabf05b0de4dfb68~mv2.jpg/v1/fill/w_1200,h_630,al_c,q_85,enc_avif,quality_auto/Engineers_edited.jpg">
+    <meta property="og:image" content="https://www.safercharging.co.uk/assets/og/engineers-1200x630.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Safer Charging | The EV Charge Point Maintenance Specialists">
@@ -111,7 +111,7 @@
         .hero-video { z-index: 2; opacity: 0; transition: opacity 1.2s var(--ease); }
         .hero.video-playing .hero-video { opacity: 1; }
         @keyframes kenburns { 0% { transform: scale(1.05) translate(0,0); } 100% { transform: scale(1.16) translate(-1.5%, -1%); } }
-        .hero-scrim { position: absolute; inset: 0; z-index: 3; background: linear-gradient(100deg, rgba(7,18,51,0.95) 0%, rgba(11,27,63,0.8) 46%, rgba(11,27,63,0.4) 100%), linear-gradient(0deg, rgba(7,18,51,0.9) 0%, rgba(7,18,51,0) 42%); }
+        .hero-scrim { position: absolute; inset: 0; z-index: 3; background: linear-gradient(100deg, rgba(7,18,51,0.88) 0%, rgba(11,27,63,0.64) 52%, rgba(11,27,63,0.15) 100%), linear-gradient(0deg, rgba(7,18,51,0.68) 0%, rgba(7,18,51,0) 34%); }
 
         /* animated live-charging hero scene (bespoke, no external media) */
         .hero-scene { position: absolute; z-index: 4; right: 3%; top: 48%; transform: translateY(-50%); width: min(42vw, 480px); pointer-events: none; opacity: 0; animation: fadeUp 1.2s var(--ease-out) 0.7s forwards; }
@@ -176,6 +176,20 @@
         .accred-item { display: flex; align-items: center; justify-content: center; height: 78px; padding: 12px 24px; background: #fff; border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 6px 18px rgba(11,27,63,0.06); transition: all 0.3s var(--ease); }
         .accred-item:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(11,27,63,0.13); border-color: var(--gold); }
         .accred-item img { height: 100%; width: auto; max-width: 170px; object-fit: contain; }
+
+        /* ===== CLIENT REFERENCE BAND ===== */
+        .refband { background: var(--navy); color: #fff; padding: clamp(66px, 8vw, 104px) 0; position: relative; overflow: hidden; }
+        .refband::after { content: ''; position: absolute; top: -30%; right: -8%; width: 520px; height: 520px; background: radial-gradient(circle, rgba(232,222,37,0.13), transparent 66%); pointer-events: none; }
+        .refband-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; text-align: center; }
+        .refband-lbl { font-size: 11.5px; font-weight: 700; letter-spacing: 2.4px; text-transform: uppercase; color: var(--gold-soft); margin-bottom: 26px; }
+        .refband blockquote { font-family: var(--font-display); font-size: clamp(19px, 2.3vw, 27px); font-weight: 400; line-height: 1.5; color: #fff; letter-spacing: -0.2px; margin: 0 0 30px; text-wrap: pretty; }
+        .refband .who { font-size: 14px; line-height: 1.65; color: rgba(255,255,255,0.62); }
+        .refband .who strong { display: block; color: var(--gold-soft); font-weight: 600; font-size: 15px; margin-bottom: 3px; }
+        .refband-logos { display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; margin-top: 34px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.13); }
+        .refband-logos .rb-cap { width: 100%; font-size: 10.5px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 4px; }
+        .refband-logos span.rb-item { display: flex; align-items: center; justify-content: center; height: 62px; padding: 10px 20px; background: #fff; border-radius: 10px; }
+        .refband-logos img { height: 100%; width: auto; max-width: 140px; object-fit: contain; }
+        @media (max-width: 620px) { .refband-logos span.rb-item { height: 52px; } }
 
         /* ===== EDITORIAL SECTION SYSTEM ===== */
         .ed { padding: clamp(90px, 12vw, 168px) 0; position: relative; }
@@ -282,7 +296,7 @@
         .vision-by { margin-top: 34px; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.5); }
 
         /* ===== ECOSYSTEM (asymmetric: one large, one small) ===== */
-        .eco-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; margin-top: 54px; }
+        .eco-grid { display: grid; grid-template-columns: 1.25fr 1fr 1fr; gap: 24px; margin-top: 54px; }
         .eco-card { border: 1px solid var(--line); padding: 44px 42px; position: relative; overflow: hidden; transition: all 0.4s var(--ease); background: var(--white); display: flex; flex-direction: column; }
         .eco-card.big { border-radius: 2px 34px 2px 2px; background: var(--navy); color: #fff; }
         .eco-card.small { border-radius: 2px 2px 34px 2px; }
@@ -407,9 +421,9 @@
     <!-- HERO -->
     <section class="hero" id="hero">
         <div class="hero-media">
-            <img class="hero-fallback" src="https://images.pexels.com/photos/37576187/pexels-photo-37576187.jpeg?auto=compress&cs=tinysrgb&w=1920" onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzBCMUIzRiIvPjxwYXRoIGQ9Ik0yMTQgOTIgTDE3NiAxNzQgaDI4IGwtMTQgNjIgNTAgLTg4IGgtMzAgeiIgZmlsbD0iI0U4REUyNSIgb3BhY2l0eT0iMC44NSIvPjwvc3ZnPg=='" alt="A car park of electric vehicle charge points">
+            <img class="hero-fallback" src="assets/media/37576187.jpg" onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzBCMUIzRiIvPjxwYXRoIGQ9Ik0yMTQgOTIgTDE3NiAxNzQgaDI4IGwtMTQgNjIgNTAgLTg4IGgtMzAgeiIgZmlsbD0iI0U4REUyNSIgb3BhY2l0eT0iMC44NSIvPjwvc3ZnPg=='" alt="A car park of electric vehicle charge points">
             <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="auto"
-                   poster="https://images.pexels.com/photos/37576187/pexels-photo-37576187.jpeg?auto=compress&cs=tinysrgb&w=1920"><source src="https://videos.pexels.com/video-files/4817951/4817951-uhd_2560_1440_30fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/4817951/4817951-hd_1920_1080_30fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/4817951/4817951-hd_1920_1080_25fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/4817951/4817951-hd_1920_1080_24fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/4817951/4817951-hd_1280_720_30fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/4817951/4817951-hd_1280_720_25fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/4817951/4817951-sd_960_540_30fps.mp4" type="video/mp4"><source src="https://videos.pexels.com/video-files/4817951/4817951-sd_640_360_30fps.mp4" type="video/mp4"><source src="https://cdn.coverr.co/videos/coverr-charging-an-electric-car-1573/1080p.mp4" type="video/mp4"></video>
+                   poster="assets/media/37576187.jpg"><source src="assets/video/hero-4817951.mp4" type="video/mp4"></video>
         </div>
         <div class="hero-scrim"></div>
 
@@ -452,9 +466,9 @@
             <div class="accred-inner">
                 <span class="accred-label">Accredited &amp; recognised</span>
                 <div class="accred-logos">
-                    <a href="https://www.safecontractor.com/" target="_blank" rel="noopener" class="accred-item" aria-label="SafeContractor accredited (opens in a new tab)"><img src="https://static.wixstatic.com/media/ab875a_428de7a7c5e44d99bd007a6ed07ac839~mv2.png" alt="SafeContractor accredited"></a>
-                    <a href="https://ssip.org.uk/" target="_blank" rel="noopener" class="accred-item" aria-label="SSIP accredited (opens in a new tab)"><img src="https://static.wixstatic.com/media/ab875a_7a8e370e904f4d66a77cef3ded16967d~mv2.jpg" alt="SSIP (Safety Schemes in Procurement) accredited"></a>
-                    <a href="https://greatbritishentrepreneurawards.com/" target="_blank" rel="noopener" class="accred-item" aria-label="Great British Entrepreneur Awards 2025 Finalist (opens in a new tab)"><img src="https://static.wixstatic.com/media/ab875a_c5add99e2cab4a578adf89ce38b0cc58~mv2.png" alt="Great British Entrepreneur Awards 2025 Finalist"></a>
+                    <a href="https://www.safecontractor.com/" target="_blank" rel="noopener" class="accred-item" aria-label="SafeContractor accredited (opens in a new tab)"><img src="assets/accreditations/safecontractor.png" alt="SafeContractor accredited"></a>
+                    <a href="https://ssip.org.uk/" target="_blank" rel="noopener" class="accred-item" aria-label="SSIP accredited (opens in a new tab)"><img src="assets/accreditations/ssip.jpg" alt="SSIP (Safety Schemes in Procurement) accredited"></a>
+                    <a href="https://greatbritishentrepreneurawards.com/" target="_blank" rel="noopener" class="accred-item" aria-label="Great British Entrepreneur Awards Finalist 2025 and 2026 (opens in a new tab)"><img src="assets/accreditations/gbea-finalist.png" alt="Great British Entrepreneur Awards Finalist 2025 and 2026"></a>
                 </div>
             </div>
         </div>
@@ -467,7 +481,7 @@
                 <div class="reveal">
                     <div class="ed-index"><span class="no">01</span><span class="lbl">Why we exist</span></div>
                     <p class="pos-lead">Most charge point problems start when the people who installed the hardware move on. <span class="hl">We pick it up, and keep it running.</span></p>
-                    <img class="pos-img" src="https://images.pexels.com/photos/9800000/pexels-photo-9800000.jpeg?auto=compress&cs=tinysrgb&w=1200" onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzBCMUIzRiIvPjxwYXRoIGQ9Ik0yMTQgOTIgTDE3NiAxNzQgaDI4IGwtMTQgNjIgNTAgLTg4IGgtMzAgeiIgZmlsbD0iI0U4REUyNSIgb3BhY2l0eT0iMC44NSIvPjwvc3ZnPg=='" alt="An EV charge point being maintained by a Safer Charging specialist" loading="lazy">
+                    <img class="pos-img" src="assets/media/9800000.jpg" onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzBCMUIzRiIvPjxwYXRoIGQ9Ik0yMTQgOTIgTDE3NiAxNzQgaDI4IGwtMTQgNjIgNTAgLTg4IGgtMzAgeiIgZmlsbD0iI0U4REUyNSIgb3BhY2l0eT0iMC44NSIvPjwvc3ZnPg=='" alt="An EV charge point being maintained by a Safer Charging specialist" loading="lazy">
                 </div>
                 <div class="pos-right reveal rd-1">
                     <p>For fleets, workplaces, property owners and public sector bodies that depend on EV charging, Safer Charging is the maintenance and compliance specialist. Unlike generalist installers who treat maintenance as a sideline, it is all we do.</p>
@@ -481,6 +495,24 @@
         </div>
     </section>
 
+    <!-- CLIENT REFERENCE -->
+    <section class="refband" aria-label="Client reference">
+        <div class="refband-inner">
+            <div class="refband-lbl">Client reference</div>
+            <blockquote>&ldquo;Safer Charging has provided excellent support to us on our EV charging infrastructure projects, delivering high-quality Specialist FRA consultancy, EV technical maintenance reviews, and practical recommendations throughout. Their professionalism, expertise, and attention to detail have been outstanding, and the quality of their work has consistently exceeded expectations.&rdquo;</blockquote>
+            <div class="who">
+                <strong>Philip Belton BEng (Hons) IEng MEI MIHEEM</strong>
+                Energy Manager, Estate &amp; Facilities Services Department<br>
+                Kent &amp; Essex Support Services Directorate, Kent and Essex Police
+            </div>
+            <div class="refband-logos">
+                <span class="rb-cap">Trusted by</span>
+                <span class="rb-item"><img src="assets/essex-police-logo.png" alt="Essex Police"></span>
+                <span class="rb-item"><img src="assets/kent-police-logo.png" alt="Kent Police"></span>
+            </div>
+        </div>
+    </section>
+
     <!-- 02 · MANIFESTO / PILLARS -->
     <section class="ed paper">
         <div class="container">
@@ -489,7 +521,7 @@
                     <div class="ed-index"><span class="no">02</span><span class="lbl">What sets us apart</span></div>
                     <h2 class="ed-h">Specialists, not a <em>sideline</em>.</h2>
                     <p>Five things that separate us from the install team that fitted your chargers.</p>
-                    <img class="pos-img" src="https://images.pexels.com/photos/8827006/pexels-photo-8827006.jpeg?auto=compress&cs=tinysrgb&w=1000" onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzBCMUIzRiIvPjxwYXRoIGQ9Ik0yMTQgOTIgTDE3NiAxNzQgaDI4IGwtMTQgNjIgNTAgLTg4IGgtMzAgeiIgZmlsbD0iI0U4REUyNSIgb3BhY2l0eT0iMC44NSIvPjwvc3ZnPg=='" alt="EV charge point cabling and connector" loading="lazy" style="margin-top:28px; aspect-ratio:4/3;">
+                    <img class="pos-img" src="assets/media/8827006.jpg" onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzBCMUIzRiIvPjxwYXRoIGQ9Ik0yMTQgOTIgTDE3NiAxNzQgaDI4IGwtMTQgNjIgNTAgLTg4IGgtMzAgeiIgZmlsbD0iI0U4REUyNSIgb3BhY2l0eT0iMC44NSIvPjwvc3ZnPg=='" alt="EV charge point cabling and connector" loading="lazy" style="margin-top:28px; aspect-ratio:4/3;">
                 </aside>
                 <div class="m-list">
                     <div class="m-row reveal"><div class="m-num">01</div><div><h3>Specialist, not a sideline</h3><p>The only UK business focused purely on EV charge point maintenance and compliance. We do not chase new installs, so your estate gets specialists who give it proper time.</p></div></div>
@@ -509,25 +541,25 @@
             <h2 class="ed-h reveal">Comprehensive charge point <em>support</em>.</h2>
             <div class="svc">
                 <a href="services.html" class="svc-row reveal">
-                    <div class="svc-thumb"><img src="https://static.wixstatic.com/media/ab875a_040ff05e29df4e23ad017ac9f48b28fa~mv2.png/v1/fill/w_400,h_264,al_c,q_90,enc_avif,quality_auto/Office%20Charge%20point.png" onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzBCMUIzRiIvPjxwYXRoIGQ9Ik0yMTQgOTIgTDE3NiAxNzQgaDI4IGwtMTQgNjIgNTAgLTg4IGgtMzAgeiIgZmlsbD0iI0U4REUyNSIgb3BhY2l0eT0iMC44NSIvPjwvc3ZnPg=='" alt="EV charge points being maintained"></div><span class="svc-no">01</span>
+                    <div class="svc-thumb"><img src="assets/services/office-charge-point.jpg" onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzBCMUIzRiIvPjxwYXRoIGQ9Ik0yMTQgOTIgTDE3NiAxNzQgaDI4IGwtMTQgNjIgNTAgLTg4IGgtMzAgeiIgZmlsbD0iI0U4REUyNSIgb3BhY2l0eT0iMC44NSIvPjwvc3ZnPg=='" alt="EV charge points being maintained"></div><span class="svc-no">01</span>
                     <h3>Maintenance &amp; aftercare</h3>
                     <span class="svc-desc">Preventative and reactive maintenance under a clear plan, sized to your estate, to minimise downtime.</span>
                     <span class="svc-go"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
                 </a>
                 <a href="risk-assessments.html" class="svc-row reveal">
-                    <div class="svc-thumb"><img src="https://images.pexels.com/photos/9800004/pexels-photo-9800004.jpeg?auto=compress&cs=tinysrgb&w=400" onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzBCMUIzRiIvPjxwYXRoIGQ9Ik0yMTQgOTIgTDE3NiAxNzQgaDI4IGwtMTQgNjIgNTAgLTg4IGgtMzAgeiIgZmlsbD0iI0U4REUyNSIgb3BhY2l0eT0iMC44NSIvPjwvc3ZnPg=='" alt="EV charger inspection"></div><span class="svc-no">02</span>
+                    <div class="svc-thumb"><img src="assets/media/9800004.jpg" onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzBCMUIzRiIvPjxwYXRoIGQ9Ik0yMTQgOTIgTDE3NiAxNzQgaDI4IGwtMTQgNjIgNTAgLTg4IGgtMzAgeiIgZmlsbD0iI0U4REUyNSIgb3BhY2l0eT0iMC44NSIvPjwvc3ZnPg=='" alt="EV charger inspection"></div><span class="svc-no">02</span>
                     <h3>Fire risk &amp; compliance</h3>
                     <span class="svc-desc">EV-specific electrical inspection and fire risk assessment, plus the remediation, with insurer-ready reporting.</span>
                     <span class="svc-go"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
                 </a>
                 <a href="contact.html" class="svc-row reveal">
-                    <div class="svc-thumb"><img src="https://images.pexels.com/photos/4699781/pexels-photo-4699781.jpeg?auto=compress&cs=tinysrgb&w=400" onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzBCMUIzRiIvPjxwYXRoIGQ9Ik0yMTQgOTIgTDE3NiAxNzQgaDI4IGwtMTQgNjIgNTAgLTg4IGgtMzAgeiIgZmlsbD0iI0U4REUyNSIgb3BhY2l0eT0iMC44NSIvPjwvc3ZnPg=='" alt="EV charge point audit"></div><span class="svc-no">03</span>
+                    <div class="svc-thumb"><img src="assets/media/4699781.jpg" onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzBCMUIzRiIvPjxwYXRoIGQ9Ik0yMTQgOTIgTDE3NiAxNzQgaDI4IGwtMTQgNjIgNTAgLTg4IGgtMzAgeiIgZmlsbD0iI0U4REUyNSIgb3BhY2l0eT0iMC44NSIvPjwvc3ZnPg=='" alt="EV charge point audit"></div><span class="svc-no">03</span>
                     <h3>Charge Point Audit</h3>
                     <span class="svc-desc">A non-invasive survey that maps the estate and gives an honest picture of condition, risk and compliance.</span>
                     <span class="svc-go"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
                 </a>
                 <a href="services.html#cpo" class="svc-row reveal">
-                    <div class="svc-thumb"><img src="https://images.pexels.com/photos/9800029/pexels-photo-9800029.jpeg?auto=compress&cs=tinysrgb&w=400" onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzBCMUIzRiIvPjxwYXRoIGQ9Ik0yMTQgOTIgTDE3NiAxNzQgaDI4IGwtMTQgNjIgNTAgLTg4IGgtMzAgeiIgZmlsbD0iI0U4REUyNSIgb3BhY2l0eT0iMC44NSIvPjwvc3ZnPg=='" alt="Network of EV charge points"></div><span class="svc-no">04</span>
+                    <div class="svc-thumb"><img src="assets/media/9800029.jpg" onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzBCMUIzRiIvPjxwYXRoIGQ9Ik0yMTQgOTIgTDE3NiAxNzQgaDI4IGwtMTQgNjIgNTAgLTg4IGgtMzAgeiIgZmlsbD0iI0U4REUyNSIgb3BhY2l0eT0iMC44NSIvPjwvc3ZnPg=='" alt="Network of EV charge points"></div><span class="svc-no">04</span>
                     <h3>CPO, OEM &amp; installer partnership</h3>
                     <span class="svc-desc">The maintenance arm for your installed base. No new install or design, so no channel conflict.</span>
                     <span class="svc-go"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
@@ -554,7 +586,7 @@
                 <div class="feat-visual reveal rd-1">
                     <div class="feat-img">
                         <span class="feat-tag">Audit-led</span>
-                        <img src="https://images.pexels.com/photos/9800002/pexels-photo-9800002.jpeg?auto=compress&cs=tinysrgb&w=1200" onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzBCMUIzRiIvPjxwYXRoIGQ9Ik0yMTQgOTIgTDE3NiAxNzQgaDI4IGwtMTQgNjIgNTAgLTg4IGgtMzAgeiIgZmlsbD0iI0U4REUyNSIgb3BhY2l0eT0iMC44NSIvPjwvc3ZnPg=='" alt="EV charge point audit in progress">
+                        <img src="assets/media/9800002.jpg" onerror="this.onerror=null;this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzBCMUIzRiIvPjxwYXRoIGQ9Ik0yMTQgOTIgTDE3NiAxNzQgaDI4IGwtMTQgNjIgNTAgLTg4IGgtMzAgeiIgZmlsbD0iI0U4REUyNSIgb3BhY2l0eT0iMC44NSIvPjwvc3ZnPg=='" alt="EV charge point audit in progress">
                     </div>
                     <div class="feat-quote"><span class="mark">&ldquo;</span><p>Fact, not guesswork, every recommendation is evidence-based.</p></div>
                 </div>
@@ -578,6 +610,34 @@
                 <div class="fig reveal rd-2"><div class="fig-num">560<span style="font-size:0.55em;">+</span></div><h4>UK installer network</h4><p>A UK-wide partner network giving us national coverage and joint-bid strength, a collaborator on delivery, never a competitor for your maintenance.</p></div>
                 <div class="fig reveal rd-3"><div class="fig-num">99<span style="font-size:0.55em;">%</span></div><h4>The reliability bar</h4><p>The uptime rapid networks must now hit under the Public Charge Point Regulations. Maintenance is how you get there.</p></div>
             </div>
+            <style>
+                /* Client reference. Deliberately not a card: no panel, no border, no radius.
+                   A rule-and-kicker masthead, the quote set large in the display serif with the
+                   opening mark hung into the margin, and a crest lockup for attribution. */
+                .ref{margin-top:58px;max-width:1000px;}
+                .ref-kicker{display:flex;align-items:center;gap:14px;font-size:11px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:var(--gold-soft);margin-bottom:24px;}
+                .ref-kicker::before{content:'';flex:none;width:46px;height:2px;background:var(--gold);}
+                .ref-q{margin:0;font-family:var(--font-display);font-weight:400;font-size:clamp(20px,2.4vw,30px);line-height:1.44;letter-spacing:-0.2px;color:#fff;text-wrap:pretty;text-indent:-0.42em;}
+                .ref-src{display:flex;align-items:center;gap:26px;margin-top:34px;flex-wrap:wrap;}
+                .ref-crests{display:flex;align-items:center;gap:12px;flex:none;}
+                /* Crests sit on a white plate because force crests are full-colour artwork.
+                   If the file is missing the plate becomes an outlined wordmark instead, so the
+                   lockup still reads as finished. Drop-in filenames are in assets/README.md. */
+                .crest{display:flex;align-items:center;justify-content:center;height:58px;min-width:58px;padding:8px 12px;background:#fff;border-radius:10px;}
+                .crest img{height:100%;width:auto;max-width:130px;object-fit:contain;}
+                .crest.crest-text{background:transparent;border:1px solid rgba(255,255,255,0.28);padding:0 15px;}
+                .crest-fb{display:none;font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.92);line-height:1.4;text-align:center;}
+                .crest.crest-text .crest-fb{display:block;}
+                .ref-who{padding-left:26px;border-left:1px solid rgba(255,255,255,0.16);font-size:14px;line-height:1.62;color:rgba(255,255,255,0.6);}
+                .ref-who b{display:block;font-family:var(--font-body);font-size:15.5px;font-weight:700;color:#fff;}
+                .ref-who .ref-org{display:block;margin-top:4px;color:var(--gold-soft);font-weight:600;letter-spacing:0.3px;}
+                @media(max-width:640px){
+                    .ref{margin-top:44px;}
+                    .ref-q{text-indent:0;}
+                    .ref-src{gap:20px;}
+                    .ref-who{flex:1 1 100%;padding-left:0;border-left:none;padding-top:18px;border-top:1px solid rgba(255,255,255,0.14);}
+                }
+            </style>
             <p class="fig-note">Client names are treated as sensitive and used only with permission. Figures reflect delivered work; we back service levels only where we have the local resource to deliver them.</p>
         </div>
     </section>
@@ -648,6 +708,16 @@
                     <p>Our training and resource hub with useful content for every experience level, from your kW to your kWh, to advanced maintenance techniques.</p>
                     <a href="about.html#academy" class="eco-btn">Explore the Academy <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                 </div>
+                <div class="eco-card small reveal rd-2">
+                    <div class="eco-lab">Client portal</div>
+                    <!-- ACN: awaiting the Charging Network logo file AND the live portal login URL.
+                         Until the portal URL is supplied this points at the holding page. To finish:
+                         add <img src="assets/charging-network-logo.png" class="eco-logo"> above the h3
+                         and change the href below to the external portal login. -->
+                    <h3>Arcane Charging Network</h3>
+                    <p>Our client portal for live estate visibility, giving existing clients one place to see the condition, compliance and service history of every charge point we look after.</p>
+                    <a href="charging-network.html" class="eco-btn">Client login <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
             </div>
         </div>
     </section>
@@ -680,9 +750,9 @@
                         <a href="https://www.facebook.com/profile.php?id=61573841676004" target="_blank" rel="noopener" aria-label="Safer Charging on Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
                     </div>
                     <div class="footer-certs">
-                        <a href="https://www.safecontractor.com/" target="_blank" rel="noopener" aria-label="SafeContractor accredited (opens in a new tab)"><img src="https://static.wixstatic.com/media/ab875a_428de7a7c5e44d99bd007a6ed07ac839~mv2.png" alt="SafeContractor accredited" class="footer-cert"></a>
-                        <a href="https://ssip.org.uk/" target="_blank" rel="noopener" aria-label="SSIP accredited (opens in a new tab)"><img src="https://static.wixstatic.com/media/ab875a_7a8e370e904f4d66a77cef3ded16967d~mv2.jpg" alt="SSIP (Safety Schemes in Procurement) accredited" class="footer-cert"></a>
-                        <a href="https://greatbritishentrepreneurawards.com/" target="_blank" rel="noopener" aria-label="Great British Entrepreneur Awards 2025 Finalist (opens in a new tab)"><img src="https://static.wixstatic.com/media/ab875a_c5add99e2cab4a578adf89ce38b0cc58~mv2.png" alt="Great British Entrepreneur Awards 2025 Finalist" class="footer-cert"></a>
+                        <a href="https://www.safecontractor.com/" target="_blank" rel="noopener" aria-label="SafeContractor accredited (opens in a new tab)"><img src="assets/accreditations/safecontractor.png" alt="SafeContractor accredited" class="footer-cert"></a>
+                        <a href="https://ssip.org.uk/" target="_blank" rel="noopener" aria-label="SSIP accredited (opens in a new tab)"><img src="assets/accreditations/ssip.jpg" alt="SSIP (Safety Schemes in Procurement) accredited" class="footer-cert"></a>
+                        <a href="https://greatbritishentrepreneurawards.com/" target="_blank" rel="noopener" aria-label="Great British Entrepreneur Awards Finalist 2025 and 2026 (opens in a new tab)"><img src="assets/accreditations/gbea-finalist.png" alt="Great British Entrepreneur Awards Finalist 2025 and 2026" class="footer-cert"></a>
                     </div>
                 </div>
                 <div>
@@ -702,6 +772,7 @@
                         <li><a href="team.html">Our team</a></li>
                         <li><a href="news.html">News &amp; insights</a></li>
                         <li><a href="https://www.chargesafe.uk" target="_blank" rel="noopener">ChargeSafe</a></li>
+                        <li><a href="https://www.arcanechargingacademy.co.uk" target="_blank" rel="noopener">Arcane Charging Academy</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -714,17 +785,18 @@
                 </div>
             </div>
             <div class="footer-group">
-                <style>.footer-group{border-top:1px solid rgba(255,255,255,0.1);margin-top:10px;padding:24px 0 6px;display:flex;flex-wrap:wrap;align-items:center;gap:16px 30px}.footer-group .fg-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.42);width:100%;margin-bottom:2px}.footer-group a.fg-brand{display:inline-flex;align-items:center;opacity:0.82;transition:opacity .3s ease}.footer-group a.fg-brand:hover{opacity:1}.footer-group a.fg-brand img{height:22px;width:auto;display:block}.footer-group a.fg-text{font-size:14px;color:rgba(255,255,255,0.72);font-weight:600;transition:color .3s ease}.footer-group a.fg-text:hover{color:#F0E94D}</style>
+                <style>.footer-group{border-top:1px solid rgba(255,255,255,0.1);margin-top:10px;padding:24px 0 6px;display:flex;flex-wrap:wrap;align-items:center;gap:16px 30px}.footer-group .fg-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.42);width:100%;margin-bottom:2px}.footer-group a.fg-brand{display:inline-flex;align-items:center;opacity:0.82;transition:opacity .3s ease}.footer-group a.fg-brand:hover{opacity:1}.footer-group a.fg-brand img{height:22px;width:auto;display:block}.footer-group a.fg-wordmark{display:inline-flex;align-items:center;height:22px;font-family:'Enriqueta',Georgia,serif;font-size:17px;font-weight:700;letter-spacing:.1px;color:rgba(255,255,255,0.92);opacity:.82;transition:opacity .3s ease,color .3s ease}.footer-group a.fg-wordmark:hover{opacity:1;color:#F0E94D}</style>
                 <span class="fg-label">Part of the group</span>
                 <a href="https://www.chargesafe.uk" target="_blank" rel="noopener" class="fg-brand" aria-label="ChargeSafe (opens in a new tab)"><img src="assets/chargesafe-logo-transparent.png" alt="ChargeSafe" style="height:22px;"></a>
                 <a href="https://www.arcanechargingacademy.co.uk" target="_blank" rel="noopener" class="fg-brand" aria-label="Arcane Charging Academy (opens in a new tab)"><img src="assets/arcane-academy-logo.png" alt="Arcane Charging Academy" style="height:30px;"></a>
-                <a href="charging-network.html" class="fg-text">Charging Network</a>
+                <!-- ACN: awaiting the Charging Network logo file. To swap: drop the artwork into assets/, then change class fg-wordmark to fg-brand and replace the text with an img tag (same pattern as the ChargeSafe and Arcane links above). --><a href="charging-network.html" class="fg-wordmark">Charging Network</a>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2024 &ndash; 2026 Safer Charging Limited. All rights reserved. Company no. 15822485. VAT: 472 4756 68.</p>
                 <div class="footer-bottom-links">
                     <a href="https://www.linkedin.com/company/safer-charging" target="_blank" rel="noopener">LinkedIn</a>
-                    <a href="privacy.html">Privacy Statement</a>
+                    <a href="privacy.html">Privacy Notice</a>
+                    <a href="policies-and-terms.html">Policies &amp; Terms</a>
                 </div>
             </div>
         </div>
